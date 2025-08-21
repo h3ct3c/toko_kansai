@@ -106,9 +106,9 @@
         <!-- Add to cart -->
         <div class="flex space-x-4 mb-6">
           <a href="/cart">
-            <button class="bg-sky-400 flex gap-2 items-center text-white px-6 py-2 rounded-md hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            <button class="bg-sky-400 flex gap-2 items-center text-white px-6 py-2 rounded-md hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
               <svg xmlns="http://www.w3.org/2000/svg" 
-                   fill="none" 
+                   fill="none"
                    viewBox="0 0 24 24"
                    stroke-width="1.5" 
                    stroke="currentColor" 
@@ -123,6 +123,15 @@
                          0 .75.75 0 0 1 1.5 0Z" />
               </svg>
               Add to Cart
+            </button>
+          </a>
+        </div>
+
+        <!-- Payment -->
+        <div class="flex space-x-4 mb-6">
+          <a href="/checkout">
+            <button class="bg-white flex gap-2 items-center border border-black text-black px-12 py-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2">
+              Payment
             </button>
           </a>
         </div>

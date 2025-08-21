@@ -112,6 +112,9 @@ route::get('/product_detail', function () {
     return view('pages/product_detail');
 });
 
+//product
+Route::get('/products', [ProductController::class, 'index']);
+
 
 // admin dashboard
 Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {

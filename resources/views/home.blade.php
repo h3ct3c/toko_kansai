@@ -2,37 +2,38 @@
 
 @include('layout.banner')
 
-  <div class="font-bold text-center text-4xl mt-10">
-  <h1 class="text-black">Browse By Category</h1>
+  <div class="font-semibold text-center text-4xl mt-20">
+  <h1 class="text-blue-900">Browse By Category</h1>
   </div>
 
 <section class="py-20">
   <div class="flex flex-wrap justify-center gap-4">
-    <a href="/cat_kayu_besi" class="px-5 py-2 block mx-10 border border-black text-black rounded-full hover:bg-gray-200 transition">
+    <a href="/cat_kayu_besi" class="px-5 py-2 block mx-10 border border-black text-black rounded-lg hover:bg-gray-200 transition">
       Cat Besi & Kayu
     </a>
-    <a href="/cat_eksterior" class="px-5 py-2 block mx-10 border border-black text-black rounded-full hover:bg-gray-200 transition">
+    <a href="/cat_eksterior" class="px-5 py-2 block mx-10 border border-black text-black rounded-lg hover:bg-gray-200 transition">
       Cat Eksterior
     </a>
-    <a href="/cat_premium" class="px-5 py-2 block mx-10 border border-black text-black rounded-full hover:bg-gray-200 transition">
+    <a href="/cat_premium" class="px-5 py-2 block mx-10 border border-black text-black rounded-lg hover:bg-gray-200 transition">
       Cat Premium
     </a>
-    <a href="/cat_interior" class="px-5 py-2 block mx-10 border border-black text-black rounded-full hover:bg-gray-200 transition">
+    <a href="/cat_interior" class="px-5 py-2 block mx-10 border border-black text-black rounded-lg hover:bg-gray-200 transition">
       Cat Interior
     </a>
   </div>
 </section>
   <div class="mb-20"></div>
   <div class="border-t border-gray-400 w-10/12 mx-auto">
-  <div class="mt-8 font-semibold mx-auto"><h1 class="text-4xl">Best Selling Products</h1></div>
   </div>
+  <div class="mt-8 font-semibold justify-items-center text-blue-900"><h1 class="text-4xl">Best Selling Products</h1>
+</div>
   
   <div class="mb-20"></div>
 
    <div class="mt-3 max-w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 
        gap-x-2 gap-y-12 justify-items-center">
 
-  <!-- ITEM 1 -->
+  <!-- ITEM 1 --> 
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
     <a href="/product_detail">
     <img src="/img/KANSAI FTALIT DUO.png" alt="KANSAI FTALIT DUO"
@@ -43,53 +44,75 @@
       </h3>
       <p class="mt-3 text-sm text-red-500 font-semibold">RP.100,000</p>
       <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
-      </a>
     </div>
+    </a>
   </div>
 
  <!-- ITEM 2 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
+    <a href="/cart">
     <img src="/img/KANSAI GLIMMER.png" alt="KANSAI SPLESH GLIMMER"
          class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
-        <a href="/cart">KANSAI SPLESH GLIMMER</a>
+        KANSAI SPLESH GLIMMER
       </h3>
       <p class="mt-3 text-sm text-red-500 font-semibold">RP.100,000</p>
       <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐</p>
     </div>
+    </a>
   </div>
 
   <!-- ITEM 3 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
+    <a href="#">
     <img src="/img/SPLESH Kaleng Plastik 2,5 L - Copy.png" alt="KANSAI SPLESH"
          class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
-        <a href="#">KANSAI SPLESH</a>
+        KANSAI SPLESH
       </h3>
       <p class="mt-3 text-sm text-red-500 font-semibold">RP.100,000</p>
       <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐</p>
     </div>
+    </a>
   </div>
 
   <!-- ITEM 4 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
+    <a href="/">
     <img src="/img/Kansai-Diamond-Shield.png" alt="KANSAI DIAMOND SHIELD"
          class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
-        <a href="/">KANSAI DIAMOND SHIELD 12-IN-1</a>
+        KANSAI DIAMOND SHIELD 12-IN-1
       </h3>
       <p class="mt-3 text-sm text-red-500 font-semibold">RP.100,000</p>
       <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
     </div>
+    </a>
+  </div>
+
+  
+  <!-- ITEM 5 --> 
+  <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
+    <a href="/product_detail">
+    <img src="/img/KANSAI FTALIT DUO.png" alt="KANSAI FTALIT DUO"
+         class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
+    <div class="p-3 text-center">
+      <h3 class="text-sm text-gray-700 font-semibold">
+        KANSAI FTALIT DUO
+      </h3>
+      <p class="mt-3 text-sm text-red-500 font-semibold">RP.100,000</p>
+      <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
+    </div>
+    </a>
   </div>
   </div>
 
-<div class="mb-44"></div>
+<div class="mb-32"></div>
 
-<button class="my-10 bg-blue-900 px-5 py-2 rounded-full text-white font-semibold font-serif block mx-auto hover:bg-sky-900
+<button class="my-10 bg-blue-900 px-5 py-2 rounded-full text-white font-semibold font-serif block mx-auto hover:bg-sky-700
 active:bg-blue-900 focus:ring-sky-300 animate-bounce">
   <span class="sr-only">View All Products</span>
 <a href="/product">

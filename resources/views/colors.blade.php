@@ -2,9 +2,9 @@
 
 @include("layout.banner")
 
-<div class="mb-20"></div>
+<div class="mb-36"></div>
 
-<h1 class="text-3xl font-bold text-center text-navy mb-10 text-blue-900">Seluruh Koleksi Warna</h1>
+<h1 class="text-3xl font-bold text-center text-navy mb-10 text-blue-900">Koleksi Warna Dasar</h1>
 <!-- Grid Warna -->
 <div class="p-4 bg-[#f1f2f6] rounded-md">
   <div class="grid grid-cols-5 lg:grid-cols-7 gap-4">
@@ -65,7 +65,6 @@
         <p class="text-sm">Purple</p>
       </div>
     </div>
-
   </div>
 </div>
 
