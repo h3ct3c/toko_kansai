@@ -103,6 +103,19 @@
           >
         </div>
 
+        <!-- stok -->
+        <div class="mb-6">
+          <label for="stok" class="block text-sm font-medium text-gray-700 mb-1">Stok:</label>
+          <input
+            type="number" 
+            id="stok" 
+            name="stok" 
+            min="100" 
+            value="100"
+            class="w-12 text-center rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          >
+        </div>
+
         <!-- Add to cart -->
         <div class="flex space-x-4 mb-6">
           <a href="/cart">
@@ -234,6 +247,18 @@
     </div>
   </div>
 
+  <!-- ITEM 5 -->
+  <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
+    <a href="/product_detail">
+      <img src="/img/KANSAI FTALIT DUO.png" alt="KANSAI FTALIT DUO"
+           class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
+      <div class="p-3 text-center">
+        <h3 class="text-sm text-gray-700 font-semibold">KANSAI FTALIT DUO</h3>
+        <p class="mt-3 text-sm text-red-500 font-semibold">Rp.100,000</p>
+        <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
+      </div>
+    </a>
+  </div>
 </div>
 
 <div class="mb-96"></div>

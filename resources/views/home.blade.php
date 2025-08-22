@@ -7,21 +7,37 @@
   </div>
 
 <section class="py-20">
-  <div class="flex flex-wrap justify-center gap-4">
-    <a href="/cat_kayu_besi" class="px-5 py-2 block mx-10 border border-black text-black rounded-lg hover:bg-gray-200 transition">
-      Cat Besi & Kayu
-    </a>
-    <a href="/cat_eksterior" class="px-5 py-2 block mx-10 border border-black text-black rounded-lg hover:bg-gray-200 transition">
-      Cat Eksterior
-    </a>
-    <a href="/cat_premium" class="px-5 py-2 block mx-10 border border-black text-black rounded-lg hover:bg-gray-200 transition">
-      Cat Premium
-    </a>
-    <a href="/cat_interior" class="px-5 py-2 block mx-10 border border-black text-black rounded-lg hover:bg-gray-200 transition">
-      Cat Interior
-    </a>
+  <div class="max-w-6xl mx-auto mt-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
+  <!-- Cat Besi & Kayu -->
+   <a href="/cat_kayu_besi">
+  <div class="group p-6 bg-white rounded-2xl shadow hover:shadow-xl border border-gray-300 flex flex-col items-center transition">
+    <p class="font-semibold text-gray-800 group-hover:text-blue-500">Cat Besi & Kayu</p>
   </div>
+  </a>
+
+  <!-- Cat Eksterior -->
+  <a href="/cat_eksterior">
+  <div class="group p-6 bg-white rounded-2xl shadow hover:shadow-xl border border-gray-300 flex flex-col items-center transition">
+    <p class="font-semibold text-gray-800 group-hover:text-sky-500">Cat Eksterior</p>
+  </div>
+  </a>
+
+  <!-- Cat Premium -->
+  <a href="/cat_premium">
+  <div class="group p-6 bg-white rounded-2xl shadow hover:shadow-xl border border-gray-300 flex flex-col items-center transition">
+    <p class="font-semibold text-gray-800 group-hover:text-sky-500">Cat Premium</p>
+  </div>
+  </a>
+
+  <!-- Cat Interior -->
+  <div class="group p-6 bg-white rounded-2xl shadow hover:shadow-xl border border-gray-300 flex flex-col items-center transition">
+    <a href="/cat_interior">
+    <p class="font-semibold text-gray-800 group-hover:text-sky-500">Cat Interior</p>
+  </div>
+  </a>
+</div>
 </section>
+
   <div class="mb-20"></div>
   <div class="border-t border-gray-400 w-10/12 mx-auto">
   </div>
