@@ -121,14 +121,14 @@ Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () 
     
     // Rute untuk Halaman Utama Dashboard
     Route::get('/', function () {
-        return view('admin/dashboard'); 
+        return view('admin.index'); 
     })->name('admin/dashboard');
 
 
     // Rute untuk Halaman Products
     Route::get('/product_management', function () {
         // Ini akan mencari file di resources/views/admin/products.blade.php
-        return view('admin/product_management/product_dashboard');
+        return view('admin.products');
     })->name('product_management');
 
 
