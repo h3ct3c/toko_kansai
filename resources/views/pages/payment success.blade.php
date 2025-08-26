@@ -39,9 +39,11 @@
         </p>
 
         <div class="p-6 mb-8 rounded-lg bg-blue-50">
+            <a href="https://kansaipaint.id">
             <p class="text-lg font-medium text-blue-700">
                 Your tool <span class="font-bold">"https://kansaipaint.id"</span> will be listed shortly.
             </p>
+            </a>
         </div>
 
         <!-- Contact Information -->
@@ -57,9 +59,9 @@
 
         <!-- Back to Home Button -->
         <div class="mt-12">
-            <a href="http://127.0.0.1:8000"
+            <a href="/order history"
                 class="inline-block px-8 py-4 text-lg font-semibold text-white transition-colors duration-200 bg-sky-400 rounded-lg hover:bg-sky-900">
-                Return to Homepage
+                Check Order History
             </a>
         </div>
     </div>

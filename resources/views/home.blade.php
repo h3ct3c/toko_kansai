@@ -39,7 +39,7 @@
 </section>
 
   <div class="mb-20"></div>
-  <div class="border-t border-gray-400 w-10/12 mx-auto">
+  <div class="border-t border-gray-400 w-11/12 mx-auto">
   </div>
   <div class="mt-8 font-semibold justify-items-center text-blue-900"><h1 class="text-4xl">Best Selling Products</h1>
 </div>
@@ -139,7 +139,7 @@ active:bg-blue-900 focus:ring-sky-300 animate-bounce">
         
 <div class="mb-28"></div> 
 
-  <div class="border-t border-gray-400 w-10/12 mx-auto"></div>
+  <div class="border-t border-gray-400 w-11/12 mx-auto"></div>
 
 <div class="mb-96"></div>
 

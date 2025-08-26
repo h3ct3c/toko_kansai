@@ -104,12 +104,16 @@ route::get('/checkout', function () {
     return view('pages/checkout');
 });
 
-route::get('/payment', function () {
-    return view('pages/payment');
+route::get('/payment success', function () {
+    return view('pages/payment success');
 });
 
 route::get('/product_detail', function () {
     return view('pages/product_detail');
+});
+
+route::get('/order history', function () {
+    return view('pages/order history');
 });
 
 //product

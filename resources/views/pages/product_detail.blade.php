@@ -144,7 +144,7 @@
         <div class="flex space-x-4 mb-6">
           <a href="/checkout">
             <button class="bg-white flex gap-2 items-center border border-black text-black px-12 py-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2">
-              Payment
+              Buy Now
             </button>
           </a>
         </div>
@@ -189,7 +189,7 @@
 
 <!-- Separator -->
 <div class="mb-40"></div>
-<div class="border-t border-gray-400 w-10/12 mx-auto"></div>
+<div class="border-t border-gray-400 w-11/12 mx-auto"></div>
 <div class="mb-20"></div>
 
 <!-- Related Products -->

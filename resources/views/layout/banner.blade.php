@@ -24,7 +24,7 @@
   var swiper = new Swiper(".mySwiper", {
     loop: true,
     autoplay: {
-      delay: 4800,
+      delay: 4830,
       disableOnInteraction: false, // biar autoplay tetap jalan meski di-swipe
     },
     speed: 1000,

@@ -463,36 +463,36 @@
       return {
         cartItems: [
           {
-            name: "Kansai Diamond Shield",
+            name: "Kansai Ftalit Duo",
             model: "Kansai Paint",
             hsCode: "847130",
             quantity: 1,
             weight: 2.5,
-            perPieceRate: 100.000,
-            totalPrice: 100.000,
+            perPieceRate: 94.000,
+            totalPrice: 94.000,
             color: "Silver",
             deliveryMethod: "Air",
             description: "A powerful and lightweight laptop with excellent performance.",
             isEditingDescription: false,
             originalDescription: "",
             showDescription: false,
-            image: "/img/FA_Kansai-Diamond-Shield_2,5L_Display.png"
+            image: "/img/KANSAI FTALIT DUO.png"
           },
           {
-            name: "Kansai Diamond Shield",
+            name: "Kansai Ftalit Duo",
             model: "Kansai Paint",
             hsCode: "851712",
             quantity: 2,
             weight: 0.5,
-            perPieceRate: 350.000,
-            totalPrice: 1599.98,
+            perPieceRate: 94.000,
+            totalPrice: 188.000,
             color: "Black",
             deliveryMethod: "Ship",
-            description: "The latest iPhone with advanced camera and processing power.",
+            description: "",
             isEditingDescription: false,
             originalDescription: "",
             showDescription: false,
-            image: "/img/FA_Kansai-Diamond-Shield_2,5L_Display.png"
+            image: "/img/KANSAI FTALIT DUO.png"
           }
         ],
         shippingMethod: "standard",

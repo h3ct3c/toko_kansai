@@ -23,19 +23,19 @@
   <nav class="w-full flex flex-wrap items-center justify-between px-4 py-3 shadow-sm sticky top-0 bg-white z-50">
     <!-- Logo -->
     <div class="flex items-center space-x-2 px-8">
-      <img src="img/logo kansai.jpg" class="h-16">
+      <img src="/img/logo kansai.jpg" class="h-16">
     </div>
 
     <!-- Menu -->
     <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-gray-700 mt-3 md:mt-0">
       <li>
-        <a href="/" class="nav-link block py-2 px-1 border-b-2 border-transparent hover:border-blue-400 hover:text-blue-400 transition-all">Home</a>
+        <a href="/" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-400 hover:text-blue-400 transition-all">Home</a>
       </li>
       <li>
-        <a href="/product" class="nav-link block py-2 px-1 border-b-2 border-transparent hover:border-blue-400 hover:text-blue-400 transition-all">Product</a>
+        <a href="/product" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-400 hover:text-blue-400 transition-all">Product</a>
       </li>
       <li>
-        <a href="/colors" class="nav-link block py-2 px-1 border-b-2 border-transparent hover:border-blue-400 hover:text-blue-400 transition-all">Colors</a>
+        <a href="/colors" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-400 hover:text-blue-400 transition-all">Colors</a>
       </li>
       <li>
         <a href="/login" class="nav-link block py-2 px-1 border-b-2 border-transparent hover:border-blue-400 hover:text-blue-400 transition-all">Login</a>
