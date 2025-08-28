@@ -1,3 +1,7 @@
+@include('layout.header')
+
+<div class="mb-12"></div>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +14,7 @@
 <body class="bg-gray-50">
     <div class="container mx-auto px-4 py-8 max-w-7xl" x-data="orders">
         <!-- Page Header -->
-        <div class="mb-8">
+        <div class="mb-8">  
             <h1 class="text-3xl font-bold text-gray-900">Order History</h1>
             <p class="text-gray-600 mt-2">View your recent purchases and order status</p>
         </div>
@@ -33,7 +37,7 @@
                                             'bg-red-400 text-white': order.status === 'Processing',
                                             'bg-blue-100 text-blue-800': order.status === 'Shipped'
                                           }"
-                                          x-text="order.status"></span>
+                                     x-text="order.status"></span>
                                 </div>
                                 <p class="text-sm text-gray-500 mt-1" x-text="'Order Date: ' + order.date"></p>
                             </div>
@@ -140,7 +144,7 @@
                             { id: 3, name: 'Kansai Ftalit Duo', price: 94.000, quantity: 1, image: '/img/KANSAI FTALIT DUO.png' },
                             { id: 4, name: 'Kansai Ftalit Duo', price: 94.000, quantity: 1, image: '/img/KANSAI FTALIT DUO.png' }
                         ],
-                        shipping: {
+                        shipping: { 
                             address: '456 Elm Street',
                             city: 'cihideng',
                             state: 'hideng',
@@ -157,3 +161,7 @@
     </script>
 </body>
 </html>
+
+<div class="mb-96"></div>
+
+@include('layout.footer')

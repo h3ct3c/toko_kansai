@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Redirect;
 use function Pest\Laravel\post;
 use illuminate\Http\Middleware\AdminMiddleware;
 
+
 // CRUD
 Route::resource('product_crud', ProductController::class);
 Route::get('product_crud/{id}/edit', [ProductController::class, 'edit'])->name('product_crud.edit');

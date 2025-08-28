@@ -56,7 +56,7 @@
     <!-- Header with cart count -->
     <div class="flex justify-between items-center mb-8">
       <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800">Shopping Cart</h1>
-      <div x-data="cart()" class="bg-blue-600 text-white px-3 py-1 rounded-full flex items-center">
+      <div x-data="cart()" class="bg-blue-900 text-white px-3 py-1 rounded-full flex items-center">
         <i class="fas fa-shopping-cart mr-2"></i>
         <span x-text="cartItems.length"></span> <span class="hidden sm:inline ml-1">items</span>
       </div>
@@ -384,7 +384,7 @@
               >
               <button 
                 @click="applyPromoCode" 
-                class="bg-blue-600 text-white px-4 py-2 rounded-r hover:bg-blue-700 transition"
+                class="bg-blue-900 text-white px-4 py-2 rounded-r hover:bg-blue-700 transition"
               >
                 Apply
               </button>
@@ -424,7 +424,7 @@
               </div>
             </div>
             <button 
-              class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition flex items-center justify-center"
+              class="w-full bg-blue-900 text-white py-3 rounded-lg font-medium hover:bg-sky-400 transition flex items-center justify-center"
               :disabled="cartItems.length === 0"
               :class="{'opacity-50 cursor-not-allowed': cartItems.length === 0}"
             >

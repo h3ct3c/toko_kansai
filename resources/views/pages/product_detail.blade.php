@@ -190,7 +190,7 @@
 <!-- Separator -->
 <div class="mb-40"></div>
 <div class="border-t border-gray-400 w-11/12 mx-auto"></div>
-<div class="mb-20"></div>
+<div class="mb-40"></div>
 
 <!-- Related Products -->
 <div class="mt-3 max-w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-2 gap-y-12 justify-items-center">

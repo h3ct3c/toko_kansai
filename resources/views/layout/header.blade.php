@@ -38,10 +38,10 @@
         <a href="/colors" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-400 hover:text-blue-400 transition-all">Colors</a>
       </li>
       <li>
-        <a href="/login" class="nav-link block py-2 px-1 border-b-2 border-transparent hover:border-blue-400 hover:text-blue-400 transition-all">Sign In</a>
+        <a href="/login" class="nav-link block py-2 px-1 border-b-2 border-transparent hover:border-blue-400 hover:text-blue-400 transition-all text-base">Sign In</a>
       </li>
       <li>
-        <a href="/register" class="nav-link block py-2 px-1 border-b-2 border-transparent hover:border-blue-400 hover:text-blue-400 transition-all">Sign Up</a>
+        <a href="/register" class="nav-link block py-2 px-1 border-b-2 border-transparent hover:border-blue-400 hover:text-blue-400 transition-all text-blue-800 font-bold text-base">Sign Up</a>
       </li>
     </ul>
 
@@ -76,6 +76,8 @@
       </a>
     </div>
   </nav>
+
+  
 
   <!-- SCRIPT: tandai menu yang aktif -->
   <script>

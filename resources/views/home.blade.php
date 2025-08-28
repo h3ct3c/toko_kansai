@@ -2,6 +2,7 @@
 
 @include('layout.banner')
 
+
   <div class="font-semibold text-center text-4xl mt-20">
   <h1 class="text-blue-900">Browse By Category</h1>
   </div>
@@ -18,21 +19,21 @@
   <!-- Cat Eksterior -->
   <a href="/cat_eksterior">
   <div class="group p-6 bg-white rounded-2xl shadow hover:shadow-xl border border-gray-300 flex flex-col items-center transition">
-    <p class="font-semibold text-gray-800 group-hover:text-sky-500">Cat Eksterior</p>
+    <p class="font-semibold text-gray-800 group-hover:text-blue-500">Cat Eksterior</p>
   </div>
   </a>
 
   <!-- Cat Premium -->
   <a href="/cat_premium">
   <div class="group p-6 bg-white rounded-2xl shadow hover:shadow-xl border border-gray-300 flex flex-col items-center transition">
-    <p class="font-semibold text-gray-800 group-hover:text-sky-500">Cat Premium</p>
+    <p class="font-semibold text-gray-800 group-hover:text-blue-500">Cat Premium</p>
   </div>
   </a>
 
   <!-- Cat Interior -->
   <div class="group p-6 bg-white rounded-2xl shadow hover:shadow-xl border border-gray-300 flex flex-col items-center transition">
     <a href="/cat_interior">
-    <p class="font-semibold text-gray-800 group-hover:text-sky-500">Cat Interior</p>
+    <p class="font-semibold text-gray-800 group-hover:text-blue-500">Cat Interior</p>
   </div>
   </a>
 </div>
