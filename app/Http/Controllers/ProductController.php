@@ -104,4 +104,19 @@ class ProductController extends Controller
         return redirect()->route('product_crud.index')
             ->with('success','Product deleted successfully.');
     }
+
+
+    public function search(Request $request)
+    {
+        // ambil kata kunci dari input
+        $keyword = $request->input('query');
+
+        // cari produk berdasarkan nama atau deskripsi
+        $products = Product::where('name', 'LIKE', "%$keyword%")
+                            ->orWhere('description', 'LIKE', "%$keyword%")
+                            ->get();
+
+        // kirim hasil ke view
+        return view('products.search', compact('products', 'keyword'));
+    }
 }

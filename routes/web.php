@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Redirect;
 use function Pest\Laravel\post;
 use illuminate\Http\Middleware\AdminMiddleware;
 
+// search
+Route::get('/search', [ProductController::class, 'search'])->name('search');
+
 
 // CRUD
 Route::resource('product_crud', ProductController::class);
