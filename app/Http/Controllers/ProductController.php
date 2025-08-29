@@ -113,10 +113,10 @@ class ProductController extends Controller
 
         // cari produk berdasarkan nama atau deskripsi
         $products = Product::where('name', 'LIKE', "%$keyword%")
-                            ->orWhere('description', 'LIKE', "%$keyword%")
-                            ->get();
+                   ->paginate(10);
 
         // kirim hasil ke view
-        return view('products.search', compact('products', 'keyword'));
+        return view('search', compact('products', 'keyword'));
+
     }
 }

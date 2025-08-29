@@ -145,6 +145,7 @@ active:bg-blue-900 focus:ring-sky-300 animate-bounce">
 <div class="mb-96"></div>
 
 @include('layout.footer')
+
 </body>
 </html>
 
