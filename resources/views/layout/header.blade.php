@@ -39,11 +39,20 @@
         <a href="/colors" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-400 hover:text-blue-400 transition-all">Colors</a>
       </li>
       <li>
-        <a href="/login" class="nav-link block py-2 px-1 border-b-2 border-transparent hover:border-blue-400 hover:text-blue-400 transition-all text-base">Sign In</a>
-      </li>
-      <li>
-        <a href="/register" class="nav-link block py-2 px-1 border-b-2 border-transparent hover:border-blue-400 hover:text-blue-400 transition-all text-blue-800 font-bold text-base">Sign Up</a>
-      </li>
+  <a href="/login"
+     class="nav-link block py-2 px-6 border-2 border-blue-400 rounded-lg text-blue-400 
+            hover:border-blue-600 hover:text-blue-600 transition-all">
+    Sign In
+  </a>
+</li>
+<li>
+  <a href="/register"
+     class="bg-blue-500 text-white nav-link block py-2 px-6 border-2 rounded-lg 
+            hover:border-blue-600 hover:text-gray-300 transition-all">
+    Sign Up
+  </a>
+</li>
+    
     </ul>
 
     <!-- Search + Cart + Dropdown -->
@@ -121,7 +130,7 @@
             </a>
 
             <!-- Settings -->
-            <a href="#"
+            <a href="/settings"
               class="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
             <svg xmlns="http://www.w3.org/2000/svg"
                  class="w-5 h-5"
@@ -137,7 +146,7 @@
 
 
             <!-- Logout -->
-           <a href="#"
+           <a href="/"
              class="flex items-center gap-2 px-4 py-2 text-sm text-red-500 hover:bg-gray-100">
            <svg xmlns="http://www.w3.org/2000/svg"
                 class="w-5 h-5"

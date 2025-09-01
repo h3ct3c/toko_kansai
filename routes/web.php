@@ -18,6 +18,7 @@ use illuminate\Http\Middleware\AdminMiddleware;
 
 
 
+Route::get
 
 // search
 Route::get('/search', [ProductController::class, 'search'])->name('search');
