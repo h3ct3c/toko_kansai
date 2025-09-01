@@ -22,7 +22,7 @@ use illuminate\Http\Middleware\AdminMiddleware;
 
 // search
 Route::get('/search', [ProductController::class, 'search'])->name('search');
-
+    
 
 // CRUD
 Route::resource('product_crud', ProductController::class);
