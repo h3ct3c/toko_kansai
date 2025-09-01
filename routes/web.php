@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Resource\views\product_crud;
 use App\Http\Controllers\ProductController;
@@ -15,13 +14,19 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use function Pest\Laravel\post;
 use illuminate\Http\Middleware\AdminMiddleware;
+use App\Http\Controllers\ProductFrontController;
 
 // search
 Route::get('/search', [ProductController::class, 'search'])->name('search');
 
+//produk//
+Route::get('/products', [ProductFrontController::class, 'index'])->name('products.index');
 
 // CRUD
-Route::resource('product_crud', ProductController::class);
+Route::prefix('admin')->group(function () {
+    Route::resource('products', ProductController::class);
+});
+
 Route::get('product_crud/{id}/edit', [ProductController::class, 'edit'])->name('product_crud.edit');
 Route::post('product_crud/{id}/edit', [ProductController::class, 'edit'])->name('product_crud.edit');
 Route::get('product_crud', [ProductController::class, 'index'])->name('product_crud.index');
@@ -31,7 +36,6 @@ Route::delete('product_crud/{id}', [ProductController::class, 'destroy'])->name(
 
 
 // LOGIN AND REGISTER
-
 Route::get('/register', [AuthenticatedSessionController::class, 'showRegister'])->name('register');
 Route::post('/register', [AuthenticatedSessionController::class, 'register']);
 Route::get('/login', [AuthenticatedSessionController::class, 'showLogin'])->name('login');
@@ -54,7 +58,6 @@ Route::get('/', function () {
 
 
 //homepage//
-
 Route::get('/product', function () {
     return view('product');
 });
@@ -70,6 +73,7 @@ Route::get('/cart', function () {
 Route::get('/', function () {
 return view('home');  
 });
+
 
 //kategori//
 Route::get('/category', function () {
@@ -91,8 +95,6 @@ route::get('/cat_premium', function () {
 route::get('/cat_interior', function () {
     return view('category/cat_interior');
 });
-
-//produk//
 
 
 //pages//
