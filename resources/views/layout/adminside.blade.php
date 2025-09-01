@@ -16,11 +16,11 @@
         <nav class="flex-1">
 
             <a href="" class="block py-6 px-14 hover:bg-blue-900 rounded-full"><h1 class="text-lg font-semibold">Dashboard</h1></a>
-            <a href="{{ route('user.index') }}" class="block py-8 px-8 hover:bg-blue-700  rounded-full">👤 User Manage</a>
+            <a href="" class="block py-8 px-8 hover:bg-blue-700  rounded-full">👤 User Manage</a>
             <a href="/product_crud" class="block py-8 px-8 hover:bg-blue-700 rounded-full">📦 Product</a>
-            <a href="{{ route('order.index') }}" class="block py-8 px-8 hover:bg-blue-700 rounded-full">📄 Order Payment</a>
-            <a href="{{ route('statistic.index') }}" class="block py-8 px-8 hover:bg-blue-700 rounded-full">📊 Statistic</a>
-            <a href="{{ route('settings.index') }}" class="block py-10 px-8  hover:bg-blue-700 rounded-full">⚙️ Settings</a>
+            <a href="" class="block py-8 px-8 hover:bg-blue-700 rounded-full">📄 Order Payment</a>
+            <a href="" class="block py-8 px-8 hover:bg-blue-700 rounded-full">📊 Statistic</a>
+            <a href="" class="block py-10 px-8  hover:bg-blue-700 rounded-full">⚙️ Settings</a>
             <div class="mb-10"></div>
             <a href="/" class="flex items-center p-10">
                 <span class="mr-2">▶️</span> Logout
