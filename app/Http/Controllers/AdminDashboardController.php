@@ -8,7 +8,8 @@ class AdminDashboardController extends Controller
 {
     public function index()
     {
-        return view('layouts.dashboard', compact('data'));
+        $pages = 'dashboard';
+        return view('layouts.dashboard', compact('pages'));
     }
 }
 

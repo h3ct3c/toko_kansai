@@ -16,8 +16,9 @@ use function Pest\Laravel\post;
 use illuminate\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\ProductFrontController;
 
+
 // search
-Route::get('/search', [ProductController::class, 'search'])->name('search');
+Route::get('/search', [ProductFrontController::class, 'search'])->name('search');
 
 //produk//
 Route::get('/products', [ProductFrontController::class, 'index'])->name('products.index');
@@ -126,30 +127,17 @@ route::get('/order history', function () {
 Route::get('/products', [ProductController::class, 'index']);
 
 
-// admin dashboard
+// ketika mengisi form login untuk admin maka diarahkan ke dashboard admin
 Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
-    
+
+
+
     // Rute untuk Halaman Utama Dashboard
     Route::get('/', function () {
         return view('admin.index'); 
-    })->name('admin/dashboard');
-
-
-    // Rute untuk Halaman Products
-    Route::get('/product_management', function () {
-        // Ini akan mencari file di resources/views/admin/products.blade.php
-        return view('admin.products');
-    })->name('product_management');
-
-
-    
-
+    })->name('admin.index');
 });
-    Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    });
+    
 
 
 
