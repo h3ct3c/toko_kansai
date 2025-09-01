@@ -16,18 +16,15 @@ use function Pest\Laravel\post;
 use illuminate\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\ProductFrontController;
 
-
 // search
 Route::get('/search', [ProductFrontController::class, 'search'])->name('search');
 
 //produk//
 Route::get('/products', [ProductFrontController::class, 'index'])->name('products.index');
 
-// CRUD
-Route::prefix('admin')->group(function () {
-    Route::resource('products', ProductController::class);
-});
-
+// CRUd
+Route::resource('product_crud', ProductController::class);
+Route::resource('products', ProductController::class);
 Route::get('product_crud/{id}/edit', [ProductController::class, 'edit'])->name('product_crud.edit');
 Route::post('product_crud/{id}/edit', [ProductController::class, 'edit'])->name('product_crud.edit');
 Route::get('product_crud', [ProductController::class, 'index'])->name('product_crud.index');
@@ -131,17 +128,8 @@ Route::get('/products', [ProductController::class, 'index']);
 Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
 
 
-
     // Rute untuk Halaman Utama Dashboard
     Route::get('/', function () {
         return view('admin.index'); 
     })->name('admin.index');
 });
-    
-
-
-
-require __DIR__.'/auth.php';
-
-
-

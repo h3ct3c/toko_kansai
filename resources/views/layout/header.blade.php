@@ -30,13 +30,13 @@
     <!-- Menu -->
     <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-gray-700 mt-3 md:mt-0">
       <li>
-        <a href="/" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Home</a>
+        <a href="/" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 text-blue-900 transition-all">Home</a>
       </li>
       <li>
-        <a href="/product" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Product</a>
+        <a href="/product" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 text-blue-900 transition-all">Product</a>
       </li>
       <li>
-        <a href="/colors" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Colors</a>
+        <a href="/colors" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 text-blue-900 transition-all">Colors</a>
       </li>
       <li>
      <a href="/login"
@@ -67,7 +67,7 @@
                  focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
           required/>
         <button type="submit" aria-label="Search"
-          class="absolute right-2 top-2.5 text-gray-400 hover:text-blue-400">
+          class="absolute right-2 top-2.5 text-gray-400 hover:text-blue-900">
           <svg xmlns="http://www.w3.org/2000/svg"
                class="h-5 w-5"
                fill="none"
