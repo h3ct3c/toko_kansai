@@ -88,8 +88,6 @@
   </div>
 </div>
 
-
-
   <div class="mb-96"></div>
 
 @include('layout.footer')

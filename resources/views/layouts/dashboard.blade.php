@@ -10,11 +10,11 @@
 
     <!-- Main Content -->
     <div class="flex-1 flex flex-col">
-        <div class="mt-10"></div>
+        <div class="mt-0"></div>
 
         <!-- Table -->
         <main class="p-6">
-        
+         @yield('content')
         </main>
 
 

@@ -100,7 +100,7 @@
       <!-- Dropdown -->
       <div class="relative inline-block text-center">
         <!-- Tombol Dropdown -->
-        <button id="dropdownButton" class="p-2 rounded-lg focus:outline-none focus:ring-2 text-blue-900 focus:ring-blue-900 hover:text-blue-900">
+        <button id="dropdownButton" class="p-2 rounded-full focus:outline-none focus:ring-2 text-blue-900 focus:ring-blue-900 hover:text-blue-900">
           <svg xmlns="http://www.w3.org/2000/svg"
                class="w-6 h-6"
                viewBox="0 0 16 16"
