@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Resource\views\product_crud;
 use App\Http\Controllers\ProductController;
@@ -15,17 +14,15 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use function Pest\Laravel\post;
 use illuminate\Http\Middleware\AdminMiddleware;
-
-
-
-
+use App\Http\Controllers\ProductFrontController;
 
 // search
 Route::get('/search', [ProductController::class, 'search'])->name('search');
     
 
-// CRUD
+// CRUd
 Route::resource('product_crud', ProductController::class);
+Route::resource('products', ProductController::class);
 Route::get('product_crud/{id}/edit', [ProductController::class, 'edit'])->name('product_crud.edit');
 Route::post('product_crud/{id}/edit', [ProductController::class, 'edit'])->name('product_crud.edit');
 Route::get('product_crud', [ProductController::class, 'index'])->name('product_crud.index');
@@ -73,6 +70,7 @@ Route::get('/', function () {
 return view('home');  
 });
 
+
 //kategori//
 Route::get('/category', function () {
     return view('category');
@@ -93,8 +91,6 @@ route::get('/cat_premium', function () {
 route::get('/cat_interior', function () {
     return view('category/cat_interior');
 });
-
-//produk//
 
 
 //pages//
@@ -130,17 +126,8 @@ Route::get('/products', [ProductController::class, 'index']);
 Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
 
 
-
     // Rute untuk Halaman Utama Dashboard
     Route::get('/', function () {
         return view('admin.index'); 
     })->name('admin.index');
 });
-    
-
-
-
-require __DIR__.'/auth.php';
-
-
-

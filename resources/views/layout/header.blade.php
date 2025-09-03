@@ -39,21 +39,20 @@
         <a href="/colors" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Colors</a>
       </li>
       <li>
-  <a href="/login"
-     class="nav-link block py-2 px-6 border-2 border-blue-400 rounded-lg text-blue-400 
+     <a href="/login"
+        class="nav-link block py-2 px-6 border-2 border-blue-900 rounded-lg text-blue-900 
             hover:border-blue-600 hover:text-blue-600 transition-all">
-    Sign In
-  </a>
-</li>
-<li>
-  <a href="/register"
-     class="bg-blue-500 text-white nav-link block py-2 px-6 border-2 rounded-lg 
-            hover:border-blue-600 hover:text-gray-300 transition-all">
-    Sign Up
-  </a>
-</li>
-    
-    </ul>
+        Sign In
+      </a>
+    </li>
+      <li>
+     <a href="/register"
+        class="bg-blue-900 text-white nav-link block py-2 px-6 border-2 rounded-lg 
+            hover:border-blue-600 transition-all">
+        Sign Up
+     </a>
+    </li>
+      </ul>
 
     <!-- Search + Cart + Dropdown -->
     <div class="flex flex-wrap items-center gap-4 mt-3 md:mt-0">
@@ -65,11 +64,10 @@
           name="query"
           placeholder="Buruan Cari!"
           class="w-full rounded-lg border border-gray-300 py-2 pl-4 pr-10 text-sm 
-                 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          required
-        />
+                 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
+          required/>
         <button type="submit" aria-label="Search"
-          class="absolute right-2 top-2.5 text-gray-400 hover:text-blue-400">
+          class="absolute right-2 top-2.5 text-gray-400 hover:text-blue-900">
           <svg xmlns="http://www.w3.org/2000/svg"
                class="h-5 w-5"
                fill="none"
@@ -83,12 +81,12 @@
           </svg>
         </button>
       </form>
-
+      
       <!-- Cart -->
       <a href="/cart">
   <button aria-label="Shopping Cart"
-    class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 flex items-center space-x-2 
-           text-gray-600 hover:text-blue-400">
+    class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900 flex items-center space-x-2 
+           text-gray-600 hover:text-blue-900">
         <svg xmlns="http://www.w3.org/2000/svg" 
          width="28" height="28" viewBox="0 0 24 24" fill="none"
          class="stroke-current">
@@ -102,7 +100,7 @@
       <!-- Dropdown -->
       <div class="relative inline-block text-center">
         <!-- Tombol Dropdown -->
-        <button id="dropdownButton" class="p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 hover:text-blue-400">
+        <button id="dropdownButton" class="p-2 rounded-full focus:outline-none focus:ring-2 text-blue-900 focus:ring-blue-900 hover:text-blue-900">
           <svg xmlns="http://www.w3.org/2000/svg"
                class="w-6 h-6"
                viewBox="0 0 16 16"
