@@ -19,7 +19,7 @@
     <div class="grid grid-cols-8 gap-4 mb-4 p-5">
         <div class="col-span-4 mt-2">
             <h1 class="text-3xl font-bold">
-                DAFTAR PRODUCT CAT WARNA
+                
             </h1>
         </div>
         <div class="col-span-4">

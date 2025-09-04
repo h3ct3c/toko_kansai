@@ -17,10 +17,8 @@ use illuminate\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\ProductFrontController;
 
 // search
-Route::get('/search', [ProductFrontController::class, 'search'])->name('search');
-
-//produk//
-Route::get('/products', [ProductFrontController::class, 'index'])->name('products.index');
+Route::get('/search', [ProductController::class, 'search'])->name('search');
+    
 
 // CRUd
 Route::resource('product_crud', ProductController::class);

@@ -27,16 +27,16 @@
       <img src="/img/logo kansai.jpg" class="h-16" alt="Kansai Paint Logo">
     </div>
 
-    <!-- Menu -->
+    <!-- HomePage -->
     <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-gray-700 mt-3 md:mt-0">
       <li>
-        <a href="/" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 text-blue-900 transition-all">Home</a>
+        <a href="/" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Home</a>
       </li>
       <li>
-        <a href="/product" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 text-blue-900 transition-all">Product</a>
+        <a href="/product" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Product</a>
       </li>
       <li>
-        <a href="/colors" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 text-blue-900 transition-all">Colors</a>
+        <a href="/colors" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Colors</a>
       </li>
       <li>
      <a href="/login"

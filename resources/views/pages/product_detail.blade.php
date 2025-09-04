@@ -51,9 +51,9 @@
         <div class="flex items-center mb-4">
           @for($i = 0; $i < 5; $i++)
             <svg xmlns="http://www.w3.org/2000/svg" 
-                 viewBox="0 0 24 24" 
-                 fill="currentColor"
-                 class="size-6 text-yellow-500">
+                viewBox="0 0 24 24" 
+                fill="currentColor"
+                class="size-6 text-yellow-500">
               <path fill-rule="evenodd" 
                     d="M10.788 3.21c.448-1.077 1.976-1.077 
                        2.424 0l2.082 5.006 5.404.434c1.164.093 
