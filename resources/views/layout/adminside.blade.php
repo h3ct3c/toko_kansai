@@ -16,12 +16,12 @@
 
   <nav class="flex-1 space-y-2">
     <!-- Dashboard -->
-    <a href="/dashboard" class="nav-link block py-3 px-6 hover:text-blue-600 rounded-lg flex items-center gap-3">
+    <a href="/user_manage" class="nav-link block py-3 px-6 hover:text-blue-600 rounded-lg flex items-center gap-3">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16" fill="currentColor">
         <path d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z"/>
         <path d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z"/>
       </svg>
-      <span class="text-sm font-medium">Dashboard</span>
+      <span class="text-sm font-medium">User Manage</span>
     </a>
 
     <!-- Product -->
@@ -37,7 +37,7 @@
     </a>
 
     <!-- Orders -->
-    <a href="" class="nav-link block py-6 px-6 hover:text-blue-600 rounded-lg flex items-center gap-3">
+    <a href="/orders" class="nav-link block py-6 px-6 hover:text-blue-600 rounded-lg flex items-center gap-3">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024" fill="currentColor">
         <path d="M53.6 1023.2c-6.4 0-12.8-2.4-17.6-8-4.8-4.8-7.2-11.2-6.4-18.4L80 222.4c0.8-12.8 11.2-22.4 24-22.4h211.2v-3.2c0-52.8 20.8-101.6 57.6-139.2C410.4 21.6 459.2 0.8 512 0.8c108 0 196.8 88 196.8 196.8v0.8H920c12.8 0 23.2 9.6 24 22.4l49.6 768.8c0.8 2.4 0.8 4 0.8 6.4-0.8 13.6-11.2 24.8-24.8 24.8H53.6z"/>
       </svg>
@@ -45,7 +45,7 @@
     </a>
 
     <!-- Analytics -->
-    <a href="" class="nav-link block py-6 px-6 hover:text-blue-600 rounded-lg flex items-center gap-3">
+    <a href="/analytics" class="nav-link block py-6 px-6 hover:text-blue-600 rounded-lg flex items-center gap-3">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32" fill="currentColor">
         <rect height="10" width="6" x="17" y="17" rx="1"/>
         <rect height="16" width="6" x="25" y="11" rx="1"/>
@@ -56,7 +56,7 @@
     </a>
 
     <!-- Settings -->
-    <a href="" class="nav-link block py-6 px-6 hover:text-blue-600 rounded-lg flex items-center gap-3">
+    <a href="/settings" class="nav-link block py-6 px-6 hover:text-blue-600 rounded-lg flex items-center gap-3">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024" fill="currentColor">
         <path d="M600.704 64a32 32 0 0 1 30.464 22.208l35.2 109.376c14.784 7.232 28.928 15.36 42.432 24.512l112.384-24.192a32 32 0 0 1 34.432 15.36L944.32 364.8a32 32 0 0 1-4.032 37.504l-77.12 85.12a357.12 357.12 0 0 1 0 49.024l77.12 85.248a32 32 0 0 1 4.032 37.504l-88.704 153.6a32 32 0 0 1-34.432 15.296L708.8 803.904c-13.44 9.088-27.648 17.28-42.368 24.512l-35.264 109.376A32 32 0 0 1 600.704 960H423.296a32 32 0 0 1-30.464-22.208L357.696 828.48a351.616 351.616 0 0 1-42.56-24.64l-112.32 24.256a32 32 0 0 1-34.432-15.36L79.68 659.2a32 32 0 0 1 4.032-37.504l77.12-85.248a357.12 357.12 0 0 1 0-48.896l-77.12-85.248A32 32 0 0 1 79.68 364.8l88.704-153.6a32 32 0 0 1 34.432-15.296l112.32 24.256c13.568-9.152 27.776-17.408 42.56-24.64l35.2-109.312A32 32 0 0 1 423.232 64H600.64zM512 320a192 192 0 1 1 0 384 192 192 0 0 1 0-384z"/>
       </svg>

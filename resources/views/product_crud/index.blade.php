@@ -66,7 +66,7 @@
                 </thead>
                 <tbody>
                 @forelse ($products as $product)
-                    <tr class="bg-white border dark:bg-white dark:border-gray-300 border-gray-200">
+                    <tr class="bg-white border dark:bg-white dark:border-gray-100 border-gray-200">
                         <td class="px-6 py-4">
                             {{ $loop->iteration }}
                         </td>

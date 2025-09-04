@@ -20,11 +20,13 @@
 </head>
 <body class="bg-white font-sans text-gray-700">
   <!-- Navbar -->
+   <a href="/dashboard">
   <nav class="w-full flex flex-wrap items-center justify-between px-4 py-3 shadow-sm sticky top-0 bg-white z-50">
     <!-- Logo -->
     <div class="flex items-center space-x-2 px-8">
       <img src="img/logo kansai.jpg" class="h-16">
     </div>
+    </a>
 
 </body>
 </html>
