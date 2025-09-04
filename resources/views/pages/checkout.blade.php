@@ -2,7 +2,7 @@
 
 <div class="mb-10"></div>
 
-<div class="container mx-auto p-6">
+<div class="container mx-auto p-6 shadow-md bg-white rounded-md">
   <div class="flex flex-col md:flex-row gap-8">
     
     <!-- Bagian kiri (Billing Details) -->
@@ -47,14 +47,14 @@
         <div class="flex items-center justify-between border rounded-md p-2">
           <div class="flex items-center gap-3">
             <img src="/img/KANSAI FTALIT DUO.png" class="w-12 h-12" />
-            <p>KANSAI ANTI-MOSQUITO</p>
+            <p>KANSAI FTALIT DUO</p>
           </div>
           <span class="text-red-500">Rp.94.000</span>
         </div>
         <div class="flex items-center justify-between border rounded-md p-2">
           <div class="flex items-center gap-3">
             <img src="/img/KANSAI GLIMMER.png" class="w-12 h-12" />
-            <p>KANSAI ANTI-MOSQUITO</p>
+            <p>KANSAI SPLESH GLIMMER</p>
           </div>
           <span class="text-red-500">Rp.100.000</span>
         </div>
@@ -80,7 +80,7 @@
 
       <!-- Tombol -->
       <a href="/payment success">
-      <button class="w-full bg-blue-900 text-white py-2 rounded-md hover:bg-sky-400">
+      <button class="w-full bg-blue-900 text-white py-2 rounded-md hover:bg-blue-600">
         Place Order
       </button>
       </a>

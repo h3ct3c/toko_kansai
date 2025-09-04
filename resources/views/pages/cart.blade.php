@@ -424,7 +424,7 @@
               </div>
             </div>
             <button 
-              class="w-full bg-blue-900 text-white py-3 rounded-lg font-medium hover:bg-sky-400 transition flex items-center justify-center"
+              class="w-full bg-blue-900 text-white py-3 rounded-lg font-medium hover:bg-blue-600 transition flex items-center justify-center"
               :disabled="cartItems.length === 0"
               :class="{'opacity-50 cursor-not-allowed': cartItems.length === 0}"
             >
@@ -479,20 +479,20 @@
             image: "/img/KANSAI FTALIT DUO.png"
           },
           {
-            name: "Kansai Ftalit Duo",
+            name: "KANSAI SPLESH GLIMMER",
             model: "Kansai Paint",
             hsCode: "851712",
             quantity: 2,
             weight: 0.5,
-            perPieceRate: 94.000,
-            totalPrice: 188.000,
+            perPieceRate: 100.000,
+            totalPrice: 200.000,
             color: "Black",
             deliveryMethod: "Ship",
             description: "",
             isEditingDescription: false,
             originalDescription: "",
             showDescription: false,
-            image: "/img/KANSAI FTALIT DUO.png"
+            image: "/img/KANSAI GLIMMER.png"
           }
         ],
         shippingMethod: "standard",

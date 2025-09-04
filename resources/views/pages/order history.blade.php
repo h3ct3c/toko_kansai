@@ -99,7 +99,7 @@
                                 <button class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100">
                                     View Invoice
                                 </button>
-                                <button class="px-4 py-2 bg-blue-600 rounded-md text-sm font-medium text-white hover:bg-blue-700">
+                                <button class="px-4 py-2 bg-blue-900 rounded-md text-sm font-medium text-white hover:bg-blue-600">
                                     Reorder
                                 </button>
                             </div>

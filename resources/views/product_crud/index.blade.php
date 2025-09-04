@@ -30,7 +30,7 @@
             </div>
         </div>
     </div>
-    <div class="bg-white p-5 rounded shadow-sm">
+    <div class="bg-white p-5 rounded shadow-lg">
         <!-- Notifikasi menggunakan flash session data -->
         @if (session('success'))
             <div class="p-3 rounded bg-green-500 text-green-100 mb-4">
@@ -38,7 +38,7 @@
             </div>
         @endif
         <div class="relative overflow-x-auto">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-700 dark:text-gray-900 font-semibold">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-700 dark:text-gray-800 font-semibold">
                 <thead class="text-xs text-gray-300 uppercase bg-gray-50 dark:bg-blue-900 dark:text-gray-300">
                 <tr>
                     <th scope="col" class="px-6 py-3">
@@ -53,7 +53,7 @@
                     <th scope="col" class="px-6 py-3">
                         Color
                     </th>
-                    <th scope="col" class="px-6 py-3    ">
+                    <th scope="col" class="px-6 py-3">
                         Stock
                     </th>
                     <th scope="col" class="px-6 py-3">
@@ -66,7 +66,7 @@
                 </thead>
                 <tbody>
                 @forelse ($products as $product)
-                    <tr class="bg-white border dark:bg-white dark:border-gray-900 border-gray-200">
+                    <tr class="bg-white border dark:bg-white dark:border-gray-300 border-gray-200">
                         <td class="px-6 py-4">
                             {{ $loop->iteration }}
                         </td>
@@ -95,7 +95,7 @@
                                 class="inline-block px-6 py-2.5 bg-blue-400 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-500 hover:shadow-lg focus:bg-blue-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg transition duration-150 ease-in-out">View</a>
 
                                 <a href="{{ route('product_crud.edit', $product) }}" id="{{ $product->id }}-edit-btn"
-                                class="inline-block px-6 py-2.5 bg-gray-900 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-600 hover:shadow-lg focus:bg-gray-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg transition duration-150 ease-in-out">Edit</a>
+                                class="inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-600 hover:shadow-lg focus:bg-gray-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg transition duration-150 ease-in-out">Edit</a>
 
                                 <button type="submit"
                                         class="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out"
