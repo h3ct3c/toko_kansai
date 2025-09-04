@@ -15,11 +15,11 @@ class ColorSeeder extends Seeder
         \App\Models\Color::insert([
             ['name' => 'Neutral'], //1
             ['name' => 'Red'], //2
-            ['name' => 'Orange'],//3
-            ['name' => 'Yellow'],//4
-            ['name' => 'Green'],//5
-            ['name' => 'Blue'],//6
-            ['name' => 'Purple'],//7
+            ['name' => 'Orange'], //3
+            ['name' => 'Yellow'], //4
+            ['name' => 'Green'], //5
+            ['name' => 'Blue'], //6
+            ['name' => 'Purple'], //7
         ]);
     }
 }
