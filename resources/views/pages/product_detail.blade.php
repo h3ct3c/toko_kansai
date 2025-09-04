@@ -39,7 +39,7 @@
       <div class="w-full md:w-1/2 px-4">
         <!-- Title -->
         <h2 class="text-3xl font-bold mb-2">Kansai FTALIT DUO</h2>
-        <p class="text-gray-600 mb-4">KPC:434</p>
+        <p class="text-gray-600 mb-4">Stock : 500</p>
         
         <!-- Harga -->
         <div class="mb-4">
@@ -104,17 +104,7 @@
         </div>
 
         <!-- stok -->
-        <div class="mb-6">
-          <label for="stok" class="block text-sm font-medium text-gray-700 mb-1">Stok:</label>
-          <input
-            type="number" 
-            id="stok" 
-            name="stok" 
-            min="100" 
-            value="100"
-            class="w-12 text-center rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-          >
-        </div>
+        
 
         <!-- Add to cart -->
         <div class="flex space-x-4 mb-6">

@@ -10,7 +10,7 @@
 <section class="py-20">
   <div class="max-w-6xl mx-auto mt-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
   <!-- Cat Besi & Kayu -->
-   <a href="/cat_kayu_besi">
+  <a href="/cat_kayu_besi">
   <div class="group p-6 bg-white rounded-2xl shadow hover:shadow-xl border border-gray-300 flex flex-col items-center transition">
     <p class="font-semibold text-gray-800 group-hover:text-blue-500">Cat Besi & Kayu</p>
   </div>

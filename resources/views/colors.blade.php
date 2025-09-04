@@ -60,7 +60,7 @@
 
     <div class="bg-white shadow rounded-md border hover:border-navy cursor-pointer">
       <div class="h-[50px] md:h-[95px] rounded-md md:rounded-t md:rounded-b-none"
-           style="background-color: rgb(124, 39, 125);"></div>
+          style="background-color: rgb(124, 39, 125);"></div>
       <div class="p-3 hidden md:block">
         <p class="text-sm">Purple</p>
       </div>
