@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -13,7 +13,7 @@
 <body>
   <div class="container mx-auto mt-10 mb-10 px-10 justify-items-center">
     <!-- Header -->
-    <div class="grid grid-cols-8 gap-4 p-5">
+    <div class="grid-center grid-cols-8 gap-4 p-5">
       <div class="col-span-4 mt-2">
         <h1 class="text-3xl text-blue-900 font-bold">CREATE NEW PRODUCT</h1>
       </div>
@@ -21,18 +21,18 @@
     </div>
 
     <!-- Form -->
-    <div class="bg-white dark:bg-white w-215 p-5 rounded-lg shadow-lg">
+    <div class="bg-white dark:bg-white w-145 p-5 rounded-lg shadow-lg">
       <form action="{{ route('product_crud.store') }}" method="POST">
         @csrf
 
         <!-- Name -->
-        <div class="mb-6">
+        <div class="mb-5">
           <label for="name" class="font-semibold">Name</label>
           <input type="text" 
                  name="name" 
                  value="{{ old('name') }}" 
                  required
-                 class="form-control block w-200 px-3 py-1.5 text-base font-normal text-gray-700 
+                 class="form-control block w-135 px-3 py-1.5 text-base font-normal text-gray-700 
                         bg-white border border-gray-400 rounded-lg transition ease-in-out
                         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mt-4" />
           @error('name')
@@ -41,13 +41,13 @@
         </div>
 
         <!-- Category -->
-        <div class="mb-6">
+        <div class="mb-5">
           <label for="category" class="font-semibold">Category</label>
           <input type="text" 
                  name="category" 
                  value="{{ old('category') }}" 
                  required
-                 class="form-control block w-200 px-3 py-1.5 text-base font-normal text-gray-700 
+                 class="form-control block w-135 px-3 py-1.5 text-base font-normal text-gray-700 
                         bg-white border border-gray-400 rounded-lg transition ease-in-out
                         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mt-4" />
           @error('category')
@@ -56,13 +56,13 @@
         </div>
 
         <!-- Color -->
-        <div class="mb-6">
+        <div class="mb-5">
           <label for="color" class="font-semibold">Color</label>
           <input type="text" 
                  name="color" 
                  value="{{ old('color') }}" 
                  required
-                 class="form-control block w-200 px-3 py-1.5 text-base font-normal text-gray-700 
+                 class="form-control block w-135 px-3 py-1.5 text-base font-normal text-gray-700 
                         bg-white border border-gray-400 rounded-lg transition ease-in-out
                         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mt-4" />
           @error('color')
@@ -71,13 +71,13 @@
         </div>
 
         <!-- Price -->
-        <div class="mb-6">
+        <div class="mb-5">
           <label for="price" class="font-semibold">Price</label>
           <input type="text" 
                  name="price" 
                  value="{{ old('price') }}" 
                  required
-                 class="form-control block w-200 px-3 py-1.5 text-base font-normal text-gray-700 
+                 class="form-control block w-135 px-3 py-1.5 text-base font-normal text-gray-700 
                         bg-white border border-gray-400 rounded-lg transition ease-in-out
                         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mt-4" />
           @error('price')
@@ -86,13 +86,13 @@
         </div>
 
         <!-- Stock -->
-        <div class="mb-6">
+        <div class="mb-5">
           <label for="stock" class="font-semibold">Stock</label>
           <input type="text" 
                  name="stock" 
                  value="{{ old('stock') }}" 
                  required
-                 class="form-control block w-200 px-3 py-1.5 text-base font-normal text-gray-700 
+                 class="form-control block w-135 px-3 py-1.5 text-base font-normal text-gray-700 
                         bg-white border border-gray-400 rounded-lg transition ease-in-out
                         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mt-4" />
           @error('stock')

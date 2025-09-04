@@ -109,7 +109,7 @@
         <!-- Add to cart -->
         <div class="flex space-x-4 mb-6">
           <a href="/cart">
-            <button class="bg-sky-400 flex gap-2 items-center text-white px-6 py-2 rounded-md hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
+            <button class="bg-blue-900 flex gap-2 items-center text-white px-6 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2">
               <svg xmlns="http://www.w3.org/2000/svg" 
                    fill="none"
                    viewBox="0 0 24 24"

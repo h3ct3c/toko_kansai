@@ -59,7 +59,7 @@
       <h3 class="text-sm text-gray-700 font-semibold">
         KANSAI FTALIT DUO
       </h3>
-      <p class="mt-3 text-sm text-red-500 font-semibold">RP.100,000</p>
+      <p class="mt-3 text-sm text-red-500 font-semibold">RP.94,000</p>
       <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
     </div>
     </a>
@@ -129,8 +129,8 @@
 
 <div class="mb-32"></div>
 
-<button class="my-10 bg-blue-900 px-5 py-2 rounded-full text-white font-semibold font-serif block mx-auto hover:bg-sky-700
-active:bg-blue-900 focus:ring-sky-300 animate-bounce">
+<button class="my-10 bg-blue-900 px-5 py-2 rounded-full text-white font-semibold font-serif block mx-auto hover:bg-blue-700
+active:bg-blue-900 focus:ring-blue-900 animate-bounce">
   <span class="sr-only">View All Products</span>
 <a href="/product">
     <span aria-hidden="true" class="absolute inset-0"></span>
