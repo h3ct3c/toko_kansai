@@ -15,6 +15,12 @@
       <p class="mt-4 font-semibold text-gray-800 group-hover:text-blue-500">Cat Premium</p>
     </div>
     </a>
+  <!-- Cat Besi & Kayu -->
+  <a href="/cat_kayu_besi">
+  <div class="group p-6 bg-white rounded-2xl shadow hover:shadow-xl border border-gray-300 flex flex-col items-center transition">
+    <p class="font-semibold text-gray-800 group-hover:text-blue-500">Cat Besi & Kayu</p>
+  </div>
+  </a>
 
     <!-- Cat Eksterior -->
     <a href="/cat_eksterior">
@@ -56,7 +62,7 @@
   <!-- ITEM 1 --> 
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
     <a href="/product_detail">
-    <img src="/img/KANSAI FTALIT DUO.png" alt="KANSAI FTALIT DUO"
+    <img src="/img/ftalitduo.png" alt="KANSAI FTALIT DUO"
         class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
@@ -71,7 +77,7 @@
 <!-- ITEM 2 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
     <a href="/cart">
-    <img src="/img/KANSAI GLIMMER.png" alt="KANSAI SPLESH GLIMMER"
+    <img src="/img/spleshglimmer.png" alt="KANSAI SPLESH GLIMMER"
         class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
@@ -86,7 +92,7 @@
   <!-- ITEM 3 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
     <a href="#">
-    <img src="/img/SPLESH Kaleng Plastik 2,5 L - Copy.png" alt="KANSAI SPLESH"
+    <img src="/img/splesh.png" alt="KANSAI SPLESH"
         class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
@@ -101,7 +107,7 @@
   <!-- ITEM 4 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
     <a href="/">
-    <img src="/img/Kansai-Diamond-Shield.png" alt="KANSAI DIAMOND SHIELD"
+    <img src="/img/diamondshield.png" alt="KANSAI DIAMOND SHIELD"
         class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
@@ -117,11 +123,11 @@
   <!-- ITEM 5 --> 
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
     <a href="/product_detail">
-    <img src="/img/KANSAI FTALIT DUO.png" alt="KANSAI FTALIT DUO"
+    <img src="/img/rainblock.png" alt="KANSAI RAIN BLOCK"
         class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
-        KANSAI FTALIT DUO
+        KANSAI RAIN BLOCK
       </h3>
       <p class="mt-3 text-sm text-red-500 font-semibold">RP.100,000</p>
       <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
@@ -132,14 +138,7 @@
 
 <div class="mb-32"></div>
 
-<button class="my-10 bg-blue-900 px-5 py-2 rounded-full text-white font-semibold font-serif block mx-auto hover:bg-blue-700
-active:bg-blue-900 focus:ring-blue-900 animate-bounce">
-  <span class="sr-only">View All Products</span>
-<a href="/product">
-    <span aria-hidden="true" class="absolute inset-0"></span>
-    View All Products
-  </a>
-</button>
+
         
 <div class="mb-28"></div> 
 

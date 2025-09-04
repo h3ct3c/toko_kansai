@@ -7,7 +7,7 @@
 
   <!-- ITEM 1 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] mx-auto hover:shadow-lg transition-shadow">
-    <img src="/img/KANSAI FTALIT DUO.png" alt="KANSAI FTALIT DUO"
+    <img src="/img/ftalitduo.png" alt="KANSAI FTALIT DUO"
          class="w-full h-[200px] max-w-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
@@ -20,7 +20,7 @@
 
  <!-- ITEM 2 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] mx-auto hover:shadow-lg transition-shadow">
-    <img src="/img/KANSAI GLIMMER.png" alt="KANSAI SPLESH GLIMMER"
+    <img src="/img/spleshglimmer.png" alt="KANSAI SPLESH GLIMMER"
          class="w-full h-[200px] max-w-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
@@ -33,7 +33,7 @@
 
   <!-- ITEM 3 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] mx-auto hover:shadow-lg transition-shadow">
-    <img src="/img/SPLESH Kaleng Plastik 2,5 L - Copy.png" alt="KANSAI SPLESH"
+    <img src="/img/splesh.png" alt="KANSAI SPLESH"
          class="w-full h-[200px] max-w-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
@@ -46,7 +46,7 @@
 
   <!-- ITEM 4 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] mx-auto hover:shadow-lg transition-shadow">
-    <img src="/img/Kansai-Diamond-Shield.png" alt="KANSAI DIAMOND SHIELD"
+    <img src="/img/diamondshield.png" alt="KANSAI DIAMOND SHIELD"
          class="w-full h-[200px] max-w-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
@@ -59,12 +59,11 @@
   
   <!-- ITEM 5 --> 
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="/product_detail">
-    <img src="/img/KANSAI FTALIT DUO.png" alt="KANSAI FTALIT DUO"
-         class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
+    <img src="/img/pearlsheen.png" alt="KANSAI PEARL SHEEN"
+        class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
-        KANSAI FTALIT DUO
+        KANSAI PEARL SHEEN
       </h3>
       <p class="mt-3 text-sm text-red-500 font-semibold">RP.100,000</p>
       <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
@@ -79,24 +78,24 @@
 
   <!-- ITEM 1 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] mx-auto hover:shadow-lg transition-shadow">
-    <img src="/img/KANSAI FTALIT DUO.png" alt="KANSAI FTALIT DUO"
-         class="w-full h-[200px] max-w-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
+    <img src="/img/rainblock.png" alt="KANSAI RAIN BLOCK"
+        class="w-full h-[200px] max-w-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
-        <a href="/product_detail">KANSAI FTALIT DUO</a>
+        <a href="/product_detail">KANSAI RAIN BLOCK</a>
       </h3>
       <p class="mt-3 text-sm text-red-500 font-semibold">RP.94,000</p>
       <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
     </div>
   </div>
 
- <!-- ITEM 2 -->
+  <!-- ITEM 2 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] mx-auto hover:shadow-lg transition-shadow">
-    <img src="/img/KANSAI GLIMMER.png" alt="KANSAI SPLESH GLIMMER"
-         class="w-full h-[200px] max-w-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
+    <img src="/img/propertyeks.png" alt="KANSAI PROPERTY EKSTERIOR"
+        class="w-full h-[200px] max-w-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
-        <a href="#">KANSAI SPLESH GLIMMER</a>
+        <a href="#">KANSAI PROPERTY EKSTERIOR</a>
       </h3>
       <p class="mt-3 text-sm text-red-500 font-semibold">RP.100,000</p>
       <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐</p>
@@ -105,11 +104,11 @@
 
   <!-- ITEM 3 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] mx-auto hover:shadow-lg transition-shadow">
-    <img src="/img/SPLESH Kaleng Plastik 2,5 L - Copy.png" alt="KANSAI SPLESH"
-         class="w-full h-[200px] max-w-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
+    <img src="/img/propertyint.png" alt="KANSAI PROPERTY INTERIOR"
+        class="w-full h-[200px] max-w-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
-        <a href="#">KANSAI SPLESH</a>
+        <a href="#">KANSAI PROPERTY INTERIOR</a>
       </h3>
       <p class="mt-3 text-sm text-red-500 font-semibold">RP.100,000</p>
       <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐</p>
@@ -118,11 +117,11 @@
 
   <!-- ITEM 4 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] mx-auto hover:shadow-lg transition-shadow">
-    <img src="/img/Kansai-Diamond-Shield.png" alt="KANSAI DIAMOND SHIELD"
-         class="w-full h-[200px] max-w-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
+    <img src="/img/ftalit.png" alt="KANSAI FTALIT"
+        class="w-full h-[200px] max-w-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
-        <a href="#">KANSAI DIAMOND SHIELD 12-IN-1</a>
+        <a href="#">KANSAI FTALIT</a>
       </h3>
       <p class="mt-3 text-sm text-red-500 font-semibold">RP.100,000</p>
       <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
@@ -131,12 +130,11 @@
   
   <!-- ITEM 5 --> 
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="/product_detail">
-    <img src="/img/KANSAI FTALIT DUO.png" alt="KANSAI FTALIT DUO"
-         class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
+    <img src="/img/tropic.png" alt="KANSAI TROPIC"
+        class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
-        KANSAI FTALIT DUO
+        KANSAI TROPIC
       </h3>
       <p class="mt-3 text-sm text-red-500 font-semibold">RP.100,000</p>
       <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
@@ -226,4 +224,3 @@
 </body>
 </html>
 
- 

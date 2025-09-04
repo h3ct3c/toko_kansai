@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    use HasFactory;
     protected $fillable = [
         'name',
         'image',
@@ -25,5 +27,10 @@ class Product extends Model
     {
         return $this->belongsToMany(Order::class, 'order_product')->withPivot('quantity');
     
+    }
+
+    public function color()
+    {
+        return $this->belongsTo(Color::class);
     }
 } 

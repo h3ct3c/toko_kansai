@@ -15,14 +15,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-    
+        $this->call([
+        ColorSeeder::class,
+        CategorySeeder::class,
+        ProductSeeder::class,
+    ]);
 
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-            'password' => ('required'),
-        ]);
     }
 }
 
