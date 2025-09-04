@@ -10,7 +10,7 @@
       <div class="w-full md:w-1/2 px-4 mb-8">
         <img 
           id="mainImage"
-          src="/img/KANSAI FTALIT DUO.png"
+          src="/img/ftalitduo.png"
           alt="Product"
           class="w-full h-auto rounded-lg shadow-md mb-4 bg-gray-100 p-10">
 
@@ -18,10 +18,10 @@
         <div class="flex gap-4 py-4 justify-center overflow-x-auto">
           @php
               $thumbnails = [
-                  "/img/KANSAI FTALIT DUO.png",
-                  "/img/KANSAI FTALIT DUO.png",
-                  "/img/KANSAI FTALIT DUO.png",
-                  "/img/KANSAI FTALIT DUO.png",
+                  "/img/ftalitduo.png",
+                  "/img/ftalitduo.png",
+                  "/img/ftalitduo.png",
+                  "/img/ftalitduo.png",
               ];
           @endphp
 
