@@ -57,7 +57,8 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('product_crud.show', compact('product'));
+        $product = Product::findOrFail($id);
+        return view('ftalitduo', compact('product'));
     }
 
     /**

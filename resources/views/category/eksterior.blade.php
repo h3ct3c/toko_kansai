@@ -11,7 +11,7 @@
         class="w-full h-[200px] max-w-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
-        <a href="/product_detail">KANSAI RAIN BLOCK</a>
+        <a href="detail.rainblock">KANSAI RAIN BLOCK</a>
       </h3>
       <p class="mt-3 text-sm text-red-500 font-semibold">RP.94,000</p>
       <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>

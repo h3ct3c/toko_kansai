@@ -51,7 +51,7 @@
 
   <!-- ITEM 1 --> 
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="/product_detail">
+    <a href="detailftalitduo">
     <img src="/img/ftalitduo.png" alt="KANSAI FTALIT DUO"
         class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
@@ -112,7 +112,7 @@
   
   <!-- ITEM 5 --> 
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="/product_detail">
+    <a href="detail.rainblock">
     <img src="/img/rainblock.png" alt="KANSAI RAIN BLOCK"
         class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
