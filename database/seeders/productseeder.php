@@ -60,10 +60,10 @@ class ProductSeeder extends Seeder
             ],
             [
                 'name' => 'KANSAI PEARL SHEEN',
-                'image' => 'pearl_sheen.jpg',
+                'image' => 'pearlsheen.png',
                 'description' => 'Cat interior dengan hasil akhir mengkilap dan tahan lama',
                 'price' => 200000.00,
-                'stock' => '500',
+                'stock' => 500,
                 'category' => 2, // Interior
                 'color'=> 7, // Purple
             ],

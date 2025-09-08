@@ -75,25 +75,29 @@ return view('home');
 
 
 //kategori//
-Route::get('/category', function () {
-    return view('category');
+Route::get('/   interior', function () {
+    return view('category.interior');
 });
 
-Route::get('/cat_kayu_besi', function () {
-    return view('category/cat_kayu_besi');
+route::get('/eksterior', function () {
+    return view('category.eksterior');
 });
 
-route::get('/cat_eksterior', function () {
-    return view('category/cat_eksterior');
+route::get('/premium', function () {
+    return view('category.premium');
 });
 
-route::get('/cat_premium', function () {
-    return view('category/cat_premium');
+route::get('/kayubesi', function () {
+    return view('category.kayubesi');
 });
 
-route::get('/cat_interior', function () {
-    return view('category/cat_interior');
-});
+// dropdown kategori
+Route::view('interior', 'category.interior');
+Route::view('/category/exterior', 'category.exterior');
+Route::view('/category/wood', 'category.wood');
+Route::view('/category/special', 'category.special');
+Route::view('/category/others', 'category.others');
+
 
 
 //pages//
