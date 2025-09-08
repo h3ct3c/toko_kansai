@@ -70,13 +70,12 @@
     </div>
     </a>
   </div>
-</div>
-<div class="mb-20"></div>
+<div class="mb-20"></div
 
 <div class="mt-3 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 
   gap-x-2 gap-y-12 justify-items-center">
 
-  <!-- ITEM 1 -->
+  <!-- ITEM 6 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] mx-auto hover:shadow-lg transition-shadow">
     <img src="/img/rainblock.png" alt="KANSAI RAIN BLOCK"
         class="w-full h-[200px] max-w-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
@@ -89,7 +88,7 @@
     </div>
   </div>
 
-  <!-- ITEM 2 -->
+  <!-- ITEM 7 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] mx-auto hover:shadow-lg transition-shadow">
     <img src="/img/propertyeks.png" alt="KANSAI PROPERTY EKSTERIOR"
         class="w-full h-[200px] max-w-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
@@ -102,7 +101,7 @@
     </div>
   </div>
 
-  <!-- ITEM 3 -->
+  <!-- ITEM 8 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] mx-auto hover:shadow-lg transition-shadow">
     <img src="/img/propertyint.png" alt="KANSAI PROPERTY INTERIOR"
         class="w-full h-[200px] max-w-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
@@ -115,7 +114,7 @@
     </div>
   </div>
 
-  <!-- ITEM 4 -->
+  <!-- ITEM  -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] mx-auto hover:shadow-lg transition-shadow">
     <img src="/img/ftalit.png" alt="KANSAI FTALIT"
         class="w-full h-[200px] max-w-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />

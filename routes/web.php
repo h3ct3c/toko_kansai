@@ -20,7 +20,7 @@ use App\Http\Controllers\ProductFrontController;
 Route::get('/search', [ProductController::class, 'search'])->name('search');
     
 
-// CRUd
+// CRUD
 Route::resource('product_crud', ProductController::class);
 Route::resource('products', ProductController::class);
 Route::get('product_crud/{id}/edit', [ProductController::class, 'edit'])->name('product_crud.edit');
@@ -66,6 +66,7 @@ Route::get('/cart', function () {
     return view('cart');
 })->name('cart');
 
+//utama //homepage setelah login
 Route::get('/', function () {
 return view('home');  
 });

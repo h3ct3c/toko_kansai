@@ -104,12 +104,12 @@
         <div class="mt-3 flex gap-3">
           <button type="submit"
                   class="px-6 py-2.5 bg-blue-900 text-white font-medium text-xs uppercase rounded-full shadow-md 
-                         hover:bg-blue-800 hover:shadow-lg focus:bg-blue-800 focus:shadow-lg 
-                         focus:outline-none active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+                        hover:bg-blue-800 hover:shadow-lg focus:bg-blue-800 focus:shadow-lg 
+                        focus:outline-none active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
             Save
           </button>
           <a href="{{ route('product_crud.index') }}"
-             class="px-6 py-2.5 bg-gray-200 text-gray-700 font-medium text-xs uppercase rounded-full shadow-md 
+            class="px-6 py-2.5 bg-gray-200 text-gray-700 font-medium text-xs uppercase rounded-full shadow-md 
                     hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg 
                     focus:outline-none active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">
             Back

@@ -14,17 +14,17 @@ class ProductSeeder extends Seeder
     {
         \App\Models\Product::insert([
             [
-            'name' => 'KANSAI FTALIT',
-            'image' => '',
-            'description' => 'Cat Besi & Kayu dengan formula khusus yang dapat melindungi permukaan besi dan kayu dari karat dan kerusakan lainnya',
-            'price' => 140000.00,
-            'stock' => 500,
-            'category' => 3, // Kayu dan Besi
-            'color' => 1,// Neutral
+                'name' => 'KANSAI FTALIT',
+                'image' => 'ftalit.png',
+                'description' => 'Cat Besi & Kayu dengan formula khusus yang dapat melindungi permukaan besi dan kayu dari karat dan kerusakan lainnya',
+                'price' => 140000.00,
+                'stock' => 500,
+                'category' => 3, // Kayu dan Besi
+                'color' => 1,// Neutral
             ],
             [
                 'name' => 'KANSAI FTALIT DUO',
-                'image' => '',
+                'image' => 'ftalitduo.png',
                 'description' => 'Cat Besi & Kayu dengan formula khusu yang memberikan perlindungan ekstra pada permukaan besi dan kayu',
                 'price' => 150000.00,
                 'stock' => 500,
@@ -33,7 +33,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 'name' => 'KANSAI ANTIMOSQUITO',
-                'image' => '',
+                'image' => 'antimosquito.png',
                 'description' => 'Cat anti nyamuk dengan formula khusus yang melindungi rumah Anda dari serangan nyamuk',
                 'price' => 120000.00,
                 'stock' => 500,
@@ -42,7 +42,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 'name' => 'KANSAI PROPERTY INTERIOR',
-                'image' => '',
+                'image' => 'propertyint.png',
                 'description' => 'Cat Interior dengan formula khusu yang memberikan hasil akhir yang halus dan tahan lama',
                 'price' => 180000.00,
                 'stock' => 500,
@@ -51,7 +51,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 'name' => 'KANSAI TROPIC',
-                'image' => '',
+                'image' => 'tropic.png',
                 'description' => 'Cat interior yang aman dan ramah lingkungan dengan aroma rendah.',
                 'price' => 130000.00,
                 'stock' => 500,
@@ -60,7 +60,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 'name' => 'KANSAI PEARL SHEEN',
-                'image' => '',
+                'image' => 'pearl_sheen.jpg',
                 'description' => 'Cat interior dengan hasil akhir mengkilap dan tahan lama',
                 'price' => 200000.00,
                 'stock' => '500',
@@ -69,7 +69,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 'name' => 'KANSAI SPLESH GLIMMER',
-                'image' => '',
+                'image' => 'splesh_glimmer.png',
                 'description' => 'Cat Interior dengan efek kilau yang elegan dan tahan lama',
                 'price' => 220000.00,
                 'stock' => 500,
@@ -78,7 +78,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 'name' => 'KANSAI RAIN BLOCK',
-                'image' => '',
+                'image' => 'rain_block.png',
                 'descriptiom' => 'Cat Eksterior dengan teknologi tahan air yang melindungi dinding dari rembesan air hujan',
                 'price' => '250000.00',
                 'stock' => 500,
