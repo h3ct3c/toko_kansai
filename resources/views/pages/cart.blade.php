@@ -99,11 +99,13 @@
                 <span class="text-gray-600">Color:</span>
                 <div class="flex items-center">
                   <select x-model="item.color" class="text-sm border rounded p-1">
-                    <option value="Black">Black</option>
-                    <option value="Silver">Silver</option>
-                    <option value="Blue">Blue</option>
-                    <option value="Red">Red</option>
-                    <option value="White">White</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="red">Red</option>
+                    <option value="orange">Orange</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="purple">Purple</option>
                   </select>
                   <div class="w-4 h-4 ml-2 rounded-full" :style="`background-color: ${getColorHex(item.color)}`"></div>
                 </div>
@@ -232,11 +234,13 @@
                       <div class="flex items-center">
                         <span class="text-sm text-gray-600 mr-2">Color:</span>
                         <select x-model="item.color" class="text-sm border rounded p-1">
-                          <option value="Black">Black</option>
-                          <option value="Silver">Silver</option>
-                          <option value="Blue">Blue</option>
-                          <option value="Red">Red</option>
+                          <option value="Neutral">Neutral</option>
+                          <option value="red">Red</option>
+                          <option value="Orange">Orange</option>
+                          <option value="Yellow">Yellow</option>
                           <option value="Green">Green</option>
+                          <option value="Blue">Blue</option>
+                          <option value="Purple">Purple</option>
                         </select>
                         <div class="w-4 h-4 ml-2 rounded-full" :style="`background-color: ${getColorHex(item.color)}`"></div>
                       </div>
@@ -247,11 +251,14 @@
                           class="text-sm border rounded p-1"
                           :class="{'bg-blue-50 text-blue-800': item.deliveryMethod === 'Air', 
                                   'bg-green-50 text-green-800': item.deliveryMethod === 'Ship',
-                                  'bg-purple-50 text-purple-800': item.deliveryMethod === 'Express'}"
+                                  'bg-purple-50 text-purple-800': item.deliveryMethod === 'Express',
+                                  'bg-red-50 text-red-800': item.deliveryMethod === 'Reguler'}"
+                                  
                         >
                           <option value="Air">Air</option>
                           <option value="Ship">Ship</option>
                           <option value="Express">Express</option>
+                          <option value="Reguler">Reguler</option>
                         </select>
                       </div>
                       <div class="flex items-center">
@@ -476,7 +483,7 @@
             isEditingDescription: false,
             originalDescription: "",
             showDescription: false,
-            image: "/img/KANSAI FTALIT DUO.png"
+            image: "/img/ftalitduo.png"
           },
           {
             name: "KANSAI SPLESH GLIMMER",
@@ -492,7 +499,7 @@
             isEditingDescription: false,
             originalDescription: "",
             showDescription: false,
-            image: "/img/KANSAI GLIMMER.png"
+            image: "/img/spleshglimmer.png"
           }
         ],
         shippingMethod: "standard",
@@ -552,11 +559,14 @@
         
         getColorHex(color) {
           const colorMap = {
-            'Black': '#000000',
-            'Silver': '#C0C0C0',
+            'Neutral': '#c3b091',
+            'Red': '#ff0000',
+            'orange': '#FFA500',
+            'yellow': '#FFFF00',
+            'Green': '#00FF00',
             'Blue': '#0047AB',
-            'Red': '#FF0000',
-            'Green': '#00FF00'
+            'Purple': '#800080',
+
           };
           return colorMap[color] || '#000000';
         },

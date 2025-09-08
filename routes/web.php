@@ -15,10 +15,12 @@ use Illuminate\Support\Facades\Redirect;
 use function Pest\Laravel\post;
 use illuminate\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\ProductFrontController;
+use App\Http\Controllers\SearchController;
 
 // search
-Route::get('/search', [ProductController::class, 'search'])->name('search');
-    
+Route::get('/search', [SearchController::class, 'index']);
+Route::get('/search', [SearchController::class, 'index'])->name('search');
+
 
 // CRUD
 Route::resource('product_crud', ProductController::class);

@@ -121,8 +121,8 @@
                         status: 'Delivered',
                         total: 463.000,
                         items: [
-                            { id: 1, name: 'Kansai Glimmer', price: 369.000, quantity: 1, image: '/img/KANSAI GLIMMER.png' },
-                            { id: 2, name: 'Kansai Ftalit Duo', price: 94.000, quantity: 1, image: '/img/KANSAI FTALIT DUO.png' }
+                            { id: 1, name: 'Kansai Glimmer', price: 369.000, quantity: 1, image: '/img/spleshglimmer.png' },
+                            { id: 2, name: 'Kansai Ftalit Duo', price: 94.000, quantity: 1, image: '/img/ftalitduo.png' }
                         ],
                         shipping: {
                             address: '123 Main Street',
@@ -141,8 +141,8 @@
                         status: 'Processing',
                         total: 188.000,
                         items: [
-                            { id: 3, name: 'Kansai Ftalit Duo', price: 94.000, quantity: 1, image: '/img/KANSAI FTALIT DUO.png' },
-                            { id: 4, name: 'Kansai Ftalit Duo', price: 94.000, quantity: 1, image: '/img/KANSAI FTALIT DUO.png' }
+                            { id: 3, name: 'Kansai Ftalit Duo', price: 94.000, quantity: 1, image: '/img/ftalitduo.png' },
+                            { id: 4, name: 'Kansai Ftalit Duo', price: 94.000, quantity: 1, image: '/img/ftalitduo.png' }
                         ],
                         shipping: { 
                             address: '456 Elm Street',

@@ -36,12 +36,12 @@
         <a href="/product" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Product</a>
       </li>
       <li>
-        <a href="/colors" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Colors</a>
+        <a href="/colors" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-700 hover:text-blue-900 transition-all">Colors</a>
       </li>
       <li>
      <a href="/login"
         class="nav-link block py-2 px-6 border-2 border-blue-900 rounded-lg text-blue-900 
-            hover:border-blue-600 hover:text-blue-600 transition-all">
+            hover:border-blue-700 hover:bg-blue-700 hover:text-white transition-all">
         Sign In
       </a>
     </li>
@@ -59,6 +59,7 @@
 
       <!-- Search -->
       <form action="{{ route('search') }}" method="GET" class="relative w-48 md:w-72">
+        <form action="{{ route('search') }}" method="GET">
         <input
           type="text"
           name="query"
@@ -78,8 +79,9 @@
             <path stroke-linecap="round" stroke-linejoin="round"
               d="M21 21l-4.35-4.35m0 0a7.5 7.5 0 10-10.61-10.61 
                  7.5 7.5 0 0010.6 10.6z" />
-          </svg>
-        </button>
+            </svg>
+         </button>
+       </form>
       </form>
       
       <!-- Cart -->
