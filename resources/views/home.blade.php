@@ -15,12 +15,6 @@
       <p class="mt-4 font-semibold text-gray-800 group-hover:text-blue-500">Cat Premium</p>
     </div>
     </a>
-  <!-- Cat Besi & Kayu -->
-  <a href="/cat_kayu_besi">
-  <div class="group p-6 bg-white rounded-2xl shadow hover:shadow-xl border border-gray-300 flex flex-col items-center transition">
-    <p class="font-semibold text-gray-800 group-hover:text-blue-500">Cat Besi & Kayu</p>
-  </div>
-  </a>
 
     <!-- Cat Eksterior -->
     <a href="/cat_eksterior">
@@ -137,11 +131,7 @@
   </div>
 
 <div class="mb-32"></div>
-
-
         
-<div class="mb-28"></div> 
-
   <div class="border-t border-gray-400 w-11/12 mx-auto"></div>
 
 <div class="mb-96"></div>

@@ -483,7 +483,7 @@
             isEditingDescription: false,
             originalDescription: "",
             showDescription: false,
-            image: "/img/KANSAI FTALIT DUO.png"
+            image: "/img/ftalitduo.png"
           },
           {
             name: "KANSAI SPLESH GLIMMER",
@@ -499,7 +499,7 @@
             isEditingDescription: false,
             originalDescription: "",
             showDescription: false,
-            image: "/img/KANSAI GLIMMER.png"
+            image: "/img/spleshglimmer.png"
           }
         ],
         shippingMethod: "standard",

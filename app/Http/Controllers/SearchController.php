@@ -3,20 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class SearchController extends Controller
 {
-     public function search(Request $request)
+    public function index(Request $request)
     {
-        // ambil kata kunci dari input
-        $keyword = $request->input('query');
+        // Ambil input user dari form
+        $query = $request->input('query');
 
-        // cari produk berdasarkan nama atau deskripsi
-        $products = Product::where('name', 'LIKE', "%$keyword%")
-                   ->paginate(10);
+        // Cari produk yang namanya persis sama dengan keyword
+        $product = Product::where('name', $query)->first();
 
-        // kirim hasil ke view
-        return view('search', compact('products', 'keyword'));
+        // Kalau tidak ketemu, kasih pesan
+        if (!$product) {
+            return view('product', ['message' => 'Produk dengan nama "'.$query.'" tidak ditemukan']);
+        }
 
+        // Kalau ketemu, kirim data produk ke view
+        return view('product', ['product' => $product]);
     }
 }

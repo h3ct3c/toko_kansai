@@ -46,14 +46,14 @@
       <div class="space-y-3 mb-4">
         <div class="flex items-center justify-between border rounded-md p-2">
           <div class="flex items-center gap-3">
-            <img src="/img/KANSAI FTALIT DUO.png" class="w-12 h-12" />
+            <img src="/img/ftalitduo.png" class="w-12 h-12" />
             <p>KANSAI FTALIT DUO</p>
           </div>
           <span class="text-red-500">Rp.94.000</span>
         </div>
         <div class="flex items-center justify-between border rounded-md p-2">
           <div class="flex items-center gap-3">
-            <img src="/img/KANSAI GLIMMER.png" class="w-12 h-12" />
+            <img src="/img/spleshglimmer.png" class="w-12 h-12" />
             <p>KANSAI SPLESH GLIMMER</p>
           </div>
           <span class="text-red-500">Rp.100.000</span>
