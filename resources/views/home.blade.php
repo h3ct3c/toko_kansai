@@ -9,7 +9,7 @@
 <section class="py-20">
   <div class="max-w-6xl mx-auto mt-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
     <!-- Cat Premium -->
-    <a href="/cat_premium">
+    <a href="premium">
     <div class="group p-6 bg-white rounded-2xl shadow hover:shadow-xl border border-gray-300 flex flex-col items-center transition">
       <img fetchpriority="high" decoding="async" width="100" height="100" src="https://kansaipaint.id/wp-content/uploads/2025/03/banner.webp" class="attachment-large size-large wp-image-183" alt="" srcset="https://kansaipaint.id/wp-content/uploads/2025/03/banner.webp 485w, https://kansaipaint.id/wp-content/uploads/2025/03/banner-300x300.webp 300w, https://kansaipaint.id/wp-content/uploads/2025/03/banner-100x100.webp 100w, https://kansaipaint.id/wp-content/uploads/2025/03/banner-150x150.webp 150w" sizes="(max-width: 485px) 100vw, 485px">
       <p class="mt-4 font-semibold text-gray-800 group-hover:text-blue-500">Cat Premium</p>
@@ -17,7 +17,7 @@
     </a>
 
     <!-- Cat Eksterior -->
-    <a href="/cat_eksterior">
+    <a href="eksterior">
     <div class="group p-6 bg-white rounded-2xl shadow hover:shadow-xl border border-gray-300 flex flex-col items-center transition">
       <img decoding="async" width="100" height="100" src="https://kansaipaint.id/wp-content/uploads/2025/03/home.webp" class="attachment-large size-large wp-image-184" alt="" srcset="https://kansaipaint.id/wp-content/uploads/2025/03/home.webp 420w, https://kansaipaint.id/wp-content/uploads/2025/03/home-300x300.webp 300w, https://kansaipaint.id/wp-content/uploads/2025/03/home-100x100.webp 100w, https://kansaipaint.id/wp-content/uploads/2025/03/home-150x150.webp 150w" sizes="(max-width: 420px) 100vw, 420px">
       <p class="mt-4 font-semibold text-gray-800 group-hover:text-blue-500">Cat Eksterior</p>
@@ -25,7 +25,7 @@
     </a>
 
     <!-- Cat Interior -->
-    <a href="/cat_interior">
+    <a href="interior">
       <div class="group p-6 bg-white rounded-2xl shadow hover:shadow-xl border border-gray-300 flex flex-col items-center transition">
         <img decoding="async" width="100" height="100" src="https://kansaipaint.id/wp-content/uploads/2025/03/sofa.webp" class="attachment-large size-large wp-image-185" alt="" srcset="https://kansaipaint.id/wp-content/uploads/2025/03/sofa.webp 425w, https://kansaipaint.id/wp-content/uploads/2025/03/sofa-100x100.webp 100w, https://kansaipaint.id/wp-content/uploads/2025/03/sofa-300x296.webp 300w" sizes="(max-width: 425px) 100vw, 425px">
         <p class="mt-4 font-semibold text-gray-800 group-hover:text-blue-500">Cat Interior</p>
@@ -33,7 +33,7 @@
     </a>
 
     <!-- Cat Besi & Kayu -->
-     <a href="/cat_kayu_besi">
+     <a href="kayubesi ">
     <div class="group p-6 bg-white rounded-2xl shadow hover:shadow-xl border border-gray-300 flex flex-col items-center transition">
       <img loading="lazy" decoding="async" width="100" height="100" src="https://kansaipaint.id/wp-content/uploads/2025/03/fence.webp" class="attachment-large size-large wp-image-186" alt="" srcset="https://kansaipaint.id/wp-content/uploads/2025/03/fence.webp 568w, https://kansaipaint.id/wp-content/uploads/2025/03/fence-300x300.webp 300w, https://kansaipaint.id/wp-content/uploads/2025/03/fence-100x100.webp 100w, https://kansaipaint.id/wp-content/uploads/2025/03/fence-150x150.webp 150w" sizes="(max-width: 568px) 100vw, 568px">
       <p class="mt-4 font-semibold text-gray-800 group-hover:text-blue-500">Cat Besi & Kayu</p>
@@ -55,7 +55,7 @@
 
   <!-- ITEM 1 --> 
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="/product_detail">
+    <a href="ftalitduo">
     <img src="/img/ftalitduo.png" alt="KANSAI FTALIT DUO"
         class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
@@ -70,7 +70,7 @@
 
 <!-- ITEM 2 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="/cart">
+    <a href="spleshglimmer">
     <img src="/img/spleshglimmer.png" alt="KANSAI SPLESH GLIMMER"
         class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
@@ -116,7 +116,7 @@
   
   <!-- ITEM 5 --> 
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="/product_detail">
+    <a href="ftalitduo">
     <img src="/img/rainblock.png" alt="KANSAI RAIN BLOCK"
         class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">

@@ -22,7 +22,7 @@ Route::get('/search', [SearchController::class, 'index']);
 Route::get('/search', [SearchController::class, 'index'])->name('search');
 
 
-// CRUd
+// CRUD
 Route::resource('product_crud', ProductController::class);
 Route::resource('products', ProductController::class);
 Route::get('product_crud/{id}/edit', [ProductController::class, 'edit'])->name('product_crud.edit');
@@ -68,31 +68,32 @@ Route::get('/cart', function () {
     return view('cart');
 })->name('cart');
 
+//utama //homepage setelah login
 Route::get('/', function () {
 return view('home');  
 });
 
 
 //kategori//
-Route::get('/category', function () {
-    return view('category');
+Route::get('/   interior', function () {
+    return view('category.interior');
 });
 
-Route::get('/cat_kayu_besi', function () {
-    return view('category/cat_kayu_besi');
+route::get('/eksterior', function () {
+    return view('category.eksterior');
 });
 
-route::get('/cat_eksterior', function () {
-    return view('category/cat_eksterior');
+route::get('/premium', function () {
+    return view('category.premium');
 });
 
-route::get('/cat_premium', function () {
-    return view('category/cat_premium');
+route::get('/kayubesi', function () {
+    return view('category.kayubesi');
 });
 
-route::get('/cat_interior', function () {
-    return view('category/cat_interior');
-});
+// dropdown kategori
+
+
 
 
 //pages//
@@ -112,9 +113,7 @@ route::get('/payment success', function () {
     return view('pages/payment success');
 });
 
-route::get('/product_detail', function () {
-    return view('pages/product_detail');
-});
+
 
 route::get('/order history', function () {
     return view('pages/order history');
@@ -132,4 +131,49 @@ Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () 
     Route::get('/', function () {
         return view('admin.index'); 
     })->name('admin.index');
+});
+
+// DETAIL PRODUK
+Route::get('ftalitduo', function () {
+    return view('ftalitduono');
+});
+
+Route::get('ftalitduo', function () {
+    return view('detail.ftalit');
+});
+
+Route::get('spleshglimmer', function () {
+    return view('detail.spleshglimmer');
+});
+
+Route::get('splesh', function () {
+    return view('detail.splesh');
+});
+
+Route::get('diamondshield', function () {
+    return view('detail.diamondshield');
+});
+
+Route::get('pearlsheen', function () {
+    return view('detail.pearlsheen');
+});
+
+Route::get('rainblock', function () {
+    return view('detail.rainblock');
+});
+
+Route::get('propertyeks', function () {
+    return view(view: 'detail.propertyeks');
+});
+
+Route::get('propertyint', function () {
+    return view('detail.propertyint');
+});
+
+Route::get('ftalit', function () {
+    return view('detail.ftalit');
+});
+
+Route::get('tropic', function () {
+    return view('detail.tropic');
 });
