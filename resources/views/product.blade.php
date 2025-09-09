@@ -221,12 +221,23 @@
     <p>{{ $message }}</p>
 @endif
 
-@if(isset($product))
-    <h2>{{ $product->name }}</h2>
-    <p>Harga: Rp{{ number_format($product->price, 0, ',', '.') }}</p>
-    <p>Stok: {{ $product->stock }}</p>
+@if(isset($products))
+<div class="mx-auto max-w-2xl">
+    <h1 class="font-semibold text-xl">Hasil pencarian:</h1>
+    <div class="mb-10"></div>
+    <ul>
+        @foreach($products as $product)
+            <li>
+                <strong>{{ $product->name }}</strong><br>
+                Harga: Rp{{ number_format($product->price, 0, ',', '.') }}<br>
+                Stok: {{ $product->stock }}<br>
+                Warna: {{ $product->color }}<br>
+                Kategori: {{ $product->category }}<br>
+            </li>
+        @endforeach
+    </ul>
+    </div>
 @endif
-
 
   <div class="mb-96"></div>
 

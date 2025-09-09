@@ -4,7 +4,7 @@
 
 <div class="mb-36"></div>
 
-<h1 class="text-3xl font-bold text-center text-navy mb-10 text-blue-900">Koleksi Warna Dasar</h1>
+<h1 class="text-4xl font-bold text-center text-navy mb-10 text-blue-900">Koleksi Warna Dasar</h1>
 <div class="mb-24"></div>
 
 <!-- Grid Warna -->
