@@ -1,12 +1,10 @@
-
-
-<body>
-
 <!-- Tambah link Swiper CSS & JS -->
+
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 <!-- Container -->
+<section class="">
 <div class="swiper mySwiper mt-16 max-w-6xl mx-auto h-48 sm:h-64 md:h-80 lg:h-96 rounded-lg overflow-hidden shadow-lg">
   <div class="swiper-wrapper">
     <div class="swiper-slide">
@@ -25,6 +23,7 @@
   <!-- Pagination -->
   <div class="swiper-pagination"></div>
 </div>
+</section>
 
 <script>
   var swiper = new Swiper(".mySwiper", {

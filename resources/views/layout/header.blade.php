@@ -30,32 +30,32 @@
     <!-- HomePage -->
     <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-gray-700 mt-3 md:mt-0">
       <li>
-        <a href="/" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Home</a>
+        <a href="/" class=" font-semibold nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Beranda</a>
       </li>
       <li class="relative group">
-        <a href="/product" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Product</a>
+        <a href="/product" class="font-semibold nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Produk</a>
           <ul class="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 w-48 z-50">
-          <li><a href="/interior" class="block px-4 py-2 hover:bg-gray-100">Interior</a></li>
-          <li><a href="/eksterior" class="block px-4 py-2 hover:bg-gray-100">Eksterior</a></li>
-          <li><a href="/kayubesi" class="block px-4 py-2 hover:bg-gray-100">Kayu & Besi</a></li>
-          <li><a href="/premium" class="block px-4 py-2 hover:bg-gray-100">Premium</a></li>
+          <li><a href="/interior" class="font-semibold block px-4 py-2 hover:bg-gray-200">Interior</a></li>
+          <li><a href="/eksterior" class="font-semibold block px-4 py-2 hover:bg-gray-200">Eksterior</a></li>
+          <li><a href="/kayubesi" class="font-semibold block px-4 py-2 hover:bg-gray-200">Kayu & Besi</a></li>
+          <li><a href="/premium" class="font-semibold block px-4 py-2 hover:bg-gray-200">Premium</a></li>
           </ul>
       </li>
       <li>
-        <a href="/colors" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-700 hover:text-blue-900 transition-all">Colors</a>
+        <a href="/colors" class="font-semibold nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Warna</a>
       </li>
       <li>
     <a href="/login"
-        class="nav-link block py-2 px-6 border-2 border-blue-900 rounded-lg text-blue-900 
+        class="font-semibold nav-link block py-2 px-6 border-2 border-blue-900 rounded-lg text-blue-900 
             hover:border-blue-700 hover:bg-blue-700 hover:text-white transition-all">
-        Sign In
+        Masuk
       </a>
     </li>
       <li>
     <a href="/register"
-        class="bg-blue-900 text-white nav-link block py-2 px-6 border-2 rounded-lg 
-            hover:border-blue-600 transition-all">
-        Sign Up
+        class=" font-semibold bg-blue-900 text-white nav-link block py-2 px-6 border-2 rounded-lg 
+            hover:border-blue-600 transition-all hover:text-blue-600">
+        Daftar
     </a>
     </li>
       </ul>
@@ -69,7 +69,7 @@
         <input
           type="text"
           name="query"
-          placeholder="Buruan Cari!"
+          placeholder="Cari Produk . . ."
           class="w-full rounded-lg border border-gray-300 py-2 pl-4 pr-10 text-sm 
                 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
           required/>

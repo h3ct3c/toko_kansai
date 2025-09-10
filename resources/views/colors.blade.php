@@ -14,7 +14,7 @@
     <!-- Item Warna -->
     <div class="bg-white shadow rounded-md border hover:border-navy cursor-pointer">
       <div class="h-[50px] md:h-[95px] rounded-md md:rounded-t md:rounded-b-none"
-           style="background-color: rgb(181, 172, 150);"></div>
+          style="background-color: rgb(181, 172, 150);"></div>
       <div class="p-3 hidden md:block">
         <p class="text-sm">Neutral</p>
       </div>
@@ -22,7 +22,7 @@
 
     <div class="bg-white shadow rounded-md border hover:border-navy cursor-pointer">
       <div class="h-[50px] md:h-[95px] rounded-md md:rounded-t md:rounded-b-none"
-           style="background-color: rgb(237, 32, 36);"></div>
+          style="background-color: rgb(237, 32, 36);"></div>
       <div class="p-3 hidden md:block">
         <p class="text-sm">Red</p>
       </div>
@@ -30,7 +30,7 @@
 
     <div class="bg-white shadow rounded-md border hover:border-navy cursor-pointer">
       <div class="h-[50px] md:h-[95px] rounded-md md:rounded-t md:rounded-b-none"
-           style="background-color: rgb(250, 164, 26);"></div>
+          style="background-color: rgb(250, 164, 26);"></div>
       <div class="p-3 hidden md:block">
         <p class="text-sm">Orange</p>
       </div>
@@ -38,7 +38,7 @@
 
     <div class="bg-white shadow rounded-md border hover:border-navy cursor-pointer">
       <div class="h-[50px] md:h-[95px] rounded-md md:rounded-t md:rounded-b-none"
-           style="background-color: rgb(246, 235, 20);"></div>
+          style="background-color: rgb(246, 235, 20);"></div>
       <div class="p-3 hidden md:block">
         <p class="text-sm">Yellow</p>
       </div>

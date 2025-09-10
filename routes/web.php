@@ -139,7 +139,7 @@ Route::get('ftalitduo', function () {
 });
 
 Route::get('ftalitduo', function () {
-    return view('detail.ftalit');
+    return view('detail.ftalitduo');
 });
 
 Route::get('spleshglimmer', function () {
