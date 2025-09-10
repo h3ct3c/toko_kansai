@@ -131,7 +131,7 @@
   </div>
   </div>
 
-<div class="mb-32"></div>
+<div class="mb-24"></div>
         
   <div class="border-t border-gray-400 w-11/12 mx-auto"></div>
 

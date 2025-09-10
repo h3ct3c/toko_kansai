@@ -25,7 +25,7 @@
         <h3 class="font-bold mb-4">Tentang Kami</h3>
         <ul class="space-y-2 text-sm font-semibold">
           <li><a href="https://kansaipaint.id/artikel">Artikel</a></li>
-          <li><a href="https://kansaipaint.id">Hubungi Kami</a></li>
+          <li><a href="https://kansaipaint.id/hubungi-kami">Hubungi Kami</a></li>
         </ul>
       </div>
 
