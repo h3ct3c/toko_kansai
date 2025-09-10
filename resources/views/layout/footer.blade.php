@@ -12,11 +12,11 @@
       <div>
         <h3 class="font-bold mb-4">Produk</h3>
         <ul class="space-y-2 text-sm font-semibold">
-          <li><a href="/cat_premium">Cat Premium</a></li>
-          <li><a href="/cat_interior">Cat Interior</a></li>
-          <li><a href="/cat_eksterior">Cat Eksterior</a></li>
-          <li><a href="/cat_kayu_besi">Cat Kayu &amp; Besi</a></li>
-          <li><a href="/tds">Lihat TDS</a></li>
+          <li class="hover:text-blue-600"><a href="/cat_premium">Cat Premium</a></li>
+          <li class="hover:text-blue-600"><a href="/cat_interior">Cat Interior</a></li>
+          <li class="hover:text-blue-600"><a href="/cat_eksterior">Cat Eksterior</a></li>
+          <li class="hover:text-blue-600"><a href="/cat_kayu_besi">Cat Kayu &amp; Besi</a></li>
+          <li class="hover:text-blue-600"><a href="/tds">Lihat TDS</a></li>
         </ul>
       </div>
 

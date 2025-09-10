@@ -164,7 +164,6 @@
 </div>
 <div class="mb-20"></div>
 
-<<<<<<< HEAD
 <div class="mt-3 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 
   gap-x-2 gap-y-12 justify-items-center">
 
@@ -183,7 +182,6 @@
     </a>
   </div>
 </div>
-=======
 @if(isset($message))
     <p>{{ $message }}</p>
 @endif
@@ -205,7 +203,6 @@
     </ul>
     </div>
 @endif
->>>>>>> 0b27cdce194e2244683b2aa0470a327b6b80e66a
 
   <div class="mb-96"></div>
 

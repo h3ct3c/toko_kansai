@@ -1,62 +1,96 @@
-@include('layout.header')
+@include("layout.header")
 
-@include('layout.banner')
+@include("layout.banner")
 
+<div class="mb-48"></div>
+<div class="text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-blue-900">Browse Our Categories</h2>
+    <p class="mt-2 text-2xl text-gray-500">Explore Your Paint</p>
+</div>
+<div class="mb-2"></div>
 
-  <div class="font-semibold text-center text-4xl mt-24">
-  <h1 class="text-blue-900">Browse By Category</h1>
-  </div>
-
-<section class="py-20">
-  <div class="max-w-6xl mx-auto mt-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
-    <!-- Cat Premium -->
-    <a href="premium">
-    <div class="group p-6 bg-white rounded-2xl shadow hover:shadow-xl border border-gray-300 flex flex-col items-center transition">
-      <img fetchpriority="high" decoding="async" width="100" height="100" src="https://kansaipaint.id/wp-content/uploads/2025/03/banner.webp" class="attachment-large size-large wp-image-183" alt="" srcset="https://kansaipaint.id/wp-content/uploads/2025/03/banner.webp 485w, https://kansaipaint.id/wp-content/uploads/2025/03/banner-300x300.webp 300w, https://kansaipaint.id/wp-content/uploads/2025/03/banner-100x100.webp 100w, https://kansaipaint.id/wp-content/uploads/2025/03/banner-150x150.webp 150w" sizes="(max-width: 485px) 100vw, 485px">
-      <p class="mt-4 font-semibold text-gray-800 group-hover:text-blue-500">Cat Premium</p>
+<!-- Bawah Banner -->
+<section class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 px-6 lg:px-16 py-12">
+    <!-- Card 1 -->
+    <div class="relative group overflow-hidden rounded-2xl shadow-lg">
+        <img src="/img/kansai_12.jpg" alt="Shoes" class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gray-500 bg-opacity-30"></div>
+        <div class="absolute bottom-6 left-6 text-white">
+            <h2 class="text-2xl font-bold">Cat Premium</h2>
+            <a href="/premium"
+               class="mt-3 inline-block bg-white text-black px-5 py-2 rounded-full font-semibold hover:bg-gray-200 transition">
+                Explore
+            </a>
+        </div>
     </div>
-    </a>
 
-    <!-- Cat Eksterior -->
-    <a href="eksterior">
-    <div class="group p-6 bg-white rounded-2xl shadow hover:shadow-xl border border-gray-300 flex flex-col items-center transition">
-      <img decoding="async" width="100" height="100" src="https://kansaipaint.id/wp-content/uploads/2025/03/home.webp" class="attachment-large size-large wp-image-184" alt="" srcset="https://kansaipaint.id/wp-content/uploads/2025/03/home.webp 420w, https://kansaipaint.id/wp-content/uploads/2025/03/home-300x300.webp 300w, https://kansaipaint.id/wp-content/uploads/2025/03/home-100x100.webp 100w, https://kansaipaint.id/wp-content/uploads/2025/03/home-150x150.webp 150w" sizes="(max-width: 420px) 100vw, 420px">
-      <p class="mt-4 font-semibold text-gray-800 group-hover:text-blue-500">Cat Eksterior</p>
+    <!-- Card 2 -->
+    <div class="relative group overflow-hidden rounded-2xl shadow-lg">
+        <img src="/img/kansai_5.jpg" alt="Apparel" class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gray-500 bg-opacity-30"></div>
+        <div class="absolute bottom-6 left-6 text-white">
+            <h2 class="text-2xl font-bold">Cat Eksterior</h2>
+            <a href="/eksterior"
+               class="mt-3 inline-block bg-white text-black px-5 py-2 rounded-full font-semibold hover:bg-gray-100 transition">
+                Explore
+            </a>
+        </div>
     </div>
-    </a>
 
-    <!-- Cat Interior -->
-    <a href="interior">
-      <div class="group p-6 bg-white rounded-2xl shadow hover:shadow-xl border border-gray-300 flex flex-col items-center transition">
-        <img decoding="async" width="100" height="100" src="https://kansaipaint.id/wp-content/uploads/2025/03/sofa.webp" class="attachment-large size-large wp-image-185" alt="" srcset="https://kansaipaint.id/wp-content/uploads/2025/03/sofa.webp 425w, https://kansaipaint.id/wp-content/uploads/2025/03/sofa-100x100.webp 100w, https://kansaipaint.id/wp-content/uploads/2025/03/sofa-300x296.webp 300w" sizes="(max-width: 425px) 100vw, 425px">
-        <p class="mt-4 font-semibold text-gray-800 group-hover:text-blue-500">Cat Interior</p>
-      </div>
-    </a>
-
-    <!-- Cat Besi & Kayu -->
-     <a href="kayubesi ">
-    <div class="group p-6 bg-white rounded-2xl shadow hover:shadow-xl border border-gray-300 flex flex-col items-center transition">
-      <img loading="lazy" decoding="async" width="100" height="100" src="https://kansaipaint.id/wp-content/uploads/2025/03/fence.webp" class="attachment-large size-large wp-image-186" alt="" srcset="https://kansaipaint.id/wp-content/uploads/2025/03/fence.webp 568w, https://kansaipaint.id/wp-content/uploads/2025/03/fence-300x300.webp 300w, https://kansaipaint.id/wp-content/uploads/2025/03/fence-100x100.webp 100w, https://kansaipaint.id/wp-content/uploads/2025/03/fence-150x150.webp 150w" sizes="(max-width: 568px) 100vw, 568px">
-      <p class="mt-4 font-semibold text-gray-800 group-hover:text-blue-500">Cat Besi & Kayu</p>
+    <!-- Card 3 -->
+    <div class="relative group overflow-hidden rounded-2xl shadow-lg">
+        <img src="/img/kansai_7.jpg" alt="Accessories" class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gray-500 bg-opacity-30"></div>
+        <div class="absolute bottom-6 left-6 text-white">
+            <h2 class="text-2xl font-bold">Cat Interior</h2>
+            <a href="/interior"
+               class="mt-3 inline-block bg-white text-black px-5 py-2 rounded-full font-semibold hover:bg-gray-200 transition">
+                Explore
+            </a>
+        </div>
     </div>
-    </a>
-  </div>
+
+    <!-- Card 2 -->
+    <div class="relative group overflow-hidden rounded-2xl shadow-lg">
+        <img src="/img/kansai_6.jpg" alt="Apparel" class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gray-500 bg-opacity-30"></div>
+        <div class="absolute bottom-6 left-6 text-white">
+            <h2 class="text-2xl font-bold">Cat Kayu & Besi</h2>
+            <a href="/kayubesi"
+               class="mt-3 inline-block bg-white text-black px-5 py-2 rounded-full font-semibold hover:bg-gray-200 transition">
+                Explore
+            </a>
+        </div>
+    </div>
 </section>
 
-  <div class="mb-28"></div>
-  <div class="border-t border-gray-400 w-11/12 mx-auto">
-  </div>
-  <div class="mt-16 font-semibold justify-items-center text-blue-900 text-center"><h1 class="text-4xl">Best Selling Products</h1>
+<div class="mb-32"></div>
+<div class="text-center">
+    <h2 class="text-3xl md:text-4xl font-bold font-display leading-tight text-blue-900">Best Selling Products</h2>
 </div>
-  
-  <div class="mb-20"></div>
+<div class="mb-16"></div>
 
-  <div class="mt-3 max-w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 
-      gap-x-2 gap-y-12 justify-items-center">
+<div class="mt-3 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 
+  gap-x-2 gap-y-12 justify-items-center">
 
-  <!-- ITEM 1 --> 
+  <!-- ITEM 1 -->
+<div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
+    <a href="ftalit">
+    <img src="/img/ftalit.png" alt="KANSAI FTALIT"
+        class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
+    <div class="p-3 text-center">
+      <h3 class="text-sm text-gray-700 font-semibold">
+        KANSAI FTALIT
+      </h3>
+      <p class="mt-3 text-sm text-red-500 font-semibold">RP.94,000</p>
+      <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
+    </div>
+    </a>
+  </div>
+
+ <!-- ITEM 2 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="ftalitduo">
+    <a href="ftalit">
     <img src="/img/ftalitduo.png" alt="KANSAI FTALIT DUO"
         class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
@@ -69,46 +103,32 @@
     </a>
   </div>
 
-<!-- ITEM 2 -->
-  <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="spleshglimmer">
-    <img src="/img/spleshglimmer.png" alt="KANSAI SPLESH GLIMMER"
-        class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
-    <div class="p-3 text-center">
-      <h3 class="text-sm text-gray-700 font-semibold">
-        KANSAI SPLESH GLIMMER
-      </h3>
-      <p class="mt-3 text-sm text-red-500 font-semibold">RP.100,000</p>
-      <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐</p>
-    </div>
-    </a>
-  </div>
-
   <!-- ITEM 3 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="#">
+    <a href="splesh">
     <img src="/img/splesh.png" alt="KANSAI SPLESH"
         class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
         KANSAI SPLESH
       </h3>
-      <p class="mt-3 text-sm text-red-500 font-semibold">RP.100,000</p>
-      <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐</p>
+      <p class="mt-3 text-sm text-red-500 font-semibold">RP.94,000</p>
+      <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
     </div>
     </a>
   </div>
 
+
   <!-- ITEM 4 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="/">
-    <img src="/img/diamondshield.png" alt="KANSAI DIAMOND SHIELD"
+    <a href="spleshglimmer">
+    <img src="/img/spleshglimmer.png" alt="KANSAI SPLESH GLIMMER"
         class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
-        KANSAI DIAMOND SHIELD 12-IN-1
+        KANSAI SPLESH GLIMMER 
       </h3>
-      <p class="mt-3 text-sm text-red-500 font-semibold">RP.100,000</p>
+      <p class="mt-3 text-sm text-red-500 font-semibold">RP.94,000</p>
       <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
     </div>
     </a>
@@ -116,29 +136,20 @@
 
   
   <!-- ITEM 5 --> 
-  <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="ftalitduo">
-    <img src="/img/rainblock.png" alt="KANSAI RAIN BLOCK"
+    <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
+    <a href="diamondshield">
+    <img src="/img/diamondshield.png" alt="KANSAI DIAMOND SHIELD"
         class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
     <div class="p-3 text-center">
       <h3 class="text-sm text-gray-700 font-semibold">
-        KANSAI RAIN BLOCK
+        KANSAI DIAMOND SHIELD
       </h3>
-      <p class="mt-3 text-sm text-red-500 font-semibold">RP.100,000</p>
+      <p class="mt-3 text-sm text-red-500 font-semibold">RP.94,000</p>
       <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
     </div>
     </a>
   </div>
-  </div>
-
-<div class="mb-24"></div>
-        
-  <div class="border-t border-gray-400 w-11/12 mx-auto"></div>
-
-<div class="mb-96"></div>
+</div>
+<div class="mb-96"></div> 
 
 @extends('layout.footer')
-
-</body>
-</html>
-
