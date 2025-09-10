@@ -2,12 +2,7 @@
 
 @include('layout.banner')
 
-  
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
-    <div class="text-center">
-      <h1 class="text-3xl font-bold text-gray-900">Welcome to Kansai Paint Store</h1>
-      <p class="mt-4 text-lg text-gray-600">Your one-stop shop for high-quality paint products</p>
-    </div>
+
   <div class="font-semibold text-center text-4xl mt-24">
   <h1 class="text-blue-900">Browse By Category</h1>
   </div>
