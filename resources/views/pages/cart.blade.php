@@ -445,7 +445,6 @@
             <div class="flex justify-center space-x-2 mt-4">
               <i class="fab fa-cc-visa text-2xl text-blue-900"></i>
               <i class="fab fa-cc-mastercard text-2xl text-red-600"></i>
-              <i class="fab fa-cc-amex text-2xl text-blue-500"></i>
               <i class="fab fa-cc-paypal text-2xl text-blue-700"></i>
             </div>
           </div>

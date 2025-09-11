@@ -21,9 +21,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-
         return view('product_crud.create');
-
     }
 
     /**
@@ -32,32 +30,24 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'name'     => 'required',
             'category' => 'required',
-            'color' => 'required',
-            'price' => 'required',
-            'stock' => 'required',
+            'color'    => 'required',
+            'price'    => 'required|numeric',
+            'stock'    => 'required|integer',
         ]);
 
-        Product::create([
-            'name' => $request->name,
-            'category' => $request->category,
-            'color' => $request->color,
-            'price' => $request->price,
-            'stock' => $request->stock,
-        ]);
+        Product::create($request->all());
 
         return redirect()->route('product_crud.index')
             ->with('success','Product created successfully.');
     }
-    
 
     /**
      * Display the specified resource.
      */
     public function show(Product $product)
     {
-        $product = Product::findOrFail($id);
         return view('ftalitduo', compact('product'));
     }
 
@@ -66,7 +56,6 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        $product = Product::findOrFail($product->id);
         return view('product_crud.edit', compact('product'));
     }
 
@@ -75,21 +64,15 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $request->validate([   
-            'name' => 'required',
+        $request->validate([
+            'name'     => 'required',
             'category' => 'required',
-            'color' => 'required',
-            'price' => 'required',
-            'stock' => 'required',
+            'color'    => 'required',
+            'price'    => 'required|numeric',
+            'stock'    => 'required|integer',
         ]);
 
-        $product->update([
-            'name' => $request->name,
-            'category' => $request->category,
-            'color' => $request->color,
-            'price' => $request->price,
-            'stock' => $request->stock,
-        ]);
+        $product->update($request->all());
 
         return redirect()->route('product_crud.index')
             ->with('success','Product updated successfully.');
@@ -105,6 +88,4 @@ class ProductController extends Controller
         return redirect()->route('product_crud.index')
             ->with('success','Product deleted successfully.');
     }
-
-
 }
