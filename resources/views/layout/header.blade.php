@@ -20,19 +20,20 @@
 <body class="bg-white font-sans text-gray-700">
 
   <!-- Navbar -->
-  <nav class="w-full flex flex-wrap items-center justify-between px-4 py-3 shadow-sm sticky top-0 bg-white z-50">
+  <nav class="w-full flex flex-wrap items-center justify-between px-4 py-3 shadow-sm sticky top-0 bg-white opacity-90 z-50">
 
     <!-- Logo -->
     <div class="flex items-center space-x-2 px-8">
-      <img src="/img/logo kansai.jpg" class="h-16" alt="Kansai Paint Logo">
+      <img src="/img/logo.png" class="h-14" alt="Kansai Paint Logo">
     </div>
 
-    <!-- HomePage -->
+    <!-- Dropdown -->
     <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-gray-700 mt-3 md:mt-0">
       <li>
         <a href="/" class=" font-semibold nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Beranda</a>
       </li>
       <li class="relative group">
+<<<<<<< HEAD
         <a href="/product" class="font-semibold nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Produk</a>
           <ul class="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 w-48 z-50">
           <li><a href="/interior" class="font-semibold block px-4 py-2 hover:bg-gray-200">Interior</a></li>
@@ -40,7 +41,23 @@
           <li><a href="/kayubesi" class="font-semibold block px-4 py-2 hover:bg-gray-200">Kayu & Besi</a></li>
           <li><a href="/premium" class="font-semibold block px-4 py-2 hover:bg-gray-200">Premium</a></li>
           </ul>
+=======
+        <a href="/product" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Product</a>
+          <ul class="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 w-96 z-50">
+          <li><a href="/interior" class="block px-4 py-2 hover:bg-gray-100">Interior</a></li>
+          <li><a href="/eksterior" class="block px-4 py-2 hover:bg-gray-100">Eksterior</a></li>
+          <li><a href="/kayubesi" class="block px-4 py-2 hover:bg-gray-100">Kayu & Besi</a></li>
+          <li><a href="/premium" class="block px-4 py-2 hover:bg-gray-100">Premium</a></li>
+
+          <ul class="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 w-96 z-50">         
+          <li><a href="/gloss" class="block px-4 py-2 hover:bg-gray-100">Gloss</a></li>
+          <li><a href="/matt" class="block px-4 py-2 hover:bg-gray-100">Matt</a></li>
+          <li><a href="/sheen" class="block px-4 py-2 hover:bg-gray-100">Sheen</a></li>
+         </ul>
+         </ul>
+>>>>>>> origin/main
       </li>
+      
       <li>
         <a href="/colors" class="font-semibold nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Warna</a>
       </li>
@@ -173,6 +190,7 @@
         </div>
       </div>
     </div>
+
   </nav>
 
   <!-- SCRIPT: Dropdown -->

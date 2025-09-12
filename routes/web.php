@@ -20,6 +20,12 @@ use App\Http\Controllers\SearchController;
 // search
 Route::get('/search', [SearchController::class, 'index']);
 Route::get('/search', [SearchController::class, 'index'])->name('search');
+Route::get('/', function () {
+    $products = Product::all();          // ambil semua product dari DB
+    return view('product', compact('products'));
+});
+
+Route::get('/search', [SearchController::class, 'index'])->name('search');
 
 
 // CRUD
@@ -135,11 +141,16 @@ Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () 
 
 // DETAIL PRODUK
 Route::get('ftalitduo', function () {
-    return view('ftalitduono');
+    return view('detail.ftalitduo');
 });
 
+<<<<<<< HEAD
 Route::get('ftalitduo', function () {
     return view('detail.ftalitduo');
+=======
+Route::get('ftalit', function () {
+    return view('detail.ftalit');
+>>>>>>> origin/main
 });
 
 Route::get('spleshglimmer', function () {

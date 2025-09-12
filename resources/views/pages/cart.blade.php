@@ -445,7 +445,6 @@
             <div class="flex justify-center space-x-2 mt-4">
               <i class="fab fa-cc-visa text-2xl text-blue-900"></i>
               <i class="fab fa-cc-mastercard text-2xl text-red-600"></i>
-              <i class="fab fa-cc-amex text-2xl text-blue-500"></i>
               <i class="fab fa-cc-paypal text-2xl text-blue-700"></i>
             </div>
           </div>
@@ -475,8 +474,8 @@
             hsCode: "847130",
             quantity: 1,
             weight: 2.5,
-            perPieceRate: 94.000,
-            totalPrice: 94.000,
+            perPieceRate: 94,
+            totalPrice: 94,
             color: "Silver",
             deliveryMethod: "Air",
             description: "A powerful and lightweight laptop with excellent performance.",
@@ -491,8 +490,8 @@
             hsCode: "851712",
             quantity: 2,
             weight: 0.5,
-            perPieceRate: 100.000,
-            totalPrice: 200.000,
+            perPieceRate: 100,
+            totalPrice: 200,
             color: "Black",
             deliveryMethod: "Ship",
             description: "",
@@ -574,7 +573,7 @@
         applyPromoCode() {
           // Example promo codes
           const promoCodes = {
-            'SAVE10': { discount: 0.1, message: '10% discount applied!' },
+            'KANSAISALE': { discount: 0.1, message: '10% discount applied!' },
             'FREESHIP': { discount: 0, message: 'Free shipping applied!', freeShipping: true },
             'WELCOME20': { discount: 0.2, message: '20% discount applied!' }
           };

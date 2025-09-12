@@ -38,7 +38,7 @@
       <!-- Product Details -->
       <div class="w-full md:w-1/2 px-4">
         <!-- Title -->
-        <h2 class="text-3xl font-bold mb-2">Kansai FTALIT DUO</h2>
+        <h2 class="text-3xl font-bold mb-2">KANSAI SPLESH GLIMMER</h2>
         <p class="text-gray-600 mb-4">Stock : 500</p>
         
         <!-- Harga -->
