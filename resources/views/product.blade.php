@@ -6,8 +6,8 @@
 
   @forelse($products ?? collect() as $product)
     <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-        <a href="{{ url('ftalitduo/') }}">
-            <img src="{{ $product->image_url ?? '/img/ftalitduo.png' }}" 
+        <a href="{{ url('') }}">
+            <img src="{{ $product->image_url ?? '/' }}" 
                  alt="{{ $product->name }}" 
                  class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
             <div class="p-3 text-center">
@@ -25,7 +25,7 @@
 
 </div>
 
-  <div class="mb-96"></div>
+  <div class="mb-[500px]"></div>
 
   @include('layout.footer')
   

@@ -344,124 +344,53 @@
       </div>
 
       <!-- Order Summary -->
-      <div x-show="cartItems.length > 0" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="md:col-span-2">
-          <!-- Shipping Options -->
-          <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6">
-            <h2 class="text-lg font-semibold mb-4">Shipping Options</h2>
-            <div class="space-y-3">
-              <label class="flex items-center p-3 border rounded cursor-pointer hover:bg-gray-50">
-                <input type="radio" name="shippingMethod" value="standard" x-model="shippingMethod" class="mr-3">
-                <div>
-                  <div class="font-medium">Standard Shipping</div>
-                  <div class="text-sm text-gray-600">Delivery in 5-7 business days</div>
-                </div>
-                <div class="ml-auto font-medium">Rp5.000</div>
-              </label>
-              
-              <label class="flex items-center p-3 border rounded cursor-pointer hover:bg-gray-50">
-                <input type="radio" name="shippingMethod" value="express" x-model="shippingMethod" class="mr-3">
-                <div>
-                  <div class="font-medium">Express Shipping</div>
-                  <div class="text-sm text-gray-600">Delivery in 1-3 business days</div>
-                </div>
-                <div class="ml-auto font-medium">Rp15.000</div>
-              </label>
-              
-              <label class="flex items-center p-3 border rounded cursor-pointer hover:bg-gray-50">
-                <input type="radio" name="shippingMethod" value="overnight" x-model="shippingMethod" class="mr-3">
-                <div>
-                  <div class="font-medium">Overnight Shipping</div>
-                  <div class="text-sm text-gray-600">Next day delivery</div>
-                </div>
-                <div class="ml-auto font-medium">Rp25.000</div>
-              </label>
-            </div>
-          </div>
-          
-          <!-- Promo Code -->
-          <div class="bg-white rounded-lg shadow-md p-4 sm:p-6">
-            <h2 class="text-lg font-semibold mb-4">Promo Code</h2>
-            <div class="flex">
-              <input 
-                type="text" 
-                x-model="promoCode" 
-                placeholder="Enter promo code" 
-                class="flex-grow border rounded-l p-2 focus:ring-blue-500 focus:border-blue-500"
-              >
-              <button 
-                @click="applyPromoCode" 
-                class="bg-blue-900 text-white px-4 py-2 rounded-r hover:bg-blue-700 transition"
-              >
-                Apply
-              </button>
-            </div>
-            <div x-show="promoMessage" class="mt-2 text-sm" :class="promoValid ? 'text-green-600' : 'text-red-600'">
-              <span x-text="promoMessage"></span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Order Total -->
-        <div class="md:col-span-1">
-          <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 sticky top-4">
-            <h2 class="text-xl font-bold mb-4">Order Summary</h2>
-            <div class="space-y-3 mb-4">
-              <div class="flex justify-between">
-                <span class="text-gray-600">Subtotal</span>
-                <span class="font-medium" x-text="'Rp' + subtotal.toFixed(2)"></span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-gray-600">Shipping</span>
-                <span class="font-medium" x-text="'Rp' + shippingCost.toFixed(2)"></span>
-              </div>
-              <div x-show="discount > 0" class="flex justify-between text-green-600">
-                <span>Discount</span>
-                <span class="font-medium" x-text="'-Rp' + discount.toFixed(2)"></span>
-              </div>
-              <div class="flex justify-between text-gray-600">
-                <span>Tax</span>
-                <span class="font-medium" x-text="'Rp' + calculateTax().toFixed(2)"></span>
-              </div>
-              <div class="border-t pt-3 mt-3">
-                <div class="flex justify-between font-bold text-lg">
-                  <span>Total</span>
-                  <span x-text="'Rp' + total.toFixed(2)"></span>
-                </div>
-              </div>
-            </div>
-            <button 
-              class="w-full bg-blue-900 text-white py-3 rounded-lg font-medium hover:bg-blue-600 transition flex items-center justify-center"
-              :disabled="cartItems.length === 0"
-              :class="{'opacity-50 cursor-not-allowed': cartItems.length === 0}"
-            >
-            <a href="/checkout">
-              <i class="fas fa-lock mr-2"></i> Proceed to Checkout
-            </a>
-            </button>
-            <div class="flex items-center justify-center mt-4 text-sm text-gray-600">
-              <i class="fas fa-shield-alt mr-2"></i> Secure Checkout
-            </div>
-            <div class="flex justify-center space-x-2 mt-4">
-              <i class="fab fa-cc-visa text-2xl text-blue-900"></i>
-              <i class="fab fa-cc-mastercard text-2xl text-red-600"></i>
-              <i class="fab fa-cc-paypal text-2xl text-blue-700"></i>
-            </div>
-          </div>
-        </div>
+<div x-show="cartItems.length > 0" class="md:col-span-1">
+  <div class="bg-white rounded-2xl shadow-xl p-6 sticky top-6 border border-gray-100">
+    <h2 class="text-2xl font-extrabold mb-6 text-gray-800">Order Summary</h2>
+    
+    <div class="space-y-4 mb-6">
+      <div class="flex justify-between text-gray-600">
+        <span>Subtotal</span>
+        <span x-text="'Rp' + subtotal.toLocaleString('id-ID')"></span>
       </div>
-      
-      <!-- Continue Shopping -->
-      <div x-show="cartItems.length > 0" class="flex flex-col sm:flex-row justify-between items-center gap-4">
-        <a href="/" class="flex items-center text-blue-600 hover:text-blue-800">
-          <i class="fas fa-arrow-left mr-2"></i>
-          Continue Shopping
-        </a>
-        <button @click="clearCart" class="text-red-600 hover:text-red-800">
-          <i class="fas fa-trash mr-1"></i> Clear Cart
-        </button>
+      <div class="flex justify-between text-gray-600">
+        <span>Shipping</span>
+        <span x-text="'Rp' + shippingCost.toLocaleString('id-ID')"></span>
+      </div>
+      <div x-show="discount > 0" class="flex justify-between text-green-600">
+        <span>Discount</span>
+        <span x-text="'Rp' + discount.toLocaleString('id-ID')"></span>
+      </div>
+      <div class="flex justify-between text-gray-600">
+        <span>Tax</span>
+        <span x-text="'Rp' + calculateTax().toLocaleString('id-ID')"></span>
+      </div>
+      <div class="border-t pt-4 mt-4">
+        <div class="flex justify-between font-bold text-xl text-gray-800">
+          <span>Total</span>
+          <span x-text="'Rp' + total.toLocaleString('id-ID')"></span>
+        </div>
       </div>
     </div>
+
+    <a href="/checkout"
+      class="block w-full text-center rounded-xl px-6 py-3 font-semibold text-white 
+             bg-gradient-to-r from-blue-700 to-blue-900 
+             shadow-md hover:shadow-lg transition transform hover:scale-105">
+      Proceed to Checkout
+    </a>
+
+    <div class="flex items-center justify-center mt-5 text-sm text-gray-500">
+      <i class="fas fa-shield-alt mr-2"></i> Secure Checkout
+    </div>
+    <div class="flex justify-center space-x-3 mt-4">
+      <div class="p-2 rounded-full"><i class="fab fa-cc-visa text-blue-800 text-2xl"></i></div>
+      <div class="p-2 rounded-full"><i class="fab fa-cc-mastercard text-red-600 text-2xl"></i></div>
+      <div class="p-2 rounded-full"><i class="fab fa-cc-paypal text-blue-600 text-2xl"></i></div>
+    </div>
+  </div>
+</div>
+
   </div>
 
   <script>
@@ -629,8 +558,5 @@
     }
   </script>
   <div class="mb-96"></div>
-
-  @include('layout.footer')
-
 </body>
 </html>

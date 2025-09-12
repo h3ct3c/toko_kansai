@@ -70,7 +70,7 @@
   </div>
 </div>
 
-<div class="mb-96"></div>
+<div class="mb-[500px]"></div>
 
 @include('layout.footer')
 

@@ -82,11 +82,21 @@
       </div>
 
       <!-- Tombol -->
-      <a href="/payment success">
-      <button class="w-full bg-blue-900 text-white py-2 rounded-md hover:bg-blue-600">
-        Place Order
-      </button>
-      </a>
+      
+   <div class="flex ps-1 w-max mt-16">
+  <a 
+    href="/payment success"
+    class="flex items-center gap-2 justify-items-center shrink-0 text-center rounded-md 
+           px-5 py-2.5 font-medium text-white 
+           bg-blue-900 border border-blue-600 shadow-md shadow-blue-600
+           transition duration-200 ease-out
+           hover:opacity-80 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-lg 
+           active:translate-x-2 active:translate-y-1 active:shadow-none
+           disabled:opacity-50 disabled:cursor-not-allowed"
+  >
+    <span>Proceed to Payment</span>
+  </a>
+</div>
     </div>
   </div>
 </div>

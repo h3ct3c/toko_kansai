@@ -150,6 +150,7 @@
     </a>
   </div>
 </div>
-<div class="mb-96"></div> 
+
+<div class="mb-[500px]"></div> 
 
 @extends('layout.footer')
