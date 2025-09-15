@@ -54,7 +54,7 @@
             
             <!-- Kolom 1 -->
             <div>
-              <h3 class="font-bold text-gray-700 mb-2">Kategori Utama</h3>
+              <h3 class="font-bold text-blue-900 mb-2">Kategori Utama</h3>
               <ul class="space-y-2">
                 <li><a href="/interior" class="block text-gray-600 hover:text-blue-700">Interior</a></li>
                 <li><a href="/eksterior" class="block text-gray-600 hover:text-blue-700">Eksterior</a></li>
@@ -65,7 +65,7 @@
 
             <!-- Kolom 2 -->
             <div>
-              <h3 class="font-bold text-gray-700 mb-2">Finishing</h3>
+              <h3 class="font-bold text-blue-900 mb-2">Finishing</h3>
               <ul class="space-y-2">
                 <li><a href="/gloss" class="block text-gray-600 hover:text-blue-700">Gloss</a></li>
                 <li><a href="/matt" class="block text-gray-600 hover:text-blue-700">Matt</a></li>
@@ -75,7 +75,7 @@
 
             <!-- Kolom 3 -->
             <div>
-              <h3 class="font-bold text-gray-700 mb-2">Koleksi Favorit</h3>
+              <h3 class="font-bold text-blue-900 mb-2">Koleksi Favorit</h3>
               <ul class="space-y-2">
                 <li><a href="/best-seller" class="block text-gray-600 hover:text-blue-700">Best Seller</a></li>
                 <li><a href="/limited-edition" class="block text-gray-600 hover:text-blue-700">Limited Edition</a></li>
@@ -90,7 +90,6 @@
           </div>
         </div>
       </li>
-
       <li>
         <a href="/colors" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Colors</a>
       </li>
