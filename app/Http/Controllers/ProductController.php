@@ -89,3 +89,10 @@ class ProductController extends Controller
             ->with('success','Product deleted successfully.');
     }
 }
+
+public function index()
+{
+    $products = Product::all();
+    return view('product', compact('products'));
+}
+

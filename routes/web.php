@@ -79,7 +79,6 @@ Route::get('/', function () {
 return view('home');  
 });
 
-
 //kategori//
 Route::get('/   interior', function () {
     return view('category.interior');
@@ -95,6 +94,19 @@ route::get('/premium', function () {
 
 route::get('/kayubesi', function () {
     return view('category.kayubesi');
+});
+
+//finishing//
+Route::get('/gloss', function () {
+    return view('finishing.gloss');
+});
+
+Route::get('/matt', function () {
+    return view('finishing.matt');
+});
+
+Route::get('/sheen', function () {
+    return view('finishing.sheen');
 });
 
 // dropdown kategori
@@ -144,6 +156,9 @@ Route::get('ftalitduo', function () {
     return view('detail.ftalitduo');
 });
 
+Route::get('ftalitduo', function () {
+    return view('detail.ftalitduo');
+});
 Route::get('ftalit', function () {
     return view('detail.ftalit');
 });
@@ -182,4 +197,10 @@ Route::get('ftalit', function () {
 
 Route::get('tropic', function () {
     return view('detail.tropic');
+});
+
+
+//diskon//
+Route::get('/diskon', function () {
+    return view('pages.diskon');
 });
