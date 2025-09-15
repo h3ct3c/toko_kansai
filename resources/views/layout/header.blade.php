@@ -97,28 +97,31 @@
     <div class="flex flex-wrap items-center gap-[29px] mt-3 md:mt-0">
 
       <!-- Search -->
-      <form action="{{ route('search') }}" method="GET" class="relative w-48 md:w-[810px]">
-        <input
-          type="text"
-          name="query"
-          placeholder="Buruan Cari!"
-          class="w-full rounded-lg border border-gray-300 py-[9px] pl-10 pr-10 text-sm 
-                 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
-          required/>
-        <button type="submit" aria-label="Search"
-          class="absolute left-2 top-2.5 text-gray-400 hover:text-blue-900">
-          <svg xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M21 21l-4.35-4.35m0 0a7.5 7.5 0 10-10.61-10.61 
-                 7.5 7.5 0 0010.6 10.6z" />
-          </svg>
-        </button>
-      </form>
+<form action="{{ route('search') }}" method="GET" class="relative w-48 md:w-[810px]">
+  <input
+    type="text"
+    name="query"
+    placeholder="Buruan Cari!"
+    class="w-full rounded-lg border border-gray-300 py-[9px] pl-10 pr-10 text-sm 
+           focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
+    required/>
+
+  <!-- Tombol Search lebih ke tengah -->
+  <button type="submit" aria-label="Search"
+    class="absolute left-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-blue-900">
+    <svg xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M21 21l-4.35-4.35m0 0a7.5 7.5 0 10-10.61-10.61 
+           7.5 7.5 0 0010.6 10.6z" />
+    </svg>
+  </button>
+</form>
+
 
       <!-- Cart -->
       <a href="/cart" aria-label="Shopping Cart"

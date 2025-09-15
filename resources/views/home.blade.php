@@ -82,68 +82,68 @@
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
     <a href="ftalitduo">
       <img src="/img/ftalitduo.png" alt="KANSAI DIAMOND SHIELD"
-           class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
+      class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
       <div class="p-3 text-center">
         <h3 class="text-sm text-gray-700 font-semibold">KANSAI FTALITDUO</h3>
-        <p class="mt-3 text-sm text-red-500 font-semibold">RP.94,000</p>
+        <p class="mt-3 text-sm text-red-500 font-semibold">RP.92,000</p>
         <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
       </div>
     </a>
   </div>
-
-  <!-- item 1 -->
+  
+  <!-- item 2 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="diamondshield">
-      <img src="/img/diamondshield.png" alt="KANSAI DIAMOND SHIELD"
+    <a href="propertyglozz">
+      <img src="/img/propertyglozz.png" alt="KANSAI PROPERTYGLOZZ"
            class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
       <div class="p-3 text-center">
-        <h3 class="text-sm text-gray-700 font-semibold">KANSAI DIAMOND SHIELD</h3>
-        <p class="mt-3 text-sm text-red-500 font-semibold">RP.94,000</p>
+        <h3 class="text-sm text-gray-700 font-semibold">KANSAI PROPERTYGLOZZ</h3>
+        <p class="mt-3 text-sm text-red-500 font-semibold">RP.69,375</p>
         <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
       </div>
     </a>
   </div>
 
-  <!-- item 1 -->
+  <!-- item 3 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="splesh">
-      <img src="/img/splesh.png" alt="KANSAI DIAMOND SHIELD"
+    <a href="propertyint">
+      <img src="/img/propertyint.png" alt="KANSAI PROPERTYINT"
            class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
       <div class="p-3 text-center">
-        <h3 class="text-sm text-gray-700 font-semibold">KANSAI SPLESH</h3>
-        <p class="mt-3 text-sm text-red-500 font-semibold">RP.94,000</p>
+        <h3 class="text-sm text-gray-700 font-semibold">KANSAI PROPERTYINT</h3>
+        <p class="mt-3 text-sm text-red-500 font-semibold">RP.174,825</p>
         <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
       </div>
     </a>
   </div>
 
-  <!-- item 1 -->
-  <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="pearlsheen">
-      <img src="/img/pearlsheen.png" alt="KANSAI DIAMOND SHIELD"
-           class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
-      <div class="p-3 text-center">
-        <h3 class="text-sm text-gray-700 font-semibold">KANSAI PEARLSHEEN</h3>
-        <p class="mt-3 text-sm text-red-500 font-semibold">RP.94,000</p>
-        <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
-      </div>
-    </a>
-  </div>
-
-  <!-- item 1 -->
+  <!-- item 4 -->
   <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
     <a href="rainblock">
       <img src="/img/rainblock.png" alt="KANSAI DIAMOND SHIELD"
            class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
       <div class="p-3 text-center">
         <h3 class="text-sm text-gray-700 font-semibold">KANSAI RAINBLOCK</h3>
-        <p class="mt-3 text-sm text-red-500 font-semibold">RP.94,000</p>
+        <p class="mt-3 text-sm text-red-500 font-semibold">RP.235,320</p>
+        <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
+      </div>
+    </a>
+  </div>
+
+  <!-- item 5 -->
+  <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
+    <a href="tropic">
+      <img src="/img/tropic.png" alt="KANSAI TROPIC"
+      class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
+      <div class="p-3 text-center">
+        <h3 class="text-sm text-gray-700 font-semibold">KANSAI TROPIC</h3>
+        <p class="mt-3 text-sm text-red-500 font-semibold">RP.126,540</p>
         <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
       </div>
     </a>
   </div>
 </div>
 
-<div class="mb-[500px]"></div>
+<div class="mb-[360px]"></div>
 
 @include('layout.footer')
