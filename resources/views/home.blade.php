@@ -2,22 +2,28 @@
 
 @include("layout.banner")
 
-<div class="mb-[200px]"></div>
 
+
+
+
+
+
+
+<div class="mb-48"></div>
 <div class="text-center">
-    <div class="text-4xl font-bold mb-4 text-blue-900">Jelajahi Kategori Produk Kami</div>
-    <div class="text-gray-600 mb-8">Temukan cat berkualitas untuk setiap kebutuhan Anda</div>
+    <h2 class="text-3xl md:text-4xl font-bold text-blue-900">Browse Our Categories</h2>
+    <p class="mt-2 text-2xl text-gray-500">Explore Your Paint</p>
 </div>
+<div class="mb-2"></div>
 
 <!-- Bawah Banner -->
 <section class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 px-6 lg:px-16 py-12">
     <!-- Card 1 -->
     <div class="relative group overflow-hidden rounded-2xl shadow-lg">
-        <img src="/img/kansai_12.jpg" alt="Premium" 
-             class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
+        <img src="/img/kansai_12.jpg" alt="Shoes" class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
         <div class="absolute inset-0 bg-gray-500 bg-opacity-30"></div>
         <div class="absolute bottom-6 left-6 text-white">
-            <h2 class="text-2xl font-bold">Premium</h2>
+            <h2 class="text-2xl font-bold">Cat Premium</h2>
             <a href="/premium"
                class="mt-3 inline-block bg-white text-black px-5 py-2 rounded-full font-semibold hover:bg-gray-200 transition">
                 Explore
@@ -27,123 +33,108 @@
 
     <!-- Card 2 -->
     <div class="relative group overflow-hidden rounded-2xl shadow-lg">
-        <img src="/img/kansai_5.jpg" alt="Eksterior" 
-             class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
+        <img src="/img/kansai_5.jpg" alt="Apparel" class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
         <div class="absolute inset-0 bg-gray-500 bg-opacity-30"></div>
         <div class="absolute bottom-6 left-6 text-white">
-            <h2 class="text-2xl font-bold">Eksterior</h2>
+            <h2 class="text-2xl font-bold">Cat Eksterior</h2>
             <a href="/eksterior"
                class="mt-3 inline-block bg-white text-black px-5 py-2 rounded-full font-semibold hover:bg-gray-100 transition">
                 Explore
             </a>
         </div>
+
     </div>
+
 
     <!-- Card 3 -->
     <div class="relative group overflow-hidden rounded-2xl shadow-lg">
-        <img src="/img/kansai_7.jpg" alt="Interior" 
-             class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
+        <img src="/img/kansai_7.jpg" alt="Accessories" class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
         <div class="absolute inset-0 bg-gray-500 bg-opacity-30"></div>
         <div class="absolute bottom-6 left-6 text-white">
-            <h2 class="text-2xl font-bold">Interior</h2>
+            <h2 class="text-2xl font-bold">Cat Interior</h2>
             <a href="/interior"
                class="mt-3 inline-block bg-white text-black px-5 py-2 rounded-full font-semibold hover:bg-gray-200 transition">
                 Explore
             </a>
         </div>
+
     </div>
 
-    <!-- Card 4 -->
+
+
+
+    <!-- Card 2 -->
     <div class="relative group overflow-hidden rounded-2xl shadow-lg">
-        <img src="/img/kansai_6.jpg" alt="Kayu & Besi" 
-             class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
+        <img src="/img/kansai_6.jpg" alt="Apparel" class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
         <div class="absolute inset-0 bg-gray-500 bg-opacity-30"></div>
         <div class="absolute bottom-6 left-6 text-white">
-            <h2 class="text-2xl font-bold">Kayu & Besi</h2>
+            <h2 class="text-2xl font-bold">Cat Kayu & Besi</h2>
             <a href="/kayubesi"
                class="mt-3 inline-block bg-white text-black px-5 py-2 rounded-full font-semibold hover:bg-gray-200 transition">
                 Explore
             </a>
         </div>
-    </div>
+
+ </div>
 </section>
 
-<div class="mb-[140px]"></div>
 
-<!-- Produk Unggulan -->
-<div class="text-center">
-  <div class="text-4xl font-bold mb-20 text-blue-900">Produk Unggulan</div>
-</div>
+  <div class="mb-20"></div>
 
-<!-- Produk -->
-<div class="mt-12 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-2 gap-y-12 justify-items-center">
+  </div> 
 
-  <!-- item 1 -->
-  <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="ftalitduo">
-      <img src="/img/ftalitduo.png" alt="KANSAI DIAMOND SHIELD"
-           class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
-      <div class="p-3 text-center">
-        <h3 class="text-sm text-gray-700 font-semibold">KANSAI FTALITDUO</h3>
-        <p class="mt-3 text-sm text-red-500 font-semibold">RP.94,000</p>
-        <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
-      </div>
-    </a>
-  </div>
 
-  <!-- item 1 -->
-  <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="diamondshield">
-      <img src="/img/diamondshield.png" alt="KANSAI DIAMOND SHIELD"
-           class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
-      <div class="p-3 text-center">
-        <h3 class="text-sm text-gray-700 font-semibold">KANSAI DIAMOND SHIELD</h3>
-        <p class="mt-3 text-sm text-red-500 font-semibold">RP.94,000</p>
-        <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
-      </div>
-    </a>
-  </div>
 
-  <!-- item 1 -->
-  <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="splesh">
-      <img src="/img/splesh.png" alt="KANSAI DIAMOND SHIELD"
-           class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
-      <div class="p-3 text-center">
-        <h3 class="text-sm text-gray-700 font-semibold">KANSAI SPLESH</h3>
-        <p class="mt-3 text-sm text-red-500 font-semibold">RP.94,000</p>
-        <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
-      </div>
-    </a>
-  </div>
 
-  <!-- item 1 -->
-  <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="pearlsheen">
-      <img src="/img/pearlsheen.png" alt="KANSAI DIAMOND SHIELD"
-           class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
-      <div class="p-3 text-center">
-        <h3 class="text-sm text-gray-700 font-semibold">KANSAI PEARLSHEEN</h3>
-        <p class="mt-3 text-sm text-red-500 font-semibold">RP.94,000</p>
-        <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
-      </div>
-    </a>
-  </div>
 
-  <!-- item 1 -->
-  <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="rainblock">
-      <img src="/img/rainblock.png" alt="KANSAI DIAMOND SHIELD"
-           class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
-      <div class="p-3 text-center">
-        <h3 class="text-sm text-gray-700 font-semibold">KANSAI RAINBLOCK</h3>
-        <p class="mt-3 text-sm text-red-500 font-semibold">RP.94,000</p>
-        <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
-      </div>
-    </a>
-  </div>
-</div>
+<!-- Script sederhana untuk filter (bisa ditempatkan di bawah sebelum </body>) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.category-btn');
+    const cards = document.querySelectorAll('.product-card');
 
-<div class="mb-[500px]"></div>
+    function setActiveBtn(activeBtn) {
+      buttons.forEach(btn => {
+        if (btn === activeBtn) {
+          btn.classList.remove('bg-white', 'text-gray-700', 'border', 'hover:text-white');
+          btn.classList.add('bg-blue-900', 'text-white', 'shadow', 'hover:bg-blue-900', 'hover:text-white',);
+        } else {
+          btn.classList.remove('bg-blue-600', 'text-white', 'shadow',);
+          btn.classList.add('bg-white', 'text-gray-700', 'border',);
+        }
+      });
+    }
 
-@include('layout.footer')
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cat = btn.getAttribute('data-cat'); // all, interior, eksterior, kayu, besi, dekoratif
+        setActiveBtn(btn);
+
+        cards.forEach(card => {
+          if (cat === 'all') {
+            card.style.display = '';
+          } else {
+            const c = card.getAttribute('data-category');
+            card.style.display = (c === cat) ? '' : 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
+
+
+  
+
+<div class="mb-32"></div>
+        
+  <div class="border-t border-gray-400 w-11/12 mx-auto"></div>
+
+<div class="mb-96"></div>
+
+@extends('layout.footer')
+
+</body>
+</html>
+
+  

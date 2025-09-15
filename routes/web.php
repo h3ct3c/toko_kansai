@@ -16,6 +16,13 @@ use function Pest\Laravel\post;
 use illuminate\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\ProductFrontController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\CartController;
+
+
+
+
+
+Route::get('cart', [CartController::class, 'index'])->name('cart.index');
 
 // search
 Route::get('/search', [SearchController::class, 'index']);
@@ -84,15 +91,15 @@ Route::get('/   interior', function () {
     return view('category.interior');
 });
 
-route::get('/eksterior', function () {
+Route::get('/eksterior', function () {
     return view('category.eksterior');
 });
 
-route::get('/premium', function () {
+Route::get('/premium', function () {
     return view('category.premium');
 });
 
-route::get('/kayubesi', function () {
+Route::get('/kayubesi', function () {
     return view('category.kayubesi');
 });
 
@@ -115,25 +122,25 @@ Route::get('/sheen', function () {
 
 
 //pages//
-route::get('/pages', function () {
+Route::get('/pages', function () {
     return view('pages');
 });
 
-route::get('/cart', function () {
+Route::get('/cart', function () {
     return view('pages/cart');
 });
 
-route::get('/checkout', function () {
+Route::get('/checkout', function () {
     return view('pages/checkout');
 });
 
-route::get('/payment success', function () {
+Route::get('/payment success', function () {
     return view('pages/payment success');
 });
 
 
 
-route::get('/order history', function () {
+Route::get('/order history', function () {
     return view('pages/order history');
 });
 
@@ -158,9 +165,11 @@ Route::get('ftalitduo', function () {
 
 Route::get('ftalitduo', function () {
     return view('detail.ftalitduo');
+
 });
 Route::get('ftalit', function () {
     return view('detail.ftalit');
+
 });
 
 Route::get('spleshglimmer', function () {
@@ -200,7 +209,32 @@ Route::get('tropic', function () {
 });
 
 
+
 //diskon//
 Route::get('/diskon', function () {
     return view('pages.diskon');
 });
+
+Route::middleware('auth')->group(function () {
+    Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+    Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
+    Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.destroy');
+});
+
+
+
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+

@@ -1,4 +1,5 @@
 <!-- Card Produk -->
+<body>
 <div class="product-card bg-white rounded-2xl shadow-md hover:shadow-xl transition-all overflow-hidden group" data-category="premium">
     <a href="spleshglimmer">
   
@@ -38,15 +39,96 @@
     </div>
 
     <!-- Tombol -->
- <div class="mt-4">
-      <a href="spleshglimmer"
-         class="w-15px inline-flex justify-items-start items-center px-4 py-2 bg-blue-800 text-white font-semibold rounded-xl hover:bg-blue-500 transition">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007.5 18h11a1 1 0 00.9-.55L21 13H7zm5 5a1 1 0 11-2 0 1 1 0 012 0zm8 0a1 1 0 11-2 0 1 1 0 012 0z" />
-        </svg>
-        Tambah ke Keranjang
-      </a>
+    <div class="mt-4">
+  <a href="javascript:void(0)"
+    class="add-to-cart w-15px inline-flex justify-items-start items-center px-4 py-2 bg-blue-800 text-white font-semibold rounded-xl hover:bg-blue-500 transition">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007.5 18h11a1 1 0 00.9-.55L21 13H7zm5 5a1 1 0 11-2 0 1 1 0 012 0zm8 0a1 1 0 11-2 0 1 1 0 012 0z" />
+    </svg>
+    Tambah ke Keranjang
+    </a>
+
+    <!-- Toast Notification -->
+<div id="toast" class="fixed top-16 right-5 hidden z-50">
+  <div class="bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg flex items-center space-x-2">
+    <i class="fas fa-check-circle"></i>
+    <span id="toast-message">Produk berhasil ditambahkan ke keranjang!</span>
+  </div>
+</div>
     </div>
   </div>
 </div>
+
+
+<script>
+  // 🔥 reset ke 0 setiap kali halaman direfresh
+  let cartCount = 0;
+  localStorage.setItem("cartCount", cartCount);
+
+  const cartCountEl = document.getElementById("cart-count");
+  const cartBtn = document.getElementById("cart-btn");
+
+  // set tampilan awal
+  cartCountEl.textContent = cartCount;
+
+  // event untuk semua tombol "Tambah ke Keranjang"
+  document.querySelectorAll(".add-to-cart").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      cartCount++;
+      cartCountEl.textContent = cartCount;
+
+      // simpan ke localStorage (tetap update, walau akan reset saat reload)
+      localStorage.setItem("cartCount", cartCount);
+
+      // animasi bounce
+      cartBtn.classList.add("animate-bounce");
+      setTimeout(() => {
+        cartBtn.classList.remove("animate-bounce");
+      }, 500);
+    });
+  });
+
+  // Ambil elemen toast
+const toast = document.getElementById("toast");
+const toastMsg = document.getElementById("toast-message");
+
+// Fungsi tampilkan notifikasi
+function showToast(message) {
+  toastMsg.textContent = message;
+  toast.classList.remove("hidden");
+  toast.classList.add("animate-slide-in");
+
+  // Hilang otomatis setelah 2.5 detik
+  setTimeout(() => {
+    toast.classList.add("hidden");
+    toast.classList.remove("animate-slide-in");
+  }, 2500);
+}
+
+// Event untuk semua tombol Tambah ke Keranjang
+document.querySelectorAll(".add-to-cart").forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    cartCount++;
+    cartCountEl.textContent = cartCount;
+    localStorage.setItem("cartCount", cartCount);
+
+    // animasi keranjang bounce
+    cartBtn.classList.add("animate-bounce");
+    setTimeout(() => cartBtn.classList.remove("animate-bounce"), 500);
+
+    // munculkan notifikasi
+    showToast("Produk berhasil ditambahkan ke keranjang!");
+  });
+});
+
+</script>
+
+
+
+
+</body>

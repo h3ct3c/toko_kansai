@@ -1,50 +1,44 @@
 <?php
 
-// app/Http/Controllers/CartController.php
 namespace App\Http\Controllers;
 
-use App\Models\Cart;
-use App\Models\CartItem;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
     public function index()
     {
-        $cart = Cart::with('items.product')->where('user_id', auth()->id())->first();
-
-        return view('cart.index', compact('cart'));
+        $cartItems = Cart::where('user_id', auth()->id())->with('product')->get();
+        return view('cart.index', compact('cartItems'));
     }
 
-    public function add(Request $request)
+    public function store(Request $request)
     {
-        $cart = Cart::firstOrCreate(['user_id' => auth()->id()]);
+        $cart = Cart::where('user_id', auth()->id())
+            ->where('product_id', $request->product_id)
+            ->first();
 
-        $item = CartItem::updateOrCreate(
-            [
-                'cart_id' => $cart->id,
-                'product_id' => $request->product_id
-            ],
-            [
-                'quantity' => \DB::raw("quantity + {$request->quantity}")
-            ]
-        );
-
-        return redirect()->route('cart.index');
-    }
-
-    public function remove($id)
-    {
-        CartItem::findOrFail($id)->delete();
-        return back();
-    }
-
-    public function clear()
-    {
-        $cart = Cart::where('user_id', auth()->id())->first();
         if ($cart) {
-            $cart->items()->delete();
+            $cart->increment('quantity');
+        } else {
+            Cart::create([
+                'user_id' => auth()->id(),
+                'product_id' => $request->product_id,
+                'quantity' => 1,
+            ]);
         }
-        return back();
+
+        return response()->json(['success' => true]);
+    }
+
+    public function destroy($id)
+    {
+        $cart = Cart::where('user_id', auth()->id())->where('id', $id)->first();
+        if ($cart) {
+            $cart->delete();
+        }
+
+        return response()->json(['success' => true]);
     }
 }
+

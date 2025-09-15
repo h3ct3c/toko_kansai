@@ -38,15 +38,48 @@
     </div>
 
     <!-- Tombol -->
-    <div class="mt-4">
-      <a href="propertyeks"
-         class="w-15px inline-flex justify-items-start items-center px-4 py-2 bg-blue-800 text-white font-semibold rounded-xl hover:bg-blue-500 transition">
+   <div class="mt-4">
+      <a href="javascript:void(0)"
+         class="add-to-cart inline-flex items-center px-4 py-2 bg-blue-800 text-white font-semibold rounded-xl hover:bg-blue-500 transition">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007.5 18h11a1 1 0 00.9-.55L21 13H7zm5 5a1 1 0 11-2 0 1 1 0 012 0zm8 0a1 1 0 11-2 0 1 1 0 012 0z" />
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007.5 18h11a1 1 0 00.9-.55L21 13H7zm5 5a1 1 0 11-2 0 1 1 0 012 0zm8 0a1 1 0 11-2 0 1 1 0 012 0z" />
         </svg>
         Tambah ke Keranjang
       </a>
     </div>
   </div>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // 🔥 reset ke 0 setiap kali halaman direfresh
+    let cartCount = 0;
+    localStorage.setItem("cartCount", cartCount);
+
+    const cartCountEl = document.getElementById("cart-count");
+    const cartBtn = document.getElementById("cart-btn");
+
+    // set tampilan awal
+    cartCountEl.textContent = cartCount;
+
+    // event untuk SEMUA tombol "Tambah ke Keranjang"
+    document.querySelectorAll(".add-to-cart").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        cartCount++;
+        cartCountEl.textContent = cartCount;
+
+        // simpan ke localStorage (walau akan reset saat reload)
+        localStorage.setItem("cartCount", cartCount);
+
+        // animasi bounce
+        cartBtn.classList.add("animate-bounce");
+        setTimeout(() => {
+          cartBtn.classList.remove("animate-bounce");
+        }, 500);
+      });
+    });
+  });
+</script>
+
