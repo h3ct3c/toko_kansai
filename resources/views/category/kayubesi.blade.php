@@ -37,6 +37,20 @@
     </a>
   </div>
 
+  <!-- ITEM 5 --> 
+  <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
+    <a href="propertyglozz">
+    <img src="/img/propertyglozz.png" alt="KANSAI PROPERTY GLOZZ"
+        class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
+    <div class="p-3 text-center">
+      <h3 class="text-sm text-gray-700 font-semibold">
+        KANSAI PROPERTY GLOZZ
+      </h3>
+      <p class="mt-3 text-sm text-red-500 font-semibold">RP.94,000</p>
+      <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
+    </div>
+    </a>
+  </div>
 </div>
   
 <div class="mb-96"></div>

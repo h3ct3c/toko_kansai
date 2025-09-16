@@ -18,10 +18,11 @@ class SearchController extends Controller
         } 
         // 3) Jika query ada -> filter pakai LIKE
         else {
-            $products = Product::where('name', 'LIKE', "%{$query}%")->get();
+            $products = Product::where('name','like','%'.$query.'%')->get();
         }
-
         // 4) Kirim data ke view product.blade.php
         return view('product', compact('products'));
     }
 }
+
+

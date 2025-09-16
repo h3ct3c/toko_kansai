@@ -89,17 +89,71 @@
     <div class="bg-[#ff4d4d] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#b30000] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
   </div>
 
   <div id="neutralRow" class="grid grid-cols-5 lg:grid-cols-7 gap-4 mt-4 hidden">
     <div class="bg-[#d9d9d9] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#a6a6a6] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
   </div>
 
   <div id="orangeRow" class="grid grid-cols-5 lg:grid-cols-7 gap-4 mt-4 hidden">
     <div class="bg-[#ffa500] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#ff8c00] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ffcc80] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ffcc80] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ffcc80] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ffcc80] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ffcc80] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ffcc80] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ffcc80] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ffcc80] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ffcc80] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ffcc80] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ffcc80] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ffcc80] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ffcc80] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ffcc80] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ffcc80] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ffcc80] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ffcc80] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ffcc80] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#ffcc80] h-[50px] md:h-[95px] rounded-md"></div>
   </div>
 
@@ -108,11 +162,47 @@
     <div class="bg-[#ddff01] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#efe124] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#efe256] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#efe256] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#efe256] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#efe256] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#efe256] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#efe256] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#efe256] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#efe256] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#efe256] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#efe256] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#efe256] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#efe256] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#efe256] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#efe256] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#efe256] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#efe256] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#efe256] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#efe256] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#efe256] h-[50px] md:h-[95px] rounded-md"></div>
   </div>
 
   <div id="greenRow" class="grid grid-cols-5 lg:grid-cols-7 gap-4 mt-4 hidden">
     <div class="bg-[#b2ff59] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#76ff03] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a8e6cf] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a8e6cf] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a8e6cf] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a8e6cf] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a8e6cf] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a8e6cf] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a8e6cf] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a8e6cf] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a8e6cf] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a8e6cf] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a8e6cf] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a8e6cf] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a8e6cf] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a8e6cf] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a8e6cf] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a8e6cf] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a8e6cf] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a8e6cf] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#a8e6cf] h-[50px] md:h-[95px] rounded-md"></div>
   </div>
 
@@ -120,11 +210,47 @@
     <div class="bg-[#1394fe] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#0059ff] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#70caf1] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#70caf1] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#70caf1] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#70caf1] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#70caf1] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#70caf1] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#70caf1] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#70caf1] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#70caf1] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#70caf1] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#70caf1] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#70caf1] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#70caf1] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#70caf1] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#70caf1] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#70caf1] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#70caf1] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#70caf1] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#70caf1] h-[50px] md:h-[95px] rounded-md"></div>
   </div>
 
   <div id="purpleRow" class="grid grid-cols-5 lg:grid-cols-7 gap-4 mt-4 hidden">
     <div class="bg-[#431de9] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#7153be] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
   </div>
 </div>

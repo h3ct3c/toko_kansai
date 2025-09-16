@@ -11,8 +11,8 @@
 
   @forelse($products ?? collect() as $product)
     <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-      <a href="{{ url('') }}">
-        <img src="{{ asset('img/'.$product->image) }}" 
+      <a href="{{ url('/  ') }}">
+        <img src="{{ asset('img/'.$product->image) }}"
              alt="{{ $product->name }}" 
              class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
         <div class="p-3 text-center">

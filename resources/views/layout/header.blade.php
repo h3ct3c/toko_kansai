@@ -23,9 +23,9 @@
 <div class="bg-gray-100 text-gray-600 text-[14px] font-normal">
   <div class="max-w-[1430px] mx-auto flex justify-end py-1">
     <div class="flex space-x-10">
-      <a href="#" class="hover:text-blue-600">Tentang Kami</a>
+      <a href="/tentangkami" class="hover:text-blue-600">Tentang Kami</a>
       <a href="/diskon" class="hover:text-blue-600">Diskon</a>
-      <a href="#" class="hover:text-blue-600">Help</a>
+      <a href="/help" class="hover:text-blue-600">Help</a>
       <a href="/login" class="hover:text-blue-600">Sign In</a>
     </div>
   </div>
@@ -36,11 +36,14 @@
 
     <!-- Logo -->
     <a href="/" class="flex items-center space-x-1 px-5">
-      <img src="/img/logo.png" class="h-14" alt="Kansai Paint Logo">
+      <img src="/img/logo.png" class="h-[53px]" alt="Kansai Paint Logo">
     </a>
 
     <!-- Menu -->
-    <ul class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-medium text-gray-700 mt-3 md:mt-0">
+    <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-gray-700 mt-3 md:mt-0">
+
+    <li class="relative group">
+        <a href="/" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Home</a>
 
       <li class="relative group">
         <a href="/product" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Product</a>
@@ -94,21 +97,21 @@
     </ul>
 
     <!-- Search + Cart + User -->
-    <div class="flex flex-wrap items-center gap-[29px] mt-3 md:mt-0">
+    <div class="flex flex-wrap items-center gap-[25px] mt-3 md:mt-0">
 
       <!-- Search -->
-<form action="{{ route('search') }}" method="GET" class="relative w-48 md:w-[810px]">
+<form action="{{ route('search') }}" method="GET" class="relative w-48 md:w-[260px]">
   <input
     type="text"
     name="query"
-    placeholder="Buruan Cari!"
-    class="w-full rounded-lg border border-gray-300 py-[9px] pl-10 pr-10 text-sm 
-           focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"
+    placeholder="What are you looking for?"
+    class="w-full rounded-full bg-gray-100 py-[10px] pl-12 pr-10 text-sm
+           focus:outline-none text-gray-600 hover:bg-gray-200 placeholder-gray-400"
     required/>
 
-  <!-- Tombol Search lebih ke tengah -->
+  <!-- Tombol Search di kiri -->
   <button type="submit" aria-label="Search"
-    class="absolute left-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-blue-900">
+    class="absolute left-4 top-1/2 -translate-y-1/2 text-black hover:text-blue-700 rounded-md">
     <svg xmlns="http://www.w3.org/2000/svg"
         class="h-5 w-5"
         fill="none"
@@ -121,7 +124,6 @@
     </svg>
   </button>
 </form>
-
 
       <!-- Cart -->
       <a href="/cart" aria-label="Shopping Cart"

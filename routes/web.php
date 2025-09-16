@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use function Pest\Laravel\post;
 use illuminate\Http\Middleware\AdminMiddleware;
-use App\Http\Controllers\ProductFrontController;
 use App\Http\Controllers\SearchController;
 
 // search
@@ -203,4 +202,10 @@ Route::get('tropic', function () {
 //diskon//
 Route::get('/diskon', function () {
     return view('pages.diskon');
+});
+
+//profile//
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
 });
