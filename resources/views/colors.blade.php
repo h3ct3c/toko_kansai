@@ -1,20 +1,18 @@
 @include("layout.header")
-@include("layout.banner")
 
-<div class="mb-44"></div>
-<div class="text-center">
-  <h2 class="text-3xl md:text-4xl font-bold font-display leading-tight text-blue-900">
-    Color Collection
-  </h2>
+<div class="bg-gradient-to-r from-blue-900 to-blue-700 shadow-md hover:shadow-lg shadow- transition transform hover:scale-105 justify-items-cente py-12">
+  <h1 class="text-4xl font-bold text-white text-center">Seluruh koleksi Warna</h1>
+  <p class="text-white text-center mt-4">Temukan Warna favorit Anda!  </p>
 </div>
+
 <div class="mb-24"></div>
 
 <div class="p-4 bg-[#f1f2f6] rounded-md">
   <!-- Grid kategori utama -->
-  <div class="grid grid-cols-5 lg:grid-cols-7 gap-4">
+  <div class="grid grid-cols-5 lg:grid-cols-7 gap-4 ">
 
     <!-- Neutral -->
-    <div class="bg-white shadow rounded-md border hover:border-navy cursor-pointer"
+    <div class="bg-white shadow rounded-md border hover:border-navy cursor-pointer hover:shadow-lg transition transform hover:scale-105"
          onclick="toggleRow('neutralRow')">
       <div class="h-[50px] md:h-[95px] rounded-md"
         style="background-color: rgb(181, 172, 150);"></div>
@@ -24,7 +22,7 @@
     </div>
 
     <!-- Red -->
-    <div class="bg-white shadow rounded-md border hover:border-navy cursor-pointer"
+    <div class="bg-white shadow rounded-md border hover:border-navy cursor-pointer hover:shadow-lg transition transform hover:scale-105"
          onclick="toggleRow('redRow')">
       <div class="h-[50px] md:h-[95px] rounded-md"
         style="background-color: rgb(237, 32, 36);"></div>
@@ -34,7 +32,7 @@
     </div>
 
     <!-- Orange -->
-    <div class="bg-white shadow rounded-md border hover:border-navy cursor-pointer"
+    <div class="bg-white shadow rounded-md border hover:border-navy cursor-pointer hover:shadow-lg transition transform hover:scale-105"
          onclick="toggleRow('orangeRow')">
       <div class="h-[50px] md:h-[95px] rounded-md"
         style="background-color: rgb(250, 164, 26);"></div>
@@ -44,7 +42,7 @@
     </div>
 
     <!-- Yellow -->
-    <div class="bg-white shadow rounded-md border hover:border-navy cursor-pointer"
+    <div class="bg-white shadow rounded-md border hover:border-navy cursor-pointer hover:shadow-lg transition transform hover:scale-105"
          onclick="toggleRow('yellowRow')">
       <div class="h-[50px] md:h-[95px] rounded-md"
         style="background-color: rgb(246, 235, 20);"></div>
@@ -54,7 +52,7 @@
     </div>
 
     <!-- Green -->
-    <div class="bg-white shadow rounded-md border hover:border-navy cursor-pointer"
+    <div class="bg-white shadow rounded-md border hover:border-navy cursor-pointer hover:shadow-lg transition transform hover:scale-105"
          onclick="toggleRow('greenRow')">
       <div class="h-[50px] md:h-[95px] rounded-md"
         style="background-color: rgb(11, 129, 64);"></div>
@@ -64,7 +62,7 @@
     </div>
 
     <!-- Blue -->
-    <div class="bg-white shadow rounded-md border hover:border-navy cursor-pointer"
+    <div class="bg-white shadow rounded-md border hover:border-navy cursor-pointer hover:shadow-lg transition transform hover:scale-105"
          onclick="toggleRow('blueRow')">
       <div class="h-[50px] md:h-[95px] rounded-md"
         style="background-color: rgb(57, 83, 164);"></div>
@@ -74,7 +72,7 @@
     </div>
 
     <!-- Purple -->
-    <div class="bg-white shadow rounded-md border hover:border-navy cursor-pointer"
+    <div class="bg-white shadow rounded-md border hover:border-navy cursor-pointer hover:shadow-lg transition transform hover:scale-105"
          onclick="toggleRow('purpleRow')">
       <div class="h-[50px] md:h-[95px] rounded-md"
         style="background-color: rgb(124, 39, 125);"></div>
@@ -86,7 +84,112 @@
 
   <!-- Grid turunan warna (row 2), default hidden -->
   <div id="redRow" class="grid grid-cols-5 lg:grid-cols-7 gap-4 mt-4 hidden">
-    <div class="bg-[#ff4d4d] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff4d4d] h-[50px] md:h-[95px] rounded-md">    </div>
+    <div class="bg-[#b30000] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff4d4d] h-[50px] md:h-[95px] rounded-md">    </div>
+    <div class="bg-[#b30000] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff4d4d] h-[50px] md:h-[95px] rounded-md">    </div>
+    <div class="bg-[#b30000] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff4d4d] h-[50px] md:h-[95px] rounded-md">    </div>
+    <div class="bg-[#b30000] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff4d4d] h-[50px] md:h-[95px] rounded-md">    </div>
+    <div class="bg-[#b30000] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#ff4d4d] h-[50px] md:h-[95px] rounded-md">    </div>
     <div class="bg-[#b30000] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#ff9999] h-[50px] md:h-[95px] rounded-md"></div>
@@ -112,6 +215,90 @@
   <div id="neutralRow" class="grid grid-cols-5 lg:grid-cols-7 gap-4 mt-4 hidden">
     <div class="bg-[#d9d9d9] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#a6a6a6] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#d9d9d9] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a6a6a6] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#d9d9d9] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a6a6a6] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#d9d9d9] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a6a6a6] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#a6a6a6] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#737373] h-[50px] md:h-[95px] rounded-md"></div>
@@ -234,12 +421,12 @@
     <div class="bg-[#431de9] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#7153be] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#5e1bab] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#37145e] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#d7cce3] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
-    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
-    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
-    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
-    <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
+    <div class="bg-[#470097] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
     <div class="bg-[#8b71a8] h-[50px] md:h-[95px] rounded-md"></div>
@@ -272,9 +459,9 @@
     [...items].forEach((item, i) => {
       item.style.opacity = 0;
       setTimeout(() => {
-        item.style.transition = "opacity 0.3s ease";
+        item.style.transition = "opacity 0,3s ease";
         item.style.opacity = 1;
-      }, i * 200);
+      }, i * 50);
     });
   }
 </script>

@@ -41,6 +41,11 @@
                 </a>
             @endif
 
+            <div class="flex items-center justify-end mt-4">
+            <a class="underline text-sm text-gray-600 hover:text-blue-700 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-900" href="{{ route('register') }}">
+                {{ __('you dont have acount?') }}
+            </a>
+
             <x-primary-button class="ms-4">
                 {{ __('Log in') }}
             </x-primary-button>

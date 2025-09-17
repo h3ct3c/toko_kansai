@@ -143,6 +143,98 @@
     </a>
   </div>
 </div>
+<div class="mb-32"></div>
+
+<!-- Testimonials -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Kata Customer begini sihh
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Testimonial 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex text-amber-400 mb-4">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+            </div>
+            <p class="text-gray-700 mb-6">
+              "Produk nya baguss ihh jadi pengen beli lagi dehh
+              times and have never been disappointed. The customer service!"
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 mr-4"
+              >
+                <i class="ri-user-3-line text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-900">Emily Richardson</h4>
+                <p class="text-sm text-gray-500">Loyal Customer</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex text-amber-400 mb-4">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-half-fill"></i>
+            </div>
+            <p class="text-gray-700 mb-6">
+              "Fast shipping and the products look exactly like the pictures.
+              The sizing guide was very helpful. Will definitely shop here
+              again!"
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 mr-4"
+              >
+                <i class="ri-user-3-line text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-900">Michael Thompson</h4>
+                <p class="text-sm text-gray-500">Verified Buyer</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex text-amber-400 mb-4">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+            </div>
+            <p class="text-gray-700 mb-6">
+              "I love the sustainable approach this brand takes. The packaging
+              is eco-friendly and the clothes are made from high-quality,
+              sustainable materials."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 mr-4"
+              >
+                <i class="ri-user-3-line text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-900">Sophia Martinez</h4>
+                <p class="text-sm text-gray-500">Repeat Customer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 <div class="mb-[360px]"></div>
 

@@ -11,11 +11,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Http;
 
 class RegisteredUserController extends Controller
 {
     /**
-     * Display the registration view.
+     * Show the registration form.
      */
     public function create(): View
     {
@@ -23,18 +24,36 @@ class RegisteredUserController extends Controller
     }
 
     /**
-     * Handle an incoming registration request.
-     *
-     * @throws \Illuminate\Validation\ValidationException
+     * Handle register request (with reCAPTCHA).
      */
     public function store(Request $request): RedirectResponse
     {
+        // validasi input dasar + captcha wajib ada
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'name' => ['required','string','max:255'],
+            'email' => ['required','string','email','max:255','unique:users,email'],
+            'password' => ['required','confirmed', Rules\Password::defaults()],
+            'g-recaptcha-response' => ['required'],
         ]);
 
+        // verifikasi token ke Google
+        $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+            'secret'   => config('services.recaptcha.secret'),
+            'response' => $request->input('g-recaptcha-response'),
+            'remoteip' => $request->ip(),
+        ]);
+
+        $result = $response->json();
+
+
+
+        if (!($result['success'] ?? false)) {
+            return back()->withErrors([
+                'g-recaptcha-response' => 'Captcha harus dicentang dulu.',
+            ])->withInput();
+        }
+
+        // buat user kalau captcha valid
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -45,6 +64,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('/', absolute: false));
+        return redirect()->route('dashboard'); // pastikan route ini ada
     }
 }
