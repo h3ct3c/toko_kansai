@@ -2,24 +2,21 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Color;
 
 class ColorSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        \App\Models\Color::insert([
-            ['name' => 'Neutral'], //1
-            ['name' => 'Red'], //2
-            ['name' => 'Orange'], //3
-            ['name' => 'Yellow'], //4
-            ['name' => 'Green'], //5
-            ['name' => 'Blue'], //6
-            ['name' => 'Purple'], //7
+        Color::insert([
+            ['id' => 1, 'name' => 'Merah'],
+            ['id' => 2, 'name' => 'Biru'],
+            ['id' => 3, 'name' => 'Hijau'],
+            ['id' => 4, 'name' => 'Putih'],
+            ['id' => 5, 'name' => 'Hitam'],
+            ['id' => 6, 'name' => 'Abu-abu'],
+            ['id' => 7, 'name' => 'Kuning'],
         ]);
     }
 }

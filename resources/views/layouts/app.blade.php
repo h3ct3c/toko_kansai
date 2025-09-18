@@ -1,178 +1,69 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="id">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
-    <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-    <script src="https://kit.fontawesome.com/42e5c9abf2.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kansai Paint</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="{{ asset('img/logo.png') }}">
 </head>
-<body class="font-sans antialiased bg-gray-100">
+<body class="bg-gray-50 text-gray-800">
 
- 
+    {{-- 🔹 Navbar --}}
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            {{-- Logo --}}
+            <a href="{{ url('/') }}" class="flex items-center space-x-2">
+                <img src="{{ asset('img/logo.png') }}" alt="Logo" class="h-8">
+                <span class="font-bold text-lg text-blue-700">KANSAI PAINT</span>
+            </a>
 
-<div class="min-h-screen flex flex-col">
+            {{-- Menu --}}
+            <div class="hidden md:flex space-x-6">
+                <a href="{{ url('/') }}" class="hover:text-blue-600">Beranda</a>
+                <a href="{{ url('/product') }}" class="hover:text-blue-600">Produk</a>
+                <a href="{{ url('/warna') }}" class="hover:text-blue-600">Warna</a>
+            </div>
 
-    <!-- 🔹 Navbar -->
-    <header class="bg-white shadow flex justify-between items-center px-6 py-4">
-        <div class="flex items-center space-x-3">
-            <!-- Tombol toggle sidebar -->
-            <button id="sidebarToggle" class="text-blue-800 focus:outline-none">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
+            {{-- Icon kanan --}}
+            <div class="flex items-center space-x-4">
+                {{-- Cart --}}
+                <a href="{{ route('cart.index') }}" id="cart-btn" class="relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700 hover:text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007.5 18h11a1 1 0 00.9-.55L21 13H7zm5 5a1 1 0 11-2 0 1 1 0 012 0zm8 0a1 1 0 11-2 0 1 1 0 012 0z" />
+                    </svg>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full">
+                        0
+                    </span>
+                </a>
 
-            <img src="img/logo.png"  class="h-14" alt="Kansai Paint Logo">
-        
-        
-        </div>
-
-        <!-- User Dropdown -->
-        <div class="relative">
-            @auth
-                <button id="userMenuButton" class="flex items-center space-x-2 focus:outline-none">
-                    <span class="text-gray-700">{{ Auth::user()->name }}</span>
-                    <i class="fas fa-chevron-down text-sm"></i>
-                </button>
-                <div id="userDropdown"
-                    class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg hidden z-50">
-                    <a href="{{ route('profile.edit') }}"
-                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-                        <i class="fas fa-user mr-2"></i> Profile
-                    </a>
-                    <form method="POST" action="{{ route('logout') }}">
+                {{-- User --}}
+                @guest
+                    <a href="{{ route('login') }}" class="px-3 py-1 border rounded hover:bg-gray-100">Masuk</a>
+                    <a href="{{ route('register') }}" class="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">Daftar</a>
+                @else
+                    <span class="font-semibold">{{ auth()->user()->name }}</span>
+                    <form action="{{ route('logout') }}" method="POST" class="inline">
                         @csrf
-                        <button type="submit"
-                                class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100">
-                            <i class="fas fa-sign-out-alt mr-2"></i> Logout
-                        </button>
+                        <button type="submit" class="px-3 py-1 border rounded hover:bg-gray-100">Keluar</button>
                     </form>
-                </div>
-            @else
-                <a href="{{ route('login') }}" class="text-blue-600 font-semibold">Login</a>
-            @endauth
+                @endguest
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- 🔹 Layout -->
-    <div class="flex flex-1">
- 
-    
-    <!-- Sidebar -->
-<aside class="w-64 bg-blue-900 text-white min-h-screen flex flex-col">
-<div class="p-4 font-bold text-lg flex items-center">
-    <span class="ml-1 mt-4"></span>
-</div>
+    {{-- 🔹 Konten halaman --}}
+    <main class="min-h-screen container mx-auto px-6 py-8">
+        @yield('content')
+    </main>
 
-<nav class="flex-1 space-y-2">
-    <!-- Dashboard -->
-    <a href="/user_manage" class="nav-link block py-3 px-6 hover:text-blue-600 rounded-lg flex items-center gap-3">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16" fill="currentColor">
-        <path d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z"/>
-        <path d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z"/>
-    </svg>
-    <span class="text-sm font-medium">User Manage</span>
-    </a>
+    {{-- 🔹 Footer --}}
+    <footer class="bg-gray-900 text-gray-300 py-6 mt-10">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; {{ date('Y') }} Kansai Paint. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
 
-    <!-- Product -->
-    <a href="/product_crud" class="nav-link block py-6 px-6 hover:text-blue-600 rounded-lg flex items-center gap-3">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <polygon points="22 7 12 2 2 7 2 17 12 22 22 17" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/>
-        <line x1="2" y1="7" x2="12" y2="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-        <line x1="12" y1="22" x2="12" y2="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-        <line x1="22" y1="7" x2="12" y2="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-        <line x1="17" y1="4.5" x2="7" y2="9.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-    </svg>
-    <span class="text-sm font-medium">Products</span>
-    </a>
-
-    <!-- Orders -->
-    <a href="/orders" class="nav-link block py-6 px-6 hover:text-blue-600 rounded-lg flex items-center gap-3">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024" fill="currentColor">
-        <path d="M53.6 1023.2c-6.4 0-12.8-2.4-17.6-8-4.8-4.8-7.2-11.2-6.4-18.4L80 222.4c0.8-12.8 11.2-22.4 24-22.4h211.2v-3.2c0-52.8 20.8-101.6 57.6-139.2C410.4 21.6 459.2 0.8 512 0.8c108 0 196.8 88 196.8 196.8v0.8H920c12.8 0 23.2 9.6 24 22.4l49.6 768.8c0.8 2.4 0.8 4 0.8 6.4-0.8 13.6-11.2 24.8-24.8 24.8H53.6z"/>
-    </svg>
-    <span class="text-sm font-medium">Orders</span>
-    </a>
-
-    <!-- Analytics -->
-    <a href="/analytics" class="nav-link block py-6 px-6 hover:text-blue-600 rounded-lg flex items-center gap-3">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32" fill="currentColor">
-        <rect height="10" width="6" x="17" y="17" rx="1"/>
-        <rect height="16" width="6" x="25" y="11" rx="1"/>
-        <rect height="12" width="6" x="9" y="15" rx="1"/>
-        <rect height="7" width="6" x="1" y="20" rx="1"/>
-    </svg>
-    <span class="text-sm font-medium">Analytics</span>
-    </a>
-
-    <!-- Settings -->
-    <a href="/settings" class="nav-link block py-6 px-6 hover:text-blue-600 rounded-lg flex items-center gap-3">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024" fill="currentColor">
-        <path d="M600.704 64a32 32 0 0 1 30.464 22.208l35.2 109.376c14.784 7.232 28.928 15.36 42.432 24.512l112.384-24.192a32 32 0 0 1 34.432 15.36L944.32 364.8a32 32 0 0 1-4.032 37.504l-77.12 85.12a357.12 357.12 0 0 1 0 49.024l77.12 85.248a32 32 0 0 1 4.032 37.504l-88.704 153.6a32 32 0 0 1-34.432 15.296L708.8 803.904c-13.44 9.088-27.648 17.28-42.368 24.512l-35.264 109.376A32 32 0 0 1 600.704 960H423.296a32 32 0 0 1-30.464-22.208L357.696 828.48a351.616 351.616 0 0 1-42.56-24.64l-112.32 24.256a32 32 0 0 1-34.432-15.36L79.68 659.2a32 32 0 0 1 4.032-37.504l77.12-85.248a357.12 357.12 0 0 1 0-48.896l-77.12-85.248A32 32 0 0 1 79.68 364.8l88.704-153.6a32 32 0 0 1 34.432-15.296l112.32 24.256c13.568-9.152 27.776-17.408 42.56-24.64l35.2-109.312A32 32 0 0 1 423.232 64H600.64zM512 320a192 192 0 1 1 0 384 192 192 0 0 1 0-384z"/>
-    </svg>
-    <span class="text-sm font-medium">Settings</span>
-    </a>
-</nav>
-</div>
-</div>
- <!-- Konten Utama -->
-        <main class="flex-1 p-6">
-        HAI AKU DISINI
-        </main>
-
-<script>
-    // 🔹 Dropdown User
-    const userMenuButton = document.getElementById('userMenuButton');
-    const userDropdown = document.getElementById('userDropdown');
-    if (userMenuButton) {
-        userMenuButton.addEventListener('click', () => {
-            userDropdown.classList.toggle('hidden');
-        });
-        window.addEventListener('click', (e) => {
-            if (!userMenuButton.contains(e.target) && !userDropdown.contains(e.target)) {
-                userDropdown.classList.add('hidden');
-            }
-        });
-    }
-
-    // // Sidebar Toggle
-const sidebar = document.getElementById('sidebar');
-const sidebarToggle = document.getElementById('sidebarToggle');
-const sidebarText = document.querySelectorAll('.sidebar-text');
-const tooltips = document.querySelectorAll('.tooltip');
-
-sidebarToggle.addEventListener('click', () => {
-    sidebar.classList.toggle('w-64');
-    sidebar.classList.toggle('w-20');
-
-    sidebarText.forEach(el => {
-        el.classList.toggle('hidden');
-    });
-
-    // kalau collapse → tooltip aktif, kalau expand → tooltip hilang
-    if (sidebar.classList.contains('w-20')) {
-        tooltips.forEach(el => {
-            el.classList.remove('hidden');
-        });
-    } else {
-        tooltips.forEach(el => {
-            el.classList.add('hidden');
-        });
-    }
-});
-
-</script>
 </body>
 </html>

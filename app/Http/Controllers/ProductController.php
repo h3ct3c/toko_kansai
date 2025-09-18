@@ -48,7 +48,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('ftalitduo', compact('product'));
+        return view('product_crud.show', compact('product'));
     }
 
     /**
@@ -90,9 +90,9 @@ class ProductController extends Controller
     }
 }
 
-public function index()
-{
+    function index()
+    {
     $products = Product::all();
     return view('product', compact('products'));
-}
+    } 
 

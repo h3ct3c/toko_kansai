@@ -123,25 +123,25 @@ Route::get('/sheen', function () {
 
 //pages//
 Route::get('/pages', function () {
-    return view('pages');
+    return view('pages.index');
 });
 
 Route::get('/cart', function () {
-    return view('pages/cart');
+    return view('pages.cart');
 });
 
 Route::get('/checkout', function () {
-    return view('pages/checkout');
+    return view('pages.checkout');
 });
 
 Route::get('/payment success', function () {
-    return view('pages/payment success');
+    return view('pages.payment success');
 });
 
 
 
 Route::get('/order history', function () {
-    return view('pages/order history');
+    return view('pages.order history');
 });
 
 //product
@@ -152,11 +152,6 @@ Route::get('/products', [ProductController::class, 'index']);
 Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
 
 
-    // Rute untuk Halaman Utama Dashboard
-    Route::get('/', function () {
-        return view('admin.index'); 
-    })->name('admin.index');
-});
 
 // DETAIL PRODUK
 Route::get('ftalitduo', function () {
@@ -226,7 +221,7 @@ Route::middleware('auth')->group(function () {
 
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('layouts.dashboard');
 })->name('dashboard');
 
 
@@ -238,3 +233,26 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/add/{id}', [CartController::class, 'addToCart'])->name('cart.add');
+Route::patch('/cart/update/{id}', [CartController::class, 'updateQuantity'])->name('cart.update');
+Route::delete('/cart/remove/{id}', [CartController::class, 'removeItem'])->name('cart.remove');
+
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::post('/cart/add/{productId}', [CartController::class, 'addToCart'])
+        ->name('cart.add');
+});
+
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/add/{productId}', [CartController::class, 'addToCart'])->name('cart.add');
+Route::put('/cart/update/{id}', [CartController::class, 'updateQuantity'])->name('cart.update');
+Route::delete('/cart/remove/{id}', [CartController::class, 'removeItem'])->name('cart.remove');
+
+
+
+
+Route::post('/cart/add/{id}', [CartController::class, 'addToCart'])->name('cart.add');
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');

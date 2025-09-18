@@ -2,21 +2,18 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Category;
 
 class CategorySeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        \App\Models\Category::insert([
-            ['name' => 'Eksterior'],
-            ['name' => 'Interior'],
-            ['name' => 'Kayu & Besi'],
-            ['name' => 'Premium'],
+        Category::insert([
+            ['id' => 1, 'name' => 'Interior'],
+            ['id' => 2, 'name' => 'Eksterior'],
+            ['id' => 3, 'name' => 'Premium'],
+            ['id' => 4, 'name' => 'Kayu & Besi'],
         ]);
     }
 }

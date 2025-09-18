@@ -29,10 +29,10 @@
         <div class="mb-5">
           <label for="name" class="font-semibold">Name</label>
           <input type="text" 
-                 name="name" 
-                 value="{{ old('name') }}" 
-                 required
-                 class="form-control block w-135 px-3 py-1.5 text-base font-normal text-gray-700 
+                name="name" 
+                value="{{ old('name') }}" 
+                required
+                class="form-control block w-135 px-3 py-1.5 text-base font-normal text-gray-700 
                         bg-white border border-gray-400 rounded-lg transition ease-in-out
                         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mt-4" />
           @error('name')
@@ -44,10 +44,10 @@
         <div class="mb-5">
           <label for="category" class="font-semibold">Category</label>
           <input type="text" 
-                 name="category" 
-                 value="{{ old('category') }}" 
-                 required
-                 class="form-control block w-135 px-3 py-1.5 text-base font-normal text-gray-700 
+                name="category" 
+                value="{{ old('category') }}" 
+                required
+                class="form-control block w-135 px-3 py-1.5 text-base font-normal text-gray-700 
                         bg-white border border-gray-400 rounded-lg transition ease-in-out
                         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mt-4" />
           @error('category')
@@ -59,10 +59,10 @@
         <div class="mb-5">
           <label for="color" class="font-semibold">Color</label>
           <input type="text" 
-                 name="color" 
-                 value="{{ old('color') }}" 
-                 required
-                 class="form-control block w-135 px-3 py-1.5 text-base font-normal text-gray-700 
+                name="color" 
+                value="{{ old('color') }}" 
+                required
+                class="form-control block w-135 px-3 py-1.5 text-base font-normal text-gray-700 
                         bg-white border border-gray-400 rounded-lg transition ease-in-out
                         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mt-4" />
           @error('color')
@@ -74,10 +74,10 @@
         <div class="mb-5">
           <label for="price" class="font-semibold">Price</label>
           <input type="text" 
-                 name="price" 
-                 value="{{ old('price') }}" 
-                 required
-                 class="form-control block w-135 px-3 py-1.5 text-base font-normal text-gray-700 
+                name="price" 
+                value="{{ old('price') }}" 
+                required
+                class="form-control block w-135 px-3 py-1.5 text-base font-normal text-gray-700 
                         bg-white border border-gray-400 rounded-lg transition ease-in-out
                         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mt-4" />
           @error('price')
@@ -89,10 +89,10 @@
         <div class="mb-5">
           <label for="stock" class="font-semibold">Stock</label>
           <input type="text" 
-                 name="stock" 
-                 value="{{ old('stock') }}" 
-                 required
-                 class="form-control block w-135 px-3 py-1.5 text-base font-normal text-gray-700 
+                name="stock" 
+                value="{{ old('stock') }}" 
+                required
+                class="form-control block w-135 px-3 py-1.5 text-base font-normal text-gray-700 
                         bg-white border border-gray-400 rounded-lg transition ease-in-out
                         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mt-4" />
           @error('stock')

@@ -7,30 +7,30 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    use HasFactory;
+    use HasFactory; 
+
     protected $fillable = [
         'name',
-        'image',
+        'image_url',
         'description',
-        'price',
-        'stock',
+        'price',    
+        'stock',      
         'category_id',
-        'color_id'
+        'color_id',
     ];
 
     public function category()
     {
-        return $this->belongsTo(Category::class, 'category_id');
-    }
-    
-    public function orders()
-    {
-        return $this->belongsToMany(Order::class, 'order_product')->withPivot('quantity');
-    
+        return $this->belongsTo(Category::class);
     }
 
     public function color()
     {
         return $this->belongsTo(Color::class);
     }
-} 
+
+    public function cartItems()
+    {
+        return $this->hasMany(CartItem::class);
+    }
+}

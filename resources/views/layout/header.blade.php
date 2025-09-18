@@ -19,18 +19,6 @@
 </head>
 <body class="bg-white font-sans text-gray-700">
 
-  <!-- Topbar -->
-<div class="bg-gray-100 text-gray-600 text-[14px] font-normal">
-  <div class="max-w-[1430px] mx-auto flex justify-end py-1">
-    <div class="flex space-x-10">
-      <a href="#" class="hover:text-blue-600">Tentang Kami</a>
-      <a href="/diskon" class="hover:text-blue-600">Diskon</a>
-      <a href="#" class="hover:text-blue-600">Help</a>
-      <a href="/login" class="hover:text-blue-600">Sign In</a>
-    </div>
-  </div>
-</div>
-
   <!-- Navbar -->
   <nav class="w-full flex flex-wrap items-center justify-between px-8 py-2 shadow-sm sticky top-0 bg-white z-50">
 
@@ -64,51 +52,8 @@
     </ul>
 
 
-    <!-- Menu -->
-    <ul class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-medium text-gray-700 mt-3 md:mt-0">
+  
 
-      <li class="relative group">
-        <a href="/product" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Product</a>
-
-        <!-- Dropdown Product -->
-        <div class="fixed left-0 hidden group-hover:flex bg-white shadow-lg rounded-lg mt-2 w-full p-8">
-          <div class="grid grid-cols-4 gap-2 max-w-4xl mx-auto">
-            
-            <!-- Kolom 1 -->
-            <div>
-              <h3 class="font-bold text-blue-900 text-[15px] mb-2">Kategori Utama</h3>
-              <ul class="space-y-2">
-                <li><a href="/interior" class="block text-gray-600 hover:text-blue-700">Interior</a></li>
-                <li><a href="/eksterior" class="block text-gray-600 hover:text-blue-700">Eksterior</a></li>
-                <li><a href="/kayubesi" class="block text-gray-600 hover:text-blue-700">Kayu & Besi</a></li>
-                <li><a href="/premium" class="block text-gray-600 hover:text-blue-700">Premium</a></li>
-              </ul>
-            </div>
-
-         
-
-            <!-- Kolom 3 -->
-            <div>
-              <h3 class="font-bold text-blue-900 text-[15px] mb-2">Koleksi Favorit</h3>
-              <ul class="space-y-2">
-                <li><a href="#" class="block text-gray-600 hover:text-blue-700">Best Seller</a></li>
-                <li><a href="#" class="block text-gray-600 hover:text-blue-700">Limited Edition</a></li>
-              </ul>
-            </div>
-
-            <!-- Kolom 4 (gambar/teaser) -->
-            <div class="relative text-[15px]">
-              <img src="https://via.placeholder.com/200x120" alt="Promo" class="rounded-md object-cover">
-              <p class="mt-2 text-sm text-gray-500">Promo spesial untuk cat premium</p>
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <li>
-        <a href="/colors" class="nav-link block py-2 px-1 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Colors</a>
-      </li>
-    </ul>
 
     <!-- Search + Cart + User -->
     <div class="flex flex-wrap items-center gap-[29px] mt-3 md:mt-0">
@@ -126,29 +71,8 @@
 </form>
 
 
-      <!-- Cart -->
-
-      <a href="/cart" aria-label="Shopping Cart"
-        class="p-2 rounded-lg focus:outline-none flex items-center space-x-2 
-               text-blue-900 hover:text-blue-900 hover:bg-gray-300">
-        <svg xmlns="http://www.w3.org/2000/svg" 
-             width="28" height="28" viewBox="0 0 24 24" fill="none"
-             class="stroke-current">
-          <path d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.5523 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z" 
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-
-      <!-- User Dropdown -->
-      <div class="relative inline-block text-center">
-        <button id="dropdownButton"
-          class="p-2 rounded-lg focus:outline-none focus:ring-2 text-blue-900 
-                 focus:ring-blue-900 hover:text-blue-900 hover:bg-gray-300">
-          <svg xmlns="http://www.w3.org/2000/svg"
-              class="w-6 h-6"
-              viewBox="0 0 16 16"
-              fill="currentColor">
-
+  
+              <!--cart-->
       <a href="/cart">
         <button id="cart-btn" aria-label="Shopping Cart"
           class="relative p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 flex items-center 
