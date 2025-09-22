@@ -70,10 +70,6 @@
 
 <div class="mb-[140px]"></div>
 
-
-
-<div class="mb-[180px]"></div>
-
 <!-- Produk Unggulan -->
 <div class="text-center">
   <div class="text-4xl font-bold mb-20 text-blue-900">Produk Unggulan</div>

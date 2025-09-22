@@ -150,6 +150,12 @@ Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () 
     })->name('admin.index');
 });
 
+Route::middleware(['auth', 'is_admin'])->group(function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'index'])
+        ->name('dashboard');
+});
+
+
 // DETAIL PRODUK
 Route::get('ftalitduo', function () {
     return view('detail.ftalitduo');
@@ -204,8 +210,8 @@ Route::get('/diskon', function () {
     return view('pages.diskon');
 });
 
-//profile//
-Route::middleware(['auth'])->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');    // lihat profil
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit'); // form edit
+    Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update'); // simpan perubahan
 });

@@ -3,41 +3,49 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
-    public function edit()
+    // Tampilkan halaman profil (GET /profile)
+    public function show()
     {
-        return view('profile.edit', ['user' => Auth::user()]);
+        $user = Auth::user();
+        return view('profile.show', compact('user'));
     }
 
+    // Form edit (GET /profile/edit)
+    public function edit()
+    {
+        $user = Auth::user();
+        return view('profile.edit', compact('user'));
+    }
+
+    // Simpan perubahan (PUT /profile)
     public function update(Request $request)
     {
         $user = Auth::user();
 
         $request->validate([
             'name' => 'required|string|max:255',
-            'phone' => 'nullable|string|max:20',
-            'password' => 'nullable|string|min:6|confirmed',
-            'avatar' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
+            'avatar' => 'nullable|image|mimes:jpg,jpeg,png,gif,webp|max:2048',
         ]);
 
-        $user->name = $request->name;
-        $user->phone = $request->phone;
-
-        if ($request->filled('password')) {
-            $user->password = Hash::make($request->password);
-        }
+        $user->name = $request->input('name');
 
         if ($request->hasFile('avatar')) {
+            // hapus lama kalau ada
+            if ($user->avatar && Storage::disk('public')->exists($user->avatar)) {
+                Storage::disk('public')->delete($user->avatar);
+            }
+            // simpan baru
             $path = $request->file('avatar')->store('avatars', 'public');
             $user->avatar = $path;
         }
 
         $user->save();
 
-        return back()->with('success', 'Profile updated!');
+        return redirect()->route('profile.show')->with('success', 'Profil berhasil diperbarui.');
     }
 }
