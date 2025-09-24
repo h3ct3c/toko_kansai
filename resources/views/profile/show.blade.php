@@ -12,7 +12,7 @@
     <img
       src="{{ $user->avatar ? asset('storage/'.$user->avatar) : asset('images/default-avatar.png') }}"
       alt="avatar"
-      class="w-24 h-24 rounded-full object-cover"
+      class="w-16 h-16 rounded-full object-cover"
     >
   </div>
 
@@ -24,6 +24,6 @@
     <strong>Email:</strong> {{ $user->email }}
   </div>
 
-  <a href="{{ route('profile.edit') }}" class="text-blue-600">Edit Profil</a>
+  <a href="{{ route('profile.edit') }}" class="text-blue-600 border rounded-lg">Edit Profil</a>
 </div>
 @endsection

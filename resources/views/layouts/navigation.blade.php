@@ -88,6 +88,7 @@
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
+                    @method('DELETE')
 
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
