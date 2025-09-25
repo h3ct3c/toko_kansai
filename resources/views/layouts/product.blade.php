@@ -22,22 +22,22 @@
       </div>
 
       <!-- Grid Produk -->
-      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 p-6">
 
 
-        <!-- Card 1 -->
-      @include('card.spleshglimmer')
-      @include('card.pearlsheen')
-      @include('card.diamondshield')
-      @include('card.antimosquito')
-      @include('card.tropic')
-      @include('card.propertyint')
-      @include('card.propertyeks')
-      @include('card.splesh')     
-      @include('card.rainblock')
-      @include('card.ftalit')
-      @include('card.ftalitduo')
-     
+        <!-- Card -->
+      @include('products.spleshglimmer')
+      @include('products.pearlsheen')
+      @include('products.diamondshield')
+      @include('products.antimosquito')
+      @include('products.tropic')
+      @include('products.propertyint')
+      @include('products.propertyeks')
+      @include('products.splesh')     
+      @include('products.rainblock')
+      @include('products.ftalit')
+      @include('products.ftalitduo')
+    
 
   <!-- Simple JS: kategori filter + active button styling -->
   <script>

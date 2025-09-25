@@ -22,7 +22,6 @@
 </head>
 <body class="font-sans antialiased bg-gray-100">
 
- 
 
 <div class="min-h-screen flex flex-col">
 
@@ -66,6 +65,8 @@
         </div>
     </header>
 
+
+    
     <!-- 🔹 Layout -->
     <div class="flex flex-1">
  
@@ -128,14 +129,14 @@
 </div>
 </div>
  <!-- Konten Utama -->
-        <main class="flex-1 p-6">
-        HAI AKU DISINI
-        </main>
+       
 
 
         @if(session('success'))
     <div class="fixed top-5 right-5 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg">
         {{ session('success') }}
+
+        
     </div>
 @endif
 

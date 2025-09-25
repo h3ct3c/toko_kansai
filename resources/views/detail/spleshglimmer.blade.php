@@ -18,10 +18,10 @@
         <div class="flex gap-4 py-4 justify-center overflow-x-auto">
           @php
               $thumbnails = [
-                  "/img/ftalitduo.png",
-                  "/img/ftalitduo.png",
-                  "/img/ftalitduo.png",
-                  "/img/ftalitduo.png",
+                  "/img/spleshglimmer.png",
+                  "/img/spleshglimmer.png",
+                  "/img/spleshglimmer.png",
+                  "/img/spleshglimmer.png",
               ];
           @endphp
 
@@ -70,9 +70,7 @@
         
         <!-- Description -->
         <p class="text-gray-700 mb-6">
-          KANSAI FTALIT DUO adalah cat sintetis 2 IN 1 berkualitas yang memadukan cat dasar besi anti-karat dan cat akhir. 
-          KANSAI FTALIT DUO bisa langsung digunakan untuk mengecat permukaan besi dan kayu. Dengan fitur yang lebih praktis, 
-          mengecat menjadi lebih hemat waktu, hemat tenaga, dan hemat biaya.
+          KANSAI SPLESH GLIMMER adalah cat warna premium yang memberikan hasil akhir yang mengkilap seperti biru, cepat kering dan tahan lama. Segera beli KANSAI SPLESH GLIMMER sekarang juga!
         </p>
 
         <!-- Color Options -->
@@ -185,71 +183,7 @@
 <!-- Related Products -->
 <div class="mt-3 max-w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-2 gap-y-12 justify-items-center">
 
-  <!-- ITEM 1 -->
-  <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="ftalitduo">
-      <img src="/img/KANSAI FTALIT DUO.png" alt="KANSAI FTALIT DUO"
-          class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
-      <div class="p-3 text-center">
-        <h3 class="text-sm text-gray-700 font-semibold">KANSAI FTALIT DUO</h3>
-        <p class="mt-3 text-sm text-red-500 font-semibold">Rp.100,000</p>
-        <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
-      </div>
-    </a>
   </div>
-
-  <!-- ITEM 2 -->
-  <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <img src="/img/KANSAI GLIMMER.png" alt="KANSAI SPLESH GLIMMER"
-        class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
-    <div class="p-3 text-center">
-      <h3 class="text-sm text-gray-700 font-semibold">
-        <a href="/cart">KANSAI SPLESH GLIMMER</a>
-      </h3>
-      <p class="mt-3 text-sm text-red-500 font-semibold">Rp.100,000</p>
-      <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐</p>
-    </div>
-  </div>
-
-  <!-- ITEM 3 -->
-  <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <img src="/img/SPLESH Kaleng Plastik 2,5 L - Copy.png" alt="KANSAI SPLESH"
-        class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
-    <div class="p-3 text-center">
-      <h3 class="text-sm text-gray-700 font-semibold">
-        <a href="#">KANSAI SPLESH</a>
-      </h3>
-      <p class="mt-3 text-sm text-red-500 font-semibold">Rp.100,000</p>
-      <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐</p>
-    </div>
-  </div>
-
-  <!-- ITEM 4 -->
-  <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <img src="/img/Kansai-Diamond-Shield.png" alt="KANSAI DIAMOND SHIELD"
-         class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
-    <div class="p-3 text-center">
-      <h3 class="text-sm text-gray-700 font-semibold">
-        <a href="/">KANSAI DIAMOND SHIELD 12-IN-1</a>
-      </h3>
-      <p class="mt-3 text-sm text-red-500 font-semibold">Rp.100,000</p>
-      <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
-    </div>
-  </div>
-
-  <!-- ITEM 5 -->
-  <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-    <a href="detail.\\ftalitduo">
-      <img src="/img/KANSAI FTALIT DUO.png" alt="KANSAI FTALIT DUO"
-           class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
-      <div class="p-3 text-center">
-        <h3 class="text-sm text-gray-700 font-semibold">KANSAI FTALIT DUO</h3>
-        <p class="mt-3 text-sm text-red-500 font-semibold">Rp.100,000</p>
-        <p class="mt-1 text-sm font-medium text-gray-900">⭐⭐⭐⭐⭐</p>
-      </div>
-    </a>
-  </div>
-</div>
 
 <div class="mb-96"></div>
 

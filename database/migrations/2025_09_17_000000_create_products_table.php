@@ -12,7 +12,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');                               // Nama produk
             $table->string('image_url')->nullable();  
-            $table->text('description')->nullable();            
             $table->decimal('price', 12, 2);       // Harga
             $table->integer('stock')->default(0);          // Stok
             $table->unsignedBigInteger('category_id');            // Relasi ke categories

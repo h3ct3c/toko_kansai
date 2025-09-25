@@ -27,11 +27,6 @@ Route::get('cart', [CartController::class, 'index'])->name('cart.index');
 // search
 Route::get('/search', [SearchController::class, 'index']);
 Route::get('/search', [SearchController::class, 'index'])->name('search');
-Route::get('/', function () {
-    $products = Product::all();          // ambil semua product dari DB
-    return view('product', compact('products'));
-});
-
 Route::get('/search', [SearchController::class, 'index'])->name('search');
 
 
@@ -70,20 +65,20 @@ Route::get('/', function () {
 
 //homepage//
 Route::get('/product', function () {
-    return view('product');
+    return view('layouts.product');
 });
 
 Route::get('/colors', function () {
-    return view('colors');
+    return view('layouts.colors');
 });
 
 Route::get('/cart', function () {
-    return view('cart');
+    return view('cart.index');
 })->name('cart');
 
 //utama //homepage setelah login
 Route::get('/', function () {
-return view('home');  
+return view('layouts.app');  
 });
 
 //kategori//
@@ -103,28 +98,13 @@ Route::get('/kayubesi', function () {
     return view('category.kayubesi');
 });
 
-//finishing//
-Route::get('/gloss', function () {
-    return view('finishing.gloss');
-});
 
-Route::get('/matt', function () {
-    return view('finishing.matt');
-});
-
-Route::get('/sheen', function () {
-    return view('finishing.sheen');
-});
 
 // dropdown kategori
 
 
 
 
-//pages//
-Route::get('/pages', function () {
-    return view('pages.index');
-});
 
 Route::get('/cart', function () {
     return view('pages.cart');
@@ -145,11 +125,11 @@ Route::get('/order history', function () {
 });
 
 //product
-Route::get('/products', [ProductController::class, 'index']);
+
 
 
 // ketika mengisi form login untuk admin maka diarahkan ke dashboard admin
-Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
+
 
 
 
@@ -256,3 +236,37 @@ Route::delete('/cart/remove/{id}', [CartController::class, 'removeItem'])->name(
 
 Route::post('/cart/add/{id}', [CartController::class, 'addToCart'])->name('cart.add');
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+
+
+
+Route::post('/cart/add/{product}', [CartController::class, 'add'])->name('cart.add');
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::patch('/cart/update/{item}', [CartController::class, 'updateQuantity'])->name('cart.updateQuantity');
+Route::delete('/cart/remove/{item}', [CartController::class, 'removeItem'])->name('cart.removeItem');
+
+
+
+
+// Admin CRUD
+Route::resource('product_crud', ProductController::class);
+// Frontend product list
+Route::get('/products', [ProductController::class, 'productList'])->name('products.index');
+
+
+
+
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::post('/cart/store', [CartController::class, 'store'])->name('cart.store');
+
+
+
+// Admin
+Route::resource('product_crud', ProductController::class)->middleware('auth');
+
+// Frontend (user)
+Route::get('/products', [ProductController::class, 'productList'])->name('products.index');
+
+
+
+
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('products.show');

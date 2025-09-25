@@ -19,7 +19,7 @@
       <div class="h-[50px] md:h-[95px] rounded-md"
         style="background-color: rgb(181, 172, 150);"></div>
       <div class="p-3 hidden md:block">
-        <p class="text-sm">Neutral</p>
+        <p class="text-sm">Netral</p>
       </div>
     </div>
 
@@ -29,7 +29,7 @@
       <div class="h-[50px] md:h-[95px] rounded-md"
         style="background-color: rgb(237, 32, 36);"></div>
       <div class="p-3 hidden md:block">
-        <p class="text-sm">Red</p>
+        <p class="text-sm">Merah</p>
       </div>
     </div>
 
@@ -39,7 +39,7 @@
       <div class="h-[50px] md:h-[95px] rounded-md"
         style="background-color: rgb(250, 164, 26);"></div>
       <div class="p-3 hidden md:block">
-        <p class="text-sm">Orange</p>
+        <p class="text-sm">Oranye</p>
       </div>
     </div>
 
@@ -49,7 +49,7 @@
       <div class="h-[50px] md:h-[95px] rounded-md"
         style="background-color: rgb(246, 235, 20);"></div>
       <div class="p-3 hidden md:block">
-        <p class="text-sm">Yellow</p>
+        <p class="text-sm">Kuning</p>
       </div>
     </div>
 
@@ -59,7 +59,7 @@
       <div class="h-[50px] md:h-[95px] rounded-md"
         style="background-color: rgb(11, 129, 64);"></div>
       <div class="p-3 hidden md:block">
-        <p class="text-sm">Green</p>
+        <p class="text-sm">Hijau</p>
       </div>
     </div>
 
@@ -69,7 +69,7 @@
       <div class="h-[50px] md:h-[95px] rounded-md"
         style="background-color: rgb(57, 83, 164);"></div>
       <div class="p-3 hidden md:block">
-        <p class="text-sm">Blue</p>
+        <p class="text-sm">Biru</p>
       </div>
     </div>
 
@@ -79,7 +79,7 @@
       <div class="h-[50px] md:h-[95px] rounded-md"
         style="background-color: rgb(124, 39, 125);"></div>
       <div class="p-3 hidden md:block">
-        <p class="text-sm">Purple</p>
+        <p class="text-sm">Ungu</p>
       </div>
     </div>
   </div>

@@ -9,14 +9,21 @@ class ColorSeeder extends Seeder
 {
     public function run(): void
     {
-        Color::insert([
-            ['id' => 1, 'name' => 'Merah'],
-            ['id' => 2, 'name' => 'Biru'],
-            ['id' => 3, 'name' => 'Hijau'],
-            ['id' => 4, 'name' => 'Putih'],
-            ['id' => 5, 'name' => 'Hitam'],
-            ['id' => 6, 'name' => 'Abu-abu'],
-            ['id' => 7, 'name' => 'Kuning'],
-        ]);
+        $colors = [
+            ['id' => 1, 'name' => 'Netral'],
+            ['id' => 2, 'name' => 'Merah'],
+            ['id' => 3, 'name' => 'Oranye'],
+            ['id' => 4, 'name' => 'Kuning'],
+            ['id' => 5, 'name' => 'Hijau'],
+            ['id' => 6, 'name' => 'Biru'],
+            ['id' => 7, 'name' => 'Ungu'],
+        ];
+
+        foreach ($colors as $color) {
+            Color::updateOrCreate(
+                ['id' => $color['id']],   // cari berdasarkan ID
+                ['name' => $color['name']] // update kalau ada, insert kalau belum ada
+            );
+        }
     }
 }

@@ -89,6 +89,25 @@
         </button>
       </a>
 
+@if(session('success'))
+<div 
+    id="toast-success" 
+    class="fixed top-5 right-5 z-50 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg animate-bounce"
+>
+    {{ session('success') }}
+</div>
+
+<script>
+    setTimeout(() => {
+        document.getElementById('toast-success')?.remove();
+    }, 3000);
+</script>
+@endif
+
+
+
+
+      
       <!-- Dropdown User -->
       <div class="relative inline-block text-center">
         <button id="dropdownButton" class="p-2 rounded-lg focus:outline-none focus:ring-2 text-blue-900 focus:ring-blue-900 hover:text-blue-900">

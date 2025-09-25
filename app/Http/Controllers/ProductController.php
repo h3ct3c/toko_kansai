@@ -3,96 +3,94 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
+use App\Models\Color;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Admin: tampilkan semua produk (CRUD).
      */
     public function index()
     {
-        $products = Product::latest()->paginate(10);
+        $products = Product::with(['category', 'color'])->latest()->paginate(10);
         return view('product_crud.index', compact('products'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Admin: form create.
      */
     public function create()
     {
-        return view('product_crud.create');
+        $categories = Category::all();
+        $colors = Color::all();
+        return view('product_crud.create', compact('categories', 'colors'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
-            'name'     => 'required',
-            'category' => 'required',
-            'color'    => 'required',
-            'price'    => 'required|numeric',
-            'stock'    => 'required|integer',
+            'name'        => 'required',
+            'image_url'   => 'nullable|string', 
+            'price'       => 'required|numeric',
+            'stock'       => 'required|integer',
+            'category_id' => 'required|exists:categories,id',
+            'color_id'    => 'required|exists:colors,id',
         ]);
 
-        Product::create($request->all());
+        Product::create($request->only([
+            'name','image_url','price','stock','category_id','color_id'
+        ]));
 
         return redirect()->route('product_crud.index')
-            ->with('success','Product created successfully.');
+            ->with('success', 'Product created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Product $product)
     {
         return view('product_crud.show', compact('product'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Product $product)
     {
-        return view('product_crud.edit', compact('product'));
+        $categories = Category::all();
+        $colors = Color::all();
+        return view('product_crud.edit', compact('product', 'categories', 'colors'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Product $product)
     {
         $request->validate([
-            'name'     => 'required',
-            'category' => 'required',
-            'color'    => 'required',
-            'price'    => 'required|numeric',
-            'stock'    => 'required|integer',
+            'name'        => 'required',
+            'image_url'   => 'nullable|string',
+            'price'       => 'required|numeric',
+            'stock'       => 'required|integer',
+            'category_id' => 'required|exists:categories,id',
+            'color_id'    => 'required|exists:colors,id',
         ]);
 
-        $product->update($request->all());
+        $product->update($request->only([
+            'name','image_url','price','stock','category_id','color_id'
+        ]));
 
         return redirect()->route('product_crud.index')
-            ->with('success','Product updated successfully.');
+            ->with('success', 'Product updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Product $product)
     {
         $product->delete();
-
         return redirect()->route('product_crud.index')
-            ->with('success','Product deleted successfully.');
+            ->with('success', 'Product deleted successfully.');
+    }
+
+    /**
+     * Frontend: tampilkan produk sebagai kartu (untuk user).
+     */
+    public function productList()
+    {
+        $products = Product::with(['category','color'])->get();
+        return view('products.index', compact('products'));
     }
 }
-
-    function index()
-    {
-    $products = Product::all();
-    return view('product', compact('products'));
-    } 
-

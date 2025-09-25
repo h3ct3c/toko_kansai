@@ -9,67 +9,55 @@ use App\Models\CartItem;
 
 class CartController extends Controller
 {
-    // 🛒 Tampilkan isi cart user
+    // 🛒 Tampilkan cart user
     public function index()
     {
         $cart = Cart::where('user_id', auth()->id())
                     ->with('items.product')
                     ->first();
 
-        // kalau cart ada → ambil itemnya, kalau tidak → buat collection kosong
-        $cartItems = $cart ? $cart->items : collect();
+        $total = $cart ? $cart->items->sum('subtotal') : 0;
 
-        return view('cart.index', compact('cart', 'cartItems'));
+        return view('cart.index', compact('cart', 'total'));
     }
 
     // ➕ Tambah produk ke cart
-    public function addToCart($productId)
+    public function store(Request $request)
     {
-        $userId = auth()->id();
+        $product = Product::findOrFail($request->product_id);
 
-        // pastikan produk valid
-        $product = Product::findOrFail($productId);
+        // Cari cart user, kalau belum ada buat baru
+        $cart = Cart::firstOrCreate(
+            ['user_id' => auth()->id()]
+        );
 
-        // cari atau buat cart user
-        $cart = Cart::firstOrCreate(['user_id' => $userId]);
+        // Cek kalau produk sudah ada di cart
+        $item = CartItem::where('cart_id', $cart->id)
+                        ->where('product_id', $product->id)
+                        ->first();
 
-        // cari item di cart (produk yang sama)
-        $cartItem = $cart->items()->where('product_id', $productId)->first();
-
-        if ($cartItem) {
-            $cartItem->increment('quantity');
+        if ($item) {
+            $item->quantity += 1;
+            $item->subtotal = $item->quantity * $product->price;
+            $item->save();
         } else {
-            $cart->items()->create([
-                'product_id' => $productId,
-                'quantity'   => 1,
+            CartItem::create([
+                'cart_id'   => $cart->id,
+                'product_id'=> $product->id,
+                'quantity'  => 1,
+                'subtotal'  => $product->price
             ]);
         }
 
-        return redirect()->route('cart.index')->with('success', 'Produk berhasil ditambahkan ke keranjang!');
+        return redirect()->route('cart.index')->with('success','Produk ditambahkan ke keranjang');
     }
 
-    // 🔄 Update jumlah produk
-    public function updateQuantity(Request $request, $id)
-    {
-        $request->validate([
-            'quantity' => 'required|integer|min:1'
-        ]);
-
-        $item = CartItem::findOrFail($id);
-
-        $item->update([
-            'quantity' => $request->quantity
-        ]);
-
-        return back()->with('success', 'Jumlah produk berhasil diperbarui!');
-    }
-
-    // ❌ Hapus produk dari cart
-    public function removeItem($id)
+    // ❌ Hapus item dari cart
+    public function destroy($id)
     {
         $item = CartItem::findOrFail($id);
         $item->delete();
 
-        return back()->with('success', 'Produk berhasil dihapus dari keranjang!');
+        return back()->with('success','Produk dihapus dari keranjang');
     }
 }

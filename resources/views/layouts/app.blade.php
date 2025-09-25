@@ -1,69 +1,136 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kansai Paint</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" href="{{ asset('img/logo.png') }}">
-</head>
-<body class="bg-gray-50 text-gray-800">
+@include("layout.header")
 
-    {{-- 🔹 Navbar --}}
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            {{-- Logo --}}
-            <a href="{{ url('/') }}" class="flex items-center space-x-2">
-                <img src="{{ asset('img/logo.png') }}" alt="Logo" class="h-8">
-                <span class="font-bold text-lg text-blue-700">KANSAI PAINT</span>
+@include("layout.banner")
+
+
+
+
+<div class="mb-48"></div>
+<div class="text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-blue-900">Browse Our Categories</h2>
+    <p class="mt-2 text-2xl text-gray-500">Explore Your Paint</p>
+</div>
+<div class="mb-2"></div>
+
+<!-- Bawah Banner -->
+<section class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 px-6 lg:px-16 py-12">
+    <!-- Card 1 -->
+    <div class="relative group overflow-hidden rounded-2xl shadow-lg">
+        <img src="/img/kansai_12.jpg" alt="Shoes" class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gray-500 bg-opacity-30"></div>
+        <div class="absolute bottom-6 left-6 text-white">
+            <h2 class="text-2xl font-bold">Cat Premium</h2>
+            <a href="/premium"
+                class="mt-3 inline-block bg-white text-black px-5 py-2 rounded-full font-semibold hover:bg-gray-200 transition">
+                Explore
             </a>
-
-            {{-- Menu --}}
-            <div class="hidden md:flex space-x-6">
-                <a href="{{ url('/') }}" class="hover:text-blue-600">Beranda</a>
-                <a href="{{ url('/product') }}" class="hover:text-blue-600">Produk</a>
-                <a href="{{ url('/warna') }}" class="hover:text-blue-600">Warna</a>
-            </div>
-
-            {{-- Icon kanan --}}
-            <div class="flex items-center space-x-4">
-                {{-- Cart --}}
-                <a href="{{ route('cart.index') }}" id="cart-btn" class="relative">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700 hover:text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007.5 18h11a1 1 0 00.9-.55L21 13H7zm5 5a1 1 0 11-2 0 1 1 0 012 0zm8 0a1 1 0 11-2 0 1 1 0 012 0z" />
-                    </svg>
-                    <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full">
-                        0
-                    </span>
-                </a>
-
-                {{-- User --}}
-                @guest
-                    <a href="{{ route('login') }}" class="px-3 py-1 border rounded hover:bg-gray-100">Masuk</a>
-                    <a href="{{ route('register') }}" class="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">Daftar</a>
-                @else
-                    <span class="font-semibold">{{ auth()->user()->name }}</span>
-                    <form action="{{ route('logout') }}" method="POST" class="inline">
-                        @csrf
-                        <button type="submit" class="px-3 py-1 border rounded hover:bg-gray-100">Keluar</button>
-                    </form>
-                @endguest
-            </div>
         </div>
-    </nav>
+    </div>
 
-    {{-- 🔹 Konten halaman --}}
-    <main class="min-h-screen container mx-auto px-6 py-8">
-        @yield('content')
-    </main>
-
-    {{-- 🔹 Footer --}}
-    <footer class="bg-gray-900 text-gray-300 py-6 mt-10">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; {{ date('Y') }} Kansai Paint. Semua Hak Dilindungi.</p>
+    <!-- Card 2 -->
+    <div class="relative group overflow-hidden rounded-2xl shadow-lg">
+        <img src="/img/kansai_5.jpg" alt="Apparel" class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gray-500 bg-opacity-30"></div>
+        <div class="absolute bottom-6 left-6 text-white">
+            <h2 class="text-2xl font-bold">Cat Eksterior</h2>
+            <a href="/eksterior"
+               class="mt-3 inline-block bg-white text-black px-5 py-2 rounded-full font-semibold hover:bg-gray-100 transition">
+                Explore
+            </a>
         </div>
-    </footer>
+
+    </div>
+
+
+    <!-- Card 3 -->
+    <div class="relative group overflow-hidden rounded-2xl shadow-lg">
+        <img src="/img/kansai_7.jpg" alt="Accessories" class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gray-500 bg-opacity-30"></div>
+        <div class="absolute bottom-6 left-6 text-white">
+            <h2 class="text-2xl font-bold">Cat Interior</h2>
+            <a href="/interior"
+               class="mt-3 inline-block bg-white text-black px-5 py-2 rounded-full font-semibold hover:bg-gray-200 transition">
+                Explore
+            </a>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Card 2 -->
+    <div class="relative group overflow-hidden rounded-2xl shadow-lg">
+        <img src="/img/kansai_6.jpg" alt="Apparel" class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gray-500 bg-opacity-30"></div>
+        <div class="absolute bottom-6 left-6 text-white">
+            <h2 class="text-2xl font-bold">Cat Kayu & Besi</h2>
+            <a href="/kayubesi"
+               class="mt-3 inline-block bg-white text-black px-5 py-2 rounded-full font-semibold hover:bg-gray-200 transition">
+                Explore
+            </a>
+        </div>
+
+ </div>
+</section>
+
+
+  <div class="mb-20"></div>
+
+  </div> 
+
+
+
+
+
+<!-- Script sederhana untuk filter (bisa ditempatkan di bawah sebelum </body>) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.category-btn');
+    const cards = document.querySelectorAll('.product-card');
+
+    function setActiveBtn(activeBtn) {
+      buttons.forEach(btn => {
+        if (btn === activeBtn) {
+          btn.classList.remove('bg-white', 'text-gray-700', 'border', 'hover:text-white');
+          btn.classList.add('bg-blue-900', 'text-white', 'shadow', 'hover:bg-blue-900', 'hover:text-white',);
+        } else {
+          btn.classList.remove('bg-blue-600', 'text-white', 'shadow',);
+          btn.classList.add('bg-white', 'text-gray-700', 'border',);
+        }
+      });
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cat = btn.getAttribute('data-cat'); // all, interior, eksterior, kayu, besi, dekoratif
+        setActiveBtn(btn);
+
+        cards.forEach(card => {
+          if (cat === 'all') {
+            card.style.display = '';
+          } else {
+            const c = card.getAttribute('data-category');
+            card.style.display = (c === cat) ? '' : 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
+
+
+  
+
+<div class="mb-32"></div>
+        
+  <div class="border-t border-gray-400 w-11/12 mx-auto"></div>
+
+<div class="mb-96"></div>
+
+@extends('layout.footer')
 
 </body>
 </html>
+
+  
