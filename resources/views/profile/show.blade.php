@@ -1,44 +1,50 @@
-@extends('layouts.app')
+@include('layout.header')
 
-<link href="/src/style.css" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-
-@section('content')
-<div class="flex min-h-screen">
-  {{-- Sidebar --}}
-  <div class="w-64 bg-gray-100 border-r">
-    @include('layout.userside')
+  {{-- bawahbar --}}
+  <div class=" text-gray-900 text-[15px] font-sansserif mt-6">
+    <div class="max-w-[1410px] mx-auto flex justify-center py-1">
+      <div class="flex space-x-8">
+        <a href="{{ route('profile.show') }}" class="block py-2 px-1 border-b border-transparent hover:border-gray-900">My Account</a>
+        <a href="" class="block py-2 px-2 border-b border-transparent hover:border-gray-900">Address</a>
+        <a href="" class="block py-2 px-1 border-b border-transparent hover:border-gray-900">Wishlist</a>
+        <a href="{{ route('profile.edit') }}" class="block py-2 px-1 border-b border-transparent hover:border-gray-900">Account Settings</a>
+      </div>
+    </div>
   </div>
 
   {{-- Konten Profil --}}
   <div class="flex-1 p-6">
-    <div class="max-w-xl mx-auto p-6 bg-white rounded shadow">
-      <h2 class="text-xl font-semibold mb-4">Profile</h2>
+    <div class="max-w-5xl mx-auto mt-7">
+      <h2 class="text-3xl font-bold mb-6 text-blue-900">My Account</h2>
 
-    @if(session('success'))
-      <div class="mb-3 text-green-700">{{ session('success') }}</div>
-    @endif
+      {{-- Personal Details --}}
+      <div class="border rounded h-[150px] mb-6 p-6 relative bg-white shadow">
+        <h3 class="text-lg font-semibold mb-4">Personal Details</h3>
+        <div class="space-y-2 text-sm">
+          <p><span class="font-semibold">First Name:</span> {{ explode(' ', $user->name)[0] ?? '' }}</p>
+          <p><span class="font-semibold">Last Name:</span> {{ explode(' ', $user->name)[1] ?? '' }}</p>
+        </div>
+        <a href="{{ route('profile.edit', ['section' => 'personal']) }}"
+           class="absolute top-6 right-6 text-gray-600 hover:bg-gray-200 rounded-full p-1">
+          Edit
+        </a>
+      </div>
 
-    <div class="mb-4">
-      <img
-        src="{{ $user->avatar ? asset('storage/'.$user->avatar) : asset('images/default-avatar.png') }}"
-        alt="avatar"
-        class="w-16 h-16 rounded-full object-cover"
-      >
+      {{-- Email & Password --}}
+      <div class="border rounded h-[150px] mb-6 p-6 relative bg-white shadow">
+        <h3 class="text-lg font-semibold mb-4">Email & Password</h3>
+        <div class="space-y-2 text-sm">
+          <p><span class="font-semibold">Email:</span> {{ $user->email }}</p>
+          <p><span class="font-semibold">Password:</span> ••••••••••••</p>
+        </div>
+        <a href="{{ route('profile.edit', ['section' => 'security']) }}"
+           class="absolute top-6 right-6 text-gray-600 hover:bg-gray-200 rounded-full p-1">
+          Edit
+        </a>
+      </div>
     </div>
-
-    <div class="mb-2">
-      <strong>Nama:</strong> {{ $user->name }}
-    </div>
-
-    <div class="mb-2">
-      <strong>Email:</strong> {{ $user->email }}
-    </div>
-
-    <a href="{{ route('profile.edit') }}"
-       class="inline-block mt-3 px-4 py-2 rounded bg-blue-900 hover:bg-blue-700 text-white">
-       Edit Profil
-    </a>
   </div>
 </div>
-@endsection
+<div class="mb-96"></div>
+
+@include('layout.footer')

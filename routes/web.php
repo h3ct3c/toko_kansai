@@ -20,8 +20,10 @@ use App\Http\Controllers\SearchController;
 Route::get('/search', [SearchController::class, 'index']);
 Route::get('/search', [SearchController::class, 'index'])->name('search');
 Route::get('/', function () {
-    $products = Product::all();          // ambil semua product dari DB
-    return view('product', compact('products'));
+   
+// ambil semua product dari DB
+$products = Product::all();
+return view('product', compact('products'));
 });
 
 Route::get('/search', [SearchController::class, 'index'])->name('search');
@@ -210,8 +212,16 @@ Route::get('/diskon', function () {
     return view('pages.diskon');
 });
 
+//profile
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');    // lihat profil
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit'); // form edit
     Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update'); // simpan perubahan
 });
+
+Route::get('/searchview', function () {
+return view('searchview');  
+});
+
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+    ->name('logout');

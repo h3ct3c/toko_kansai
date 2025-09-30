@@ -5,55 +5,42 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
-use Illuminate\Support\Facades\Http; // jangan lupa ini
+use Illuminate\Support\Facades\Http;
 
 class RegisteredUserController extends Controller
 {
-    /**
-     * Show registration form
-     */
     public function create()
     {
         return view('auth.register');
     }
 
-    /**
-     * Handle registration
-     */
-    public function store(Request $request): RedirectResponse
+    public function register(Request $request)
     {
-        // validasi input + captcha
+        // Validasi input
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'g-recaptcha-response' => ['required'], // captcha wajib
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|string|min:6|confirmed',
+            'g-recaptcha-response' => 'required'
         ]);
 
-        // cek captcha ke Google
-        $response = Http::asForm()->post(
-            'https://www.google.com/recaptcha/api/siteverify',
-            [
-                'secret'   => config('services.recaptcha.secret'),
-                'response' => $request->input('g-recaptcha-response'),
-                'remoteip' => $request->ip(),
-            ]
-        );
+        // Verifikasi captcha ke Google
+        $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+            'secret' => config('services.recaptcha.secret'),
+            'response' => $request->input('g-recaptcha-response'),
+            'remoteip' => $request->ip()
+        ]);
 
         $result = $response->json();
 
-        if (!($result['success'] ?? false)) {
-            return back()->withErrors([
-                'g-recaptcha-response' => 'Captcha harus dicentang dulu.',
-            ])->withInput();
+        if (empty($result['success']) || $result['success'] !== true) {
+            return back()->withErrors(['g-recaptcha-response' => 'Captcha tidak valid, coba lagi.']);
         }
 
-        // bikin user baru
+        // Buat user
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -64,6 +51,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('dashboard'); // ganti sesuai route projectmu
+        return redirect()->route('dashboard');
     }
 }

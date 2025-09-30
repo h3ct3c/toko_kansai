@@ -21,7 +21,7 @@ class SearchController extends Controller
             $products = Product::where('name','like','%'.$query.'%')->get();
         }
         // 4) Kirim data ke view product.blade.php
-        return view('product', compact('products'));
+        return view('searchview', compact('products'));
     }
 }
 

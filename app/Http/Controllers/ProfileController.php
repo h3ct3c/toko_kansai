@@ -30,9 +30,21 @@ class ProfileController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'avatar' => 'nullable|image|mimes:jpg,jpeg,png,gif,webp|max:2048',
+            'password' => 'nullable|min:6',
+            'email' => 'required|email|unique:users,email,'.$user->id,
         ]);
 
         $user->name = $request->input('name');
+
+        // update name & email
+    $user->name = $request->name;
+    $user->email = $request->email;
+
+    // update password kalau diisi
+    if ($request->filled('password')) {
+        $user->password = bcrypt($request->password);
+    }
+
 
         if ($request->hasFile('avatar')) {
             // hapus lama kalau ada

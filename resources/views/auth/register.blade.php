@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
+    <form id="register-form" method="POST" action="{{ route('register') }}">
         @csrf
 
         <!-- Name -->
@@ -37,12 +37,21 @@
 
         <!-- reCAPTCHA -->
         <div class="mt-10">
-            <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site') }}"></div>
+            <div class="g-recaptcha"
+                 data-sitekey="{{ config('services.recaptcha.site') }}"
+                 data-callback="hideCaptchaWarning"></div>
+
+            {{-- Error dari backend --}}
             @if ($errors->has('g-recaptcha-response'))
                 <span class="text-red-600 text-sm">
                     {{ $errors->first('g-recaptcha-response') }}
                 </span>
             @endif
+
+            {{-- Pesan validasi dari frontend --}}
+            <span id="captcha-warning" class="text-red-600 text-sm hidden">
+                Silakan centang reCAPTCHA terlebih dahulu ya anak pinterr
+            </span>
         </div>
 
         <!-- Button + Link -->
@@ -61,3 +70,21 @@
 
 <!-- Script reCAPTCHA -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<script>
+function hideCaptchaWarning() {
+    document.getElementById("captcha-warning").classList.add("hidden");
+}
+
+document.getElementById("register-form").addEventListener("submit", function(e) {
+    var response = grecaptcha.getResponse();
+    var warning = document.getElementById("captcha-warning");
+
+    if(response.length === 0) {
+        e.preventDefault();
+        warning.classList.remove("hidden"); // tampilkan pesan merah
+    } else {
+        warning.classList.add("hidden"); // sembunyikan kalau sudah centang
+    }
+});
+</script>

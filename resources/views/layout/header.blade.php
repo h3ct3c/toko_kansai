@@ -92,7 +92,7 @@
     <div class="flex items-center gap-4">
       <!-- Search -->
 <form action="{{ route('search') }}" method="GET" 
-      class="relative group transition-all duration-1000 ease-in-out w-[180px] focus-within:w-[890px]">
+      class="relative group transition-all duration-1000 ease-in-out w-[180px] focus-within:w-[870px]">
   <input
     type="text"
     name="query"
@@ -164,7 +164,10 @@
           <a href="/order history" class="block py-2 hover:bg-gray-100">Orders</a>
         </li>
         <li>
-          <a href="#" class="block py-2 hover:bg-gray-100">Wishlist</a>
+          <form method="POST" action="{{ route('logout') }}" class="block py-2 hover:bg-gray-100">
+            @csrf
+            <button type="submit" class="text-red-500">Logout</button>
+          </form>
         </li>
       </ul>
     </div>
