@@ -34,3 +34,4 @@
   @endforelse
 
 </div>
+<div class="mb-44"></div>

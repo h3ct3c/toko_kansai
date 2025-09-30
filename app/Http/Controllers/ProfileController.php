@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -30,28 +31,31 @@ class ProfileController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'avatar' => 'nullable|image|mimes:jpg,jpeg,png,gif,webp|max:2048',
-            'password' => 'nullable|min:6',
-            'email' => 'required|email|unique:users,email,'.$user->id,
+            'current_password' => 'nullable|string',
+            'password' => 'nullable|min:6|confirmed',
         ]);
 
-        $user->name = $request->input('name');
+        // Update nama
+        $user->name = $request->name;
 
-        // update name & email
-    $user->name = $request->name;
-    $user->email = $request->email;
+        // Update password kalau diisi
+        if ($request->filled('password')) {
+            // Cek password lama dulu
+            if (!Hash::check($request->current_password, $user->password)) {
+                return back()->withErrors(['current_password' => 'Password lama salah.']);
+            }
 
-    // update password kalau diisi
-    if ($request->filled('password')) {
-        $user->password = bcrypt($request->password);
-    }
+            $user->password = Hash::make($request->password);
+        }
 
-
+        // Update avatar kalau ada file baru
         if ($request->hasFile('avatar')) {
-            // hapus lama kalau ada
+            // Hapus lama kalau ada
             if ($user->avatar && Storage::disk('public')->exists($user->avatar)) {
                 Storage::disk('public')->delete($user->avatar);
             }
-            // simpan baru
+
+            // Simpan baru
             $path = $request->file('avatar')->store('avatars', 'public');
             $user->avatar = $path;
         }

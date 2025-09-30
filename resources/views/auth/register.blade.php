@@ -50,17 +50,15 @@
 
             {{-- Pesan validasi dari frontend --}}
             <span id="captcha-warning" class="text-red-600 text-sm hidden">
-                Silakan centang reCAPTCHA terlebih dahulu ya anak pinterr
+                Isi reCAPTCHA terlebih dahulu ya anak pinterr
             </span>
         </div>
 
         <!-- Button + Link -->
         <div class="flex items-center justify-end mt-8">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-               href="{{ route('login') }}">
+            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                 {{ __('Already registered?') }}
             </a>
-
             <x-primary-button class="ms-4">
                 {{ __('Register') }}
             </x-primary-button>
