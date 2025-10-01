@@ -74,7 +74,7 @@
       <div>
         <button type="submit" 
                 class="w-full md:w-auto px-6 py-3 font-semibold text-white rounded-md 
-                       bg-blue-900 hover:bg-blue-800 shadow-md shadow-blue-800 transition duration-200 ease-out
+                       bg-blue-900 border border-blue-700 shadow-md shadow-blue-800 transition duration-200 ease-out
                        hover:opacity-80 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-lg 
                        active:translate-x-2 active:translate-y-1 active:shadow-none
                        disabled:opacity-50 disabled:cursor-not-allowed">

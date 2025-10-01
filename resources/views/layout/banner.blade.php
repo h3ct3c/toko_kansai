@@ -23,7 +23,7 @@
   var swiper = new Swiper(".mySwiper", {
     loop: true,
     autoplay: {
-      delay: 3000,
+      delay: 3080,
     },
     pagination: {
       el: ".swiper-pagination",

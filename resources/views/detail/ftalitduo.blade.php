@@ -130,6 +130,7 @@
           </a>
         </div>
 
+
         <!-- Payment -->
         <div class="flex space-x-4 mb-6">
           <a href="/checkout">
@@ -282,3 +283,4 @@
 <div class="mb-96"></div>
 
 @include('layout.footer')
+
