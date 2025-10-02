@@ -16,8 +16,9 @@
   <div class="justify-items-center p-6">
     <div class="max-w-5xl mx-auto mt-4">
       <h2 class="text-[42px] font-bold mb-2 text-blue-900">
-      <p><span>Hello, 
-      </span>{{ explode(' ', $user->name)[0] ?? '' }}</p>
+      <p><span>Hello, </span>
+      {{ explode(' ', $user->name)[0] ?? '' }}
+     </p>
       </h2>
       <div class="text-lg font-sansserif text-gray-900">Account Overview</div>
      </div>

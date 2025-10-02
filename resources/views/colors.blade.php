@@ -1,6 +1,6 @@
 @include("layout.header")
 
-<div class="bg-gradient-to-r from-blue-900 to-blue-700 shadow-md hover:shadow-lg shadow- transition transform hover:scale-105 justify-items-cente py-12">
+<div class="bg-gradient-to-br from-blue-900 to-blue-800 shadow-md hover:shadow-lg shadow- transition transform hover:scale-105 justify-items-cente py-12">
   <h1 class="text-4xl font-bold text-white text-center">Seluruh koleksi Warna</h1>
   <p class="text-white text-center mt-4">Temukan Warna favorit Anda!  </p>
 </div>

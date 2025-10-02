@@ -1,11 +1,17 @@
 @include('layout.header')
 
 {{-- bawahbar --}}
-  <div class=" text-gray-900 text-[15px] font-semiblod mt-6">
-    <div class="max-w-[1410px] mx-auto flex justify-start py-1">
-      <div class="flex space-x-8">
-        <a href="" class="block py-2 px-1 border-b border-transparent hover:border-gray-900">Home</a>
-        <a href="" class="block py-2 px-1 border-b border-transparent hover:border-gray-900">Search</a>
+  <div class="border-b bg-gradient-to-br from-blue-900 to-blue-800 text-gray-200 text-[15px] font-normal">
+    <div class="max-w-[1409px] mx-auto flex justify-start py-2">
+      <div class="flex space-x-6">
+        <h2 class="mt-2"> 
+          Hasil Pencarian Anda untuk:
+          <i>
+          <p class="text-[32px] font-medium">
+            "{{ $keyword }}"
+          </p>
+          </i>
+        </h2>
       </div>
     </div>
   </div>
@@ -15,7 +21,7 @@
 
   @forelse($products ?? collect() as $search)
     <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-      <a href="{{ url('/  ') }}">
+      <a href="{{ url('/') }}">
         <img src="{{ asset('img/'.$search->image) }}"
              alt="{{ $search->name }}"  
              class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />

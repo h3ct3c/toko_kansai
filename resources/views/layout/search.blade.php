@@ -1,5 +1,3 @@
-<h2 class="text-lg font-bold mb-4">Hasil pencarian: {{ $keyword }}</h2>
-
 @if($products->isEmpty())
     <p class="text-gray-600">Tidak ada produk yang cocok.</p>
 @else

@@ -9,20 +9,20 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
-        // 1) Ambil query dari input form
-        $query = trim($request->input('query', ''));
+        // ambil keyword dari form input bernama 'query'
+        $keyword = trim($request->input('query', ''));
 
-        // 2) Jika query kosong -> tampilkan semua produk
-        if ($query === '') {
+        // kalau keyword kosong tampilkan semua produk
+        if ($keyword === '') {
             $products = Product::all();
-        } 
-        // 3) Jika query ada -> filter pakai LIKE
-        else {
-            $products = Product::where('name','like','%'.$query.'%')->get();
+        } else {
+            $products = Product::where('name', 'like', '%' . $keyword . '%')->get();
         }
-        // 4) Kirim data ke view product.blade.php
-        return view('searchview', compact('products'));
+
+        // kirim keyword + produk ke view
+        return view('searchview', [
+            'products' => $products,
+            'keyword'  => $keyword,   // <-- penting
+        ]);
     }
 }
-
-
