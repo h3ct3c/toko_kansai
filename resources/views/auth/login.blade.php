@@ -1,4 +1,13 @@
-    <x-guest-layout>
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kansai Store.com</title>
+    <link rel="website icon" type="png" href="img/Logo_KansaiK.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+   <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 

@@ -9,22 +9,22 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
-        // 1) Ambil query dari input form
+        // Ambil query dari input form
         $query = trim($request->input('query', ''));
 
-        // 2) Jika query kosong -> tampilkan semua produk
+        // Jika kosong → ambil semua produk
         if ($query === '') {
             $products = Product::all();
-        } 
-        // 3) Jika query ada -> filter pakai LIKE
-        else {
-            $products = Product::where('name','like','%'.$query.'%')->get();
+        } else {
+            // Ambil data lengkap (wajib ada kolom image!)
+            $products = Product::where('name', 'like', '%' . $query . '%')->get();
         }
 
-        // 4) Kirim data ke view searchview.blade.php
+        // Kirim ke view
         return view('layout.searchview', [
             'products' => $products,
-            'keyword'  => $query,   // biar blade nggak error
+            'category_id' => null,
+            'keyword'  => $query,
         ]);
     }
 }

@@ -31,8 +31,8 @@ class ProductController extends Controller
     {
         $request->validate([
             'name'     => 'required',
-            'category' => 'required',
-            'color'    => 'required',
+            'color_id'    => 'required|exists:category,id',
+            'category_id' => 'required|exists:colors,id',
             'price'    => 'required|numeric',
             'stock'    => 'required|integer',
         ]);
@@ -46,9 +46,18 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+        public function show($id)
     {
-        return view('ftalitduo', compact('product'));
+        // bisa pakai id atau slug — fleksibel
+        $product = Product::findOrFail($id);
+                $products = Product::all();
+
+
+        // related sederhana: ambil 5 produk lain
+        $related = Product::where('id', '!=', $product->id)->limit(5)->get();
+
+        return view('product.show', compact('product','related'));
+        
     }
 
     /**
@@ -66,8 +75,8 @@ class ProductController extends Controller
     {
         $request->validate([
             'name'     => 'required',
-            'category' => 'required',
-            'color'    => 'required',
+            'category_id' => 'required',
+            'color_id'    => 'required',
             'price'    => 'required|numeric',
             'stock'    => 'required|integer',
         ]);

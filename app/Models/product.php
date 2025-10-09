@@ -22,6 +22,11 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class, 'category_id');
     }
+
+     public function color()
+    {
+        return $this->belongsTo(Color::class, 'color_id');
+    }
     
     public function orders()
     {
@@ -29,8 +34,4 @@ class Product extends Model
     
     }
 
-    public function color()
-    {
-        return $this->belongsTo(Color::class);
-    }
 } 

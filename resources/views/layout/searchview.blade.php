@@ -21,7 +21,7 @@
 
   @forelse($products ?? collect() as $search)
     <div class="group border rounded-md overflow-hidden max-w-[200px] hover:shadow-lg transition-shadow">
-      <a href="{{ url('/') }}">
+      <a href="{{ url(path: 'product/'.$search->id) }}">
         <img src="{{ asset('img/'.$search->image) }}"
              alt="{{ $search->name }}"  
              class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />

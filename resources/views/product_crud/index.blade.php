@@ -74,10 +74,10 @@
                             {{ $product->name}}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $product->category }}
+                            {{ $product->category_id }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $product->color }}
+                            {{ $product->color_id }}
                         </td>
                         <td class="px-6 py-4">
                             {{ $product->stock }}

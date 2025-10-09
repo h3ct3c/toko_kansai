@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kansai Paint
-  </title>
+  <title>Kansai Store.com</title>
+  <link rel="website icon" type="png" href="img/Logo_KansaiK.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* Custom scrollbar for product sliders or any horizontal scroll if needed */

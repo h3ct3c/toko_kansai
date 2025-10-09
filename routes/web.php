@@ -5,8 +5,12 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\UserManageController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -62,6 +66,8 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name
 
 // ----------------- Pages -----------------
 Route::get('/product', fn() => view('product'));
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
+
 Route::get('/colors', fn() => view('colors'));
 Route::get('/cart', fn() => view('cart'))->name('cart');
 
@@ -86,26 +92,30 @@ Route::get('/order history', fn() => view('pages/order history'));
 // Diskon
 Route::get('/diskon', fn() => view('pages.diskon'));
 
-// ----------------- Detail Produk -----------------
-Route::get('ftalitduo', fn() => view('detail.ftalitduo'));
-Route::get('ftalit', fn() => view('detail.ftalit'));
-Route::get('spleshglimmer', fn() => view('detail.spleshglimmer'));
-Route::get('splesh', fn() => view('detail.splesh'));
-Route::get('diamondshield', fn() => view('detail.diamondshield'));
-Route::get('pearlsheen', fn() => view('detail.pearlsheen'));
-Route::get('rainblock', fn() => view('detail.rainblock'));
-Route::get('propertyeks', fn() => view(view: 'detail.propertyeks'));
-Route::get('propertyint', fn() => view('detail.propertyint'));
-Route::get('tropic', fn() => view('detail.tropic'));
 
 // ----------------- Dashboard -----------------
 Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
     Route::get('/', fn() => view('admin.index'))->name('admin.index');
 });
 
-Route::middleware(['auth', 'is_admin'])->group(function () {
-    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('dashboard');
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
 });
+
+// ----------------- User Management -----------------
+Route::resource('user_manage', UserManageController::class);
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/user-manage', [UserManageController::class, 'index'])->name('user_manage.index');
+    Route::get('/user-manage/{id}', [UserManageController::class, 'show'])->name('user_manage.show');
+    Route::post('/user-manage/{id}/update-role', [UserManageController::class, 'updateRole'])->name('user_manage.updateRole');
+    Route::post('/user-manage/{id}/update-status', [UserManageController::class, 'updateStatus'])->name('user_manage.updateStatus');
+});
+
+
+Route::middleware(['auth', 'user'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'show']);
+});
+
 
 // ----------------- Profile -----------------
 Route::middleware('auth')->group(function () {
@@ -122,5 +132,17 @@ Route::prefix('cart')->group(function () {
     Route::get('/', [CartController::class, 'index'])->name('cart.index');
     Route::post('/add', [CartController::class, 'add'])->name('cart.add');
     Route::post('/update', [CartController::class, 'update'])->name('cart.update');
-    Route::post('/remove', [CartController::class, 'remove'])->name('cart.remove');
+    Route::post('/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
+});
+
+// ----------------- Checkout -----------------
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+Route::post('/checkout/shipping', [CheckoutController::class, 'storeShipping'])->name('checkout.shipping');
+
+
+// ----------------- Orders -----------------
+Route::middleware('auth')->group(function () {
+    Route::post('/order', [OrderController::class, 'store'])->name('orders.store');
+    Route::get('/order/{order}', [OrderController::class, 'index'])->name('orders.index');
 });

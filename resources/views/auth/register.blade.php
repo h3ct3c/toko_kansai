@@ -1,3 +1,12 @@
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kansai Store.com</title>
+    <link rel="website icon" type="png" href="img/Logo_KansaiK.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+
 <x-guest-layout>
     <form id="register-form" method="POST" action="{{ route('register') }}">
         @csrf

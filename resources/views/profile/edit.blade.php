@@ -9,7 +9,7 @@
         <a href="" class="block py-2 px-1 border-b border-transparent hover:border-gray-900">Wishlist</a>
         <a href="{{ route('profile.edit') }}" class="block py-2 px-1 border-b border-transparent hover:border-gray-900">Account Settings</a>
       </div>
-    </div>
+    </div>  
   </div>
 
 {{-- Konten Edit Profil --}}

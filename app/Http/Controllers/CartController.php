@@ -7,53 +7,68 @@ use App\Models\Product;
 
 class CartController extends Controller
 {
+    // Menampilkan halaman cart
     public function index()
     {
         $cart = session()->get('cart', []);
         return view('cart.index', compact('cart'));
     }
 
+    // Menambahkan produk ke cart
     public function add(Request $request)
     {
-        $request->validate([
-            'product_id' => 'required|integer|exists:products,id',
-            'quantity'   => 'nullable|integer|min:1'
-        ]);
-
-        $product = Product::findOrFail($request->product_id);
-        $qty = $request->quantity ?? 1;
-
-        // cek stok bila ada kolom stok
-        if (isset($product->stock) && $product->stock < $qty) {
-            return response()->json(['success' => false, 'message' => 'Stok tidak cukup'], 400);
-        }
+        // Ambil produk dari database sesuai ID
+        $product = Product::findOrFail($request->id);
 
         $cart = session()->get('cart', []);
 
+        // Jika produk sudah ada di cart, tambahkan quantity-nya
         if (isset($cart[$product->id])) {
-            $cart[$product->id]['quantity'] += $qty;
+            $cart[$product->id]['quantity']++;
         } else {
+            // Jika belum, tambahkan baru dari database
             $cart[$product->id] = [
-                'id'       => $product->id,
-                'name'     => $product->name,
-                'price'    => $product->price,
-                'quantity' => $qty,
-                'image'    => $product->image ?? null,
+                'name' => $product->name,
+                'price' => $product->price,
+                'quantity' => 1,
+                'image' => $product->image // ambil gambar sesuai ID dari database
             ];
         }
 
-        session(['cart' => $cart]);
+        session()->put('cart', $cart);
 
-        // hitung total item
-        $cartCount = 0;
-        foreach ($cart as $item) $cartCount += $item['quantity'];
-
-        return response()->json([
-            'success'    => true,
-            'cart_count' => $cartCount,
-            'cart'       => $cart
-        ]);
+        return redirect()->route('cart.index')->with('success', 'Produk berhasil ditambahkan ke keranjang!');
     }
 
-    // tambahkan update/remove jika perlu (logika mirip: edit session 'cart' lalu return JSON)
+    // Mengupdate jumlah produk di cart
+    public function update(Request $request)
+    {
+        $cart = session()->get('cart', []);
+        $id = $request->id;
+
+        if (isset($cart[$id])) {
+            if ($request->action === 'increase') {
+                $cart[$id]['quantity']++;
+            } elseif ($request->action === 'decrease' && $cart[$id]['quantity'] > 1) {
+                $cart[$id]['quantity']--;
+            }
+
+            session()->put('cart', $cart);
+        }
+
+        return redirect()->route('cart.index');
+    }
+
+    // Menghapus produk dari cart
+    public function remove($id)
+    {
+        $cart = session()->get('cart', []);
+
+        if (isset($cart[$id])) {
+            unset($cart[$id]);
+            session()->put('cart', $cart);
+        }
+
+        return redirect()->route('cart.index')->with('success', 'Produk dihapus dari keranjang.');
+    }
 }

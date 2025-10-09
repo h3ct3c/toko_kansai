@@ -74,7 +74,7 @@
                     ease-in-out
                     m-0
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-                    " name="category" value="{{ old('category', $product->category) }}" required>
+                    " name="category" value="{{ old('category', $product->category_id) }}" required>
 
                 <!-- error message untuk category -->
                 @error('category')

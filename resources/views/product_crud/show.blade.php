@@ -40,7 +40,7 @@
                         Category
                     </th>
                     <td class="px-6 py-4">
-                        {{ $product->category }}
+                        {{ $product->category_id }}
                     </td>
                 </tr>
 
@@ -49,7 +49,7 @@
                         Product Color
                     </th>
                     <td class="px-6 py-4">
-                        {{ $product->color }}
+                        {{ $product->color_id}}
                     </td>
                 </tr>
 
