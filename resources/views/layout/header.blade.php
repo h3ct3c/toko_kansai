@@ -11,17 +11,21 @@
 </head>
 <body class="bg-white font-sans text-gray-700">
 
-  <!-- Topbar -->
-  <div class="bg-gray-100 text-gray-900 text-[13px] font-bold">
-    <div class="max-w-[1410px] mx-auto flex justify-end py-1">
-      <div class="flex space-x-8">
-        <a href="/diskon" class="hover:text-blue-600">Diskon</a>
-        <a href="/help" class="hover:text-blue-600">Help</a>
+<!-- Topbar -->
+<div class="bg-gray-100 text-gray-900 text-[13px] font-bold">
+  <div class="max-w-[1410px] mx-auto flex justify-end py-1">
+    <div class="flex space-x-8">
+      <a href="/diskon" class="hover:text-blue-600">Diskon</a>
+      <a href="/help" class="hover:text-blue-600">Help</a>
+
+      @guest
+        <!-- Kalau belum login -->
         <a href="/register" class="hover:text-blue-600">Join us</a>
         <a href="/login" class="hover:text-blue-600">Sign In</a>
-      </div>
+      @endguest
     </div>
   </div>
+</div>
 
   <!-- Navbar -->
   <nav class="w-full flex items-center justify-between px-8 py-2 shadow-sm sticky top-0 bg-white z-50">
@@ -163,7 +167,7 @@
           <a href="{{ route('profile.show') }}" class="block py-2 hover:bg-gray-100">My Account</a>
         </li>
         <li>
-          <a href="/order history" class="block py-2 hover:bg-gray-100">Orders</a>
+          <a href="{{ route('order.show') }}" class="block py-2 hover:bg-gray-100">Orders</a>
         </li>
         <li>
           <form method="POST" action="{{ route('logout') }}" class="block py-2 hover:bg-gray-100">

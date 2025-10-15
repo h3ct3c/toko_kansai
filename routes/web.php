@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\admin\ProductCrudController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
@@ -42,15 +43,20 @@ Route::get('/', function () {
 });
 
 // ----------------- CRUD -----------------
-Route::resource('product_crud', ProductController::class);
-Route::resource('products', ProductController::class);
+Route::prefix('product_crud')->name('product_crud.')->group(function () {
+    Route::get('/', [ProductCrudController::class, 'index'])->name('index'); // Halaman utama produk
+    Route::get('/create', [ProductCrudController::class, 'create'])->name('create'); // Form tambah produk
+    Route::post('/', [ProductCrudController::class, 'store'])->name('store'); // Simpan produk baru
+    Route::get('/{product}', [ProductCrudController::class, 'showAdmin'])->name('show'); // Detail produk
+    Route::get('/{product}/edit', [ProductCrudController::class, 'edit'])->name('edit'); // Edit produk
+    Route::put('/{product}', [ProductCrudController::class, 'update'])->name('update'); // Update produk
+    Route::delete('/{product}', [ProductCrudController::class, 'destroy'])->name('destroy'); // Hapus produk
+});
 
-Route::get('product_crud/{id}/edit', [ProductController::class, 'edit'])->name('product_crud.edit');
-Route::post('product_crud/{id}/edit', [ProductController::class, 'edit'])->name('product_crud.edit');
-Route::get('product_crud', [ProductController::class, 'index'])->name('product_crud.index');
-Route::post('product_crud', [ProductController::class, 'store'])->name('product_crud.store');
-Route::put('product_crud/{id}', [ProductController::class, 'update'])->name('product_crud.update');
-Route::delete('product_crud/{id}', [ProductController::class, 'destroy'])->name('product_crud.destroy');
+// PUBLIC (user)
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/products/category/{categoryId}', [ProductController::class, 'byCategory'])->name('products.byCategory');
+Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
 
 // ----------------- Auth -----------------
 Route::get('/register', [AuthenticatedSessionController::class, 'showRegister'])->name('register');
@@ -87,17 +93,12 @@ Route::get('/pages', fn() => view('pages'));
 Route::get('/cart', fn() => view('pages/cart'));
 Route::get('/checkout', fn() => view('pages/checkout'));
 Route::get('/payment success', fn() => view('pages/payment success'));
-Route::get('/order history', fn() => view('pages/order history'));
 
 // Diskon
 Route::get('/diskon', fn() => view('pages.diskon'));
 
 
 // ----------------- Dashboard -----------------
-Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
-    Route::get('/', fn() => view('admin.index'))->name('admin.index');
-});
-
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
 });
@@ -107,8 +108,10 @@ Route::resource('user_manage', UserManageController::class);
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/user-manage', [UserManageController::class, 'index'])->name('user_manage.index');
     Route::get('/user-manage/{id}', [UserManageController::class, 'show'])->name('user_manage.show');
+    Route::get('/user-manage/{id}/edit', [UserManageController::class, 'edit'])->name('user_manage.edit');
     Route::post('/user-manage/{id}/update-role', [UserManageController::class, 'updateRole'])->name('user_manage.updateRole');
     Route::post('/user-manage/{id}/update-status', [UserManageController::class, 'updateStatus'])->name('user_manage.updateStatus');
+    Route::delete('/user_manage/bulk-delete', [UserManageController::class, 'bulkDelete'])->name('user_manage.bulk_delete');
 });
 
 
@@ -142,7 +145,20 @@ Route::post('/checkout/shipping', [CheckoutController::class, 'storeShipping'])-
 
 
 // ----------------- Orders -----------------
-Route::middleware('auth')->group(function () {
-    Route::post('/order', [OrderController::class, 'store'])->name('orders.store');
-    Route::get('/order/{order}', [OrderController::class, 'index'])->name('orders.index');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/order', [OrderController::class, 'index'])->name('order.index');
+    Route::get('/order', [OrderController::class, 'show'])->name('order.show');
+    Route::post('/order', [OrderController::class, 'store'])->name('order.store');
 });
+
+
+// Bagian admin CRUD
+Route::prefix('order_crud')->middleware(['auth'])->group(function () {
+    Route::get('/', [OrderController::class, 'orderCrudIndex'])->name('orderCrud.index');
+    Route::get('/create', [OrderController::class, 'orderCrudCreate'])->name('orderCrud.create');
+    Route::post('/store', [OrderController::class, 'orderCrudStore'])->name('orderCrud.store');
+    Route::get('/{id}/edit', [OrderController::class, 'orderCrudEdit'])->name('orderCrud.edit');
+    Route::put('/{id}', [OrderController::class, 'orderCrudUpdate'])->name('orderCrud.update');
+    Route::delete('/{id}', [OrderController::class, 'orderCrudDestroy'])->name('orderCrud.destroy');
+});
+

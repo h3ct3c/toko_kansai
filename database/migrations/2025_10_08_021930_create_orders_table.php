@@ -11,6 +11,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->foreignId('customer_id')->constrained('users')->onDelete('cascade');
+            $table->string('product_name')->nullable(); // ⬅️ Tambahin ini
             $table->decimal('total_price', 12, 2)->default(0);
             $table->string('status')->default('pending');
             $table->timestamps();

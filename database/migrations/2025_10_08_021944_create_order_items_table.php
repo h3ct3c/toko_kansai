@@ -10,11 +10,18 @@ return new class extends Migration
     {
         Schema::create('order_items', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('order_id')->constrained('orders')->onDelete('cascade');
-            $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
-            $table->integer('quantity')->default(1);
+            $table->foreignId('order_id')
+                ->constrained('orders')
+                ->onDelete('cascade');
+
+            $table->foreignId('product_id')
+                ->constrained('products')
+                ->onDelete('cascade');
+
+            $table->string('product_name'); // 🆕 simpan nama produk langsung di order_items
+            $table->integer('quantity')->default(value: 1);
             $table->decimal('price', 12, 2);
-            $table->decimal('total', 14, 2);
+            $table->decimal('total', 14, 2)->default(0);
             $table->timestamps();
         });
     }

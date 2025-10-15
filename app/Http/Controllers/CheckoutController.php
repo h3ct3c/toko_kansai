@@ -65,6 +65,8 @@ class CheckoutController extends Controller
     // Buat order baru
     $order = Order::create([
         'customer_id' => Auth::id(), // ✅ INI YANG PENTING
+        'product_name' => implode(', ', array_map(fn($item) => $item['name'], $cart)), // Gabungkan nama produk
+        'quantity' => array_sum(array_map(fn($item) => $item['quantity'], $cart)), // Total quantity
         'total' => $total,
         'total_price' => $total,
         'status' => 'Diproses',
@@ -83,6 +85,6 @@ class CheckoutController extends Controller
     // Kosongkan keranjang
     session()->forget('cart');
 
-    return redirect()->route('orders.index')->with('success', 'Pesanan berhasil dibuat!');
+    return redirect()->route('order.show')->with('success', 'Pesanan berhasil dibuat!');
 }
 }

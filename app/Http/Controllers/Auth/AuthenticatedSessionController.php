@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 
 class AuthenticatedSessionController extends Controller
@@ -17,6 +19,9 @@ class AuthenticatedSessionController extends Controller
         return view('auth.login');
     }
 
+    /**
+     * Proses login user/admin.
+     */
     public function store(Request $request)
     {
         // Validasi input
@@ -35,18 +40,54 @@ class AuthenticatedSessionController extends Controller
         // Regenerasi session
         $request->session()->regenerate();
 
-        // Redirect ke dashboard
-        return redirect()->intended('/');
+        // Cek apakah email mengandung kata "admin"
+        $userEmail = Auth::user()->email;
+
+        if (str_contains($userEmail, 'admin')) {
+            return redirect()->intended('/dashboard'); // arahkan ke dashboard admin
+        }
+
+        return redirect()->intended('/'); // arahkan ke halaman utama user
     }
 
+    /**
+     * Logout user/admin.
+     */
     public function destroy(Request $request)
     {
         Auth::logout();
 
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+
+    /**
+     * Tampilkan halaman register.
+     */
+    public function showRegister()
+    {
+        return view('auth.register');
+    }
+
+    /**
+     * Proses register user baru.
+     */
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:6|confirmed',
+        ]);
+
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        return redirect()->route('login')->with('success', 'Akun berhasil dibuat! Silakan login.');
     }
 }

@@ -1,6 +1,6 @@
 @include('layout.header')
 
-<div class="mt-12"></div>
+<div class="mt-10"></div>
 
 <div class="bg-white">
   <div class="container mx-auto px-4 py-8">
@@ -204,3 +204,5 @@
 <div class="mb-96"></div>
 
 @include('layout.footer')
+
+

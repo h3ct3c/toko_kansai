@@ -3,11 +3,26 @@
 <div class="container mx-auto py-12 px-6">
     <h1 class="text-4xl font-bold mb-10 text-gray-800">MY SHOPPING CART</h1>
 
-    @if(session('success'))
-        <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-5 rounded">
-            {{ session('success') }}
-        </div>
-    @endif
+    @if (session('success'))
+    @php
+        $isDeleted = str_contains(session('success'), 'dihapus');
+    @endphp
+
+    <div id="alert-message" 
+        class="{{ $isDeleted ? 'bg-red-100 border-red-500 text-red-700' : 'bg-green-100 border-green-500 text-green-700' }} border-l-4 p-4 rounded mb-5">
+        {{ session('success') }}
+    </div>
+
+    <script>
+        setTimeout(() => {
+            const alert = document.getElementById('alert-message');
+            if (alert) {
+                alert.style.opacity = '0';
+                setTimeout(() => alert.remove(), 500);
+            }
+        }, 1080);
+    </script>
+@endif
 
     @if($cart && count($cart) > 0)
         @php $total = 0; @endphp
@@ -109,12 +124,18 @@
                     <span id="total">Rp{{ number_format($total + 25000, 0, ',', '.') }}</span>
                 </div>
 
-                <div class="mt-6 text-right">
-                    <a href="/checkout" 
-                       class="bg-gradient-to-r from-blue-700 to-blue-900 text-white px-6 py-3 rounded-lg hover:scale-105 transform transition font-semibold">
-                       Proceed to Checkout
-                    </a>
-                </div>
+      <div>
+        <a href="{{ route('checkout.index') }}">
+        <button type="submit" 
+                class="w-full md:w-auto px-6 py-3 font-semibold text-white rounded-md ms-[348px] mt-6
+                       bg-blue-900 border border-blue-700 shadow-md shadow-blue-800 transition duration-200 ease-out
+                       hover:opacity-80 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-lg 
+                       active:translate-x-2 active:translate-y-1 active:shadow-none
+                       disabled:opacity-50 disabled:cursor-not-allowed">
+          Proceed To Checkout
+        </button>
+        </a>
+      </div>
             </div>
         </div>
 
@@ -122,9 +143,17 @@
         <div class="bg-white p-10 rounded-2xl shadow text-center text-gray-600">
             <i class="fas fa-shopping-cart text-6xl mb-4 text-gray-400"></i>
             <p class="text-lg">Your cart is empty.</p>
-            <a href="/" class="inline-block mt-5 bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-900 transition">
-                Continue Shopping
-            </a>
+      <div>
+        <a href="/"></a>
+        <button type="submit" 
+                class="w-full md:w-auto px-6 py-3 font-semibold text-white rounded-md items-center mt-6
+                       bg-blue-900 border border-blue-700 shadow-md shadow-blue-800 transition duration-200 ease-out
+                       hover:opacity-80 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-lg 
+                       active:translate-x-2 active:translate-y-1 active:shadow-none
+                       disabled:opacity-50 disabled:cursor-not-allowed">
+          Continue Shopping
+        </button>
+      </div>
         </div>
     @endif
 </div>

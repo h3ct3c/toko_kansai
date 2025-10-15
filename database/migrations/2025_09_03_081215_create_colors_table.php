@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name'); // contoh: Silver, White, Grey
             $table->timestamps();
         });
-    }
+    }   
 
     /**
      * Reverse the migrations.

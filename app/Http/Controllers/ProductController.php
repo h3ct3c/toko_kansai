@@ -3,100 +3,32 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $products = Product::latest()->paginate(10);
-        return view('product_crud.index', compact('products'));
+        $products = Product::latest()->paginate(12);
+        return view('product.index', compact('products'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function byCategory($categoryId)
     {
-        return view('product_crud.create');
+        $category = Category::findOrFail($categoryId);
+        $products = Product::where('category_id', $categoryId)->paginate(12);
+        return view('product.by_category', compact('products', 'category'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function show($id)
     {
-        $request->validate([
-            'name'     => 'required',
-            'color_id'    => 'required|exists:category,id',
-            'category_id' => 'required|exists:colors,id',
-            'price'    => 'required|numeric',
-            'stock'    => 'required|integer',
-        ]);
-
-        Product::create($request->all());
-
-        return redirect()->route('product_crud.index')
-            ->with('success','Product created successfully.');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-        public function show($id)
-    {
-        // bisa pakai id atau slug — fleksibel
         $product = Product::findOrFail($id);
-                $products = Product::all();
+        $related = Product::where('category_id', $product->category_id)
+                          ->where('id', '!=', $product->id)
+                          ->limit(5)
+                          ->get();
 
-
-        // related sederhana: ambil 5 produk lain
-        $related = Product::where('id', '!=', $product->id)->limit(5)->get();
-
-        return view('product.show', compact('product','related'));
-        
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Product $product)
-    {
-        return view('product_crud.edit', compact('product'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Product $product)
-    {
-        $request->validate([
-            'name'     => 'required',
-            'category_id' => 'required',
-            'color_id'    => 'required',
-            'price'    => 'required|numeric',
-            'stock'    => 'required|integer',
-        ]);
-
-        $product->update($request->all());
-
-        return redirect()->route('product_crud.index')
-            ->with('success','Product updated successfully.');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Product $product)
-    {
-        $product->delete();
-
-        return redirect()->route('product_crud.index')
-            ->with('success','Product deleted successfully.');
+        return view('product.show', compact('product', 'related'));
     }
 }
-
-

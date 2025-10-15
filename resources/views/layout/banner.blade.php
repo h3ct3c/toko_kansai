@@ -9,7 +9,7 @@
       <img src="/img/kansai_19.jpg" class="w-full h-full object-cover" />
     </div>
     <div class="swiper-slide">
-      <img src="/img/kansai_16.jpg" class="w-full h-full object-cover" />
+      <img src="/img/kansai_20.jpg" class="w-full h-full object-cover" />
     </div>
     <div class="swiper-slide">
       <img src="/img/kansai_3.jpg" class="w-full h-full object-cover" />

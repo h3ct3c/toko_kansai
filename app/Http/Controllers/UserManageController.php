@@ -51,4 +51,49 @@ class UserManageController extends Controller
 
         return redirect()->route('user_manage.index')->with('success', 'Status berhasil diperbarui.');
     }
+
+    public function bulkDelete(Request $request)
+{
+    $ids = $request->ids;
+    if ($ids) {
+        \App\Models\User::whereIn('id', $ids)->delete();
+        return redirect()->back()->with('success', count($ids) . ' pengguna berhasil dihapus.');
+    }
+    return redirect()->back()->with('error', 'Tidak ada pengguna yang dipilih.');
+}
+
+public function edit($id)
+{
+    $user = User::findOrFail($id);
+    return view('user_manage.edit', compact('user'));
+}
+
+public function update(Request $request, $id)
+{
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|max:255',
+        'role' => 'required|in:admin,user',
+    ]);
+
+    $user = User::findOrFail($id);
+    $user->update([
+        'name' => $request->name,
+        'email' => $request->email,
+        'role' => $request->role,
+    ]);
+
+    return redirect()->route('user_manage.index')->with('success', 'Data user berhasil diperbarui.');
+}
+
+
+public function destroy($id)
+{
+    $user = User::findOrFail($id);
+    $user->delete();
+
+    return redirect()->route('user_manage.index')->with('success', 'User berhasil dihapus.');
+}
+
+
 }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -50,5 +51,11 @@ class User extends Authenticatable
 {
     return $this->hasMany(Order::class, 'customer_id');
 }
+
+public function isOnline()
+{
+    return Cache::has('user-is-online-' . $this->id);
+}
+
 
 }
