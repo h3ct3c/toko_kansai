@@ -73,21 +73,8 @@
             <span class="text-sm font-medium me-10">Orders</span>
         </a>
 
-        {{-- Analytics --}}
-        <a href="/analytics"
-           class="block py-3 px-6 rounded-lg flex items-center gap-3 w-[230px]
-           {{ Request::is('analytics*') ? 'bg-white text-blue-900 shadow-xl' : 'hover:bg-white/10 hover:text-white' }}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32" fill="currentColor">
-                <rect height="10" width="6" x="17" y="17" rx="1"/>
-                <rect height="16" width="6" x="25" y="11" rx="1"/>
-                <rect height="12" width="6" x="9" y="15" rx="1"/>
-                <rect height="7" width="6" x="1" y="20" rx="1"/>
-            </svg>
-            <span class="text-sm font-medium me-10">Analytics</span>
-        </a>
-
         {{-- Settings --}}
-        <a href="/settings"
+        <a href="{{ route('profile.show') }}"
            class="block py-3 px-6 rounded-lg flex items-center gap-3 w-[230px]
            {{ Request::is('settings*') ? 'bg-white text-blue-900 shadow-xl' : 'hover:bg-white/10 hover:text-white' }}">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"

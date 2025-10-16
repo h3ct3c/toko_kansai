@@ -1,7 +1,7 @@
 @include("layout.header")
 
 <div class="container mx-auto py-12 px-6">
-    <h1 class="text-4xl font-bold mb-10 text-gray-800">MY SHOPPING CART</h1>
+    <h1 class="text-4xl font-bold mb-10 text-blue-900">MY SHOPPING CART</h1>
 
     @if (session('success'))
     @php

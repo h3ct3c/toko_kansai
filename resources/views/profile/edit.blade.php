@@ -1,88 +1,103 @@
 @include('layout.header')
 
 {{-- bawahbar --}}
-  <div class="border-b border-gray-300 text-gray-900 text-[15px] font-sansserif mt-4">
+  <div class="border-b border-gray-300 text-gray-900 text-[15px] font-sansserif shadow-sm mt-4">
     <div class="max-w-[1410px] mx-auto flex justify-center py-1">
       <div class="flex space-x-8">
         <a href="{{ route('profile.show') }}" class="block py-2 px-1 border-b border-transparent hover:border-gray-900">My Account</a>
         <a href="" class="block py-2 px-2 border-b border-transparent hover:border-gray-900">Address</a>
-        <a href="" class="block py-2 px-1 border-b border-transparent hover:border-gray-900">Wishlist</a>
         <a href="{{ route('profile.edit') }}" class="block py-2 px-1 border-b border-transparent hover:border-gray-900">Account Settings</a>
       </div>
     </div>  
   </div>
 
-{{-- Konten Edit Profil --}}
-<div class="flex-1 p-6">
-  <div class="max-w-[800px] mx-auto bg-white border rounded-lg shadow-sm p-8">
-    <h2 class="text-2xl text-blue-900 font-bold mb-6 tracking-wide border-b pb-3">Account Settings</h2>
+{{-- Konten Edit Profil (Main Content) --}}
+<div class="min-h-screen pt-12 pb-20">
+    {{-- max-w-xl untuk centering dan tampilan lebih fokus --}}
+    <div class="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8">
 
-    <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
-      @csrf
-      @method('PUT')
+        {{-- Container Form di tengah --}}
+        <div class="bg-white rounded-xl shadow-2xl p-8 border border-gray-100">
+            <h2 class="text-2xl font-bold text-blue-900 mb-6 border-b pb-4">Account Settings</h2>
 
-      {{-- Nama --}}
-      <div>
-        <label class="block text-sm font-medium mb-1">Nama</label>
-        <input type="text" name="name" 
-               value="{{ old('name', $user->name) }}"
-               class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-900">
-        @error('name') 
-          <div class="text-red-600 text-sm mt-1">{{ $message }}</div> 
-        @enderror
-      </div>
+            <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data" class="space-y-8">
+                @csrf
+                @method('PUT')
 
-      {{-- Email (readonly) --}}
-      <div>
-        <label class="block text-sm font-medium mb-2">Email</label>
-        <input type="email" name="email" 
-               value="{{ $user->email }}" readonly
-               class="w-full border border-gray-200 bg-gray-100 rounded-md px-4 py-2 text-gray-600 cursor-not-allowed">
-      </div>
+                {{-- Bagian Nama --}}
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nama Lengkap</label>
+                    <input type="text" id="name" name="name" 
+                        value="{{ old('name', $user->name) }}"
+                        {{-- Focus ring diubah ke blue-900 --}}
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900 transition duration-150 shadow-sm">
+                    @error('name') 
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p> 
+                    @enderror
+                </div>
 
-      {{-- Password Lama --}}
-      <div>
-        <label class="block text-sm font-medium mb-2">Password Lama</label>
-        <input type="password" name="current_password" 
-               placeholder="Masukkan password lama"
-               class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-900">
-        @error('current_password') 
-          <div class="text-red-600 text-sm mt-1">{{ $message }}</div> 
-        @enderror
-      </div>
+                {{-- Bagian Email (readonly) --}}
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                    <input type="email" id="email" name="email" 
+                        value="{{ $user->email }}" readonly
+                        class="w-full border border-gray-200 bg-gray-100 rounded-lg px-4 py-2.5 text-gray-500 cursor-not-allowed">
+                    <p class="mt-1 text-xs text-gray-500">Email tidak dapat diubah.</p>
+                </div>
+                
+                {{-- Batas untuk Password --}}
+                <div class="border-t border-gray-200 pt-8">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Ubah Password</h3>
+                    
+                    <div class="space-y-6">
+                        {{-- Password Lama --}}
+                        <div>
+                            <label for="current_password" class="block text-sm font-medium text-gray-700 mb-2">Password Lama</label>
+                            <input type="password" id="current_password" name="current_password" 
+                                placeholder="Masukkan password lama Anda"
+                                {{-- Focus ring diubah ke blue-900 --}}
+                                class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900 transition duration-150 shadow-sm">
+                            @error('current_password') 
+                                <p class="text-red-500 text-sm mt-1">{{ $message }}</p> 
+                            @enderror
+                        </div>
 
-      {{-- Password Baru --}}
-      <div>
-        <label class="block text-sm font-medium mb-2">Password Baru</label>
-        <input type="password" name="password" 
-               placeholder="Masukkan password baru"
-               class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-900">
-        @error('password') 
-          <div class="text-red-600 text-sm mt-1">{{ $message }}</div> 
-        @enderror
-      </div>
+                        {{-- Password Baru --}}
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password Baru</label>
+                            <input type="password" id="password" name="password" 
+                                placeholder="Minimal 8 karakter"
+                                {{-- Focus ring diubah ke blue-900 --}}
+                                class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900 transition duration-150 shadow-sm">
+                            @error('password') 
+                                <p class="text-red-500 text-sm mt-1">{{ $message }}</p> 
+                            @enderror
+                        </div>
 
-      {{-- Konfirmasi Password --}}
-      <div>
-        <label class="block text-sm font-medium mb-2">Konfirmasi Password Baru</label>
-        <input type="password" name="password_confirmation" 
-               placeholder="Ulangi password baru"
-               class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-900">
-      </div>
-
-      {{-- Submit --}}
-      <div>
-        <button type="submit" 
-                class="w-full md:w-auto px-6 py-3 font-semibold text-white rounded-md 
-                       bg-blue-900 border border-blue-700 shadow-md shadow-blue-800 transition duration-200 ease-out
-                       hover:opacity-80 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-lg 
-                       active:translate-x-2 active:translate-y-1 active:shadow-none
-                       disabled:opacity-50 disabled:cursor-not-allowed">
-          Simpan Perubahan
-        </button>
-      </div>
-    </form>
-  </div>
+                        {{-- Konfirmasi Password --}}
+                        <div>
+                            <label for="password_confirmation" class="block text-sm font-medium text-gray-700 mb-2">Konfirmasi Password Baru</label>
+                            <input type="password" id="password_confirmation" name="password_confirmation" 
+                                placeholder="Ulangi password baru Anda"
+                                {{-- Focus ring diubah ke blue-900 --}}
+                                class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900 transition duration-150 shadow-sm">
+                        </div>
+                    </div>
+                </div>
+                
+                {{-- Tombol Submit --}}
+                <div class="pt-6">
+                    <button type="submit" 
+                        {{-- Warna tombol utama diubah ke blue-900 --}}
+                        class="w-full inline-flex justify-center items-center px-6 py-3 font-semibold text-white bg-blue-900 rounded-lg shadow-md transform hover:scale-[1.02] transition duration-300 
+                            hover:bg-blue-800 hover:shadow-lg">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Simpan Perubahan
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
 <div class="mb-32"></div>

@@ -139,10 +139,11 @@ Route::prefix('cart')->group(function () {
 });
 
 // ----------------- Checkout -----------------
+Route::middleware('auth')->group(function () {
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
 Route::post('/checkout/shipping', [CheckoutController::class, 'storeShipping'])->name('checkout.shipping');
-
+});
 
 // ----------------- Orders -----------------
 Route::middleware(['auth'])->group(function () {

@@ -21,7 +21,7 @@
             <a href="{{ url('product/'.$product->id) }}">
                 <img src="{{ asset('img/' . $product->image) }}" 
                      alt="{{ $product->name }}"
-                     class="w-full h-[200px] object-cover bg-gray-200 group-hover:opacity-60 p-4" />
+                     class="w-full h-[200px] object-cover bg-white group-hover:opacity-60 p-4" />
                 <div class="p-3 text-center">
                     <h3 class="text-sm text-gray-700 font-semibold">{{ $product->name }}</h3>
                     <p class="mt-3 text-sm text-red-500 font-semibold">

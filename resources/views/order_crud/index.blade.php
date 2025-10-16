@@ -1,9 +1,10 @@
 @extends('layouts.admin')
 
-@section('content')
+@section('page_title', 'orders')
 
+@section('content')
 {{-- Container utama, kini hanya menampung layout dan jarak --}}
-<div class="w-[1228px] mt-12 px-6 sm:px-8 lg:px-10 ms-[276px]">
+<div class="bg-white shadow-xl rounded-xl overflow-hidden">
     
     {{-- Bagian Header (Dikeluarkan dari Card) --}}
     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">

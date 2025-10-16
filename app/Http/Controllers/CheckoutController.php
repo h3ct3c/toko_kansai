@@ -7,15 +7,15 @@ use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Order;
 use App\Models\OrderItem;
+use Illuminate\Support\Facades\DB;
 
 class CheckoutController extends Controller
 {
     /**
-     * Menampilkan halaman checkout.
+     * Menampilkan halaman checkout
      */
     public function index()
     {
-        // Ambil isi cart dari session
         $cart = session()->get('cart', []);
 
         if (empty($cart)) {
@@ -23,68 +23,86 @@ class CheckoutController extends Controller
         }
 
         // Ambil produk dari database
-        $productIds = array_keys(array: $cart);
-        $products = Product::whereIn('id', $productIds)->get();
+        $productIds = array_keys($cart);
+        $products = Product::whereIn('id', $productIds)->get()->keyBy('id');
 
         // Hitung subtotal
         $subtotal = 0;
-        foreach ($products as $product) {
-            $subtotal += $product->price * $cart[$product->id]['quantity'];
+        foreach ($cart as $productId => $item) {
+            if (!isset($products[$productId])) continue;
+            $price = $products[$productId]->price;
+            $quantity = $item['quantity'] ?? 1;
+            $subtotal += $price * $quantity;
         }
 
-        // Data pengiriman (default kosong)
+        // Ambil data pengiriman dari session (kalau ada)
         $shipping = session()->get('shipping', [
-            'name' => '',
-            'address' => '',
-            'city' => '',
-            'postal_code' => '',
-            'shipping_cost' => 0,
+            'method' => 'Gratis',
+            'cost' => 0
         ]);
 
-        $total = $subtotal + $shipping['shipping_cost'];
+        $total = $subtotal + ($shipping['cost'] ?? 0);
 
         return view('checkout.index', compact('products', 'cart', 'subtotal', 'shipping', 'total'));
     }
 
     /**
-     * Menyimpan pesanan ke database.
+     * Proses simpan pesanan ke database
      */
     public function store(Request $request)
-{
-    $cart = session()->get('cart', []);
-    if (empty($cart)) {
-        return redirect()->route('cart.index')->with('error', 'Keranjang masih kosong.');
+    {
+        $cart = session()->get('cart', []);
+        if (empty($cart)) {
+            return redirect()->route('cart.index')->with('error', 'Keranjang masih kosong.');
+        }
+
+        DB::beginTransaction();
+        try {
+            $productIds = array_keys($cart);
+            $products = Product::whereIn('id', $productIds)->get()->keyBy('id');
+
+            $totalPrice = 0;
+            foreach ($cart as $productId => $item) {
+                if (!isset($products[$productId])) continue;
+                $totalPrice += $products[$productId]->price * ($item['quantity'] ?? 1);
+            }
+
+            // Simpan ke tabel orders
+            $order = Order::create([
+                'customer_id' => Auth::id(),
+                'product_name' => implode(', ', array_column($cart, 'name')),
+                'quantity' => array_sum(array_column($cart, 'quantity')),
+                'total_price' => $totalPrice,
+                'status' => 'Diproses', // default status
+            ]);
+
+            // Simpan ke tabel order_items
+            foreach ($cart as $productId => $item) {
+                if (!isset($products[$productId])) continue;
+                $product = $products[$productId];
+                $quantity = $item['quantity'] ?? 1;
+                $price = $product->price;
+                $total = $price * $quantity;
+
+                OrderItem::create([
+                    'order_id' => $order->id,
+                    'product_id' => $productId,
+                    'product_name' => $product->name,
+                    'quantity' => $quantity,
+                    'price' => $price,
+                    'total' => $total,
+                ]);
+            }
+
+            DB::commit();
+
+            // Hapus cart dari session
+            session()->forget('cart');
+
+            return redirect()->route('order.index')->with('success', 'Pesanan berhasil dibuat!');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->route('checkout.index')->with('error', 'Gagal membuat pesanan: ' . $e->getMessage());
+        }
     }
-
-    // Hitung total harga
-    $total = 0;
-    foreach ($cart as $item) {
-        $total += $item['price'] * $item['quantity'];
-    }
-
-    // Buat order baru
-    $order = Order::create([
-        'customer_id' => Auth::id(), // ✅ INI YANG PENTING
-        'product_name' => implode(', ', array_map(fn($item) => $item['name'], $cart)), // Gabungkan nama produk
-        'quantity' => array_sum(array_map(fn($item) => $item['quantity'], $cart)), // Total quantity
-        'total' => $total,
-        'total_price' => $total,
-        'status' => 'Diproses',
-    ]);
-
-    // Simpan detail produk ke tabel order_items
-    foreach ($cart as $id => $item) {
-        OrderItem::create([
-            'order_id' => $order->id,
-            'product_id' => $id,
-            'quantity' => $item['quantity'],
-            'price' => $item['price'],
-        ]);
-    }
-
-    // Kosongkan keranjang
-    session()->forget('cart');
-
-    return redirect()->route('order.show')->with('success', 'Pesanan berhasil dibuat!');
-}
 }

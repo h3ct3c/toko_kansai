@@ -1,27 +1,22 @@
 @extends('layouts.admin')
 
+@section('page_title', 'user manage')
+
 @section('content')
-<div class="min-h-screen w-full lg:w-[1230px] lg:ms-[258px] px-4 lg:px-8 py-10 text-gray-900 mx-auto">
+<div class="bg-white shadow-xl rounded-xl overflow-hidden">
     <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-4">
         <h1 class="text-3xl font-semibold text-gray-800">Manajemen Pengguna</h1>
-        <a href="{{ route('dashboard') }}" 
-           class="inline-flex items-center gap-2 bg-blue-900 hover:bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow-md">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12h18M3 6h18M3 18h18" />
-            </svg>
-            Kembali ke Dashboard
-        </a>
-    </div>
-
-    <form id="bulkDeleteForm" action="{{ route('user_manage.bulk_delete') }}" method="POST">
-        @csrf
-        @method('DELETE')
+        
+        <form id="bulkDeleteForm" action="{{ route('user_manage.bulk_delete') }}" method="POST">
+            @csrf
+            @method('DELETE')
 
         <button type="submit"
             onclick="return confirm('Hapus semua user terpilih?')"
-            class="mb-4 bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-lg text-sm font-medium transition shadow-sm">
+            class="mb-4 bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-lg text-sm font-medium shadow-sm transfrom hover:scale-[1.02] transition duration-300">
             Hapus Terpilih
         </button>   
+    </div>
 
         <div class="bg-white shadow-xl rounded-2xl border border-gray-200 overflow-hidden">
             <div class="overflow-x-auto">
@@ -32,7 +27,7 @@
                                 <input type="checkbox" id="select-all" class="rounded text-blue-600 focus:ring-blue-500">
                             </th>
                             <th class="px-6 py-4 w-5/12">Nama</th>
-                            <th class="px-6 py-4 w-2/12">Posisi (Role)</th>
+                            <th class="px-6 py-4 w-2/12">Role</th>
                             <th class="px-6 py-4 w-2/12">Dibuat</th>
                             <th class="px-6 py-4 w-1/12 text-center">Status</th>
                             <th class="px-6 py-4 w-2/12 text-center">Aksi</th>
@@ -73,8 +68,8 @@
                                             Online
                                         </span>
                                     @else
-                                        <span class="inline-flex items-center gap-2 text-xs font-medium text-red-700">
-                                            <span class="h-2 w-2 bg-red-500 rounded-full"></span>
+                                        <span class="inline-flex items-center gap-2 text-xs font-medium text-blue-900">
+                                            <span class="h-2 w-2 bg-blue-900 rounded-full"></span>
                                             Offline
                                         </span>
                                     @endif
@@ -83,7 +78,7 @@
                                 {{-- Aksi Edit & Delete --}}
                                 <td class="px-6 py-3 flex justify-end gap-3">
                                     <a href="{{ route('user_manage.edit', $user->id) }}" 
-                                       class="inline-flex items-center gap-1.5 border border-gray-300 bg-white hover:bg-gray-50 text-gray-700 px-3 py-1.5 rounded-lg text-xs font-medium transition shadow-sm">
+                                       class="inline-flex items-center h-8 gap-1.5 border border-gray-300 bg-white hover:bg-gray-50 text-gray-700 px-3 py-1.5 rounded-lg text-xs font-medium shadow-sm transfrom hover:scale-[1.02] transition duration-300">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
                                         </svg>
@@ -94,7 +89,7 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit"
-                                            class="inline-flex items-center gap-1.5 bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg text-xs font-medium transition shadow-sm">
+                                            class="inline-flex items-center gap-1.5 bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg text-xs font-medium shadow-sm transfrom hover:scale-[1.02] transition duration-300">
                                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                                             </svg>
