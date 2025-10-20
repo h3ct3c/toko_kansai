@@ -56,6 +56,17 @@ class CheckoutController extends Controller
             return redirect()->route('cart.index')->with('error', 'Keranjang masih kosong.');
         }
 
+        // Validasi input alamat & telepon
+        $request->validate([
+            'jalan' => 'required|string|max:255',
+            'provinsi' => 'required|string|max:100',
+            'kota' => 'required|string|max:100',
+            'kecamatan' => 'required|string|max:100',
+            'kelurahan' => 'required|string|max:100',
+            'kode_pos' => 'required|string|max:10',
+            'nomor_telepon' => 'required|string|max:15',
+        ]);
+
         DB::beginTransaction();
         try {
             $productIds = array_keys($cart);
@@ -74,6 +85,15 @@ class CheckoutController extends Controller
                 'quantity' => array_sum(array_column($cart, 'quantity')),
                 'total_price' => $totalPrice,
                 'status' => 'Diproses', // default status
+
+                // Tambahan kolom alamat dan kontak
+                'jalan' => $request->jalan,
+                'provinsi' => $request->provinsi,
+                'kota' => $request->kota,
+                'kecamatan' => $request->kecamatan,
+                'kelurahan' => $request->kelurahan,
+                'kode_pos' => $request->kode_pos,
+                'nomor_telepon' => $request->nomor_telepon,
             ]);
 
             // Simpan ke tabel order_items

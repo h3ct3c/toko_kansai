@@ -1,9 +1,11 @@
 @extends('layouts.admin') {{-- Menggunakan layout header sesuai permintaan Anda --}}
 
+@section('page_title', 'edit order')
+
 @section('content')
 
 {{-- Container Utama --}}
-<div class="container mx-auto mt-10 px-4 sm:px-6 lg:px-8 ms-[260px]">
+<div class="container mx-auto mt-10 px-4 sm:px-6 lg:px-8">
     
     {{-- Card Form Premium: Shadow yang lebih menonjol, border-t untuk aksen --}}
     <div class="bg-white shadow-2xl rounded-xl p-6 lg:p-10 max-w-4xl mx-auto border-t-4 border-blue-900 ring-1 ring-gray-100">

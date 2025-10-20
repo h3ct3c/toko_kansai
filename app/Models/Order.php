@@ -15,6 +15,13 @@ class Order extends Model
         'quantity',
         'total_price',
         'status',
+        'jalan',
+        'provinsi',
+        'kota',
+        'kecamatan',
+        'kelurahan',
+        'kode_pos',
+        'nomor_telepon',
     ];
 
     public function customer()

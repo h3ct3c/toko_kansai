@@ -14,29 +14,77 @@
                     @csrf
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        {{-- NAMA LENGKAP --}}
                         <div class="md:col-span-2">
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap*</label>
-                            <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition" placeholder="Nama Anda" />
+                            <input type="text" id="name" name="name" required
+                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition"
+                                placeholder="Nama Anda" />
                         </div>
 
+                        {{-- ALAMAT JALAN --}}
                         <div class="md:col-span-2">
-                            <label for="address" class="block text-sm font-medium text-gray-700 mb-1">Alamat Jalan*</label>
-                            <input type="text" id="address" name="address" required class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition" placeholder="Nama jalan, nomor rumah/bangunan" />
+                            <label for="jalan" class="block text-sm font-medium text-gray-700 mb-1">Alamat Jalan*</label>
+                            <input type="text" id="jalan" name="jalan" required
+                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition"
+                                placeholder="Nama jalan, nomor rumah/bangunan" />
                         </div>
 
+                        {{-- PROVINSI --}}
                         <div>
-                            <label for="city" class="block text-sm font-medium text-gray-700 mb-1">Kota/Kabupaten*</label>
-                            <input type="text" id="city" name="city" required class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition" placeholder="Contoh: Jakarta Pusat" />
+                            <label for="provinsi" class="block text-sm font-medium text-gray-700 mb-1">Provinsi*</label>
+                            <input type="text" id="provinsi" name="provinsi" required
+                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition"
+                                placeholder="Contoh: Jawa Barat" />
                         </div>
 
+                        {{-- KOTA --}}
                         <div>
-                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Nomor Telepon*</label>
-                            <input type="text" id="phone" name="phone" required class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition" placeholder="08xx-xxxx-xxxx" />
+                            <label for="kota" class="block text-sm font-medium text-gray-700 mb-1">Kota/Kabupaten*</label>
+                            <input type="text" id="kota" name="kota" required
+                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition"
+                                placeholder="Contoh: Bandung" />
                         </div>
 
+                        {{-- KECAMATAN --}}
+                        <div>
+                            <label for="kecamatan" class="block text-sm font-medium text-gray-700 mb-1">Kecamatan*</label>
+                            <input type="text" id="kecamatan" name="kecamatan" required
+                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition"
+                                placeholder="Contoh: Sukajadi" />
+                        </div>
+
+                        {{-- KELURAHAN --}}
+                        <div>
+                            <label for="kelurahan" class="block text-sm font-medium text-gray-700 mb-1">Kelurahan*</label>
+                            <input type="text" id="kelurahan" name="kelurahan" required
+                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition"
+                                placeholder="Contoh: Cipedes" />
+                        </div>
+
+                        {{-- KODE POS --}}
+                        <div>
+                            <label for="kode_pos" class="block text-sm font-medium text-gray-700 mb-1">Kode Pos*</label>
+                            <input type="text" id="kode_pos" name="kode_pos" required
+                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition"
+                                placeholder="Contoh: 40162" />
+                        </div>
+
+                        {{-- NOMOR TELEPON --}}
+                        <div>
+                            <label for="nomor_telepon" class="block text-sm font-medium text-gray-700 mb-1">Nomor Telepon*</label>
+                            <input type="text" id="nomor_telepon" name="nomor_telepon" required
+                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition"
+                                placeholder="08xx-xxxx-xxxx" />
+                        </div>
+
+                        {{-- EMAIL --}}
                         <div class="md:col-span-2">
                             <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Alamat Email*</label>
-                            <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition" placeholder="nama@contoh.com" />
+                            <input type="email" id="email" name="email" required
+                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition"
+                                placeholder="nama@contoh.com" />
                         </div>
                     </div>
 
@@ -44,12 +92,16 @@
                     <div class="pt-4 border-t border-gray-200">
                         <h3 class="text-xl font-semibold text-gray-800 mb-4">Metode Pembayaran</h3>
                         <div class="space-y-3">
-                            <label class="flex items-center gap-3 border border-gray-300 p-4 rounded-lg cursor-pointer hover:bg-gray-50 transition">
-                                <input type="radio" name="payment_method" value="COD" checked class="h-5 w-5 text-blue-600 accent-blue-600" /> 
+                            <label
+                                class="flex items-center gap-3 border border-gray-300 p-4 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                                <input type="radio" name="payment_method" value="COD" checked
+                                    class="h-5 w-5 text-blue-600 accent-blue-600" />
                                 <span class="text-gray-900 font-medium flex-grow">Cash on Delivery (COD)</span>
                             </label>
-                            <label class="flex items-center gap-3 border border-gray-300 p-4 rounded-lg cursor-pointer opacity-60">
-                                <input type="radio" name="payment_method" value="Transfer" class="h-5 w-5 text-blue-600 accent-blue-600" disabled/> 
+                            <label
+                                class="flex items-center gap-3 border border-gray-300 p-4 rounded-lg cursor-pointer opacity-60">
+                                <input type="radio" name="payment_method" value="Transfer"
+                                    class="h-5 w-5 text-blue-600 accent-blue-600" disabled />
                                 <span class="text-gray-900 font-medium flex-grow">Bank Transfer (belum tersedia)</span>
                             </label>
                         </div>
@@ -61,7 +113,7 @@
 
                     {{-- Tombol --}}
                     <div class="pt-6">
-                        <button type="submit" id="payBtn" 
+                        <button type="submit" id="payBtn"
                             class="w-full bg-blue-900 text-white font-semibold p-4 rounded-lg shadow-lg hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-700 focus:ring-opacity-50 transition">
                             Buat Pesanan
                         </button>
@@ -71,18 +123,21 @@
 
             {{-- RINGKASAN PESANAN --}}
             <div class="w-full lg:w-1/3">
-                <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl border border-gray-200 sticky top-10">
+                <div
+                    class="bg-white p-6 md:p-8 rounded-lg shadow-xl border border-gray-200 sticky top-10">
                     <h2 class="text-2xl font-semibold text-gray-800 mb-6">Ringkasan Pesanan</h2>
-                    
+
                     <div class="space-y-4 mb-6 max-h-96 overflow-y-auto pr-2">
                         @foreach($products as $product)
-                        <div class="flex items-center justify-between border-b pb-3 last:border-b-0">
+                        <div
+                            class="flex items-center justify-between border-b pb-3 last:border-b-0">
                             <div class="flex items-start gap-4">
-                                <img src="{{ asset('img/' . $product->image) }}" alt="{{ $product->name }}" class="w-16 h-16 object-cover rounded-md border" />
+                                <img src="{{ asset('img/' . $product->image) }}" alt="{{ $product->name }}"
+                                    class="w-16 h-16 object-cover rounded-md border" />
                                 <div>
                                     <p class="font-medium text-gray-800 line-clamp-2">{{ $product->name }}</p>
                                     <p class="text-sm text-gray-500">Qty: {{ $cart[$product->id]['quantity'] }}</p>
-                                </div>  
+                                </div>
                             </div>
                             <span class="text-base font-semibold text-red-600 whitespace-nowrap">
                                 Rp{{ number_format($product->price * $cart[$product->id]['quantity'], 0, ',', '.') }}
@@ -110,7 +165,8 @@
                             </span>
                         </div>
 
-                        <div class="flex justify-between font-bold text-xl border-t border-gray-300 pt-3 mt-3">
+                        <div
+                            class="flex justify-between font-bold text-xl border-t border-gray-300 pt-3 mt-3">
                             <span>Total:</span>
                             <span class="text-gray-900">
                                 Rp{{ number_format($total, 0, ',', '.') }}

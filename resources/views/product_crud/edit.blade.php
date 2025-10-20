@@ -3,9 +3,11 @@
 {{-- Pastikan ini berada di <head> atau sebelum @section, tapi jika Anda ingin tetap di sini, biarkan saja --}}
 <script src="https://cdn.tailwindcss.com"></script>
 
+@section('page_title', 'edit product')
+
 @section('content')
-<div class="p-6 bg-white shadow-2xl rounded-xl max-w-4xl mx-auto mt-8 ms-[500px]">
-    <h2 class="text-3xl font-bold text-blue-900 mb-8 border-b-4 border-indigo-100 pb-3">
+<div class="p-6 bg-white shadow-2xl rounded-xl max-w-4xl mx-auto mt-8">
+    <h2 class="text-3xl font-bold text-blue-900 mb-8 border-b-4 border-blue-100 pb-3">
         Edit Produk: {{ $product->name }}
     </h2>
 

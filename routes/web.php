@@ -84,16 +84,14 @@ Route::get('/premium', fn() => view('category.premium'));
 Route::get('/kayubesi', fn() => view('category.kayubesi'));
 
 // Finishing
-Route::get('/gloss', fn() => view('finishing.gloss'));
-Route::get('/matt', fn() => view('finishing.matt'));
-Route::get('/sheen', fn() => view('finishing.sheen'));
+Route::get('/gloss', fn() => view('category.finishing.gloss'));
+Route::get('/matt', fn() => view('category.finishing.matt'));
+Route::get('/sheen', fn() => view('category.finishing.sheen'));
 
 // Pages
 Route::get('/pages', fn() => view('pages'));
 Route::get('/cart', fn() => view('pages/cart'));
 Route::get('/checkout', fn() => view('pages/checkout'));
-Route::get('/payment success', fn() => view('pages/payment success'));
-
 // Diskon
 Route::get('/diskon', fn() => view('pages.diskon'));
 
@@ -145,10 +143,9 @@ Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.s
 Route::post('/checkout/shipping', [CheckoutController::class, 'storeShipping'])->name('checkout.shipping');
 });
 
-// ----------------- Orders -----------------
 Route::middleware(['auth'])->group(function () {
-    Route::get('/order', [OrderController::class, 'index'])->name('order.index');
-    Route::get('/order', [OrderController::class, 'show'])->name('order.show');
+    Route::get('/order/{id}', [OrderController::class, 'index'])->name('order.index'); // daftar semua order
+    Route::get('/order', [OrderController::class, 'show'])->name('order.show'); // detail per order
     Route::post('/order', [OrderController::class, 'store'])->name('order.store');
 });
 

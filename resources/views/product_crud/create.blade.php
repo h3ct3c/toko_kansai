@@ -1,7 +1,9 @@
 @extends('layouts.admin')
 
+@section('page_title', 'create product')
+
 @section('content')
-<div class="p-6 bg-white shadow-xl rounded-xl max-w-4xl mx-auto mt-10 ms-[500px]">
+<div class="p-6 bg-white shadow-xl rounded-xl max-w-4xl mx-auto mt-10">
     <h2 class="text-2xl font-semibold text-blue-900 mb-6 border-b pb-3">Tambah Produk Baru 🛍️</h2>
 
     <form action="{{ route('product_crud.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6">

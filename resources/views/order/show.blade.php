@@ -112,7 +112,7 @@
 
                             <div class="border-t border-gray-100 px-6 py-4 bg-gray-50">
                                 <div class="flex justify-end space-x-4">
-                                    <a href="{{ route('order.show', $order->id) }}"
+                                    <a href="{{ route('order.index', $order->id) }}"
                                         class="px-4 py-2 bg-blue-900 rounded-md text-sm font-medium text-white hover:bg-blue-700">
                                         Lihat Detail Lengkap
                                     </a>

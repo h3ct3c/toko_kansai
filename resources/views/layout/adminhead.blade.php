@@ -22,7 +22,7 @@
 
       <!-- Bagian kanan -->
       <div class="text-white font-semibold">
-        Hallo Anak ajg
+        Hallo Anak Keren
       </div>
     </div>
   </header>

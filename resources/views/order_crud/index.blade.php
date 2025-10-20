@@ -3,21 +3,20 @@
 @section('page_title', 'orders')
 
 @section('content')
-{{-- Container utama, kini hanya menampung layout dan jarak --}}
-<div class="bg-white shadow-xl rounded-xl overflow-hidden">
-    
-    {{-- Bagian Header (Dikeluarkan dari Card) --}}
-    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
-        <h2 class="text-3xl font-semibold text-gray-900 flex items-center">
+{{-- Bagian Header (Dikeluarkan dari Card) --}}
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
+    <h2 class="text-3xl font-semibold text-gray-900 flex items-center">
             {{-- Menggunakan warna blue-900 untuk ikon --}} 
             Daftar Order Pelanggan
         </h2>
         <a href="{{ route('orderCrud.create') }}" 
         class="mt-4 sm:mt-0 bg-blue-900 hover:bg-blue-800 text-white font-medium px-6 py-2 rounded-lg shadow-md transform hover:scale-[1.02] transition duration-300">
-            <span class="mr-1">+</span> Tambah Order
-        </a>
-    </div>
+        <span class="mr-1">+</span> Tambah Order
+    </a>
+</div>
 
+{{-- Container utama, kini hanya menampung layout dan jarak --}}
+<div class="bg-white shadow-xl rounded-xl overflow-hidden">
     {{-- Notifikasi (Alert) (Dikeluarkan dari Card) --}}
     @if (session('success'))
         @php

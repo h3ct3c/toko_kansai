@@ -144,7 +144,7 @@
             <i class="fas fa-shopping-cart text-6xl mb-4 text-gray-400"></i>
             <p class="text-lg">Your cart is empty.</p>
       <div>
-        <a href="/"></a>
+        <a href="/">
         <button type="submit" 
                 class="w-full md:w-auto px-6 py-3 font-semibold text-white rounded-md items-center mt-6
                        bg-blue-900 border border-blue-700 shadow-md shadow-blue-800 transition duration-200 ease-out
@@ -153,6 +153,7 @@
                        disabled:opacity-50 disabled:cursor-not-allowed">
           Continue Shopping
         </button>
+        </a>
       </div>
         </div>
     @endif

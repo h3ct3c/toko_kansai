@@ -21,12 +21,30 @@ class OrderController extends Controller
             'items.*.product_id' => 'required|exists:products,id',
             'items.*.quantity' => 'required|integer|min:1',
             'items.*.price' => 'required|numeric|min:0',
+
+            // alamat (tambahan)
+            'jalan' => 'required|string|max:255',
+            'provinsi' => 'required|string|max:100',
+            'kota' => 'required|string|max:100',
+            'kecamatan' => 'required|string|max:100',
+            'kelurahan' => 'required|string|max:100',
+            'kode_pos' => 'required|string|max:10',
+            'nomor_telepon' => 'required|string|max:20',
         ]);
 
         $order = Order::create([
             'customer_id' => Auth::id(),
             'status' => 'pending',
             'total_price' => 0,
+
+            // alamat (tambahan)
+            'jalan' => $data['jalan'],
+            'provinsi' => $data['provinsi'],
+            'kota' => $data['kota'],
+            'kecamatan' => $data['kecamatan'],
+            'kelurahan' => $data['kelurahan'],
+            'kode_pos' => $data['kode_pos'],
+            'nomor_telepon' => $data['nomor_telepon'],
         ]);
 
         $total = 0;
@@ -65,107 +83,142 @@ class OrderController extends Controller
 
 
     /* ===========================================================
-   🧑‍💼 BAGIAN UNTUK ADMIN (ORDER CRUD)
-============================================================ */
+       🧑‍💼 BAGIAN UNTUK ADMIN (ORDER CRUD)
+    ============================================================ */
 
-public function orderCrudIndex()
-{
-    $orders = Order::with('customer')->latest()->get();
-    return view('order_crud.index', compact('orders'));
-}
+    public function orderCrudIndex()
+    {
+        $orders = Order::with('customer')->latest()->get();
+        return view('order_crud.index', compact('orders'));
+    }
 
-// ➕ Form tambah order manual (admin)
-public function orderCrudCreate()
-{
-    $customers = User::all(); // ambil semua user untuk dropdown customer
-    $products = Product::all(); // ambil semua produk untuk dropdown produk
-    return view('order_crud.create', compact('customers', 'products'));
-}
+    // ➕ Form tambah order manual (admin)
+    public function orderCrudCreate()
+    {
+        $customers = User::all(); // ambil semua user untuk dropdown customer
+        $products = Product::all(); // ambil semua produk untuk dropdown produk
+        return view('order_crud.create', compact('customers', 'products'));
+    }
 
-// 💾 Simpan order baru
-public function orderCrudStore(Request $request)
-{
-    $request->validate([
-        'customer_id' => 'required|exists:users,id',
-        'product_id' => 'required|exists:products,id',
-        'quantity' => 'required|integer|min:1',
-        'status' => 'required|string',
-    ]);
+    // 💾 Simpan order baru
+    public function orderCrudStore(Request $request)
+    {
+        $request->validate([
+            'customer_id' => 'required|exists:users,id',
+            'product_id' => 'required|exists:products,id',
+            'quantity' => 'required|integer|min:1',
+            'status' => 'required|string',
 
-    $product = Product::find($request->product_id);
-    $total_price = $product->price * $request->quantity;
+            // alamat (tambahan)
+            'jalan' => 'nullable|string|max:255',
+            'provinsi' => 'nullable|string|max:100',
+            'kota' => 'nullable|string|max:100',
+            'kecamatan' => 'nullable|string|max:100',
+            'kelurahan' => 'nullable|string|max:100',
+            'kode_pos' => 'nullable|string|max:10',
+            'nomor_telepon' => 'nullable|string|max:20',
+        ]);
 
-    $order = Order::create([
-        'customer_id' => $request->customer_id,
-        'status' => $request->status,
-        'total_price' => $total_price,
-    ]);
+        $product = Product::find($request->product_id);
+        $total_price = $product->price * $request->quantity;
 
-    // Buat item order
-    OrderItem::create([
-        'order_id' => $order->id,
-        'product_id' => $product->id,
-        'product_name' => $product->name,
-        'quantity' => $request->quantity,
-        'price' => $product->price,
-        'total' => $total_price,
-    ]);
+        $order = Order::create([
+            'customer_id' => $request->customer_id,
+            'status' => $request->status,
+            'total_price' => $total_price,
 
-    return redirect()->route('orderCrud.index')->with('success', 'Order berhasil ditambahkan!');
-}
+            // alamat (tambahan)
+            'jalan' => $request->jalan,
+            'provinsi' => $request->provinsi,
+            'kota' => $request->kota,
+            'kecamatan' => $request->kecamatan,
+            'kelurahan' => $request->kelurahan,
+            'kode_pos' => $request->kode_pos,
+            'nomor_telepon' => $request->nomor_telepon,
+        ]);
 
-// ✏️ Form edit order
-public function orderCrudEdit($id)
-{
-    $order = Order::with('items')->findOrFail($id);
-    $customers = User::all();
-    $products = Product::all();
-    
-    return view('order_crud.edit', compact('order', 'customers', 'products'));
-}
-
-// 🔁 Update order
-public function orderCrudUpdate(Request $request, $id)
-{
-    $request->validate([
-        'customer_id' => 'required|exists:users,id',
-        'product_id' => 'required|exists:products,id',
-        'quantity' => 'required|integer|min:1',
-        'status' => 'required|string',
-    ]);
-
-    $order = Order::with('items')->findOrFail($id);
-    $product = Product::find($request->product_id);
-    $total_price = $product->price * $request->quantity;
-
-    // update order utama
-    $order->update([
-        'customer_id' => $request->customer_id,
-        'status' => $request->status,
-        'total_price' => $total_price,
-    ]);
-
-    // update item order pertama (kalau ada)
-    if ($order->items->isNotEmpty()) {
-        $order->items->first()->update([
+        // Buat item order
+        OrderItem::create([
+            'order_id' => $order->id,
             'product_id' => $product->id,
             'product_name' => $product->name,
             'quantity' => $request->quantity,
             'price' => $product->price,
             'total' => $total_price,
         ]);
+
+        return redirect()->route('orderCrud.index')->with('success', 'Order berhasil ditambahkan!');
     }
 
-    return redirect()->route('orderCrud.index')->with('success', 'Order berhasil diperbarui!');
-}
+    // ✏️ Form edit order
+    public function orderCrudEdit($id)
+    {
+        $order = Order::with('items')->findOrFail($id);
+        $customers = User::all();
+        $products = Product::all();
+        
+        return view('order_crud.edit', compact('order', 'customers', 'products'));
+    }
 
-// ❌ Hapus order
-public function orderCrudDestroy($id)
-{
-    $order = Order::findOrFail($id);
-    $order->delete();
+    // 🔁 Update order
+    public function orderCrudUpdate(Request $request, $id)
+    {
+        $request->validate([
+            'customer_id' => 'required|exists:users,id',
+            'product_id' => 'required|exists:products,id',
+            'quantity' => 'required|integer|min:1',
+            'status' => 'required|string',
 
-    return redirect()->route('orderCrud.index')->with('success', 'Order berhasil dihapus!');
-}
+            // alamat (tambahan)
+            'jalan' => 'nullable|string|max:255',
+            'provinsi' => 'nullable|string|max:100',
+            'kota' => 'nullable|string|max:100',
+            'kecamatan' => 'nullable|string|max:100',
+            'kelurahan' => 'nullable|string|max:100',
+            'kode_pos' => 'nullable|string|max:10',
+            'nomor_telepon' => 'nullable|string|max:20',
+        ]);
 
+        $order = Order::with('items')->findOrFail($id);
+        $product = Product::find($request->product_id);
+        $total_price = $product->price * $request->quantity;
+
+        // update order utama
+        $order->update([
+            'customer_id' => $request->customer_id,
+            'status' => $request->status,
+            'total_price' => $total_price,
+
+            // alamat (tambahan)
+            'jalan' => $request->jalan,
+            'provinsi' => $request->provinsi,
+            'kota' => $request->kota,
+            'kecamatan' => $request->kecamatan,
+            'kelurahan' => $request->kelurahan,
+            'kode_pos' => $request->kode_pos,
+            'nomor_telepon' => $request->nomor_telepon,
+        ]);
+
+        // update item order pertama (kalau ada)
+        if ($order->items->isNotEmpty()) {
+            $order->items->first()->update([
+                'product_id' => $product->id,
+                'product_name' => $product->name,
+                'quantity' => $request->quantity,
+                'price' => $product->price,
+                'total' => $total_price,
+            ]);
+        }
+
+        return redirect()->route('orderCrud.index')->with('success', 'Order berhasil diperbarui!');
+    }
+
+    // ❌ Hapus order
+    public function orderCrudDestroy($id)
+    {
+        $order = Order::findOrFail($id);
+        $order->delete();
+
+        return redirect()->route('orderCrud.index')->with('success', 'Order berhasil dihapus!');
+    }
 }
