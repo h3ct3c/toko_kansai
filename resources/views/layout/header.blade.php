@@ -16,7 +16,7 @@
     <div class="max-w-[1410px] mx-auto flex justify-end py-1">
       <div class="flex space-x-8">
         <a href="/diskon" class="hover:text-blue-600">Diskon</a>
-        <a href="/https://kansaipaint.id/hubungi-kami" class="hover:text-blue-600">Help</a>
+        <a href="/https://kansaipaint.id/hubungi-kami" class="hover:text-blue-600">Contact</a>
 
         @guest
           <a href="/register" class="hover:text-blue-600">Join us</a>

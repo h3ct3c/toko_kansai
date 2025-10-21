@@ -5,7 +5,7 @@
       
       <!-- Logo -->
       <div class="col-start-1 col-end-3 md:col-end-auto">
-        <img src="/img/logo kansai.jpg" alt="Kansai Paint Logo" class="h-[68px]">
+        <img src="/img/logo.png" alt="Kansai Paint Logo" class="h-[48px]">
       </div>
 
       <!-- Produk -->

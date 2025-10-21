@@ -10,7 +10,7 @@
 <body class="bg-gray-50 font-sans text-gray-700">
 
   <!-- HEADER ADMIN -->
-  <header class="w-[1160px] bg-gradient-to-r from-blue-900 to-blue-700 px-8 py-5 rounded-lg shadow-md mb-6">
+  <header class="w-[1160px] bg-gradient-to-br from-blue-900 to-blue-800 px-8 py-5 sticky top-0 rounded-lg shadow-md mb-6">
     <div class="flex items-center justify-between">
       <!-- Bagian kiri -->
       <div class="text-sm text-indigo-100">

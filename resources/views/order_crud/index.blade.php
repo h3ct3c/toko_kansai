@@ -10,7 +10,7 @@
             Daftar Order Pelanggan
         </h2>
         <a href="{{ route('orderCrud.create') }}" 
-        class="mt-4 sm:mt-0 bg-blue-900 hover:bg-blue-800 text-white font-medium px-6 py-2 rounded-lg shadow-md transform hover:scale-[1.02] transition duration-300">
+        class="mt-4 sm:mt-0 bg-gradient-to-br from-blue-900 to-blue-800 hover:bg-blue-800 text-white font-medium px-6 py-2 rounded-lg shadow-md transform hover:scale-[1.02] transition duration-300">
         <span class="mr-1">+</span> Tambah Order
     </a>
 </div>

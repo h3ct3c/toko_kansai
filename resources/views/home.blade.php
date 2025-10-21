@@ -168,4 +168,3 @@
 <div class="mb-[360px]"></div>
 
 @include('layout.footer')
-

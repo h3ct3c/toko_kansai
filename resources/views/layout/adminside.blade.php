@@ -23,7 +23,7 @@
 
         {{-- Dashboard --}}
         <a href="/dashboard"
-           class="block py-3 px-6 rounded-lg flex items-center gap-3 w-[230px]
+           class="block py-4 px-6 rounded-lg flex items-center gap-3 w-[230px]
            {{ Request::is('dashboard') ? 'bg-white text-blue-900 shadow-xl' : 'hover:bg-white/10 hover:text-white' }}">
             <svg width="24px" height="26px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -35,7 +35,7 @@
 
         {{-- User Manage --}}
         <a href="/user_manage"
-           class="block py-3 px-6 rounded-lg flex items-center gap-3 w-[230px]
+           class="block py-4 px-6 rounded-lg flex items-center gap-3 w-[230px]
            {{ Request::is('user_manage*') ? 'bg-white text-blue-900 shadow-xl' : 'hover:bg-white/10 hover:text-white' }}">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16" fill="currentColor">
                 <path d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z"/>
@@ -46,7 +46,7 @@
 
         {{-- Products --}}
         <a href="/product_crud  "
-           class="block py-3 px-6 rounded-lg flex items-center gap-3 w-[230px]
+           class="block py-4 px-6 rounded-lg flex items-center gap-3 w-[230px]
            {{ Request::is('product_crud*') ? 'bg-white text-blue-900 shadow-xl' : 'hover:bg-white/10 hover:text-white' }}">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <polygon points="22 7 12 2 2 7 2 17 12 22 22 17"
@@ -65,7 +65,7 @@
 
         {{-- Orders --}}
         <a href="/order_crud"
-           class="block py-3 px-6 rounded-lg flex items-center gap-3 w-[230px]
+           class="block py-4 px-6 rounded-lg flex items-center gap-3 w-[230px]
            {{ Request::is('order_crud*') ? 'bg-white text-blue-900 shadow-xl' : 'hover:bg-white/10 hover:text-white' }}">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024" fill="currentColor">
                 <path d="M53.6 1023.2c-6.4 0-12.8-2.4-17.6-8-4.8-4.8-7.2-11.2-6.4-18.4L80 222.4c0.8-12.8 11.2-22.4 24-22.4h211.2v-3.2c0-52.8 20.8-101.6 57.6-139.2C410.4 21.6 459.2 0.8 512 0.8c108 0 196.8 88 196.8 196.8v0.8H920c12.8 0 23.2 9.6 24 22.4l49.6 768.8c0.8 2.4 0.8 4 0.8 6.4-0.8 13.6-11.2 24.8-24.8 24.8H53.6z"/>
@@ -75,7 +75,7 @@
 
         {{-- Settings --}}
         <a href="{{ route('profile.show') }}"
-           class="block py-3 px-6 rounded-lg flex items-center gap-3 w-[230px]
+           class="block py-4 px-6 rounded-lg flex items-center gap-3 w-[230px]
            {{ Request::is('settings*') ? 'bg-white text-blue-900 shadow-xl' : 'hover:bg-white/10 hover:text-white' }}">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                  viewBox="0 0 1024 1024" fill="currentColor">
@@ -91,6 +91,7 @@
         <form method="POST" action="{{ route('logout') }}"
               class="flex items-center gap-3 py-3 px-6 hover:text-red-500 rounded-lg w-[230px]">
             @csrf
+            
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                  viewBox="0 0 24 24" fill="none" stroke="currentColor"
                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">

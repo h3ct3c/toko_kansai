@@ -1,99 +1,110 @@
+@include('layout.header')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kansai Store.com - Login</title>
-    <link rel="website icon" type="png" href="img/Logo_KansaiK.png">
+    <link rel="icon" type="image/png" href="img/Logo_KansaiK.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
 
-<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
-    
-    <div class="w-full max-w-md">
-        <div class="text-center mb-8">
-            <div class="w-20 h-20 mx-auto mb-4 p-2 flex items-center justify-center">
-                <img 
-                    src="img/Logo_KansaiK.png" 
-                    alt="Kansai Store Logo" 
-                    class="w-full h-full object-contain">
+    {{-- MAIN --}}
+    <main class="flex-grow flex flex-col items-center justify-center text-center pt-28 px-4">
+        <h2 class="text-4xl font-bold text-blue-900 mb-2">Login</h2>
+        <p class="text-gray-500 mb-8 text-sm">Please sign in to continue</p>
+
+        {{-- ALERT ERROR --}}
+        @if (session('error'))
+            <div id="alert-message" class="bg-red-100 border border-red-300 text-red-700 px-4 py-3 rounded-lg text-sm mb-4 w-full max-w-sm text-left">
+                <strong class="font-semibold">Oops!</strong>
+                <span class="block">{{ session('error') }}</span>
             </div>
-        </div>
+        @endif
 
-        <div class="bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl p-8 space-y-8 transition-all duration-500 hover:shadow-xl">
-            <div class="text-center">
-                <h2 class="text-3xl font-bold bg-gradient-to-r from-blue-800 to-blue-900 bg-clip-text text-transparent">Welcome Back</h2>
-                <p class="text-gray-500 mt-2">Please sign in to continue</p>
+        @if ($errors->any())
+            <div id="alert-message" class="bg-red-100 border border-red-300 text-red-700 px-4 py-3 rounded-lg text-sm mb-4 w-full max-w-sm text-left">
+                <strong class="font-semibold">Error!</strong>
+                <ul class="list-disc pl-5 mt-1 space-y-1">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+        {{-- FORM LOGIN --}}
+        <form method="POST" action="{{ route('login') }}" class="space-y-6 w-full max-w-sm">
+            @csrf
+
+            <div class="text-left">
+                <label for="email" class="block text-gray-700 text-sm font-medium mb-2">Email Address</label>
+                <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                    autofocus
+                    autocomplete="username"
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-900 transition duration-200"
+                >
             </div>
 
-            <form method="POST" action="/login" class="space-y-6"> 
-                <div class="relative">
-                    <label for="email" class="block text-gray-700 text-sm font-medium mb-2">Email Address</label>
-                    
-                    <div class="relative">                        
-                        <input
-                            id="email" 
-                            class="w-full pl-6 py-3 rounded-xl border border-gray-200 **hover:border-blue-900** focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900 transition-all duration-200 bg-white/50" 
-                            type="email" 
-                            name="email" 
-                            placeholder="Enter your email"
-                            required 
-                            autofocus 
-                            autocomplete="username" 
-                        />
-                        </div>
-                </div>
+            <div class="text-left">
+                <label for="password" class="block text-gray-700 text-sm font-medium mb-2">Password</label>
+                <input
+                    id="password"
+                    type="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                    autocomplete="current-password"
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-900 transition duration-200"
+                >
+            </div>
 
-                <div class="relative">
-                    <label for="password" class="block text-gray-700 text-sm font-medium mb-2">Password</label>
+            <div class="flex items-center justify-between text-sm text-gray-600">
+                <label class="flex items-center">
+                    <input id="remember_me" type="checkbox" name="remember" class="h-4 w-4 text-blue-900 border-gray-300 rounded focus:ring-blue-900">
+                    <span class="ml-2">Remember me</span>
+                </label>
 
-                    <div class="relative">                        
-                        <input
-                            id="password" 
-                            class="w-full pl-6 py-3 rounded-xl border border-gray-200 **hover:border-blue-900** focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900 transition-all duration-200 bg-white/50"
-                            type="password"
-                            name="password"
-                            placeholder="Enter your password"
-                            required 
-                            autocomplete="current-password" 
-                        />
-                        </div>
-                </div>
-
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center">
-                        <input id="remember_me" type="checkbox" class="h-4 w-4 text-blue-900 focus:ring-blue-900 border-gray-300 rounded" name="remember">
-                        <label for="remember_me" class="ml-2 text-gray-600 text-sm">Remember me</label>
-                    </div>
-
-                    @if (Route::has('password.request'))
-                    <a class="text-sm text-blue-800 hover:text-blue-900 font-medium transition-colors duration-200" href="{{ route('password.request') }}">
+                @if (Route::has('password.request'))
+                    <a href="{{ route('password.request') }}" class="text-blue-800 hover:text-blue-900 font-medium transition">
                         Forgot Password?
                     </a>
-                    @endif
-                    </div>
+                @endif
+            </div>
 
-                <button 
-                    type="submit" 
-                    class="w-full bg-gradient-to-r from-blue-800 to-blue-900 text-white py-3 rounded-xl hover:opacity-90 transition duration-200 transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl"
-                >
-                    Log in
-                </button>
-            </form>
+            <button 
+                type="submit" 
+                class="w-full bg-blue-900 text-white py-3 rounded-lg font-medium hover:bg-blue-800 transition duration-200">
+                Log in
+            </button>
+        </form>
 
-            <p class="text-center text-sm text-gray-600">
-                Don't have an account? 
-                <a href="{{ route('register') }}" class="text-blue-800 hover:text-blue-900 font-semibold transition-colors duration-200">
-                    Sign up
-                </a>
-            </p>
-
-        </div>
-    </div>
+        <p class="text-sm text-gray-600 mt-8">
+            Don't have an account? 
+            <a href="{{ route('register') }}" class="text-blue-800 hover:text-blue-900 font-semibold transition">
+                Sign up
+            </a>
+        </p>
+    </main>
 
     <script>
-        lucide.createIcons();
+        setTimeout(() => {
+            const alert = document.getElementById('alert-message');
+            if (alert) {
+                alert.style.opacity = '0';
+                setTimeout(() => alert.remove(), 500);
+            }
+        }, 2000);
     </script>
 </body>
 </html>
+<div class="mb-[300px]"></div>
+
+@include('layout.footer')
