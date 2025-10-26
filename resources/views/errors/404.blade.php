@@ -1,18 +1,26 @@
+@include('layout.header')
+<div class="mb-[160px]"></div>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>404 Not Found</title>
+  <title>kansai store.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white flex items-center justify-center min-h-screen text-gray-700 p-6">
-  <div class="text-center max-w-md">
-    <img src="/img/Wibu stress.jpeg" alt="404" class="w-screen mx-auto mb-10">
-    <h1 class="text-6xl font-bold text-black mb-6">404</h1>
-    <a href="{{ url('/') }}" class="inline-block bg-yellow-200 text-yellow-900 px-6 py-3 rounded-lg hover:bg-yellow-500 transition mt-4">
-      Back to Home
-    </a>
-  </div>
-</body>
+
+<body
+  class="w-screen h-screen m-0 flex flex-col items-center justify-center bg-white font-sans text-base leading-relaxed">
+  <div class="max-w-full text-center text-blue-900">
+    <strong class="block text-4xl mb-6">We can't find the page you are looking for.</strong>
+    <p class="text-2xl">Sorry for the inconvenience.</p>
+    </div>
+</body> 
+
 </html>
+
+<div class="mb-[260px]"></div>
+
+@include('layout.footer')

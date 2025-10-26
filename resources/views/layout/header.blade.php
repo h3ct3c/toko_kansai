@@ -108,14 +108,30 @@
         </button>
       </form>
 
-      <!-- Cart -->
-      <a href="/cart" aria-label="Shopping Cart"
-        class="p-2 rounded-full flex items-center text-blue-900 hover:text-blue-900 hover:bg-gray-200">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" class="stroke-current">
-          <path d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.5523 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>        
+     <!-- Cart -->
+<a href="{{ route('cart.index') }}" aria-label="Shopping Cart"
+   class="relative p-2 rounded-full flex items-center text-blue-900 hover:text-blue-900 hover:bg-gray-200">
+
+  <!-- Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" class="stroke-current">
+    <path d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.5523 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+
+  <!-- Badge -->
+  @php
+      $cart = session('cart', []);
+      $cartCount = is_array($cart) ? count($cart) : 0;
+  @endphp
+
+  @if($cartCount > 0)
+    <span
+      class="absolute top-1 right-1 bg-red-600 text-white text-xs font-semibold rounded-full px-1.5 py-0.4 transform translate-x-1/2 -translate-y-1/2">
+      {{ $cartCount }}
+    </span>
+  @endif
+</a>
+          
 
       <!-- User Dropdown -->
       <div class="relative" x-data="{ open: false }">
