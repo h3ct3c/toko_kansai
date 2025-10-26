@@ -1,88 +1,103 @@
 @include('layout.header')
 
 <div class="container mx-auto mt-10 px-6">
-    <div class="bg-white shadow-lg rounded-2xl p-6">
-        <h2 class="text-2xl font-semibold text-gray-800 mb-4">
-            Detail Order #{{ $order->id }}
+    <div class="bg-white shadow-xl rounded-2xl p-8">
+        <h2 class="text-3xl font-bold text-blue-900 mb-6 border-b pb-3">
+            Detail Order #{{ $orders->id }}
         </h2>
 
-        {{-- INFO UMUM ORDER --}}
-        <div class="text-gray-700 space-y-2 mb-6">
-            <p>Status: 
-                <span class="font-medium text-gray-900">
-                    {{ ucfirst($order->status) }}
-                </span>
-            </p>
-            <p>Total Item: 
-                <span class="font-medium text-gray-900">
-                    {{ $order->total_items }}
-                </span>
-            </p>
-            <p>Total Harga: 
-                <span class="font-bold text-green-600">
-                    Rp{{ number_format($order->total_price, 0, ',', '.') }}
-                </span>
-            </p>
-        </div>
+        {{-- STATUS DAN INFORMASI UMUM --}}
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-blue-50 rounded-xl p-4">
+                <p class="text-gray-600 text-sm">Status</p>
+                <p class="text-lg font-semibold text-blue-900">{{ ucfirst($orders->status) }}</p>
+            </div>
 
-        {{-- INFO ALAMAT DAN KONTAK --}}
-        <div class="bg-gray-50 rounded-xl p-4 mb-6">
-            <h3 class="text-lg font-semibold text-gray-800 mb-3">Alamat Pengiriman</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-700">
-                <p><span class="font-medium">Nama Penerima:</span> {{ $order->user->name ?? '-' }}</p>
-                <p><span class="font-medium">Nomor Telepon:</span> {{ $order->phone ?? '-' }}</p>
-                <p><span class="font-medium">Jalan:</span> {{ $order->address ?? '-' }}</p>
-                <p><span class="font-medium">Kelurahan:</span> {{ $order->kelurahan ?? '-' }}</p>
-                <p><span class="font-medium">Kecamatan:</span> {{ $order->kecamatan ?? '-' }}</p>
-                <p><span class="font-medium">Kota:</span> {{ $order->kota ?? '-' }}</p>
-                <p><span class="font-medium">Provinsi:</span> {{ $order->provinsi ?? '-' }}</p>
-                <p><span class="font-medium">Kode Pos:</span> {{ $order->kode_pos ?? '-' }}</p>
+            <div class="bg-blue-50 rounded-xl p-4">
+                <p class="text-gray-600 text-sm">Total Item</p>
+                <p class="text-lg font-semibold text-blue-900">
+                    {{ $orders->items->sum('quantity') }}
+                </p>
+            </div>
+
+            <div class="bg-blue-50 rounded-xl p-4">
+                <p class="text-gray-600 text-sm">Total Harga</p>
+                <p class="text-lg font-bold text-green-600">
+                    Rp{{ number_format($orders->total_price, 0, ',', '.') }}
+                </p>
             </div>
         </div>
 
-        {{-- DAFTAR PRODUK --}}
-        <div class="overflow-x-auto">
-            <table class="w-full border-collapse">
-                <thead>
-                    <tr class="bg-gray-100 text-left text-gray-700">
-                        <th class="py-3 px-4 border-b font-semibold">Produk</th>
-                        <th class="py-3 px-4 border-b font-semibold text-center">Jumlah</th>
-                        <th class="py-3 px-4 border-b font-semibold text-right">Harga</th>
-                        <th class="py-3 px-4 border-b font-semibold text-right">Subtotal</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($order->items as $item)
-                        <tr class="hover:bg-gray-50 transition">
-                            <td class="py-3 px-4 border-b">
-                                <div class="flex items-center gap-3">
-                                    @if($item->product->image ?? false)
-                                        <img src="{{ asset('storage/' . $item->product->image) }}" 
-                                             alt="{{ $item->product->name }}" 
-                                             class="w-12 h-12 object-cover rounded-md">
-                                    @endif
-                                    <span class="font-medium text-gray-800">{{ $item->product->name }}</span>
-                                </div>
-                            </td>
-                            <td class="py-3 px-4 border-b text-center">{{ $item->quantity }}</td>
-                            <td class="py-3 px-4 border-b text-right text-gray-700">
-                                Rp{{ number_format($item->price, 0, ',', '.') }}
-                            </td>
-                            <td class="py-3 px-4 border-b text-right font-semibold text-gray-900">
-                                Rp{{ number_format($item->total, 0, ',', '.') }}
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+        {{-- INFORMASI PENERIMA --}}
+        <div class="bg-gray-50 rounded-2xl p-6 mb-8 border">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Alamat Pengiriman</h3>
+
+            <div class="grid md:grid-cols-2 gap-4 text-gray-700">
+                <p><span class="font-medium">Nama Penerima:</span> {{ $orders->customer->name ?? '-' }}</p>
+                <p><span class="font-medium">Nomor Telepon:</span> {{ $orders->nomor_telepon ?? '-' }}</p>
+                <p><span class="font-medium">Jalan:</span> {{ $orders->jalan ?? '-' }}</p>
+                <p><span class="font-medium">Kelurahan:</span> {{ $orders->kelurahan ?? '-' }}</p>
+                <p><span class="font-medium">Kecamatan:</span> {{ $orders->kecamatan ?? '-' }}</p>
+                <p><span class="font-medium">Kota:</span> {{ $orders->kota ?? '-' }}</p>
+                <p><span class="font-medium">Provinsi:</span> {{ $orders->provinsi ?? '-' }}</p>
+                <p><span class="font-medium">Kode Pos:</span> {{ $orders->kode_pos ?? '-' }}</p>
+            </div>
         </div>
 
+        {{-- PRODUK DALAM ORDER --}}
+        @if(isset($orders->items) && count($orders->items) > 0)
+            <div class="bg-white border rounded-2xl p-6 shadow-sm mb-8">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Produk Dipesan</h3>
+
+                <div class="flex flex-wrap gap-5">
+                    @foreach($orders->items as $item)
+                        @php
+                            // Ambil warna dari nama produk")
+                            preg_match('/\(([^)]+)\)/', $item->product_name, $match);
+                            $colorText = $match[1] ?? null;
+                        @endphp
+
+                        <div class="flex flex-col items-center text-center border rounded-xl p-4 shadow-sm hover:shadow-md transition duration-150 ease-out">
+                            <img src="{{ asset('img/' . $item->product->image) }}" 
+                                 alt="{{ $item->product_name }}" 
+                                 class="w-32 h-32 object-cover rounded-lg mb-2">
+
+                            {{-- Nama produk tanpa warna --}}
+                            <p class="font-medium text-gray-800 text-sm w-32 truncate">
+                                {{ preg_replace('/\s*\([^)]*\)/', '', $item->product_name) }}
+                            </p>
+
+                            <p class="text-gray-600 text-xs">
+                                Qty: {{ $item->quantity }}
+                            </p>
+
+                            {{-- Tampilkan warna jika ada --}}
+                            @if($colorText)
+                                <div class="text-sm mt-2">
+                                    Warna: 
+                                    <span class="inline-block px-2 py-0.3 rounded-full border"
+                                          style="background-color: {{ strtolower($colorText) }};">
+                                          {{ ucfirst($colorText) }}
+                                    </span>
+                                </div>
+                            @endif
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        @endif
+
         {{-- TOMBOL KEMBALI --}}
-        <div class="text-right mt-6">
+        <div class="text-right mt-8">
             <a href="{{ route('order.show') }}" 
-               class="inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition">
+               class="inline-block bg-blue-900 text-white font-semibold py-3 px-6 rounded-lg 
+                      hover:bg-blue-800 transition duration-200 ease-out shadow-md">
                 Kembali ke Daftar Order
             </a>
         </div>
     </div>
 </div>
+
+<div class="mb-[200px]"></div>
+
+@extends('layout.footer')

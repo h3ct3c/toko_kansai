@@ -1,20 +1,15 @@
 @extends('layouts.admin')
 
+@section('page_title', 'edit user')
+
 @section('content')
-<div class="min-h-screen w-full lg:w-[1230px] lg:ms-[258px] px-4 lg:px-8 py-10 text-gray-900 mx-auto">
+<div class="min-h-screen w-full lg:w-[1230px] lg:ms-[258px] px-4 lg:px-8 py-8 text-gray-900 mx-auto">
     <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
         <h1 class="text-3xl font-semibold text-gray-800">Edit Pengguna: {{ $user->name }}</h1>
-        <a href="{{ route('user_manage.index') }}" 
-           class="inline-flex items-center gap-2 bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow-md">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            Kembali ke Daftar Pengguna
-        </a>
     </div>
 
     <div class="bg-white shadow-xl rounded-2xl border border-gray-200 p-8 max-w-2xl">
-        {{-- Form untuk mengupdate data pengguna. Pastikan route dan method sudah benar. --}}
+        {{-- Form untuk mengupdate --}}
         <form action="{{ route('user_manage.update', $user->id) }}" method="POST">
             @csrf
             @method('PUT')

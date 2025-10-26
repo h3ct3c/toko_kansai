@@ -24,6 +24,7 @@ use Resource\views\product_crud;
 use function Pest\Laravel\post;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\NewPasswordController;
+use App\Http\Controllers\PaymentController;
 
 
 //-------------forgot password-----------------
@@ -130,7 +131,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/user-manage/{id}/edit', [UserManageController::class, 'edit'])->name('user_manage.edit');
     Route::post('/user-manage/{id}/update-role', [UserManageController::class, 'updateRole'])->name('user_manage.updateRole');
     Route::post('/user-manage/{id}/update-status', [UserManageController::class, 'updateStatus'])->name('user_manage.updateStatus');
-    Route::delete('/user_manage/bulk-delete', [UserManageController::class, 'bulkDelete'])->name('user_manage.bulk_delete');
+    Route::delete('/user-manage/delete-selected', [UserManageController::class, 'deleteSelected'])->name('user_manage.deleteSelected');
 });
 
 
@@ -155,6 +156,7 @@ Route::prefix('cart')->group(function () {
     Route::post('/add', [CartController::class, 'add'])->name('cart.add');
     Route::post('/update', [CartController::class, 'update'])->name('cart.update');
     Route::post('/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
+    Route::post('/cart/set-shipping', [CartController::class, 'setShipping'])->name('cart.setShipping');
 });
 
 // ----------------- Checkout -----------------
@@ -164,12 +166,18 @@ Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.s
 Route::post('/checkout/shipping', [CheckoutController::class, 'storeShipping'])->name('checkout.shipping');
 });
 
+//-------------- Payment -----------------
+Route::post('/payment', [PaymentController::class, 'createPayment'])->name('payment.create');
+Route::post('/payment/callback', [PaymentController::class, 'callback'])->name('payment.callback');
+Route::post('/payment/token', [PaymentController::class, 'getToken'])->name('payment.token');
+
+
+//----------------- Order --------------
 Route::middleware(['auth'])->group(function () {
     Route::get('/order/{id}', [OrderController::class, 'index'])->name('order.index'); // daftar semua order
     Route::get('/order', [OrderController::class, 'show'])->name('order.show'); // detail per order
     Route::post('/order', [OrderController::class, 'store'])->name('order.store');
 });
-
 
 // Bagian admin CRUD
 Route::prefix('order_crud')->middleware(['auth'])->group(function () {

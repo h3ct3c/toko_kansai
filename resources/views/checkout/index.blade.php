@@ -10,112 +10,87 @@
             <div class="w-full lg:w-2/3 bg-white p-6 md:p-8 rounded-lg shadow-xl border border-gray-200">
                 <h2 class="text-2xl font-semibold text-gray-800 mb-6">Detail Pengiriman & Pembayaran</h2>
 
-                <form id="billingForm" method="POST" action="{{ route('checkout.store') }}" class="space-y-6">
+                <form id="checkoutForm" class="space-y-6">
                     @csrf
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {{-- HIDDEN ORDER ID --}}
+                    <input type="hidden" id="order_id" name="order_id" value="{{ $order->id ?? '' }}">
 
-                        {{-- NAMA LENGKAP --}}
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="md:col-span-2">
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap*</label>
-                            <input type="text" id="name" name="name" required
-                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition"
-                                placeholder="Nama Anda" />
+                            <input type="text" id="name" name="name" value="{{ Auth::user()->name }}" required
+                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition">
                         </div>
 
-                        {{-- ALAMAT JALAN --}}
                         <div class="md:col-span-2">
                             <label for="jalan" class="block text-sm font-medium text-gray-700 mb-1">Alamat Jalan*</label>
                             <input type="text" id="jalan" name="jalan" required
-                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition"
-                                placeholder="Nama jalan, nomor rumah/bangunan" />
+                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition">
                         </div>
 
-                        {{-- PROVINSI --}}
                         <div>
                             <label for="provinsi" class="block text-sm font-medium text-gray-700 mb-1">Provinsi*</label>
                             <input type="text" id="provinsi" name="provinsi" required
-                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition"
-                                placeholder="Contoh: Jawa Barat" />
+                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition">
                         </div>
 
-                        {{-- KOTA --}}
                         <div>
-                            <label for="kota" class="block text-sm font-medium text-gray-700 mb-1">Kota/Kabupaten*</label>
+                            <label for="kota" class="block text-sm font-medium text-gray-700 mb-1">Kota*</label>
                             <input type="text" id="kota" name="kota" required
-                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition"
-                                placeholder="Contoh: Bandung" />
+                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition">
                         </div>
 
-                        {{-- KECAMATAN --}}
                         <div>
                             <label for="kecamatan" class="block text-sm font-medium text-gray-700 mb-1">Kecamatan*</label>
                             <input type="text" id="kecamatan" name="kecamatan" required
-                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition"
-                                placeholder="Contoh: Sukajadi" />
+                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition">
                         </div>
 
-                        {{-- KELURAHAN --}}
                         <div>
                             <label for="kelurahan" class="block text-sm font-medium text-gray-700 mb-1">Kelurahan*</label>
                             <input type="text" id="kelurahan" name="kelurahan" required
-                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition"
-                                placeholder="Contoh: Cipedes" />
+                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition">
                         </div>
 
-                        {{-- KODE POS --}}
                         <div>
                             <label for="kode_pos" class="block text-sm font-medium text-gray-700 mb-1">Kode Pos*</label>
                             <input type="text" id="kode_pos" name="kode_pos" required
-                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition"
-                                placeholder="Contoh: 40162" />
+                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition">
                         </div>
 
-                        {{-- NOMOR TELEPON --}}
                         <div>
                             <label for="nomor_telepon" class="block text-sm font-medium text-gray-700 mb-1">Nomor Telepon*</label>
-                            <input type="text" id="nomor_telepon" name="nomor_telepon" required
-                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition"
-                                placeholder="08xx-xxxx-xxxx" />
+                            <input type="text" id="nomor_telepon" name="nomor_telepon" value="{{ Auth::user()->nomor_telepon ?? '' }}" required
+                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition">
                         </div>
 
-                        {{-- EMAIL --}}
                         <div class="md:col-span-2">
                             <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Alamat Email*</label>
-                            <input type="email" id="email" name="email" required
-                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition"
-                                placeholder="nama@contoh.com" />
+                            <input type="email" id="email" name="email" value="{{ Auth::user()->email }}" required
+                                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition">
                         </div>
                     </div>
 
-                    {{-- Metode Pembayaran --}}
+                    {{-- PEMBAYARAN --}}
                     <div class="pt-4 border-t border-gray-200">
                         <h3 class="text-xl font-semibold text-gray-800 mb-4">Metode Pembayaran</h3>
                         <div class="space-y-3">
-                            <label
-                                class="flex items-center gap-3 border border-gray-300 p-4 rounded-lg cursor-pointer hover:bg-gray-50 transition">
-                                <input type="radio" name="payment_method" value="COD" checked
-                                    class="h-5 w-5 text-blue-600 accent-blue-600" />
+                            <label class="flex items-center gap-3 border border-gray-300 p-4 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                                <input type="radio" name="payment_method" value="COD" checked class="h-5 w-5 text-blue-600 accent-blue-600">
                                 <span class="text-gray-900 font-medium flex-grow">Cash on Delivery (COD)</span>
                             </label>
-                            <label
-                                class="flex items-center gap-3 border border-gray-300 p-4 rounded-lg cursor-pointer opacity-60">
-                                <input type="radio" name="payment_method" value="Transfer"
-                                    class="h-5 w-5 text-blue-600 accent-blue-600" disabled />
-                                <span class="text-gray-900 font-medium flex-grow">Bank Transfer (belum tersedia)</span>
+                            <label class="flex items-center gap-3 border border-gray-300 p-4 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                                <input type="radio" name="payment_method" value="Midtrans" class="h-5 w-5 text-blue-600 accent-blue-600">
+                                <span class="text-gray-900 font-medium flex-grow">Bayar via Bank / E-Wallet (Midtrans)</span>
                             </label>
                         </div>
                     </div>
 
-                    {{-- Hidden shipping data --}}
-                    <input type="hidden" name="shipping_method" value="{{ $shipping['method'] ?? '' }}">
-                    <input type="hidden" name="shipping_cost" value="{{ $shipping['cost'] ?? 0 }}">
-
-                    {{-- Tombol --}}
                     <div class="pt-6">
-                        <button type="submit" id="payBtn"
+                        <button type="button" id="payBtn"
                             class="w-full bg-blue-900 text-white font-semibold p-4 rounded-lg shadow-lg hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-700 focus:ring-opacity-50 transition">
-                            Buat Pesanan
+                            Lanjutkan Pembayaran
                         </button>
                     </div>
                 </form>
@@ -123,54 +98,38 @@
 
             {{-- RINGKASAN PESANAN --}}
             <div class="w-full lg:w-1/3">
-                <div
-                    class="bg-white p-6 md:p-8 rounded-lg shadow-xl border border-gray-200 sticky top-10">
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl border border-gray-200 sticky top-10">
                     <h2 class="text-2xl font-semibold text-gray-800 mb-6">Ringkasan Pesanan</h2>
 
                     <div class="space-y-4 mb-6 max-h-96 overflow-y-auto pr-2">
                         @foreach($products as $product)
-                        <div
-                            class="flex items-center justify-between border-b pb-3 last:border-b-0">
-                            <div class="flex items-start gap-4">
-                                <img src="{{ asset('img/' . $product->image) }}" alt="{{ $product->name }}"
-                                    class="w-16 h-16 object-cover rounded-md border" />
-                                <div>
-                                    <p class="font-medium text-gray-800 line-clamp-2">{{ $product->name }}</p>
-                                    <p class="text-sm text-gray-500">Qty: {{ $cart[$product->id]['quantity'] }}</p>
+                            @php 
+                                $cartItem = $cart[$product->id] ?? null;
+                            @endphp
+                            <div class="flex items-center justify-between border-b pb-3 last:border-b-0">
+                                <div class="flex items-start gap-4">
+                                    <img src="{{ asset('img/' . $product->image) }}" class="w-16 h-16 object-cover rounded-md border" />
+                                    <div>
+                                        <p class="font-medium text-gray-800">{{ $product->name }}</p>
+                                        <p class="text-sm text-gray-500">Qty: {{ $cartItem['quantity'] ?? 1 }}</p>
+                                    </div>
                                 </div>
+                                <span class="text-base font-semibold text-red-600">
+                                    Rp{{ number_format($product->price * ($cartItem['quantity'] ?? 1), 0, ',', '.') }}
+                                </span>
                             </div>
-                            <span class="text-base font-semibold text-red-600 whitespace-nowrap">
-                                Rp{{ number_format($product->price * $cart[$product->id]['quantity'], 0, ',', '.') }}
-                            </span>
-                        </div>
                         @endforeach
                     </div>
 
                     <div class="border-t border-gray-200 pt-6 space-y-3">
                         <div class="flex justify-between text-gray-700">
                             <span>Subtotal:</span>
-                            <span class="font-medium">
-                                Rp{{ number_format($subtotal, 0, ',', '.') }}
-                            </span>
+                            <span class="font-medium">Rp{{ number_format($subtotal, 0, ',', '.') }}</span>
                         </div>
 
-                        <div class="flex justify-between text-gray-700">
-                            <span>Pengiriman ({{ $shipping['method'] ?? 'Gratis' }}):</span>
-                            <span class="font-medium text-green-600">
-                                @if(($shipping['cost'] ?? 0) > 0)
-                                    Rp{{ number_format($shipping['cost'], 0, ',', '.') }}
-                                @else
-                                    Gratis
-                                @endif
-                            </span>
-                        </div>
-
-                        <div
-                            class="flex justify-between font-bold text-xl border-t border-gray-300 pt-3 mt-3">
+                        <div class="flex justify-between font-bold text-xl border-t border-gray-300 pt-3 mt-3">
                             <span>Total:</span>
-                            <span class="text-gray-900">
-                                Rp{{ number_format($total, 0, ',', '.') }}
-                            </span>
+                            <span class="text-gray-900">Rp{{ number_format($total, 0, ',', '.') }}</span>
                         </div>
                     </div>
                 </div>
@@ -179,6 +138,61 @@
     </div>
 </div>
 
-<div class="mb-[600px]"></div>
+{{-- MIDTRANS SANDBOX --}}
+<script src="https://app.sandbox.midtrans.com/snap/snap.js"
+        data-client-key="{{ config('midtrans.client_key') }}"></script>
+
+<script>
+document.getElementById('payBtn').addEventListener('click', async function() {
+    const selectedPayment = document.querySelector('input[name="payment_method"]:checked').value;
+    const form = document.getElementById('checkoutForm');
+
+    if (selectedPayment === 'COD') {
+        form.action = "{{ route('checkout.store') }}";
+        form.method = "POST";
+        form.submit();
+        return;
+    }
+
+    // MIDTRANS PAYMENT
+    fetch("/payment/token", {
+        method: "POST",
+        headers: { 
+            "Content-Type": "application/json",
+            "X-CSRF-TOKEN": "{{ csrf_token() }}"
+        },
+        body: JSON.stringify({
+            total_price: {{ $total }},
+            name: "{{ Auth::user()->name }}",
+            email: "{{ Auth::user()->email }}",
+            nomor_telepon: "{{ Auth::user()->nomor_telepon ?? '0812345678' }}"
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.snap_token) {
+            snap.pay(data.snap_token, {
+                onSuccess: function(result) {
+                    console.log('Payment Success:', result);
+                    window.location.href = "/order-success";
+                },
+                onPending: function(result) {
+                    console.log('Payment Pending:', result);
+                },
+                onError: function(result) {
+                    console.error('Payment Error:', result);
+                    alert("Terjadi kesalahan pada pembayaran.");
+                }
+            });
+        } else {
+            alert(data.error || 'Gagal memuat Midtrans');
+        }
+    })
+    .catch(err => {
+        console.error(err);
+        alert("Gagal menghubungi server pembayaran.");
+    });
+});
+</script>
 
 @include("layout.footer")

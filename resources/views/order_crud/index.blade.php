@@ -3,10 +3,9 @@
 @section('page_title', 'orders')
 
 @section('content')
-{{-- Bagian Header (Dikeluarkan dari Card) --}}
+{{-- Bagian Header--}}
 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
-    <h2 class="text-3xl font-semibold text-gray-900 flex items-center">
-            {{-- Menggunakan warna blue-900 untuk ikon --}} 
+    <h2 class="text-3xl font-semibold text-gray-800 flex items-center">
             Daftar Order Pelanggan
         </h2>
         <a href="{{ route('orderCrud.create') }}" 
@@ -15,9 +14,9 @@
     </a>
 </div>
 
-{{-- Container utama, kini hanya menampung layout dan jarak --}}
+{{-- Container utama--}}
 <div class="bg-white shadow-xl rounded-xl overflow-hidden">
-    {{-- Notifikasi (Alert) (Dikeluarkan dari Card) --}}
+    {{-- Notifikasi--}}
     @if (session('success'))
         @php
             $isDeleted = str_contains(session('success'), 'dihapus');
@@ -44,12 +43,11 @@
     @endif
     
     {{-- Card Kontainer Khusus Tabel --}}
-    {{-- Ini yang sekarang diberi background putih, shadow, dan padding --}}
     <div class="bg-white shadow-xl rounded-xl overflow-hidden">
             
         <div class="overflow-x-auto">
             <table class="min-w-full text-left">
-                {{-- Header Tabel (Mengikuti style minimalis contoh) --}}
+                {{-- Header Tabel--}}
                 <thead class="border-b border-gray-100 bg-gray-50/50">
                     <tr>
                         <th class="p-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">ID</th>
@@ -99,8 +97,9 @@
                             <td class="p-4">
                                 @php
                                     $statusClasses = [
-                                        'pending' => 'bg-yellow-100 text-yellow-800',
-                                        'completed' => 'bg-green-100 text-green-800',
+                                        'processing' => 'bg-yellow-100 text-yellow-800',
+                                        'shipped' => 'bg-green-100 text-green-800',
+                                        'delivered' => 'bg-blue-100 text blue-800',
                                         'cancelled' => 'bg-red-100 text-red-800',
                                     ];
                                     $currentClass = $statusClasses[$order->status] ?? 'bg-gray-100 text-gray-800';
@@ -116,15 +115,15 @@
                             </td>
                             
                             {{-- Kolom Actions --}}
-                            <td class="p-4 text-right">
+                            <td class="p-4 text-center">
                                 <div class="flex justify-end space-x-2">
-                                    {{-- Tombol Edit (Pencil SVG) --}}
+                                    {{-- Tombol Edit --}}
                                     <a href="{{ route('orderCrud.edit', $order->id) }}"
                                     class="text-blue-600 hover:text-blue-800 p-2 rounded-full hover:bg-blue-50 transition">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 25" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-9-4l9-9m-7 7l-2 2"></path></svg>
+                                    <svg width="16px" height="16px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title></title> <g id="Complete"> <g id="edit"> <g> <path d="M20,16v4a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V6A2,2,0,0,1,4,4H8" fill="none" stroke="#00308f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path> <polygon fill="none" points="12.5 15.8 22 6.2 17.8 2 8.3 11.5 8 16 12.5 15.8" stroke="#00308f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon> </g> </g> </g> </g></svg>
                                     </a>
                                     
-                                    {{-- Tombol Hapus (Trash SVG) --}}
+                                    {{-- Tombol Hapus --}}
                                     <form action="{{ route('orderCrud.destroy', $order->id) }}" method="POST" onsubmit="return confirm('❗ Yakin hapus order ini? Aksi ini tidak dapat dibatalkan.')">
                                         @csrf
                                         @method('DELETE')
@@ -146,7 +145,7 @@
             </table>
         </div>
         
-        {{-- Opsional: Paginasi (jika ada) --}}
+        {{-- Opsional: Paginasi --}}
         @if(isset($orders) && method_exists($orders, 'links'))
             <div class="mt-4 p-4 border-t border-gray-100">
                 {{ $orders->links() }}

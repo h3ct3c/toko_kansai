@@ -13,7 +13,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-7-4l9-9m-7 7l-2 2"></path>
             </svg>
-            <h2 class="text-3xl font-bold text-gray-800 tracking-tight">Edit Order #{{ $order->id }}</h2>
+            <h2 class="text-3xl font-bold text-blue-900 tracking-tight">Edit Order #{{ $order->id }}</h2>
         </div>
 
         {{-- Notifikasi Error --}}

@@ -21,10 +21,12 @@
       </div>
 
       <!-- Bagian kanan -->
-      <div class="text-white font-semibold">
-        Hallo Anak Keren
-      </div>
-    </div>
+<div class="text-white font-semibold">
+    <p>
+        <span>Hello, </span>
+        {{ Auth::check() ? explode(' ', Auth::user()->name)[0] : 'Guest' }}
+    </p>
+</div>
   </header>
 
 </body>

@@ -52,15 +52,20 @@ class UserManageController extends Controller
         return redirect()->route('user_manage.index')->with('success', 'Status berhasil diperbarui.');
     }
 
+   // Method bulk delete
     public function bulkDelete(Request $request)
-{
-    $ids = $request->ids;
-    if ($ids) {
-        \App\Models\User::whereIn('id', $ids)->delete();
-        return redirect()->back()->with('success', count($ids) . ' pengguna berhasil dihapus.');
+    {
+        $ids = $request->input('ids'); // ambil array id dari checkbox
+
+        if (empty($ids)) {
+            return redirect()->back()->with('error', 'Tidak ada pengguna yang dipilih.');
+        }
+
+        // Hapus semua user berdasarkan ID yang dicentang
+        User::whereIn('id', $ids)->delete();
+
+        return redirect()->back()->with('success', 'Pengguna terpilih berhasil dihapus.');
     }
-    return redirect()->back()->with('error', 'Tidak ada pengguna yang dipilih.');
-}
 
 public function edit($id)
 {
@@ -93,6 +98,19 @@ public function destroy($id)
     $user->delete();
 
     return redirect()->route('user_manage.index')->with('success', 'User berhasil dihapus.');
+}
+
+public function deleteSelected(Request $request)
+{
+    $ids = $request->selected_ids; // langsung ambil aja array-nya
+
+    if (empty($ids)) {
+        return back()->with('error', 'Tidak ada user yang dipilih.');
+    }
+
+    User::whereIn('id', $ids)->delete();
+
+    return back()->with('success', 'User terpilih berhasil dihapus.');
 }
 
 

@@ -12,79 +12,85 @@ use Illuminate\Support\Facades\Auth;
 class OrderController extends Controller
 {
     /* ===========================================================
-       👤 BAGIAN UNTUK USER (JANGAN DIUBAH)
-    ============================================================ */
-    public function store(Request $request)
-    {
-        $data = $request->validate([
-            'items' => 'required|array',
-            'items.*.product_id' => 'required|exists:products,id',
-            'items.*.quantity' => 'required|integer|min:1',
-            'items.*.price' => 'required|numeric|min:0',
+   👤 BAGIAN UNTUK USER
+=========================================================== */
+public function store(Request $request)
+{
+    $data = $request->validate([
+        'items' => 'required|array',
+        'items.*.product_id' => 'required|exists:products,id',
+        'items.*.quantity' => 'required|integer|min:1',
+        'items.*.price' => 'required|numeric|min:0',
+        'items.*.color' => 'nullable|string|max:50',
 
-            // alamat (tambahan)
-            'jalan' => 'required|string|max:255',
-            'provinsi' => 'required|string|max:100',
-            'kota' => 'required|string|max:100',
-            'kecamatan' => 'required|string|max:100',
-            'kelurahan' => 'required|string|max:100',
-            'kode_pos' => 'required|string|max:10',
-            'nomor_telepon' => 'required|string|max:20',
-        ]);
+        // alamat
+        'jalan' => 'required|string|max:255',
+        'provinsi' => 'required|string|max:100',
+        'kota' => 'required|string|max:100',
+        'kecamatan' => 'required|string|max:100',
+        'kelurahan' => 'required|string|max:100',
+        'kode_pos' => 'required|string|max:10',
+        'nomor_telepon' => 'required|string|max:20',
+    ]);
 
-        $order = Order::create([
-            'customer_id' => Auth::id(),
-            'status' => 'pending',
-            'total_price' => 0,
+    // Buat order utama
+    $order = Order::create([
+        'customer_id' => Auth::id(),
+        'status' => 'pending',
+        'total_price' => 0,
+        'jalan' => $data['jalan'],
+        'provinsi' => $data['provinsi'],
+        'kota' => $data['kota'],
+        'kecamatan' => $data['kecamatan'],
+        'kelurahan' => $data['kelurahan'],
+        'kode_pos' => $data['kode_pos'],
+        'nomor_telepon' => $data['nomor_telepon'],
+    ]);
 
-            // alamat (tambahan)
-            'jalan' => $data['jalan'],
-            'provinsi' => $data['provinsi'],
-            'kota' => $data['kota'],
-            'kecamatan' => $data['kecamatan'],
-            'kelurahan' => $data['kelurahan'],
-            'kode_pos' => $data['kode_pos'],
-            'nomor_telepon' => $data['nomor_telepon'],
-        ]);
+    $total = 0;
 
-        $total = 0;
+    foreach ($data['items'] as $item) {
+        $subtotal = $item['price'] * $item['quantity'];
+        $total += $subtotal;
 
-        foreach ($data['items'] as $item) {
-            $subtotal = $item['price'] * $item['quantity'];
-            $total += $subtotal;
-
-            OrderItem::create([
-                'order_id' => $order->id,
-                'product_id' => $item['product_id'],
-                'product_name' => $item['product_name'] ?? null, // biar aman kalo null
-                'quantity' => $item['quantity'],
-                'price' => $item['price'],
-                'total' => $subtotal,
-            ]);
+        // Satukan warna ke nama produk tanpa nambah kolom baru
+        $productName = $item['product_name'] ?? 'Produk Tanpa Nama';
+        if (!empty($item['color'])) {
+            $productName .= ' (' . ucfirst($item['color']) . ')';
         }
 
-        $order->update(['total_price' => $total]);
-
-        return redirect()->back()->with('success', 'Pesanan berhasil dibuat!');
+        OrderItem::create([
+            'order_id' => $order->id,
+            'product_id' => $item['product_id'],
+            'product_name' => $productName, // nama udah ada warna
+            'product_image' => $item['product_image'] ?? null,
+            'quantity' => $item['quantity'],
+            'price' => $item['price'],
+            'total' => $subtotal,
+            // gak perlu column color, aman
+        ]);
     }
 
-    public function index()
-    {
-        $orders = Order::latest()->get();
-        return view('order.index', compact('orders'));
-    }
+    $order->update(['total_price' => $total]);
 
-    public function show()
-    {
-        $orders = Order::where('customer_id', Auth::id())->get();
-        return view('order.show', compact('orders'));
-    }
+    return redirect()->back()->with('success', 'Pesanan berhasil dibuat!');
+}
+
+public function index($id)
+{
+    $orders = Order::with('items')->findOrFail($id);
+    return view('order.index', compact('orders'));
+}
+
+public function show()
+{
+    $orders = Order::where('customer_id', Auth::id())->get();
+    return view('order.show', compact('orders'));
+}
 
 
 
-    /* ===========================================================
-       🧑‍💼 BAGIAN UNTUK ADMIN (ORDER CRUD)
-    ============================================================ */
+    //------*BAGIAN UNTUK ADMIN (ORDER CRUD)*------//
 
     public function orderCrudIndex()
     {
@@ -109,7 +115,7 @@ class OrderController extends Controller
             'quantity' => 'required|integer|min:1',
             'status' => 'required|string',
 
-            // alamat (tambahan)
+            // alamat
             'jalan' => 'nullable|string|max:255',
             'provinsi' => 'nullable|string|max:100',
             'kota' => 'nullable|string|max:100',
@@ -127,7 +133,7 @@ class OrderController extends Controller
             'status' => $request->status,
             'total_price' => $total_price,
 
-            // alamat (tambahan)
+            // alamat
             'jalan' => $request->jalan,
             'provinsi' => $request->provinsi,
             'kota' => $request->kota,
@@ -169,7 +175,7 @@ class OrderController extends Controller
             'quantity' => 'required|integer|min:1',
             'status' => 'required|string',
 
-            // alamat (tambahan)
+            // alamat
             'jalan' => 'nullable|string|max:255',
             'provinsi' => 'nullable|string|max:100',
             'kota' => 'nullable|string|max:100',
@@ -189,7 +195,7 @@ class OrderController extends Controller
             'status' => $request->status,
             'total_price' => $total_price,
 
-            // alamat (tambahan)
+            // alamat
             'jalan' => $request->jalan,
             'provinsi' => $request->provinsi,
             'kota' => $request->kota,
@@ -199,7 +205,7 @@ class OrderController extends Controller
             'nomor_telepon' => $request->nomor_telepon,
         ]);
 
-        // update item order pertama (kalau ada)
+        // update item order
         if ($order->items->isNotEmpty()) {
             $order->items->first()->update([
                 'product_id' => $product->id,

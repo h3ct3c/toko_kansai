@@ -79,39 +79,42 @@
           {{ $product->description }}
         </p>
 
-        <!-- Color Options -->
-        <div class="mb-6">
-          <h3 class="text-lg font-semibold mb-2">Color:</h3>
-          <div class="flex space-x-2">
-            <button class="w-8 h-8 bg-stone-400 rounded-full focus:ring-2 focus:ring-offset-2 focus:ring-stone-400"></button>
-            <button class="w-8 h-8 bg-red-500 rounded-full focus:ring-2 focus:ring-offset-2 focus:ring-red-500"></button>
-            <button class="w-8 h-8 bg-orange-500 rounded-full focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"></button>
-            <button class="w-8 h-8 bg-yellow-500 rounded-full focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"></button>
-            <button class="w-8 h-8 bg-green-500 rounded-full focus:ring-2 focus:ring-offset-2 focus:ring-green-500"></button>
-            <button class="w-8 h-8 bg-blue-500 rounded-full focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"></button>
-            <button class="w-8 h-8 bg-indigo-500 rounded-full focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"></button>
+        <!-- Add to cart form -->
+        <form action="{{ route('cart.add') }}" method="POST" id="addToCartForm">
+          @csrf
+          <input type="hidden" name="id" value="{{ $product->id }}">
+          <input type="hidden" name="color" id="selectedColor" value="">
+
+          <!-- Color Options -->
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold mb-2">Color:</h3>
+            <div class="flex space-x-2" id="colorButtons">
+              <button type="button" data-color="Gray" class="w-8 h-8 bg-stone-400 rounded-full border-2 border-transparent"></button>
+              <button type="button" data-color="Red" class="w-8 h-8 bg-red-500 rounded-full border-2 border-transparent"></button>
+              <button type="button" data-color="Orange" class="w-8 h-8 bg-orange-500 rounded-full border-2 border-transparent"></button>
+              <button type="button" data-color="Yellow" class="w-8 h-8 bg-yellow-500 rounded-full border-2 border-transparent"></button>
+              <button type="button" data-color="Green" class="w-8 h-8 bg-green-500 rounded-full border-2 border-transparent"></button>
+              <button type="button" data-color="Blue" class="w-8 h-8 bg-blue-500 rounded-full border-2 border-transparent"></button>
+              <button type="button" data-color="Indigo" class="w-8 h-8 bg-indigo-500 rounded-full border-2 border-transparent"></button>
+            </div>
           </div>
-        </div>
 
-        <!-- Quantity -->
-        <div class="mb-6">
-          <label for="quantity" class="block text-sm font-medium text-gray-700 mb-1">Quantity:</label>
-          <input 
-            type="number" 
-            id="quantity" 
-            name="quantity" 
-            min="1" 
-            value="1"
-            class="w-12 text-center rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-            oninput="updatePrice()"
-          >
-        </div>
+          <!-- Quantity -->
+          <div class="mb-6">
+            <label for="quantity" class="block text-sm font-medium text-gray-700 mb-1">Quantity:</label>
+            <input 
+              type="number" 
+              id="quantity" 
+              name="quantity" 
+              min="1" 
+              value="1"
+              class="w-16 text-center rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              oninput="updatePrice()"
+            >
+          </div>
 
-        <!-- Add to cart -->
-        <form action="{{ route('cart.add') }}" method="POST">
-    @csrf
-    <input type="hidden" name="id" value="{{ $product->id }}">
-    <button class="bg-blue-900 flex gap-2 items-center text-white px-6 py-3 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2 mb-5">
+          <!-- Add to cart -->
+          <button type="submit" class="bg-blue-900 flex gap-2 items-center text-white px-6 py-3 rounded-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2 mb-5">
               <svg xmlns="http://www.w3.org/2000/svg" 
                   fill="none"
                   viewBox="0 0 24 24"
@@ -128,17 +131,8 @@
                         0 .75.75 0 0 1 1.5 0Z" />
               </svg>
               Add to Cart
-            </button>
-          </form>
-
-        <!-- Payment -->
-        <div class="flex space-x-4 mb-6">
-          <a href="/checkout">
-            <button class="bg-white flex gap-2 items-center border border-black text-black px-12 py-2 rounded-lg hover:border-gray-400 hover:bg-gray-100 focus:ring-2 focus:ring-white focus:ring-offset-2">
-              Buy Now
-            </button>
-          </a>
-        </div>
+          </button>
+        </form>
 
         <!-- Key features -->
         <div>
@@ -150,7 +144,7 @@
             <li>Tidak mengandung timbal dan logam berat</li>
             <li>Tidak cepat menguning</li>
             <li>Dapat diaplikasikan pada permukaan kayu</li>
-          </ul>
+          </ul> 
         </div>
       </div>
     </div>
@@ -174,6 +168,18 @@
     function formatRupiah(angka) {
       return "Rp." + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
+
+    // Warna
+    const colorButtons = document.querySelectorAll('#colorButtons button');
+    const colorInput = document.getElementById('selectedColor');
+
+    colorButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        colorButtons.forEach(b => b.classList.remove('ring-2', 'ring-offset-2', 'ring-blue-500'));
+        btn.classList.add('ring-2', 'ring-offset-2', 'ring-blue-500');
+        colorInput.value = btn.getAttribute('data-color');
+      });
+    });
   </script>
 </div>
 
@@ -204,5 +210,3 @@
 <div class="mb-96"></div>
 
 @include('layout.footer')
-
-

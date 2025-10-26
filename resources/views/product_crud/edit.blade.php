@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 
-{{-- Pastikan ini berada di <head> atau sebelum @section, tapi jika Anda ingin tetap di sini, biarkan saja --}}
 <script src="https://cdn.tailwindcss.com"></script>
 
 @section('page_title', 'edit product')

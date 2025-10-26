@@ -5,7 +5,6 @@
     <div class="max-w-[1410px] mx-auto flex justify-center py-1">
       <div class="flex space-x-8">
         <a href="{{ route('profile.show') }}" class="block py-2 px-1 border-b border-transparent hover:border-gray-900">My Account</a>
-        <a href="" class="block py-2 px-2 border-b border-transparent hover:border-gray-900">Address</a>
         <a href="{{ route('profile.edit') }}" class="block py-2 px-1 border-b border-transparent hover:border-gray-900">Account Settings</a>
       </div>
     </div>  

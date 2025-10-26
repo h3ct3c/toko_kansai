@@ -4,7 +4,7 @@
 
 @section('content')
 
-{{-- Header Utama (judul + tombol tambah di luar card tabel) --}}
+{{-- Header Utama --}}
 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
     <h1 class="text-3xl font-bold text-gray-900">
         Manajemen Produk
@@ -15,7 +15,7 @@
     </a>
 </div>
 
-{{-- Notifikasi (Alert) --}}
+{{-- Notifikasi --}}
 @if (session('success'))
     @php
         $isDeleted = str_contains(session('success'), 'Dihapus');
@@ -47,31 +47,25 @@
         <table class="min-w-full text-left">
             <thead class="bg-gray-50 border-b border-gray-200">
                 <tr>
-                    <th class="px-6 py-4 w-4">
-                        <input type="checkbox" class="rounded text-blue-600 focus:ring-blue-500 border-gray-300">
-                    </th>
                     <th class="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider w-3/12">Product Name</th>
-                    <th class="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider w-2/12">Category</th>
-                    <th class="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider w-2/12">Color</th>
+                    <th class="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider text-center w-2/12">Category</th>
+                    <th class="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider text-center w-2/12">Color</th>
                     <th class="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider w-1/12">Stock</th>
-                    <th class="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider text-right w-1/12">Price</th>
-                    <th class="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider text-right w-3/12">Actions</th>
+                    <th class="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider text-center w-1/12">Price</th>
+                    <th class="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider text-center w-3/12">Actions</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-gray-100">
                 @forelse ($products as $product)
                     <tr class="hover:bg-gray-50 transition duration-150">
-                        <td class="px-6 py-4">
-                            <input type="checkbox" class="rounded text-blue-600 focus:ring-blue-500 border-gray-300">
-                        </td>
                         <td class="px-6 py-3">
                             <div class="flex flex-col">
                                 <span class="font-medium text-gray-900">{{ $product->name }}</span>
                                 <span class="text-xs text-gray-500">ID: #{{ str_pad($product->id, 6, '0', STR_PAD_LEFT) }}</span>
                             </div>
                         </td>
-                        <td class="px-6 py-3 text-sm text-gray-700">{{ $product->category_id }}</td>
-                        <td class="px-6 py-3 text-sm text-gray-700">{{ $product->color_id }}</td>
+                        <td class="px-6 py-3 text-sm text-center text-gray-700">{{ $product->category_id }}</td>
+                        <td class="px-6 py-3 text-sm text-center text-gray-700">{{ $product->color_id }}</td>
                         <td class="px-6 py-3 text-sm">
                             <span class="font-medium px-2 py-0.5 rounded
                                 @if($product->stock > 10) text-blue-700 bg-blue-100

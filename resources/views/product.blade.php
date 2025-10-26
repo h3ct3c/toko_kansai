@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="bg-gradient-to-br from-blue-900 to-blue-800 shadow-md hover:shadow-lg shadow- transition transform hover:scale-105 justify-items-cente py-12">
+<div class="bg-gradient-to-br from-blue-900 to-blue-800 shadow-md hover:shadow-lg justify-items-center py-12">
   <h1 class="text-4xl font-bold text-white text-center">Semua Produk Cat</h1>
   <p class="text-white text-center mt-4">Temukan cat berkualitas untuk semua kebutuhan proyek Anda  </p>
 </div>
@@ -12,7 +12,7 @@
 @php
     use App\Models\Product;
 
-    $products = Product::all(); // Ambil semua produk langsung dari database
+    $products = Product::all();
 @endphp
 
 <div class="mt-12 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-2 gap-y-12 justify-items-center">

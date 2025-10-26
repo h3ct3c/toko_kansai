@@ -41,11 +41,12 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         // Cek apakah email mengandung kata "admin"
-        $userEmail = Auth::user()->email;
+        $role = auth()->user()->role;
 
-        if (str_contains($userEmail, 'admin')) {
-            return redirect()->intended('/dashboard'); // arahkan ke dashboard admin
-        }
+    // Arahkan sesuai role
+    if ($role === 'admin') {
+        return redirect()->intended(route('dashboard'));
+    }
 
         return redirect()->intended('/'); // arahkan ke halaman utama user
     }
