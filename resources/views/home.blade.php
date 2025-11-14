@@ -5,18 +5,22 @@
 
 <!-- Kategori Produk -->
 <div class="text-center">
-  <div class="text-4xl font-bold mb-4 text-blue-900">Jelajahi Kategori Produk Kami</div>
-  <div class="text-gray-600 mb-8">Temukan cat berkualitas untuk setiap kebutuhan Anda</div>
+  <div class="text-4xl font-bold mb-4 text-blue-900">
+    {{ __('messages.Home_ExploreCategories') }}
+  </div>
+  <div class="text-gray-600 mb-8">
+    {{ __('messages.Home_FindQualityPaint') }}
+  </div>
 </div>
 
 <!-- Kartu Kategori -->
 <section class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 px-6 lg:px-16 py-12">
   @php
     $categories = [
-      ['img' => 'kansai_12.jpg', 'title' => 'Premium', 'link' => '/premium'],
-      ['img' => 'kansai_5.jpg', 'title' => 'Eksterior', 'link' => '/eksterior'],
-      ['img' => 'kansai_7.jpg', 'title' => 'Interior', 'link' => '/interior'],
-      ['img' => 'kansai_6.jpg', 'title' => 'Kayu & Besi', 'link' => '/kayubesi'],
+      ['img' => 'kansai_12.jpg', 'title' => __('messages.Cat_Premium'), 'link' => '/premium'],
+      ['img' => 'kansai_5.jpg', 'title' => __('messages.Cat_Exterior'), 'link' => '/eksterior'],
+      ['img' => 'kansai_7.jpg', 'title' => __('messages.Cat_Interior'), 'link' => '/interior'],
+      ['img' => 'kansai_6.jpg', 'title' => __('messages.Cat_WoodIron'), 'link' => '/kayubesi'],
     ];
   @endphp
 
@@ -34,7 +38,7 @@
           href="{{ $category['link'] }}"
           class="mt-3 inline-block bg-white text-black px-5 py-2 rounded-full font-semibold hover:bg-gray-200 transition"
         >
-          Explore
+          {{ __('messages.Btn_Explore') }}
         </a>
       </div>
     </div>
@@ -49,34 +53,36 @@
     <div class="flex flex-col md:flex-row items-center">
       
       <div class="md:w-1/2 mb-8 md:mb-0">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Summer Sale</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          {{ __('messages.Home_SummerSale') }}
+        </h2>
         <p class="text-xl text-gray-300 mb-6">
-          Up to 50% off on selected items. Limited time offer.
+          {{ __('messages.Home_SummerSaleDesc') }}
         </p>
 
         <!-- Promo sepecial -->
         <div class="flex gap-4 mb-8 text-white" id="countdown">
           <div class="bg-white/10 rounded-lg p-4 text-center">
             <span id="days" class="block text-3xl font-bold">00</span>
-            <span class="text-sm text-gray-300">Days</span>
+            <span class="text-sm text-gray-300">{{ __('messages.Time_Days') }}</span>
           </div>
           <div class="bg-white/10 rounded-lg p-4 text-center">
             <span id="hours" class="block text-3xl font-bold">00</span>
-            <span class="text-sm text-gray-300">Hours</span>
+            <span class="text-sm text-gray-300">{{ __('messages.Time_Hours') }}</span>
           </div>
           <div class="bg-white/10 rounded-lg p-4 text-center">
             <span id="minutes" class="block text-3xl font-bold">00</span>
-            <span class="text-sm text-gray-300">Minutes</span>
+            <span class="text-sm text-gray-300">{{ __('messages.Time_Minutes') }}</span>
           </div>
           <div class="bg-white/10 rounded-lg p-4 text-center">
             <span id="seconds" class="block text-3xl font-bold">00</span>
-            <span class="text-sm text-gray-300">Seconds</span>
+            <span class="text-sm text-gray-300">{{ __('messages.Time_Seconds') }}</span>
           </div>
         </div>
 
         <a href="/product"
           class="inline-block py-3 px-8 bg-white text-gray-900 font-medium rounded-xl hover:bg-gray-100 transition transfrom hover:scale-95 ease-in-out">
-          Shop the Sale
+          {{ __('messages.Btn_ShopSale') }}
         </a>
       </div>
 
@@ -99,7 +105,7 @@
     if (distance < 0) {
       clearInterval(countdown);
       document.getElementById("countdown").innerHTML =
-        '<span class="text-2xl font-bold text-red-500">Waktu Habis!</span>';
+        '<span class="text-2xl font-bold text-red-500">{{ __('messages.Time_Expired') }}</span>';
       return;
     }
 
@@ -119,7 +125,9 @@
 
 <!-- Produk Unggulan -->
 <div class="text-center">
-  <div class="text-4xl font-bold mb-20 text-blue-900">Produk Unggulan</div>
+  <div class="text-4xl font-bold mb-20 text-blue-900">
+    {{ __('messages.Home_FeaturedProducts') }}
+  </div>
 </div>
 
 <!-- Produk -->

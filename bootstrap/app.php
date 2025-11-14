@@ -6,6 +6,7 @@ use Illuminate\Foundation\Configuration\Middleware;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\UserMiddleware;
 use App\Http\Middleware\UserActivity;
+use App\Http\Middleware\SetLocale; // tambahkan ini
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
@@ -18,6 +19,7 @@ return Application::configure(basePath: dirname(__DIR__))
         // Tambahkan middleware global ke group web
         $middleware->web(append: [
             UserActivity::class,
+            SetLocale::class, // ini penting biar bahasa otomatis di-load
         ]);
     })
     ->withRouting(

@@ -82,7 +82,7 @@
                             </label>
                             <label class="flex items-center gap-3 border border-gray-300 p-4 rounded-lg cursor-pointer hover:bg-gray-50 transition">
                                 <input type="radio" name="payment_method" value="Midtrans" class="h-5 w-5 text-blue-600 accent-blue-600">
-                                <span class="text-gray-900 font-medium flex-grow">Bayar via Bank / E-Wallet (Midtrans)</span>
+                                <span class="text-gray-900 font-medium flex-grow">Bayar via Bank / E-Wallet</span>
                             </label>
                         </div>
                     </div>
@@ -194,5 +194,7 @@ document.getElementById('payBtn').addEventListener('click', async function() {
     });
 });
 </script>
+
+<div class="mb-[350px]"></div>
 
 @include("layout.footer")

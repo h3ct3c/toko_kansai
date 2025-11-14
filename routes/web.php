@@ -25,6 +25,20 @@ use function Pest\Laravel\post;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\LanguageController;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
+
+Route::get('lang/{locale}', function ($locale) {
+    if (! in_array($locale, ['en', 'id'])) {
+        abort(400);
+    }
+
+    Session::put('locale', $locale);
+    App::setLocale($locale);
+
+    return Redirect::back();
+})->name('lang.switch');
 
 
 //-------------forgot password-----------------
@@ -189,3 +203,5 @@ Route::prefix('order_crud')->middleware(['auth'])->group(function () {
     Route::delete('/{id}', [OrderController::class, 'orderCrudDestroy'])->name('orderCrud.destroy');
 });
 
+// language switcher
+Route::get('lang/{locale}', [LanguageController::class, 'switch'])->name('lang.switch');

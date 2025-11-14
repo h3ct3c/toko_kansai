@@ -95,8 +95,7 @@
         {{-- Grafik Penjualan --}}
         <div class="col-span-2 bg-white p-6 rounded-xl shadow-md">
             <div class="flex items-center justify-between mb-4">
-                <h2 class="text-2xl font-semibold text-gray-800">Daily Sales</h2>
-                <span class="text-sm text-gray-500">15% increase in today sales</span>
+                <h2 class="text-2xl font-semibold text-gray-800">Monthly Sales</h2>   
             </div>
 
             {{-- chart container dengan tinggi fix --}}

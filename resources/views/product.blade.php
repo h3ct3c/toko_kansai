@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="bg-gradient-to-br from-blue-900 to-blue-800 shadow-md hover:shadow-lg justify-items-center py-12">
-  <h1 class="text-4xl font-bold text-white text-center">Semua Produk Cat</h1>
-  <p class="text-white text-center mt-4">Temukan cat berkualitas untuk semua kebutuhan proyek Anda  </p>
+  <h1 class="text-4xl font-bold text-white text-center">{{ __('messages.all_products_title') }}</h1>
+  <p class="text-white text-center mt-4">{{ __('messages.all_products_subtitle') }}</p>
 </div>
 
 <div class="mt-20"></div>
@@ -32,7 +32,7 @@
             </a>
         </div>
     @empty
-        <p class="text-center col-span-full text-gray-500">Belum ada produk tersedia.</p>
+        <p class="text-center col-span-full text-gray-500">{{ __('messages.no_products') }}</p>
     @endforelse
 </div>
 

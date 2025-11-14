@@ -1,5 +1,5 @@
-
 <footer class="bg-white border-t font-raleway text-[#1C244B]">
+
   <div class="max-w-[1200px] mx-auto px-4 py-8">
     <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
       
@@ -10,40 +10,40 @@
 
       <!-- Produk -->
       <div>
-        <h3 class="font-bold mb-4">Produk</h3>
+        <h3 class="font-bold mb-4">{{ __('messages.Footer_Products') }}</h3>
         <ul class="space-y-2 text-sm font-semibold">
-          <li class="hover:text-blue-600"><a href="/cat_premium">Cat Premium</a></li>
-          <li class="hover:text-blue-600"><a href="/cat_interior">Cat Interior</a></li>
-          <li class="hover:text-blue-600"><a href="/cat_eksterior">Cat Eksterior</a></li>
-          <li class="hover:text-blue-600"><a href="/cat_kayu_besi">Cat Kayu &amp; Besi</a></li>
-          <li class="hover:text-blue-600"><a href="/tds">Lihat TDS</a></li>
+          <li><a href="/cat_premium" class="hover:text-blue-600">{{ __('messages.Footer_PremiumPaint') }}</a></li>
+          <li><a href="/cat_interior" class="hover:text-blue-600">{{ __('messages.Footer_InteriorPaint') }}</a></li>
+          <li><a href="/cat_eksterior" class="hover:text-blue-600">{{ __('messages.Footer_ExteriorPaint') }}</a></li>
+          <li><a href="/cat_kayu_besi" class="hover:text-blue-600">{{ __('messages.Footer_WoodIron') }}</a></li>
+          <li><a href="/tds" class="hover:text-blue-600">{{ __('messages.Footer_TDS') }}</a></li>
         </ul>
       </div>
 
       <!-- Tentang Kami -->
       <div>
-        <h3 class="font-bold mb-4">Tentang Kami</h3>
+        <h3 class="font-bold mb-4">{{ __('messages.Footer_AboutUs') }}</h3>
         <ul class="space-y-2 text-sm font-semibold">
-          <li><a href="https://kansaipaint.id/artikel">Artikel</a></li>
-          <li><a href="https://kansaipaint.id/hubungi-kami">Hubungi Kami</a></li>
+          <li><a href="https://kansaipaint.id/artikel">{{ __('messages.Footer_Articles') }}</a></li>
+          <li><a href="https://kansaipaint.id/hubungi-kami">{{ __('messages.Footer_ContactUs') }}</a></li>
         </ul>
       </div>
 
       <!-- Simulasi -->
       <div>
-        <h3 class="font-bold mb-4">Simulasi</h3>
+        <h3 class="font-bold mb-4">{{ __('messages.Footer_Simulation') }}</h3>
         <ul class="space-y-2 text-sm font-semibold">
-          <li><a href="https://color.kansaipaint.id/paint-calculator">Kalkulator Cat</a></li>
-          <li><a href="https://color.kansaipaint.id">Warna</a></li>
+          <li><a href="https://color.kansaipaint.id/paint-calculator">{{ __('messages.Footer_PaintCalculator') }}</a></li>
+          <li><a href="https://color.kansaipaint.id">{{ __('messages.Footer_Colors') }}</a></li>
         </ul>
       </div>
 
       <!-- Layanan -->
       <div>
-        <h3 class="font-bold mb-4">Layanan</h3>
+        <h3 class="font-bold mb-4">{{ __('messages.Footer_Services') }}</h3>
         <ul class="space-y-2 text-sm font-semibold">
-          <li><a href="https://kansaipaint.id/b2b">Business to Business</a></li>
-          <li><a href="https://kansaipaint.id/warranty">Garansi 12 Tahun</a></li>
+          <li><a href="https://kansaipaint.id/b2b">{{ __('messages.Footer_B2B') }}</a></li>
+          <li><a href="https://kansaipaint.id/warranty">{{ __('messages.Footer_12YearWarranty') }}</a></li>
         </ul>
       </div>
 
@@ -53,7 +53,8 @@
   <!-- Copyright -->
   <div class="border-t bg-blue-900 text-white">
     <div class="max-w-6xl mx-auto px-4 py-4 text-sm text-center">
-      ©2025 Kansai Paint. All Rights Reserved.
+      ©2025 Kansai Paint. {{ __('messages.Footer_AllRightsReserved') }}
     </div>
   </div>
+
 </footer>

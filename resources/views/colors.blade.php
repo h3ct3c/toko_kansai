@@ -1,8 +1,8 @@
 @include("layout.header")
 
 <div class="bg-gradient-to-br from-blue-900 to-blue-800 shadow-md hover:shadow-lg justify-items-center py-12">
-  <h1 class="text-4xl font-bold text-white text-center">Seluruh koleksi Warna</h1>
-  <p class="text-white text-center mt-4">Temukan Warna favorit Anda!  </p>
+  <h1 class="text-4xl font-bold text-white text-center">{{ __('messages.title') }}</h1>
+  <p class="text-white text-center mt-4">{{ __('messages.subtitle') }}</p>
 </div>
 
 <div class="mb-24"></div>
@@ -80,6 +80,7 @@
         <p class="text-sm">Purple</p>
       </div>
     </div>
+
   </div>
 
   <!-- Grid turunan warna (row 2), default hidden -->
@@ -95,8 +96,7 @@
     <div class="bg-[#ffa500] h-[50px] md:h-[95px] rounded-md"></div>
   </div>
 
-  <!-- tambahin row lain sesuai kategori -->
-   <div id="yellowRow" class="grid grid-cols-5 lg:grid-cols-7 gap-4 mt-4 hidden">
+  <div id="yellowRow" class="grid grid-cols-5 lg:grid-cols-7 gap-4 mt-4 hidden">
     <div class="bg-[#ddff01] h-[50px] md:h-[95px] rounded-md"></div>
   </div>
 
@@ -118,14 +118,10 @@
 
 <script>
   function toggleRow(id) {
-    // sembunyiin semua row turunan
     document.querySelectorAll('[id$="Row"]').forEach(el => el.classList.add("hidden"));
-
-    // tampilkan row yang diklik
     const row = document.getElementById(id);
     row.classList.remove("hidden");
 
-    // animasi item muncul satu per satu
     const items = row.children;
     [...items].forEach((item, i) => {
       item.style.opacity = 0;

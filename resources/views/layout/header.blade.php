@@ -15,12 +15,12 @@
   <div class="bg-gray-100 text-gray-900 text-[13px] font-bold">
     <div class="max-w-[1410px] mx-auto flex justify-end py-1">
       <div class="flex space-x-8">
-        <a href="/diskon" class="hover:text-blue-600">Diskon</a>
-        <a href="/https://kansaipaint.id/hubungi-kami" class="hover:text-blue-600">Contact</a>
+        <a href="/diskon" class="hover:text-blue-600">{{ __('messages.Discount') }}</a>
+        <a href="/https://kansaipaint.id/hubungi-kami" class="hover:text-blue-600">{{ __('messages.Contact') }}</a>
 
         @guest
-          <a href="/register" class="hover:text-blue-600">Join us</a>
-          <a href="/login" class="hover:text-blue-600">Sign In</a>
+          <a href="/register" class="hover:text-blue-600">{{ __('messages.JoinUs') }}</a>
+          <a href="/login" class="hover:text-blue-600">{{ __('messages.SignIn') }}</a>
         @endguest
       </div>
     </div>
@@ -37,57 +37,57 @@
 
       <ul class="flex gap-x-6 text-sm font-medium text-gray-700">
         <li>
-          <a href="/" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Home</a>
+          <a href="/" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">{{ __('messages.Home') }}</a>
         </li>
 
         <!-- Dropdown Product -->
         <li class="relative group">
-          <a href="/product" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Product</a>
+          <a href="/product" class="nav-link block py-2 px-2 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">{{ __('messages.Product') }}</a>
 
           <div class="fixed left-0 hidden group-hover:flex bg-white shadow-lg rounded-lg mt-2 w-full p-8">
             <div class="grid grid-cols-4 gap-2 max-w-4xl mx-auto">
 
               <!-- Kolom 1 -->
               <div>
-                <h3 class="font-bold text-blue-900 text-[15px] mb-2">Kategori Utama</h3>
+                <h3 class="font-bold text-blue-900 text-[15px] mb-2">{{ __('messages.MainCategories') }}</h3>
                 <ul class="space-y-2">
-                  <li><a href="/interior" class="block text-gray-600 hover:text-blue-700">Interior</a></li>
-                  <li><a href="/eksterior" class="block text-gray-600 hover:text-blue-700">Eksterior</a></li>
-                  <li><a href="/kayubesi" class="block text-gray-600 hover:text-blue-700">Kayu & Besi</a></li>
-                  <li><a href="/premium" class="block text-gray-600 hover:text-blue-700">Premium</a></li>
+                  <li><a href="/interior" class="block text-gray-600 hover:text-blue-700">{{ __('messages.Interior') }}</a></li>
+                  <li><a href="/eksterior" class="block text-gray-600 hover:text-blue-700">{{ __('messages.Exterior') }}</a></li>
+                  <li><a href="/kayubesi" class="block text-gray-600 hover:text-blue-700">{{ __('messages.WoodIron') }}</a></li>
+                  <li><a href="/premium" class="block text-gray-600 hover:text-blue-700">{{ __('messages.Premium') }}</a></li>
                 </ul>
               </div>
 
               <!-- Kolom 2 -->
               <div>
-                <h3 class="font-bold text-blue-900 text-[15px] mb-2">Finishing</h3>
+                <h3 class="font-bold text-blue-900 text-[15px] mb-2">{{ __('messages.Finishing') }}</h3>
                 <ul class="space-y-2">
-                  <li><a href="/gloss" class="block text-gray-600 hover:text-blue-700">Gloss</a></li>
-                  <li><a href="/matt" class="block text-gray-600 hover:text-blue-700">Matt</a></li>
-                  <li><a href="/sheen" class="block text-gray-600 hover:text-blue-700">Sheen</a></li>
+                  <li><a href="/gloss" class="block text-gray-600 hover:text-blue-700">{{ __('messages.Gloss') }}</a></li>
+                  <li><a href="/matt" class="block text-gray-600 hover:text-blue-700">{{ __('messages.Matt') }}</a></li>
+                  <li><a href="/sheen" class="block text-gray-600 hover:text-blue-700">{{ __('messages.Sheen') }}</a></li>
                 </ul>
               </div>
 
               <!-- Kolom 3 -->
               <div>
-                <h3 class="font-bold text-blue-900 text-[15px] mb-2">Koleksi Favorit</h3>
+                <h3 class="font-bold text-blue-900 text-[15px] mb-2">{{ __('messages.FavoriteCollection') }}</h3>
                 <ul class="space-y-2">
-                  <li><a href="#" class="block text-gray-600 hover:text-blue-700">Best Seller</a></li>
-                  <li><a href="#" class="block text-gray-600 hover:text-blue-700">Limited Edition</a></li>
+                  <li><a href="#" class="block text-gray-600 hover:text-blue-700">{{ __('messages.BestSeller') }}</a></li>
+                  <li><a href="#" class="block text-gray-600 hover:text-blue-700">{{ __('messages.LimitedEdition') }}</a></li>
                 </ul>
               </div>
 
               <!-- Kolom 4 -->
               <div class="relative text-[15px]">
                 <img src="https://via.placeholder.com/200x120" alt="Promo" class="rounded-md object-cover">
-                <p class="mt-2 text-sm text-gray-500">Promo spesial untuk cat premium</p>
+                <p class="mt-2 text-sm text-gray-500">{{ __('messages.SpecialPromo') }}</p>
               </div>
             </div>
           </div>
         </li>
 
         <li>
-          <a href="/colors" class="nav-link block py-2 px-1 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">Colors</a>
+          <a href="/colors" class="nav-link block py-2 px-1 border-b-2 border-transparent hover:border-blue-900 hover:text-blue-900 transition-all">{{ __('messages.Colors') }}</a>
         </li>
       </ul>
     </div>
@@ -97,7 +97,7 @@
 
       <!-- Search -->
       <form action="{{ route('search') }}" method="GET" class="relative group transition-all duration-1000 ease-in-out w-[180px] focus-within:w-[870px]">
-        <input type="text" name="query" placeholder="What the helly" 
+        <input type="text" name="query" placeholder="{{ __('messages.SearchPlaceholder') }}" 
           class="w-full rounded-full bg-gray-100 py-[10px] pl-12 pr-10 text-sm focus:outline-none text-gray-600 hover:bg-gray-200 placeholder-gray-400 transition-all duration-1000 ease-in-out"
           required />
         <button type="submit" aria-label="Search"
@@ -155,6 +155,26 @@
                 Orders
               </a>
             </li>
+
+<!-- Language Switcher -->
+<div class="language-switcher flex items-center justify-end gap-[66px]">
+    <div class="text-sm text-gray-700">
+        Language
+    </div>
+
+    <div class="flex items-center text-sm text-gray-700 gap-1">
+        <a href="{{ route('lang.switch', 'id') }}"
+           class="{{ session('locale','id') == 'id' ? 'font-semibold text-gray-900' : '' }}">
+           ID
+        </a>
+        <span>|</span>
+
+        <a href="{{ route('lang.switch', 'en') }}"
+           class="{{ session('locale','id') == 'en' ? 'font-semibold text-gray-900' : '' }}">
+           EN
+        </a>
+    </div>
+</div>
 
             @auth
             <li>
