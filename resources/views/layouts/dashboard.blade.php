@@ -3,7 +3,7 @@
 @section('page_title', 'Dashboard')
 
 @section('content')
-<div class="bg-gray-50 p-6 rounded-2xl space-y-10">
+<div class="bg-gray-50 p-6 rounded-2xl space-y-6">
 
     {{-- GRID CARD STATISTICS --}}
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -12,7 +12,7 @@
         <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
             <div class="flex items-center justify-between">
                 <div>
-                    <p class="text-gray-500 text-sm font-medium">Total Revenue</p>
+                    <p class="text-gray-500 text-sm font-medium">{{ __('dashboard.total_revenue') }}</p>
                     <h2 class="text-3xl font-bold text-gray-800 mt-1">Rp{{ number_format($totalRevenue, 0, ',', '.') }}</h2>
                 </div>
                 <div class="bg-gradient-to-tr from-green-500 to-teal-400 p-3 rounded-xl text-white shadow-lg">
@@ -32,7 +32,7 @@
         <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
             <div class="flex items-center justify-between">
                 <div>
-                    <p class="text-gray-500 text-sm font-medium">Total Users</p>
+                    <p class="text-gray-500 text-sm font-medium">{{ __('dashboard.total_users') }}</p>
                     <h2 class="text-3xl font-bold text-gray-800 mt-1">{{ $totalUsers }}</h2>
                 </div>
                 <div class="bg-gradient-to-tr from-blue-500 to-indigo-400 p-3 rounded-xl text-white shadow-lg">
@@ -52,7 +52,7 @@
         <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
             <div class="flex items-center justify-between">
                 <div>
-                    <p class="text-gray-500 text-sm font-medium">Total Orders</p>
+                    <p class="text-gray-500 text-sm font-medium">{{ __('dashboard.total_orders') }}</p>
                     <h2 class="text-3xl font-bold text-gray-800 mt-1">{{ $totalOrders }}</h2>
                 </div>
                 <div class="bg-gradient-to-tr from-yellow-500 to-orange-400 p-3 rounded-xl text-white shadow-lg">
@@ -72,7 +72,7 @@
         <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
             <div class="flex items-center justify-between">
                 <div>
-                    <p class="text-gray-500 text-sm font-medium">Total Products</p>
+                    <p class="text-gray-500 text-sm font-medium">{{ __('dashboard.total_products') }}</p>
                     <h2 class="text-3xl font-bold text-gray-800 mt-1">{{ $totalProducts }}</h2>
                 </div>
                 <div class="bg-gradient-to-tr from-red-500 to-pink-400 p-3 rounded-xl text-white shadow-lg">
@@ -95,7 +95,7 @@
         {{-- Grafik Penjualan --}}
         <div class="col-span-2 bg-white p-6 rounded-xl shadow-md">
             <div class="flex items-center justify-between mb-4">
-                <h2 class="text-2xl font-semibold text-gray-800">Monthly Sales</h2>   
+                <h2 class="text-2xl font-semibold text-gray-800">{{ __('dashboard.monthly_sales') }}</h2>   
             </div>
 
             {{-- chart container dengan tinggi fix --}}
@@ -103,12 +103,12 @@
                 <canvas id="salesChart"></canvas>
             </div>
 
-            <p class="text-gray-400 text-xs mt-4">updated 4 min ago</p>
+            <p class="text-gray-400 text-xs mt-4">{{ __('dashboard.updated', ['min' => 4]) }}</p>
         </div>
 
         {{-- Produk Terlaris --}}
         <div class="bg-white p-6 rounded-xl shadow-md">
-            <h2 class="text-2xl font-bold text-blue-900 mb-4">Top Selling Products</h2>
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">{{ __('dashboard.top_selling') }}</h2>
             <ul class="divide-y divide-gray-100">
                 @forelse ($topProducts as $product)
                     <li class="py-3 flex justify-between items-center hover:bg-gray-50 px-2 rounded-lg transition">
@@ -116,7 +116,7 @@
                         <span class="text-blue-900 text-sm font-semibold">{{ $product->total_sold }} sold</span>
                     </li>
                 @empty
-                    <li class="py-3 text-gray-400 text-center text-sm">Belum ada data penjualan.</li>
+                    <li class="py-3 text-gray-400 text-center text-sm">{{ __('dashboard.no_sales_data') }}</li>
                 @endforelse
             </ul>
         </div>

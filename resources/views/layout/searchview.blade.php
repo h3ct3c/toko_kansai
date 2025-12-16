@@ -42,3 +42,5 @@
 
 </div>
 <div class="mb-44"></div>
+
+@include('layout.footer')

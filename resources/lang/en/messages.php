@@ -10,6 +10,10 @@ return [
     'Product' => 'Products',
     'Colors' => 'Colors',
 
+    'My Account' => 'My Account',
+    'Orders' => 'Orders',
+    'Language' => 'Language',
+
     // MAIN CATEGORIES
     'MainCategories' => 'Main Categories',
     'Interior' => 'Interior',
@@ -65,8 +69,8 @@ return [
 
     'Btn_Explore' => 'Explore',
 
-    'Home_SummerSale' => 'Summer Sale',
-    'Home_SummerSaleDesc' => 'Up to 50% off on selected items. Limited time offer.',
+    'Home_WinterSale' => 'Winter Sale',
+    'Home_WinterSaleDesc' => 'Up to 50% off on selected items. Limited time offer.',
 
     'Time_Days' => 'Days',
     'Time_Hours' => 'Hours',
@@ -86,5 +90,10 @@ return [
     // COLORS PAGE
     'title' => 'All Color Collections',
     'subtitle' => 'Find your favorite color!',
+
+    // CART
+    'MY SHOPPING CART' => 'MY SHOPPING CART',
+    'your_cart_is_empty' => 'Your cart is empty.',
+    'Countinue_Shopping' => 'Continue Shopping',
 
 ];

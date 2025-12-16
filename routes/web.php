@@ -124,10 +124,6 @@ Route::get('/gloss', fn() => view('category.finishing.gloss'));
 Route::get('/matt', fn() => view('category.finishing.matt'));
 Route::get('/sheen', fn() => view('category.finishing.sheen'));
 
-// Pages
-Route::get('/pages', fn() => view('pages'));
-Route::get('/cart', fn() => view('pages/cart'));
-Route::get('/checkout', fn() => view('pages/checkout'));
 // Diskon
 Route::get('/diskon', fn() => view('pages.diskon'));
 
@@ -171,6 +167,8 @@ Route::prefix('cart')->group(function () {
     Route::post('/update', [CartController::class, 'update'])->name('cart.update');
     Route::post('/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
     Route::post('/cart/set-shipping', [CartController::class, 'setShipping'])->name('cart.setShipping');
+    Route::post('/cart/increase', [CartController::class, 'ajaxIncrease'])->name('cart.ajaxIncrease');
+    Route::post('/cart/decrease', [CartController::class, 'ajaxDecrease'])->name('cart.ajaxDecrease');
 });
 
 // ----------------- Checkout -----------------

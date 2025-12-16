@@ -1,9 +1,9 @@
 @include("layout.header")
 
 <div class="container mx-auto py-12 px-6">
-    <h1 class="text-4xl font-bold mb-10 text-blue-900">MY SHOPPING CART</h1>
+    <h1 class="text-4xl font-bold mb-10 text-blue-900">{{ __('messages.MY SHOPPING CART') }}</h1>
 
-    {{-- ALERT --}}
+    {{-- NOTIF --}}
     @if (session('success'))
         @php $isDeleted = str_contains(session('success'), 'dihapus'); @endphp
         <div id="alert-message" 
@@ -44,7 +44,8 @@
                             $total += $subtotal; 
                         @endphp
                         <tr class="border-b hover:bg-gray-50 transition">
-                            <!-- Product Info -->
+
+                            <!-- Product -->
                             <td class="py-4 px-6 flex items-center space-x-3">
                                 <img src="{{ asset('img/'. $item['image']) }}" 
                                      alt="{{ $item['name'] }}" 
@@ -59,7 +60,7 @@
                                 @if(!empty($item['color']))
                                     <div class="flex items-center justify-center gap-2">
                                         <div class="w-4 h-4 rounded-full border"
-                                             style="background-color: {{ strtolower($item['color']) }}">
+                                             style="background-color: {{ strtolower($item['color']) }};">
                                         </div>
                                         <span class="text-gray-600 text-sm capitalize">{{ $item['color'] }}</span>
                                     </div>
@@ -70,15 +71,18 @@
 
                             <!-- Quantity -->
                             <td class="py-4 px-6 text-center">
-                                <form action="{{ route('cart.update') }}" method="POST" class="inline-flex items-center space-x-2">
-                                    @csrf
-                                    <input type="hidden" name="id" value="{{ $id }}">
-                                    <button type="submit" name="action" value="decrease"
-                                            class="bg-gray-200 text-gray-700 px-2 py-1 rounded hover:bg-gray-300">-</button>
-                                    <span class="px-3 font-semibold">{{ $item['quantity'] }}</span>
-                                    <button type="submit" name="action" value="increase"
-                                            class="bg-gray-200 text-gray-700 px-2 py-1 rounded hover:bg-gray-300">+</button>
-                                </form>
+
+                                <div class="inline-flex items-center space-x-2 quantity-box" 
+                                     data-id="{{ $id }}" 
+                                     data-price="{{ $item['price'] }}">
+
+                                    <button type="button" class="btn-dec bg-gray-200 text-gray-700 px-2 py-1 rounded hover:bg-gray-300">-</button>
+
+                                    <span class="qty px-3 font-semibold">{{ $item['quantity'] }}</span>
+
+                                    <button type="button" class="btn-inc bg-gray-200 text-gray-700 px-2 py-1 rounded hover:bg-gray-300">+</button>
+                                </div>
+
                             </td>
 
                             <!-- Price -->
@@ -86,8 +90,8 @@
                                 Rp{{ number_format($item['price'], 0, ',', '.') }}
                             </td>
 
-                            <!-- Total -->
-                            <td class="py-4 px-6 text-right font-semibold text-gray-900">
+                            <!-- Total per item -->
+                            <td class="row-total py-4 px-6 text-right font-semibold text-gray-900">
                                 Rp{{ number_format($subtotal, 0, ',', '.') }}
                             </td>
 
@@ -95,10 +99,10 @@
                             <td class="py-4 px-6 text-center">
                                 <form action="{{ route('cart.remove', $id) }}" method="POST" onsubmit="return confirm('Remove this item?')">
                                     @csrf
-                                    <input type="hidden" name="id" value="{{ $id }}">
                                     <button type="submit" class="text-red-600 hover:text-red-800 font-semibold">Remove</button>
                                 </form>
                             </td>
+
                         </tr>
                     @endforeach
                 </tbody>
@@ -107,6 +111,7 @@
 
         <!-- Summary Section -->
         <div class="mt-8 grid md:grid-cols-2 gap-8">
+
             <!-- Shipping -->
             <div class="bg-white rounded-2xl shadow p-6">
                 <h2 class="text-lg font-semibold mb-3 text-gray-800">Shipping Method</h2>
@@ -157,7 +162,7 @@
     @else
         <div class="bg-white p-10 rounded-2xl shadow text-center text-gray-600">
             <i class="fas fa-shopping-cart text-6xl mb-4 text-gray-400"></i>
-            <p class="text-lg">Your cart is empty.</p>
+            <p class="text-lg">{{ __('messages.your_cart_is_empty') }}</p>
             <div>
                 <a href="/">
                     <button type="button"
@@ -165,7 +170,7 @@
                                    bg-blue-900 border border-blue-700 shadow-md shadow-blue-800 transition duration-200 ease-out
                                    hover:opacity-80 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-lg 
                                    active:translate-x-2 active:translate-y-1 active:shadow-none">
-                      Continue Shopping
+                      {{ __('messages.Countinue_Shopping') }}
                     </button>
                 </a>
             </div>
@@ -181,32 +186,85 @@
 
     function updateTotal() {
         const selectedOption = shippingSelect.options[shippingSelect.selectedIndex];
-        const shippingMethod = selectedOption.value;
         const shippingCost = parseInt(selectedOption.dataset.cost);
         const subtotal = parseInt(subtotalElement.dataset.subtotal);
         const total = subtotal + shippingCost;
 
-        // Update tampilan
         shippingCostElement.textContent = 'Rp' + shippingCost.toLocaleString('id-ID');
         totalElement.textContent = 'Rp' + total.toLocaleString('id-ID');
-
-        // Kirim ke server untuk disimpan di session
-        fetch('{{ route("cart.setShipping") }}', {
-            method: 'POST',
-            headers: {
-                'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                shipping_method: shippingMethod,
-                shipping_cost: shippingCost
-            })
-        });
     }
 
     shippingSelect.addEventListener('change', updateTotal);
     updateTotal();
 </script>
+
+<script>
+// INCREASE
+document.querySelectorAll('.quantity-box .btn-inc').forEach(btn => {
+    btn.addEventListener('click', function () {
+
+        const box = this.closest('.quantity-box');
+        const id = box.dataset.id;
+        const price = parseInt(box.dataset.price);
+
+        fetch("{{ route('cart.ajaxIncrease') }}", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRF-TOKEN": "{{ csrf_token() }}"
+            },
+            body: JSON.stringify({ id: id })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (!data.success) return;
+
+            updateRow(box, data.quantity, price, data.subtotal);
+        });
+    });
+});
+
+// DECREASE
+document.querySelectorAll('.quantity-box .btn-dec').forEach(btn => {
+    btn.addEventListener('click', function () {
+
+        const box = this.closest('.quantity-box');
+        const id = box.dataset.id;
+        const price = parseInt(box.dataset.price);
+
+        fetch("{{ route('cart.ajaxDecrease') }}", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRF-TOKEN": "{{ csrf_token() }}"
+            },
+            body: JSON.stringify({ id: id })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (!data.success) return;
+
+            updateRow(box, data.quantity, price, data.subtotal);
+        });
+    });
+});
+
+// FUNCTION UPDATE TAMPILAN
+function updateRow(box, qty, price, newSubtotal) {
+
+    box.querySelector('.qty').textContent = qty;
+
+    const row = box.closest('tr').querySelector('.row-total');
+    row.textContent = "Rp" + (price * qty).toLocaleString('id-ID');
+
+    subtotalElement.dataset.subtotal = newSubtotal;
+    subtotalElement.textContent = "Rp" + newSubtotal.toLocaleString('id-ID');
+
+    const shippingCost = parseInt(shippingSelect.selectedOptions[0].dataset.cost);
+    totalElement.textContent = "Rp" + (newSubtotal + shippingCost).toLocaleString('id-ID');
+}
+</script>
+
 
 <div class="mb-[380px]"></div>
 @extends('layout.footer')

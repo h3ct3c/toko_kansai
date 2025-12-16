@@ -6,11 +6,11 @@
 {{-- Bagian Header--}}
 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
     <h2 class="text-3xl font-semibold text-gray-800 flex items-center">
-            Daftar Order Pelanggan
+            List Customer Orders
         </h2>
         <a href="{{ route('orderCrud.create') }}" 
         class="mt-4 sm:mt-0 bg-gradient-to-br from-blue-900 to-blue-800 hover:bg-blue-800 text-white font-medium px-6 py-2 rounded-lg shadow-md transform hover:scale-[1.02] transition duration-300">
-        <span class="mr-1">+</span> Tambah Order
+        <span class="mr-1">+</span> Add Order
     </a>
 </div>
 

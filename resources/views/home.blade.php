@@ -54,10 +54,10 @@
       
       <div class="md:w-1/2 mb-8 md:mb-0">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">
-          {{ __('messages.Home_SummerSale') }}
+          {{ __('messages.Home_WinterSale') }}
         </h2>
         <p class="text-xl text-gray-300 mb-6">
-          {{ __('messages.Home_SummerSaleDesc') }}
+          {{ __('messages.Home_WinterSaleDesc') }}
         </p>
 
         <!-- Promo sepecial -->
@@ -96,7 +96,7 @@
 </section>
 
 <script>
-  const targetDate = new Date("2025-11-30T23:59:59").getTime();
+  const targetDate = new Date("2026-01-30T23:59:59").getTime();
 
   const countdown = setInterval(() => {
     const now = new Date().getTime();

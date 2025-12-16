@@ -24,8 +24,8 @@
       <div>
         <h3 class="font-bold mb-4">{{ __('messages.Footer_AboutUs') }}</h3>
         <ul class="space-y-2 text-sm font-semibold">
-          <li><a href="https://kansaipaint.id/artikel">{{ __('messages.Footer_Articles') }}</a></li>
-          <li><a href="https://kansaipaint.id/hubungi-kami">{{ __('messages.Footer_ContactUs') }}</a></li>
+          <li><a href="https://kansaipaint.id/artikel" class="hover:text-blue-600">{{ __('messages.Footer_Articles') }}</a></li>
+          <li><a href="https://kansaipaint.id/hubungi-kami" class="hover:text-blue-600">{{ __('messages.Footer_ContactUs') }}</a></li>
         </ul>
       </div>
 
@@ -33,8 +33,8 @@
       <div>
         <h3 class="font-bold mb-4">{{ __('messages.Footer_Simulation') }}</h3>
         <ul class="space-y-2 text-sm font-semibold">
-          <li><a href="https://color.kansaipaint.id/paint-calculator">{{ __('messages.Footer_PaintCalculator') }}</a></li>
-          <li><a href="https://color.kansaipaint.id">{{ __('messages.Footer_Colors') }}</a></li>
+          <li><a href="https://color.kansaipaint.id/paint-calculator" class="hover:text-blue-600">{{ __('messages.Footer_PaintCalculator') }}</a></li>
+          <li><a href="https://color.kansaipaint.id" class="hover:text-blue-600">{{ __('messages.Footer_Colors') }}</a></li>
         </ul>
       </div>
 
@@ -42,8 +42,8 @@
       <div>
         <h3 class="font-bold mb-4">{{ __('messages.Footer_Services') }}</h3>
         <ul class="space-y-2 text-sm font-semibold">
-          <li><a href="https://kansaipaint.id/b2b">{{ __('messages.Footer_B2B') }}</a></li>
-          <li><a href="https://kansaipaint.id/warranty">{{ __('messages.Footer_12YearWarranty') }}</a></li>
+          <li><a href="https://kansaipaint.id/b2b" class="hover:text-blue-600">{{ __('messages.Footer_B2B') }}</a></li>
+          <li><a href="https://kansaipaint.id/warranty" class="hover:text-blue-600">{{ __('messages.Footer_12YearWarranty') }}</a></li>
         </ul>
       </div>
 

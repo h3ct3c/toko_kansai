@@ -102,24 +102,49 @@
                     <h2 class="text-2xl font-semibold text-gray-800 mb-6">Ringkasan Pesanan</h2>
 
                     <div class="space-y-4 mb-6 max-h-96 overflow-y-auto pr-2">
-                        @foreach($products as $product)
-                            @php 
-                                $cartItem = $cart[$product->id] ?? null;
-                            @endphp
-                            <div class="flex items-center justify-between border-b pb-3 last:border-b-0">
-                                <div class="flex items-start gap-4">
-                                    <img src="{{ asset('img/' . $product->image) }}" class="w-16 h-16 object-cover rounded-md border" />
-                                    <div>
-                                        <p class="font-medium text-gray-800">{{ $product->name }}</p>
-                                        <p class="text-sm text-gray-500">Qty: {{ $cartItem['quantity'] ?? 1 }}</p>
-                                    </div>
-                                </div>
-                                <span class="text-base font-semibold text-red-600">
-                                    Rp{{ number_format($product->price * ($cartItem['quantity'] ?? 1), 0, ',', '.') }}
-                                </span>
-                            </div>
-                        @endforeach
-                    </div>
+    @foreach($cart as $cartKey => $item)
+        <div class="flex justify-between border-b pb-3 last:border-b-0">
+
+            <!-- KIRI: gambar + nama -->
+            <div class="flex gap-4">
+                <img
+                    src="{{ asset('img/' . $item['image']) }}"
+                    class="w-16 h-16 object-cover rounded-md border shrink-0"
+                    alt="{{ $item['name'] }}"
+                />
+
+                <div class="max-w-xs">
+                    <p class="font-medium text-gray-800 leading-snug break-words">
+                        {{ $item['name'] }}
+                    </p>
+
+                    @if(!empty($item['color']))
+                        <div class="flex items-center gap-1 mt-1 text-sm text-gray-500">
+                            <span
+                                class="inline-block w-3 h-3 rounded-full border shrink-0"
+                                style="background-color: {{ $item['color'] }};"
+                            ></span>
+                            <span>{{ ucfirst($item['color']) }}</span>
+                        </div>
+                    @endif
+                </div>
+            </div>
+
+            <!-- KANAN: qty + harga -->
+            <div class="flex flex-col items-end justify-center">
+                <p class="text-sm text-gray-500">
+                    Qty: {{ $item['quantity'] }}
+                </p>
+
+                <span class="text-base font-semibold text-red-600">
+                    Rp{{ number_format($item['price'] * $item['quantity'], 0, ',', '.') }}
+                </span>
+            </div>
+
+        </div>
+    @endforeach
+</div>
+
 
                     <div class="border-t border-gray-200 pt-6 space-y-3">
                         <div class="flex justify-between text-gray-700">

@@ -14,42 +14,32 @@ class CheckoutController extends Controller
     public function index()
 {
     $cart = session()->get('cart', []);
-
-    if (empty($cart)) {
-        return redirect()->route('cart.index')->with('error', 'Keranjang masih kosong.');
-    }
-
-    $cart = array_filter($cart, function ($item) {
-        return isset($item['id']);
-    });
-
-    if (empty($cart)) {
-        session()->forget('cart');
-        return redirect()->route('cart.index')->with('error', 'Keranjang tidak valid, silakan tambah produk lagi.');
-    }
-
-    $productIds = collect($cart)->pluck('id')->unique();
-    $products = Product::whereIn('id', $productIds)->get()->keyBy('id');
-
-    $subtotal = collect($cart)->reduce(function ($total, $item) use ($products) {
-        $id = $item['id'] ?? null;
-        if (!$id || !isset($products[$id])) return $total;
-
-        $quantity = $item['quantity'] ?? 1;
-        $price = $products[$id]->price ?? 0;
-
-        return $total + ($price * $quantity);
-    }, 0);
-
     $shipping = session()->get('shipping', [
         'method' => 'pickup',
         'cost' => 0,
     ]);
 
+    if (empty($cart)) {
+        return redirect()->route('cart.index')
+            ->with('error', 'Keranjang masih kosong.');
+    }
+
+    $subtotal = 0;
+
+    foreach ($cart as $item) {
+        $subtotal += $item['price'] * $item['quantity'];
+    }
+
     $total = $subtotal + ($shipping['cost'] ?? 0);
 
-    return view('checkout.index', compact('products', 'cart', 'subtotal', 'shipping', 'total'));
+    return view('checkout.index', compact(
+        'cart',
+        'shipping',
+        'subtotal',
+        'total'
+    ));
 }
+
     public function store(Request $request)
     {
         $cart = session()->get('cart', []);
@@ -82,23 +72,19 @@ class CheckoutController extends Controller
             $productIds = collect($cart)->pluck('id')->unique();
             $products = Product::whereIn('id', $productIds)->get()->keyBy('id');
 
-            $subtotal = 0;
-            $combinedNames = [];
-            $totalQuantity = 0;
+           $subtotal = 0;
+$totalQuantity = 0;
+$combinedNames = [];
 
-            foreach ($cart as $item) {
-                if (!isset($products[$item['id']])) continue;
+foreach ($cart as $item) {
+    $subtotal += $item['price'] * $item['quantity'];
+    $totalQuantity += $item['quantity'];
 
-                $product = $products[$item['id']];
-                $quantity = $item['quantity'] ?? 1;
-                $subtotal += $product->price * $quantity;
-                $totalQuantity += $quantity;
+    $combinedNames[] = isset($item['color'])
+        ? "{$item['name']} (" . ucfirst($item['color']) . ")"
+        : $item['name'];
+}
 
-                $color = $item['color'] ?? null;
-                $combinedNames[] = $color
-                    ? "{$product->name} (" . ucfirst($color) . ")"
-                    : $product->name;
-            }
 
             $totalPrice = $subtotal + ($shipping['cost'] ?? 0);
 

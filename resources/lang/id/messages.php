@@ -10,6 +10,10 @@ return [
     'Product' => 'Produk',
     'Colors' => 'Warna',
 
+    'My Account' => 'Akun Saya',
+    'Orders' => 'Pesanan',
+    'Language' => 'Bahasa',
+
     // MAIN CATEGORIES
     'MainCategories' => 'Kategori Utama',
     'Interior' => 'Interior',
@@ -54,7 +58,7 @@ return [
 
     'Footer_AllRightsReserved' => 'Hak Cipta Dilindungi.',
 
-    // HOME PAGE
+    // HOMEPAGE
     'Home_ExploreCategories' => 'Jelajahi Kategori Produk Kami',
     'Home_FindQualityPaint' => 'Temukan cat berkualitas untuk setiap kebutuhan Anda',
 
@@ -65,8 +69,8 @@ return [
 
     'Btn_Explore' => 'Jelajahi',
 
-    'Home_SummerSale' => 'Promo Musim Panas',
-    'Home_SummerSaleDesc' => 'Diskon hingga 50% untuk produk pilihan. Waktu terbatas.',
+    'Home_WinterSale' => 'Promo Musim Dingin',
+    'Home_WinterSaleDesc' => 'Diskon hingga 50% untuk produk pilihan. Waktu terbatas.',
 
     'Time_Days' => 'Hari',
     'Time_Hours' => 'Jam',
@@ -78,13 +82,18 @@ return [
 
     'Home_FeaturedProducts' => 'Produk Unggulan',
 
-    // ALL PRODUCTS
+    // PRODUCTS
     'all_products_title' => 'Semua Produk Cat',
     'all_products_subtitle' => 'Temukan cat berkualitas untuk semua kebutuhan proyek Anda',
     'no_products' => 'Belum ada produk tersedia.',
 
-    // COLORS PAGE
+    // COLORS
     'title' => 'Seluruh Koleksi Warna',
     'subtitle' => 'Temukan Warna favorit Anda!',
+
+    // CART
+    'MY SHOPPING CART' => 'KERANJANG BELANJA SAYA',
+    'your_cart_is_empty' => 'Keranjang belanja Anda kosong.',
+    'Countinue_Shopping' => 'Lanjutkan Belanja',
 
 ];

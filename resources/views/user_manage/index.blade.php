@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-4">
-    <h1 class="text-3xl font-semibold text-gray-800">Manajemen Pengguna</h1>
+    <h1 class="text-3xl font-semibold text-gray-800">User Management</h1>
 
     <!-- Form hapus terpilih -->
     <form id="bulkDeleteForm" action="{{ route('user_manage.deleteSelected') }}" method="POST" class="flex items-center">
@@ -12,9 +12,9 @@
         @method('DELETE')
         <input type="hidden" name="selected_ids" id="selected_ids">
         <button type="submit"
-            onclick="return confirm('Hapus semua user terpilih?')"
+            onclick="return confirm('Delete all selected users?')"
             class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm transform hover:scale-[1.02] transition duration-300">
-            Hapus Terpilih
+            Delete all
         </button>
     </form>
 </div>
@@ -116,7 +116,7 @@
     @endif
 </div>
 
-<!-- Script pilih semua dan kirim ID terpilih -->
+<!-- Script pilih semua -->
 <script>
     const selectAll = document.getElementById('select-all');
     const checkboxes = document.querySelectorAll('.user-checkbox');

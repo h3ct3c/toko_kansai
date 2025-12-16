@@ -8,7 +8,7 @@
 <div class="mb-24"></div>
 
 <div class="p-4 bg-[#f1f2f6] rounded-md">
-  <!-- Grid kategori utama -->
+  <!-- Grid utama -->
   <div class="grid grid-cols-5 lg:grid-cols-7 gap-4 ">
 
     <!-- Neutral -->
@@ -83,7 +83,7 @@
 
   </div>
 
-  <!-- Grid turunan warna (row 2), default hidden -->
+  <!-- Grid turunan warna -->
   <div id="redRow" class="grid grid-cols-5 lg:grid-cols-7 gap-4 mt-4 hidden">
     <div class="bg-[#ff4d4d] h-[50px] md:h-[95px] rounded-md">    </div>
   </div>
