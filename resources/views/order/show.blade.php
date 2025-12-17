@@ -7,13 +7,13 @@
     {{-- Inisialisasi Alpine.js dengan state 'openOrder' --}}
     <div class="container mx-auto px-4 py-8 max-w-7xl mt-6" x-data="{ openOrder: null }">
         <div class="mb-8">
-            <h1 class="text-3xl font-bold text-blue-900">Riwayat Order</h1>
-            <p class="text-gray-600 mt-2">Lihat daftar pesanan dan detail pembelian Anda.</p>
+            <h1 class="text-3xl font-bold text-blue-900">{{ __('messages.Order History') }}</h1>
+            <p class="text-gray-600 mt-2">{{ __('messages.View your order list and purchase details') }}</p>
         </div>
         
         @if($orders->isEmpty())
             <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 text-center">
-                <p class="text-gray-500">Anda belum memiliki riwayat pesanan.</p>
+                <p class="text-gray-500">{{ __('messages.You don’t have any order history yet.') }}</p>
             </div>
         @else
             <div class="space-y-6">
@@ -49,7 +49,7 @@
                                         </span>
                                     </div>
                                     <p class="text-sm text-gray-500 mt-1">
-                                        Tanggal Order: {{ $order->created_at->format('d M, Y') ?? 'N/A' }}
+                                        {{ __('messages.Order Date') }}: {{ $order->created_at->format('d M, Y') ?? 'N/A' }}
                                     </p>
                                 </div>
                                 <div class="text-right">
@@ -74,7 +74,7 @@
                             
                             <div class="p-6 space-y-6">
                                 <div class="space-y-4">
-                                    <h3 class="text-base font-semibold text-gray-900 border-b pb-2">Produk yang Dibeli</h3>
+                                    <h3 class="text-base font-semibold text-gray-900 border-b pb-2">{{ __('messages.Purchased Products') }}</h3>
                                     
                                     {{-- Loop untuk menampilkan setiap item dalam order --}}
                                     @if($order->items->isNotEmpty())
@@ -114,7 +114,7 @@
                                 <div class="flex justify-end space-x-4">
                                     <a href="{{ route('order.index', $order->id) }}"
                                         class="px-4 py-2 bg-blue-900 rounded-md text-sm font-medium text-white hover:bg-blue-700">
-                                        Lihat Detail Lengkap
+                                        {{ __('messages.View Full Details') }}
                                     </a>
                                 </div>
                             </div>

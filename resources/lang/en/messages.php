@@ -93,7 +93,63 @@ return [
 
     // CART
     'MY SHOPPING CART' => 'MY SHOPPING CART',
+    'Product' => 'Product',
+    'Color' => 'Color',
+    'Quantity' => 'Quantity',
+    'Price' => 'Price',  
+    'Remove' => 'Remove',
+    'Shipping Method' => 'Shipping Method',
+    'Order Summary' => 'Order Summary',
+    'Shipping' => 'Shipping',
+    'Proceed To Checkout' => 'Proceed To Checkout',
     'your_cart_is_empty' => 'Your cart is empty.',
     'Countinue_Shopping' => 'Continue Shopping',
 
+    //CHECKOUT
+    'Shipping & Payment Details' => 'Shipping & Payment Details',
+    'Order Summary' => 'Order Summary',
+    'Full Name*' => 'Full Name*',
+    'Street Address*' => 'Street Address*',
+    'Email Address*' => 'Email Address*',
+    'Province*' => 'Province*',
+    'City*' => 'City*',
+    'District*' => 'District*',
+    'Subdistrict*' => 'Subdistrict*',
+    'Postal Code*' => 'Postal Code*',
+    'Phone Number*' => 'Phone Number*',
+
+    //payment methods
+    'Payment Method*' => 'Metode Pembayaran*',
+    'Bayar via Bank / E-Wallet' => 'Bayar via Bank / E-Wallet',
+    'Lanjutkan Pembayaran' => 'Continue to Payment',
+
+     //ORDER
+    'Order History' => 'Order History',
+    'View your order list and purchase details' => 'View your order list and purchase details',
+    'You don’t have any order history yet.' => 'You don’t have any order history yet.',
+    'Purchased Products' => 'Purchased Products',
+    'View Full Details' => 'View Full Details',
+    'Order Date' => 'Order Date',
+
+    // ORDER DETAILS
+    'Detail Order' => 'Order Details',
+    'Status' => 'Status',
+    'Total Item' => 'Total Items',
+    'Total Price' => 'Total Price',
+
+    'Shipping Address' => 'Shipping Address',
+    'Recipient Name' => 'Recipient Name',
+    'Phone Number' => 'Phone Number',
+    'Street Address' => 'Street Address',
+    'Sub-district' => 'Sub-district',
+    'District' => 'District',
+    'City' => 'City',
+    'Province' => 'Province',
+    'Postal Code' => 'Postal Code',
+
+    'Ordered Products' => 'Ordered Products',
+    'Quantity' => 'Quantity',
+    'Color' => 'Color',
+
+    'Back to Order List' => 'Back to Order List',
 ];

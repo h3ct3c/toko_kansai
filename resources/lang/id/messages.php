@@ -93,7 +93,65 @@ return [
 
     // CART
     'MY SHOPPING CART' => 'KERANJANG BELANJA SAYA',
+    'Product' => 'Produk',
+    'Color' => 'Warna',
+    'Quantity' => 'Jumlah',
+    'Price' => 'Harga',  
+    'Remove' => 'Hapus',
+    'Shipping Method' => 'Metode Pengiriman',
+    'Order Summary' => 'Ringkasan Pesanan',
+    'Shipping' => 'Ongkos Kirim',
+    'Proceed To Checkout' => 'Lanjutkan ke Pembayaran',
     'your_cart_is_empty' => 'Keranjang belanja Anda kosong.',
     'Countinue_Shopping' => 'Lanjutkan Belanja',
+
+    //CHECKOUT
+    'Shipping & Payment Details' => 'Detail Pengiriman & Pembayaran',
+    'Order Summary' => 'Ringkasan Pesanan',
+    'Full Name*' => 'Nama Lengkap*',
+    'Street Address*' => 'Alamat Jalan*',
+    'Email Address*' => 'Alamat Email*',
+    'Province*' => 'Provinsi*',
+    'City*' => 'Kota*',
+    'District*' => 'Kecamatan*',
+    'Subdistrict*' => 'Kelurahan*',
+    'Postal Code*' => 'Kode Pos*',
+    'Phone Number*' => 'Nomor Telepon*',
+
+    //payment methods
+    'Payment Method*' => 'Metode Pembayaran*',
+    'Bayar via Bank / E-Wallet' => 'Bayar via Bank / E-Wallet',
+    'Lanjutkan Pembayaran' => 'Continue to Payment',
+
+    //ORDER
+    'Order History' => 'Riwayat Order',
+    'View your order list and purchase details' => 'Lihat daftar pesanan dan detail pembelian Anda',
+    'You don’t have any order history yet.' => 'Anda belum memiliki riwayat pesanan.',
+    'Purchased Products' => 'Produk yang Dibeli',
+    'View Full Details' => 'Lihat Detail Lengkap',
+    'Order Date' => 'Tanggal Order',
+
+    // ORDER DETAILS
+    'Detail Order' => 'Detail Pesanan',
+    'Status' => 'Status',
+    'Total Item' => 'Total Item',
+    'Total Price' => 'Total Harga',
+
+    'Shipping Address' => 'Alamat Pengiriman',
+    'Recipient Name' => 'Nama Penerima',
+    'Phone Number' => 'Nomor Telepon',
+    'Street Address' => 'Alamat Jalan',
+    'Sub-district' => 'Kelurahan',
+    'District' => 'Kecamatan',
+    'City' => 'Kota',
+    'Province' => 'Provinsi',
+    'Postal Code' => 'Kode Pos',
+
+    'Ordered Products' => 'Produk yang Dipesan',
+    'Quantity' => 'Jumlah',
+    'Color' => 'Warna',
+
+    'Back to Order List' => 'Kembali ke Daftar Pesanan',
+
 
 ];

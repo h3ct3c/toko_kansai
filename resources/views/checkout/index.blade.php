@@ -8,7 +8,7 @@
 
             {{-- FORM CHECKOUT --}}
             <div class="w-full lg:w-2/3 bg-white p-6 md:p-8 rounded-lg shadow-xl border border-gray-200">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-6">Detail Pengiriman & Pembayaran</h2>
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">{{ __('messages.Shipping & Payment Details') }}</h2>
 
                 <form id="checkoutForm" class="space-y-6">
                     @csrf
@@ -18,55 +18,55 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="md:col-span-2">
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap*</label>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">{{ __('messages.Full Name*') }}</label>
                             <input type="text" id="name" name="name" value="{{ Auth::user()->name }}" required
                                 class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition">
                         </div>
 
                         <div class="md:col-span-2">
-                            <label for="jalan" class="block text-sm font-medium text-gray-700 mb-1">Alamat Jalan*</label>
+                            <label for="jalan" class="block text-sm font-medium text-gray-700 mb-1">{{ __('messages.Street Address*') }}</label>
                             <input type="text" id="jalan" name="jalan" required
                                 class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition">
                         </div>
 
                         <div>
-                            <label for="provinsi" class="block text-sm font-medium text-gray-700 mb-1">Provinsi*</label>
+                            <label for="provinsi" class="block text-sm font-medium text-gray-700 mb-1">{{ __('messages.Province*') }}</label>
                             <input type="text" id="provinsi" name="provinsi" required
                                 class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition">
                         </div>
 
                         <div>
-                            <label for="kota" class="block text-sm font-medium text-gray-700 mb-1">Kota*</label>
+                            <label for="kota" class="block text-sm font-medium text-gray-700 mb-1">{{ __('messages.City*') }}</label>
                             <input type="text" id="kota" name="kota" required
                                 class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition">
                         </div>
 
                         <div>
-                            <label for="kecamatan" class="block text-sm font-medium text-gray-700 mb-1">Kecamatan*</label>
+                            <label for="kecamatan" class="block text-sm font-medium text-gray-700 mb-1">{{ __('messages.District*') }}</label>
                             <input type="text" id="kecamatan" name="kecamatan" required
                                 class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition">
                         </div>
 
                         <div>
-                            <label for="kelurahan" class="block text-sm font-medium text-gray-700 mb-1">Kelurahan*</label>
+                            <label for="kelurahan" class="block text-sm font-medium text-gray-700 mb-1">{{ __('messages.Subdistrict*') }}</label>
                             <input type="text" id="kelurahan" name="kelurahan" required
                                 class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition">
                         </div>
 
                         <div>
-                            <label for="kode_pos" class="block text-sm font-medium text-gray-700 mb-1">Kode Pos*</label>
+                            <label for="kode_pos" class="block text-sm font-medium text-gray-700 mb-1">{{ __('messages.Postal Code*') }}</label>
                             <input type="text" id="kode_pos" name="kode_pos" required
                                 class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition">
                         </div>
 
                         <div>
-                            <label for="nomor_telepon" class="block text-sm font-medium text-gray-700 mb-1">Nomor Telepon*</label>
+                            <label for="nomor_telepon" class="block text-sm font-medium text-gray-700 mb-1">{{ __('messages.Phone Number*') }}</label>
                             <input type="text" id="nomor_telepon" name="nomor_telepon" value="{{ Auth::user()->nomor_telepon ?? '' }}" required
                                 class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition">
                         </div>
 
                         <div class="md:col-span-2">
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Alamat Email*</label>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">{{ __('messages.Email Address*') }}</label>
                             <input type="email" id="email" name="email" value="{{ Auth::user()->email }}" required
                                 class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-600 focus:border-blue-600 transition">
                         </div>
@@ -74,7 +74,7 @@
 
                     {{-- PEMBAYARAN --}}
                     <div class="pt-4 border-t border-gray-200">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Metode Pembayaran</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">{{ __('messages.Payment Method*') }}</h3>
                         <div class="space-y-3">
                             <label class="flex items-center gap-3 border border-gray-300 p-4 rounded-lg cursor-pointer hover:bg-gray-50 transition">
                                 <input type="radio" name="payment_method" value="COD" checked class="h-5 w-5 text-blue-600 accent-blue-600">
@@ -82,7 +82,7 @@
                             </label>
                             <label class="flex items-center gap-3 border border-gray-300 p-4 rounded-lg cursor-pointer hover:bg-gray-50 transition">
                                 <input type="radio" name="payment_method" value="Midtrans" class="h-5 w-5 text-blue-600 accent-blue-600">
-                                <span class="text-gray-900 font-medium flex-grow">Bayar via Bank / E-Wallet</span>
+                                <span class="text-gray-900 font-medium flex-grow">{{ __('messages.Bayar via Bank / E-Wallet') }}</span>
                             </label>
                         </div>
                     </div>
@@ -90,7 +90,7 @@
                     <div class="pt-6">
                         <button type="button" id="payBtn"
                             class="w-full bg-blue-900 text-white font-semibold p-4 rounded-lg shadow-lg hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-700 focus:ring-opacity-50 transition">
-                            Lanjutkan Pembayaran
+                            {{ __('messages.Lanjutkan Pembayaran') }}
                         </button>
                     </div>
                 </form>
@@ -99,7 +99,7 @@
             {{-- RINGKASAN PESANAN --}}
             <div class="w-full lg:w-1/3">
                 <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl border border-gray-200 sticky top-10">
-                    <h2 class="text-2xl font-semibold text-gray-800 mb-6">Ringkasan Pesanan</h2>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-6">{{ __('messages.Order Summary') }}</h2>
 
                     <div class="space-y-4 mb-6 max-h-96 overflow-y-auto pr-2">
     @foreach($cart as $cartKey => $item)

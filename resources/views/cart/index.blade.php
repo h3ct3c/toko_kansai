@@ -29,10 +29,10 @@
             <table class="min-w-full text-sm">
                 <thead class="bg-gray-100 text-gray-700 uppercase text-xs font-semibold">
                     <tr>
-                        <th class="py-4 px-6 text-left">Product</th>
-                        <th class="py-4 px-6 text-center">Color</th>
-                        <th class="py-4 px-6 text-center">Quantity</th>
-                        <th class="py-4 px-6 text-right">Price</th>
+                        <th class="py-4 px-6 text-left">{{ __('messages.Product') }}</th>
+                        <th class="py-4 px-6 text-center">{{ __('messages.Color') }}</th>
+                        <th class="py-4 px-6 text-center">{{ __('messages.Quantity') }}</th>
+                        <th class="py-4 px-6 text-right">{{ __('messages.Price') }}</th>
                         <th class="py-4 px-6 text-right">Total</th>
                         <th class="py-4 px-6 text-center">Action</th>
                     </tr>
@@ -99,7 +99,7 @@
                             <td class="py-4 px-6 text-center">
                                 <form action="{{ route('cart.remove', $id) }}" method="POST" onsubmit="return confirm('Remove this item?')">
                                     @csrf
-                                    <button type="submit" class="text-red-600 hover:text-red-800 font-semibold">Remove</button>
+                                    <button type="submit" class="text-red-600 hover:text-red-800 font-semibold">{{ __('messages.Remove') }}</button>
                                 </form>
                             </td>
 
@@ -114,7 +114,7 @@
 
             <!-- Shipping -->
             <div class="bg-white rounded-2xl shadow p-6">
-                <h2 class="text-lg font-semibold mb-3 text-gray-800">Shipping Method</h2>
+                <h2 class="text-lg font-semibold mb-3 text-gray-800">{{ __('messages.Shipping Method') }}</h2>
                 <form id="shipping-form">
                     <select id="shipping" name="shipping" 
                             class="w-full border rounded-lg p-3 text-gray-700 focus:ring-2 focus:ring-blue-600">
@@ -128,7 +128,7 @@
 
             <!-- Order Summary -->
             <div class="bg-white rounded-2xl shadow p-6">
-                <h2 class="text-lg font-semibold mb-3 text-gray-800">Order Summary</h2>
+                <h2 class="text-lg font-semibold mb-3 text-gray-800">{{ __('messages.Order Summary') }}</h2>
 
                 <div class="flex justify-between py-2 text-gray-700">
                     <span>Subtotal</span>
@@ -152,7 +152,7 @@
                                        bg-blue-900 border border-blue-700 shadow-md shadow-blue-800 transition duration-200 ease-out
                                        hover:opacity-80 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-lg 
                                        active:translate-x-2 active:translate-y-1 active:shadow-none">
-                          Proceed To Checkout
+                          {{ __('messages.Proceed To Checkout') }}
                         </button>
                     </a>
                 </div>
